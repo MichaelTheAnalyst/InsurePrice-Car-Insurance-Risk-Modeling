@@ -5,6 +5,10 @@ Step 2: Clean & explore the data
 - Inspect missing values
 - Explore key variables
 - Plot claim rates by: Age, Car category, NCD (proxy), Region
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 import pandas as pd

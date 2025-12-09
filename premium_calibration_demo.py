@@ -3,6 +3,10 @@ Premium Calibration Demonstration
 
 Shows how to convert risk scores into realistic market premiums
 using properly calibrated actuarial formulas.
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 from actuarial_pricing_engine import ActuarialPricingEngine

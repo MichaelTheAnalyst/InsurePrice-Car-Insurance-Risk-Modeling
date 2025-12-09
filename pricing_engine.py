@@ -7,8 +7,9 @@ This module provides a comprehensive pricing engine for car insurance that incor
 - Premium calculation with profit margins and expenses
 - Different coverage types and policy options
 
-Author: InsurePrice AI Assistant
+Author: MichaelTheAnalyst
 Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 import pandas as pd

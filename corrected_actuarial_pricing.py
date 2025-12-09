@@ -5,6 +5,10 @@ Uses mathematically correct actuarial formulas to convert risk scores to premium
 - Pure Premium = Expected Loss
 - Gross Premium = Pure Premium / (1 - expense ratio - profit ratio - risk ratio)
 - Final Premium = Gross Premium × (1 - investment return)
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 def mathematically_correct_actuarial_premium(risk_score,

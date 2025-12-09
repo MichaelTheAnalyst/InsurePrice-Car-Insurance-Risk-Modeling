@@ -4,6 +4,10 @@ InsurePrice Visualization Dashboard
 Comprehensive visualization suite showcasing the enhanced car insurance pricing engine,
 data quality improvements, and actuarial insights.
 
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
+
 Features:
 - Risk factor analysis
 - Premium distribution analysis

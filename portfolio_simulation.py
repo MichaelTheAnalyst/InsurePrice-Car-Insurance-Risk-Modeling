@@ -6,6 +6,10 @@ Monte Carlo simulation of insurance portfolio profitability with:
 - Profit distribution
 - Sensitivity scenarios
 - Risk stress testing
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 import pandas as pd

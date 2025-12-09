@@ -7,6 +7,10 @@ Train and evaluate three baseline models:
 - XGBoost
 
 Metrics: AUC, Gini coefficient, Calibration curve, Feature importance
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 import pandas as pd

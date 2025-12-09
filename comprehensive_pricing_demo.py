@@ -3,6 +3,10 @@ Comprehensive Actuarial Pricing Demonstration
 
 Shows how to convert risk scores into realistic UK car insurance premiums
 using advanced actuarial formulas and industry-standard loadings.
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 def advanced_actuarial_premium(risk_score, base_frequency=0.122, base_severity=3500):

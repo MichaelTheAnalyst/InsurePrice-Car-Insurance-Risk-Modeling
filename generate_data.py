@@ -1,3 +1,12 @@
+"""
+Enhanced Synthetic Car Insurance Data Generator
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
+Description: Generates realistic synthetic car insurance data with enhanced features
+"""
+
 import pandas as pd
 import numpy as np
 import random

@@ -202,7 +202,8 @@ pricing_stats = engine.analyze_pricing_distribution(priced_policies)
 
 ## 📞 Contact & Attribution
 
-**Project**: InsurePrice Car Insurance Pricing Engine
+**Project**: InsurePrice Car Insurance Risk Modeling
+**Author**: MichaelTheAnalyst
 **Version**: 1.0.0
 **Date**: December 2025
 **Methodology**: Based on UK insurance industry standards and actuarial principles

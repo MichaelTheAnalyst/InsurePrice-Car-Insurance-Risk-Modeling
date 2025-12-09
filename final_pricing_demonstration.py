@@ -3,6 +3,10 @@ Final Actuarial Pricing Demonstration
 
 Complete workflow: Risk Score → Expected Loss → Actuarial Premium
 Using industry-standard formulas and realistic UK market parameters.
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 def calculate_realistic_actuarial_premium(risk_score,

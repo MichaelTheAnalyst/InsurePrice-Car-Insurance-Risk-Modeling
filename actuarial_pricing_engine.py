@@ -8,6 +8,10 @@ Formulas:
 1. Basic Actuarial: Premium = Expected Loss + Expenses + Margin
 2. Frequency-Severity: Premium = (Frequency × Severity) × Loading Factors
 3. Comprehensive: Net Premium = Gross Premium × (1 + Risk Margin) × (1 + Expense Loading)
+
+Author: MichaelTheAnalyst
+Date: December 2025
+Project: InsurePrice Car Insurance Risk Modeling
 """
 
 import pandas as pd
