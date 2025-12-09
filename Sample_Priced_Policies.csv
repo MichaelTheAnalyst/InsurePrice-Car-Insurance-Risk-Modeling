@@ -1,0 +1,101 @@
+ID,AGE,GENDER,REGION,DRIVING_EXPERIENCE,EDUCATION,INCOME,CREDIT_SCORE,VEHICLE_OWNERSHIP,VEHICLE_YEAR,MARRIED,CHILDREN,POSTAL_CODE,ANNUAL_MILEAGE,VEHICLE_TYPE,SAFETY_RATING,SPEEDING_VIOLATIONS,DUIS,PAST_ACCIDENTS,OUTCOME,CLAIM_AMOUNT,CALCULATED_PREMIUM,MONTHLY_PREMIUM,RISK_SCORE,COVERAGE_TYPE,NCD_YEARS,VOLUNTARY_EXCESS
+1,26-39,female,Scotland,10-19y,high_school,working_class,0.473,1.0,before_2010,1.0,1.0,10238,5707.0,suv,standard,1,0,0,0.0,0.0,1457.71,121.48,2.36,comprehensive,1,200
+2,26-39,female,Wales,0-9y,high_school,middle_class,0.697,1.0,2016-2020,0.0,1.0,32765,7601.0,luxury_sedan,basic,0,0,1,0.0,0.0,2466.09,205.51,3.992,comprehensive,1,200
+3,26-39,male,East Anglia,0-9y,high_school,working_class,0.733,1.0,before_2010,1.0,1.0,78901,10825.0,suv,basic,1,0,1,0.0,0.0,1892.38,157.7,3.063,comprehensive,1,200
+4,26-39,male,North West,10-19y,high_school,working_class,0.558,1.0,2010-2015,0.0,0.0,45678,4717.0,suv,standard,0,0,0,1.0,718.48,1412.86,117.74,2.287,comprehensive,1,200
+5,40-64,male,Yorkshire,20-29y,university,working_class,0.792,1.0,2010-2015,0.0,1.0,67890,7311.0,luxury_sedan,advanced,0,0,1,0.0,0.0,1134.29,94.52,1.836,comprehensive,1,200
+6,40-64,female,Yorkshire,10-19y,postgraduate,middle_class,0.698,1.0,2016-2020,1.0,1.0,45678,7623.0,suv,basic,0,0,0,0.0,0.0,1223.26,101.94,1.98,comprehensive,1,200
+7,26-39,female,North East,0-9y,university,upper_class,0.821,1.0,2010-2015,1.0,1.0,45678,9059.0,family_sedan,basic,0,0,0,0.0,0.0,1681.42,140.12,2.722,comprehensive,1,200
+8,16-25,female,North East,0-2y,high_school,middle_class,0.598,1.0,2016-2020,0.0,0.0,67890,4132.0,suv,basic,1,1,1,0.0,0.0,14011.85,1167.65,22.68,comprehensive,1,200
+9,26-39,female,South East,10-19y,university,working_class,0.398,0.0,after_2020,1.0,1.0,10238,7931.0,family_sedan,standard,0,0,0,0.0,0.0,1076.47,89.71,1.742,comprehensive,1,200
+10,26-39,male,South West,10-19y,university,working_class,0.376,1.0,2010-2015,0.0,0.0,54321,8022.0,suv,basic,0,0,1,0.0,0.0,1743.87,145.32,2.823,comprehensive,1,200
+11,26-39,female,East Anglia,10-19y,postgraduate,upper_class,0.538,1.0,after_2020,1.0,1.0,54321,7597.0,small_hatchback,basic,1,0,0,0.0,0.0,777.75,64.81,1.259,comprehensive,1,200
+12,65+,female,South West,30y+,none,middle_class,0.285,1.0,2010-2015,1.0,1.0,78901,4442.0,luxury_sedan,standard,0,0,0,1.0,12480.0,1053.89,87.82,1.706,comprehensive,1,200
+13,26-39,female,South West,10-19y,university,middle_class,0.529,1.0,before_2010,1.0,1.0,45678,6163.0,suv,standard,0,0,2,0.0,0.0,1284.42,107.03,2.079,comprehensive,1,200
+14,40-64,female,London,20-29y,university,working_class,0.584,0.0,2010-2015,1.0,0.0,78901,3226.0,suv,basic,0,0,0,0.0,0.0,1167.65,97.3,1.89,comprehensive,1,200
+15,26-39,male,Yorkshire,10-19y,high_school,poverty,0.075,1.0,before_2010,1.0,1.0,78901,11474.0,family_sedan,standard,1,0,0,0.0,0.0,1420.94,118.41,2.3,comprehensive,1,200
+16,26-39,male,East Midlands,10-19y,university,working_class,0.227,1.0,2016-2020,0.0,0.0,45678,5767.0,small_hatchback,standard,1,0,0,0.0,0.0,1107.15,92.26,1.792,comprehensive,1,200
+17,26-39,male,West Midlands,0-9y,university,poverty,0.162,1.0,before_2010,1.0,1.0,67890,10208.0,small_hatchback,standard,1,0,0,0.0,0.0,1665.29,138.77,2.695,comprehensive,1,200
+18,40-64,male,Wales,20-29y,high_school,middle_class,0.772,1.0,2016-2020,1.0,0.0,32765,9109.0,sports_car,standard,0,0,0,0.0,0.0,1223.26,101.94,1.98,comprehensive,1,200
+19,65+,female,North West,30y+,university,poverty,0.307,1.0,2016-2020,0.0,0.0,10238,500.0,family_sedan,basic,0,0,1,0.0,0.0,1573.81,131.15,2.547,comprehensive,1,200
+20,40-64,male,South East,10-19y,university,working_class,0.162,1.0,after_2020,1.0,1.0,67890,11075.0,suv,standard,0,0,1,0.0,0.0,1345.58,112.13,2.178,comprehensive,1,200
+21,40-64,female,London,20-29y,university,upper_class,0.656,1.0,2010-2015,1.0,0.0,10238,5499.0,small_hatchback,basic,0,0,0,0.0,0.0,882.23,73.52,1.428,comprehensive,1,200
+22,26-39,female,London,0-9y,university,middle_class,0.628,1.0,after_2020,0.0,0.0,45678,4571.0,luxury_sedan,advanced,1,0,2,0.0,0.0,2501.12,208.43,4.048,comprehensive,1,200
+23,65+,male,South East,30y+,postgraduate,middle_class,0.58,1.0,before_2010,1.0,0.0,67890,10158.0,luxury_sedan,advanced,0,0,0,0.0,0.0,1013.77,84.48,1.641,comprehensive,1,200
+24,26-39,female,Yorkshire,10-19y,university,middle_class,0.662,1.0,2010-2015,1.0,1.0,10238,6203.0,sports_car,standard,0,0,0,0.0,0.0,1761.49,146.79,2.851,comprehensive,1,200
+25,40-64,female,North East,20-29y,high_school,upper_class,0.831,1.0,after_2020,0.0,0.0,10238,5493.0,family_sedan,advanced,0,0,0,0.0,0.0,708.93,59.08,1.147,comprehensive,1,200
+26,40-64,female,Yorkshire,10-19y,university,working_class,0.377,1.0,2016-2020,1.0,1.0,54321,13474.0,family_sedan,basic,0,0,0,1.0,348.4,1350.48,112.54,2.186,comprehensive,1,200
+27,26-39,male,South West,10-19y,postgraduate,upper_class,0.888,1.0,after_2020,1.0,1.0,78901,9854.0,luxury_sedan,standard,0,0,0,0.0,0.0,1089.92,90.83,1.764,comprehensive,1,200
+28,40-64,female,London,20-29y,high_school,upper_class,0.816,0.0,after_2020,0.0,0.0,45678,4894.0,family_sedan,basic,0,0,0,0.0,0.0,840.71,70.06,1.361,comprehensive,1,200
+29,26-39,male,London,10-19y,university,middle_class,0.627,1.0,after_2020,0.0,0.0,67890,3530.0,suv,standard,0,0,0,0.0,0.0,1412.86,117.74,2.287,comprehensive,1,200
+30,40-64,female,South West,20-29y,university,middle_class,0.573,1.0,2010-2015,1.0,1.0,67890,10883.0,suv,advanced,1,0,0,0.0,0.0,649.86,54.15,1.052,comprehensive,1,200
+31,26-39,female,Wales,10-19y,high_school,middle_class,0.909,1.0,2010-2015,0.0,0.0,10238,8320.0,small_hatchback,standard,0,0,0,0.0,0.0,686.25,57.19,1.111,comprehensive,1,200
+32,65+,male,South East,30y+,university,middle_class,0.829,1.0,2010-2015,1.0,0.0,67890,9880.0,family_sedan,advanced,0,0,0,1.0,660.92,608.26,50.69,0.985,comprehensive,1,200
+33,16-25,female,North West,3-5y,high_school,middle_class,0.332,1.0,before_2010,0.0,1.0,54321,1579.0,small_hatchback,basic,0,0,1,0.0,0.0,5762.57,480.21,9.327,comprehensive,1,200
+34,16-25,male,South West,0-2y,university,working_class,0.663,0.0,2010-2015,1.0,1.0,10238,4472.0,small_hatchback,standard,1,0,1,0.0,0.0,4257.85,354.82,6.892,comprehensive,1,200
+35,40-64,male,West Midlands,20-29y,high_school,working_class,0.605,1.0,2010-2015,0.0,1.0,45678,2616.0,suv,standard,0,0,0,1.0,680.04,903.54,75.3,1.463,comprehensive,1,200
+36,16-25,female,North West,0-2y,postgraduate,middle_class,0.685,1.0,2016-2020,0.0,0.0,78901,3262.0,small_hatchback,advanced,1,0,0,0.0,0.0,4330.63,360.89,7.01,comprehensive,1,200
+37,40-64,male,East Anglia,10-19y,high_school,middle_class,0.762,1.0,before_2010,1.0,0.0,67890,4189.0,small_hatchback,standard,1,0,0,0.0,0.0,486.09,40.51,0.787,comprehensive,1,200
+38,16-25,male,North West,3-5y,postgraduate,upper_class,0.825,1.0,before_2010,0.0,0.0,45678,3461.0,sports_car,basic,3,0,0,1.0,2340.0,10906.51,908.88,17.654,comprehensive,1,200
+39,40-64,female,East Anglia,20-29y,university,middle_class,0.599,1.0,2016-2020,1.0,1.0,67890,7526.0,suv,standard,0,0,0,0.0,0.0,656.42,54.7,1.062,comprehensive,1,200
+40,65+,female,South West,30y+,postgraduate,middle_class,0.671,1.0,before_2010,1.0,1.0,32765,7090.0,family_sedan,basic,0,0,0,0.0,0.0,780.66,65.06,1.264,comprehensive,1,200
+41,26-39,female,East Anglia,10-19y,university,poverty,0.101,1.0,after_2020,1.0,0.0,32765,10524.0,suv,standard,1,0,0,1.0,300.0,1143.75,95.31,1.851,comprehensive,1,200
+42,65+,male,North West,30y+,postgraduate,upper_class,0.843,1.0,before_2010,1.0,0.0,67890,4652.0,suv,basic,0,0,0,0.0,0.0,1229.54,102.46,1.99,comprehensive,1,200
+43,16-25,female,Scotland,0-2y,high_school,working_class,0.608,1.0,2010-2015,0.0,0.0,45678,6539.0,small_hatchback,standard,0,0,0,1.0,2075.0,4778.73,398.23,7.735,comprehensive,1,200
+44,16-25,female,East Midlands,0-2y,university,middle_class,0.8,1.0,before_2010,0.0,1.0,10238,8411.0,family_sedan,standard,0,0,1,0.0,0.0,5708.53,475.71,9.24,comprehensive,1,200
+45,26-39,male,South West,0-9y,university,poverty,0.099,1.0,2010-2015,1.0,1.0,67890,9291.0,sports_car,basic,0,0,0,1.0,777.53,2663.37,221.95,4.311,comprehensive,1,200
+46,16-25,female,Wales,0-2y,none,working_class,0.463,1.0,2010-2015,0.0,1.0,10238,500.0,suv,standard,1,0,1,0.0,0.0,6957.27,579.77,11.261,comprehensive,1,200
+47,40-64,female,South West,10-19y,university,working_class,0.761,1.0,after_2020,0.0,0.0,54321,8586.0,suv,standard,0,0,0,0.0,0.0,764.54,63.71,1.238,comprehensive,1,200
+48,40-64,male,North East,20-29y,university,working_class,0.367,1.0,2010-2015,1.0,1.0,67890,12411.0,family_sedan,advanced,0,0,0,0.0,0.0,1087.03,90.59,1.759,comprehensive,1,200
+49,26-39,male,East Midlands,10-19y,none,upper_class,0.961,0.0,2016-2020,1.0,0.0,10238,4778.0,mpv,basic,1,0,0,0.0,0.0,1002.29,83.52,1.622,comprehensive,1,200
+50,26-39,female,South East,10-19y,postgraduate,middle_class,0.948,1.0,2016-2020,0.0,0.0,67890,9379.0,suv,basic,0,0,0,0.0,0.0,1211.02,100.92,1.96,comprehensive,1,200
+51,40-64,male,East Anglia,20-29y,postgraduate,middle_class,0.888,0.0,2016-2020,0.0,1.0,10238,5626.0,family_sedan,standard,0,0,0,0.0,0.0,472.62,39.39,0.765,comprehensive,1,200
+52,26-39,male,Scotland,10-19y,high_school,poverty,0.235,1.0,2016-2020,1.0,1.0,45678,8305.0,family_sedan,basic,0,0,0,0.0,0.0,1679.29,139.94,2.718,comprehensive,1,200
+53,40-64,female,Yorkshire,20-29y,university,poverty,0.608,0.0,2016-2020,1.0,0.0,67890,11387.0,suv,basic,0,0,0,0.0,0.0,1112.05,92.67,1.8,comprehensive,1,200
+54,40-64,female,Yorkshire,20-29y,university,working_class,0.16,1.0,2010-2015,0.0,0.0,54321,7301.0,suv,standard,0,0,0,0.0,0.0,1112.05,92.67,1.8,comprehensive,1,200
+55,40-64,male,South East,20-29y,postgraduate,poverty,0.311,1.0,before_2010,1.0,1.0,54321,7454.0,family_sedan,standard,0,0,0,0.0,0.0,815.5,67.96,1.32,comprehensive,1,200
+56,40-64,female,North East,20-29y,university,working_class,0.572,1.0,2010-2015,1.0,0.0,10238,7570.0,family_sedan,standard,0,0,1,0.0,0.0,1112.05,92.67,1.8,comprehensive,1,200
+57,26-39,male,Scotland,10-19y,university,middle_class,0.587,1.0,before_2010,0.0,0.0,78901,7585.0,sports_car,advanced,0,0,0,1.0,1800.0,1784.24,148.69,2.888,comprehensive,1,200
+58,40-64,female,Yorkshire,20-29y,high_school,middle_class,0.594,0.0,2016-2020,1.0,1.0,54321,11551.0,luxury_sedan,standard,0,0,0,0.0,0.0,1112.05,92.67,1.8,comprehensive,1,200
+59,40-64,male,South East,20-29y,university,working_class,0.414,1.0,2010-2015,1.0,1.0,67890,4210.0,luxury_sedan,standard,0,0,0,0.0,0.0,917.44,76.45,1.485,comprehensive,1,200
+60,65+,male,South West,30y+,postgraduate,middle_class,0.727,1.0,2016-2020,1.0,0.0,45678,6504.0,family_sedan,basic,0,0,0,0.0,0.0,780.66,65.06,1.264,comprehensive,1,200
+61,65+,male,Yorkshire,20-29y,postgraduate,poverty,0.415,1.0,before_2010,1.0,0.0,32765,6068.0,luxury_sedan,basic,0,0,0,0.0,0.0,1734.8,144.57,2.808,comprehensive,1,200
+62,40-64,female,South West,10-19y,high_school,working_class,0.532,1.0,after_2020,1.0,1.0,78901,7883.0,family_sedan,advanced,0,0,0,0.0,0.0,519.88,43.32,0.842,comprehensive,1,200
+63,26-39,female,Scotland,10-19y,university,middle_class,0.308,1.0,2010-2015,1.0,0.0,32765,9229.0,mpv,standard,1,0,0,0.0,0.0,1329.44,110.79,2.152,comprehensive,1,200
+64,65+,male,North East,30y+,university,working_class,0.592,1.0,2010-2015,0.0,0.0,67890,2246.0,luxury_sedan,basic,0,1,1,1.0,1828.72,2634.73,219.56,4.265,comprehensive,1,200
+65,26-39,female,North West,0-9y,university,middle_class,0.643,1.0,before_2010,1.0,0.0,78901,6863.0,sports_car,basic,1,0,0,1.0,2853.46,3452.52,287.71,5.588,comprehensive,1,200
+66,40-64,female,East Anglia,20-29y,high_school,middle_class,0.716,0.0,2010-2015,1.0,1.0,67890,6147.0,family_sedan,standard,0,0,0,0.0,0.0,525.14,43.76,0.85,comprehensive,1,200
+67,40-64,female,North East,10-19y,high_school,upper_class,0.93,1.0,2016-2020,1.0,0.0,10238,7936.0,family_sedan,basic,0,0,0,0.0,0.0,1100.93,91.74,1.782,comprehensive,1,200
+68,65+,male,East Anglia,30y+,university,upper_class,0.826,1.0,2016-2020,0.0,0.0,54321,7098.0,family_sedan,basic,0,0,1,0.0,0.0,796.27,66.36,1.289,comprehensive,1,200
+69,26-39,female,Yorkshire,10-19y,university,middle_class,0.844,0.0,2010-2015,1.0,1.0,67890,10200.0,suv,standard,0,0,0,0.0,0.0,1100.93,91.74,1.782,comprehensive,1,200
+70,26-39,female,Yorkshire,0-9y,high_school,middle_class,0.675,1.0,before_2010,1.0,0.0,54321,9264.0,small_hatchback,standard,1,0,0,0.0,0.0,1164.54,97.05,1.885,comprehensive,1,200
+71,26-39,female,North West,10-19y,none,working_class,0.487,1.0,after_2020,0.0,0.0,32765,4674.0,family_sedan,standard,0,0,0,0.0,0.0,1027.54,85.63,1.663,comprehensive,1,200
+72,40-64,female,South West,20-29y,university,middle_class,0.864,0.0,2016-2020,0.0,1.0,10238,12149.0,family_sedan,standard,0,0,0,0.0,0.0,575.49,47.96,0.931,comprehensive,1,200
+73,26-39,female,South East,10-19y,university,working_class,0.499,1.0,2010-2015,1.0,0.0,67890,7651.0,small_hatchback,standard,0,0,0,0.0,0.0,762.5,63.54,1.234,comprehensive,1,200
+74,26-39,female,London,0-9y,university,middle_class,0.351,1.0,2016-2020,0.0,0.0,32765,9111.0,family_sedan,standard,0,1,0,0.0,0.0,2266.81,188.9,3.669,comprehensive,1,200
+75,16-25,male,East Midlands,0-2y,university,middle_class,0.924,1.0,2010-2015,1.0,0.0,32765,5996.0,small_hatchback,basic,1,0,0,1.0,427.3,5284.1,440.34,8.553,comprehensive,1,200
+76,26-39,female,South East,0-9y,high_school,upper_class,0.95,1.0,before_2010,0.0,0.0,45678,9258.0,suv,basic,0,0,1,0.0,0.0,1849.56,154.13,2.994,comprehensive,1,200
+77,65+,female,London,30y+,high_school,working_class,0.521,1.0,2016-2020,1.0,0.0,32765,4624.0,luxury_sedan,standard,0,0,0,0.0,0.0,1366.16,113.85,2.211,comprehensive,1,200
+78,26-39,male,East Midlands,10-19y,high_school,upper_class,0.85,0.0,2016-2020,0.0,0.0,67890,7004.0,luxury_sedan,advanced,0,0,0,0.0,0.0,1132.31,94.36,1.833,comprehensive,1,200
+79,26-39,male,London,10-19y,university,middle_class,0.891,1.0,2010-2015,0.0,0.0,45678,2628.0,small_hatchback,standard,0,0,0,0.0,0.0,864.67,72.06,1.4,comprehensive,1,200
+80,16-25,male,Yorkshire,3-5y,university,working_class,0.689,1.0,2016-2020,0.0,0.0,32765,6827.0,small_hatchback,advanced,1,0,0,0.0,0.0,3266.54,272.21,5.287,comprehensive,1,200
+81,40-64,female,London,20-29y,university,working_class,0.585,0.0,2010-2015,0.0,0.0,67890,2953.0,luxury_sedan,advanced,0,0,0,0.0,0.0,992.51,82.71,1.606,comprehensive,1,200
+82,40-64,female,Yorkshire,20-29y,high_school,upper_class,0.965,1.0,2016-2020,1.0,0.0,32765,9320.0,suv,standard,1,0,0,1.0,1500.0,917.44,76.45,1.485,comprehensive,1,200
+83,26-39,female,London,10-19y,high_school,poverty,0.266,0.0,2010-2015,0.0,0.0,67890,6537.0,sports_car,basic,0,0,1,0.0,0.0,3551.16,295.93,5.748,comprehensive,1,200
+84,40-64,male,Yorkshire,20-29y,high_school,upper_class,0.682,1.0,2010-2015,0.0,0.0,67890,10606.0,small_hatchback,standard,0,0,0,0.0,0.0,630.16,52.51,1.02,comprehensive,1,200
+85,40-64,male,West Midlands,10-19y,university,middle_class,0.856,1.0,2010-2015,1.0,1.0,78901,2325.0,suv,basic,0,1,0,0.0,0.0,1395.43,116.29,2.259,comprehensive,1,200
+86,40-64,female,North East,10-19y,high_school,upper_class,0.902,1.0,before_2010,1.0,1.0,78901,11122.0,family_sedan,basic,0,0,0,0.0,0.0,1100.93,91.74,1.782,comprehensive,1,200
+87,40-64,female,South East,20-29y,university,working_class,0.576,0.0,2010-2015,0.0,0.0,32765,7294.0,luxury_sedan,standard,0,0,0,0.0,0.0,1019.38,84.95,1.65,comprehensive,1,200
+88,40-64,female,South West,20-29y,high_school,middle_class,0.732,1.0,before_2010,0.0,0.0,45678,3015.0,suv,standard,0,0,0,0.0,0.0,625.53,52.13,1.012,comprehensive,1,200
+89,26-39,female,South East,10-19y,university,middle_class,0.909,1.0,after_2020,0.0,1.0,32765,13004.0,suv,advanced,0,1,0,0.0,0.0,1282.42,106.87,2.076,comprehensive,1,200
+90,16-25,male,North East,0-2y,postgraduate,upper_class,0.831,1.0,2010-2015,0.0,0.0,32765,5369.0,small_hatchback,standard,1,0,0,0.0,0.0,6004.66,500.39,9.719,comprehensive,1,200
+91,16-25,female,North East,0-2y,university,working_class,0.69,1.0,2010-2015,0.0,0.0,54321,5823.0,small_hatchback,basic,0,0,0,0.0,0.0,6616.71,551.39,10.71,comprehensive,1,200
+92,40-64,male,West Midlands,20-29y,university,middle_class,0.558,1.0,before_2010,1.0,0.0,67890,4332.0,family_sedan,standard,0,0,0,0.0,0.0,722.83,60.24,1.17,comprehensive,1,200
+93,26-39,male,South East,10-19y,university,middle_class,0.66,0.0,after_2020,0.0,0.0,32765,7564.0,small_hatchback,basic,0,0,0,1.0,300.0,1006.5,83.87,1.629,comprehensive,1,200
+94,65+,female,London,30y+,high_school,working_class,0.469,1.0,2010-2015,1.0,1.0,10238,4744.0,luxury_sedan,advanced,0,0,0,0.0,0.0,1161.23,96.77,1.88,comprehensive,1,200
+95,16-25,female,South West,0-2y,university,middle_class,0.942,1.0,after_2020,0.0,0.0,78901,4889.0,mpv,basic,3,0,0,0.0,0.0,4672.25,389.35,7.563,comprehensive,1,200
+96,40-64,male,East Midlands,10-19y,university,working_class,0.487,1.0,after_2020,1.0,1.0,32765,8464.0,suv,advanced,0,0,0,0.0,0.0,794.27,66.19,1.286,comprehensive,1,200
+97,40-64,female,South East,10-19y,university,upper_class,0.709,1.0,2016-2020,1.0,1.0,10238,5387.0,family_sedan,standard,0,0,1,0.0,0.0,897.05,74.75,1.452,comprehensive,1,200
+98,40-64,female,West Midlands,20-29y,high_school,poverty,0.474,1.0,2016-2020,0.0,0.0,32765,4907.0,suv,standard,0,0,0,0.0,0.0,903.54,75.3,1.463,comprehensive,1,200
+99,26-39,female,North West,0-9y,high_school,working_class,0.483,1.0,before_2010,1.0,1.0,45678,7608.0,family_sedan,standard,0,0,0,0.0,0.0,1453.08,121.09,2.352,comprehensive,1,200
+100,65+,male,Wales,30y+,university,middle_class,0.38,1.0,after_2020,0.0,0.0,67890,5312.0,family_sedan,standard,1,0,0,0.0,0.0,1049.55,87.46,1.699,comprehensive,1,200
