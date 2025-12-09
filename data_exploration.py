@@ -6,7 +6,12 @@ Step 2: Clean & explore the data
 - Explore key variables
 - Plot claim rates by: Age, Car category, NCD (proxy), Region
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 """

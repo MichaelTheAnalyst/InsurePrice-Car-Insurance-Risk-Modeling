@@ -8,7 +8,12 @@ Train and evaluate three baseline models:
 
 Metrics: AUC, Gini coefficient, Calibration curve, Feature importance
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 """

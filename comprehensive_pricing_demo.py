@@ -4,7 +4,12 @@ Comprehensive Actuarial Pricing Demonstration
 Shows how to convert risk scores into realistic UK car insurance premiums
 using advanced actuarial formulas and industry-standard loadings.
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 """

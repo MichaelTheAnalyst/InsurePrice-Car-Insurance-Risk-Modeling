@@ -1,7 +1,12 @@
 """
 Enhanced Synthetic Car Insurance Data Generator
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 Description: Generates realistic synthetic car insurance data with enhanced features

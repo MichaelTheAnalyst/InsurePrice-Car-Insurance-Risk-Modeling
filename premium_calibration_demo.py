@@ -4,7 +4,12 @@ Premium Calibration Demonstration
 Shows how to convert risk scores into realistic market premiums
 using properly calibrated actuarial formulas.
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 """

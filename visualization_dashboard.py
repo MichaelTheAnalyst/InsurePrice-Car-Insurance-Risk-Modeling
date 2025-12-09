@@ -4,7 +4,12 @@ InsurePrice Visualization Dashboard
 Comprehensive visualization suite showcasing the enhanced car insurance pricing engine,
 data quality improvements, and actuarial insights.
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 

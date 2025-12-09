@@ -6,7 +6,12 @@ Uses mathematically correct actuarial formulas to convert risk scores to premium
 - Gross Premium = Pure Premium / (1 - expense ratio - profit ratio - risk ratio)
 - Final Premium = Gross Premium × (1 - investment return)
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 """

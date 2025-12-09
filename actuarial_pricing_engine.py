@@ -9,7 +9,12 @@ Formulas:
 2. Frequency-Severity: Premium = (Frequency × Severity) × Loading Factors
 3. Comprehensive: Net Premium = Gross Premium × (1 + Risk Margin) × (1 + Expense Loading)
 
-Author: MichaelTheAnalyst
+Author: Masood Nazari
+Business Intelligence Analyst | Data Science | AI | Clinical Research
+Email: M.Nazari@soton.ac.uk
+Portfolio: https://michaeltheanalyst.github.io/
+LinkedIn: linkedin.com/in/masood-nazari
+GitHub: github.com/michaeltheanalyst
 Date: December 2025
 Project: InsurePrice Car Insurance Risk Modeling
 """
