@@ -234,6 +234,97 @@ For a 100,000 policy portfolio:
 
 ---
 
+## 🎨 Interactive Dashboard
+
+### Modern AI-Powered Analytics Platform
+
+Experience the future of insurance analytics with our **InsurePrice Interactive Dashboard** - a sophisticated web application featuring color psychology-driven design and real-time risk modeling.
+
+![Dashboard Preview](https://via.placeholder.com/800x400/1e3a8a/ffffff?text=InsurePrice+Dashboard+Preview)
+
+### ✨ Key Features
+
+#### 🎯 Real-Time Risk Assessment
+- **Interactive Risk Calculator**: Input driver profiles and get instant risk scores
+- **AI Model Integration**: Live predictions using ensemble ML models
+- **Risk Factor Analysis**: Visual breakdown of contributing risk factors
+- **Premium Recommendations**: Market-competitive pricing suggestions
+
+#### 📊 Advanced Analytics Dashboard
+- **Portfolio Overview**: Comprehensive risk distribution analysis
+- **Performance Metrics**: Real-time KPI monitoring and visualization
+- **Model Comparison**: ROC curves and performance metrics for all models
+- **Regional Analysis**: Geographic risk mapping and insights
+
+#### 💰 Premium Optimization Tools
+- **Actuarial Calculator**: Professional-grade premium calculations
+- **Elasticity Modeling**: Price sensitivity analysis and optimization
+- **Profitability Analysis**: Combined ratio and margin optimization
+- **Scenario Planning**: Monte Carlo simulation for risk assessment
+
+### 🎨 Design Philosophy - Color Psychology
+
+Our dashboard implements scientifically-backed color psychology for optimal user experience:
+
+| Color | Hex Code | Psychology | Application |
+|-------|----------|------------|-------------|
+| 🔵 **Deep Blue** | `#1e3a8a` | Trust, Security, Professionalism | Primary branding, headers |
+| 🔵 **Ocean Blue** | `#3b82f6` | Confidence, Reliability | Navigation, secondary elements |
+| 🟢 **Emerald Green** | `#059669` | Success, Growth, Prosperity | Positive metrics, profits |
+| 🟠 **Sunset Orange** | `#ea580c` | Energy, Action, Premium | Call-to-action buttons |
+| 🔴 **Crimson Red** | `#dc2626` | Urgency, High Risk | Warning indicators, alerts |
+| 🟣 **Royal Purple** | `#7c3aed` | Luxury, Sophistication | Premium features, VIP sections |
+
+### 🚀 Launch Dashboard
+
+#### Quick Launch
+```bash
+# Option 1: Use the launcher script
+python run_dashboard.py
+
+# Option 2: Direct Streamlit command
+streamlit run insureprice_dashboard.py
+```
+
+#### Access Dashboard
+- **Local URL**: http://localhost:8501
+- **Network URL**: http://0.0.0.0:8501 (if configured)
+
+### 📱 Dashboard Navigation
+
+1. **📊 Dashboard**: Overview with key metrics and risk distribution
+2. **🎯 Risk Assessment**: Interactive risk calculator for individual profiles
+3. **💰 Premium Calculator**: Actuarial premium calculation with breakdown
+4. **📈 Portfolio Analytics**: Comprehensive portfolio risk analysis
+5. **🔍 Model Performance**: ML model evaluation and comparison
+6. **📋 About**: Project documentation and methodology
+
+### 🛠️ Dashboard Requirements
+
+```bash
+# Core dependencies
+streamlit>=1.28.0
+plotly>=5.15.0
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Enhanced features
+streamlit-extras>=0.3.0
+```
+
+### 📊 Dashboard Screenshots
+
+#### Main Dashboard
+*Hero section with key metrics, risk distribution charts, and regional analysis*
+
+#### Risk Assessment Tool
+*Interactive form for driver profiling with real-time risk scoring and premium calculation*
+
+#### Portfolio Analytics
+*Advanced portfolio risk analysis with scatter plots and distribution visualizations*
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
