@@ -205,10 +205,10 @@ pricing_stats = engine.analyze_pricing_distribution(priced_policies)
 **Masood Nazari**  
 **Business Intelligence Analyst | Data Science | AI | Clinical Research**
 
-📧 **Email**: M.Nazari@soton.ac.uk  
-🌐 **Portfolio**: https://michaeltheanalyst.github.io/  
-💼 **LinkedIn**: linkedin.com/in/masood-nazari  
-🔗 **GitHub**: github.com/michaeltheanalyst
+📧 **Email**: M.Nazari@soton.ac.uk
+🌐 **Portfolio**: [https://michaeltheanalyst.github.io/](https://michaeltheanalyst.github.io/)
+💼 **LinkedIn**: [linkedin.com/in/masood-nazari](https://linkedin.com/in/masood-nazari)
+🔗 **GitHub**: [github.com/michaeltheanalyst](https://github.com/michaeltheanalyst)
 
 ---
 
