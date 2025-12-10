@@ -151,8 +151,12 @@ if 'page' not in st.session_state:
 @st.cache_data
 def load_data():
     """Load data and initialize engines"""
+    import os
+    # Get the directory where this script is located
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_FILE = os.path.join(SCRIPT_DIR, 'data', 'processed', 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
     try:
-        df = pd.read_csv('Enhanced_Synthetic_Car_Insurance_Claims.csv')
+        df = pd.read_csv(DATA_FILE)
         pricing_engine = ActuarialPricingEngine(
             base_claim_frequency=0.122,
             base_claim_severity=3500,
@@ -200,6 +204,8 @@ def main():
             "📊 Dashboard": "dashboard",
             "🎯 Risk Assessment": "risk_assessment",
             "💰 Premium Calculator": "premium_calculator",
+            "💎 Customer CLV": "clv_prediction",
+            "🧪 A/B Testing": "ab_testing",
             "🔍 Fraud Detection": "fraud_detection",
             "📈 Portfolio Analytics": "portfolio_analytics",
             "🤖 Model Performance": "model_performance",
@@ -229,6 +235,10 @@ def main():
         render_risk_assessment(df, pricing_engine)
     elif st.session_state.page == "premium_calculator":
         render_premium_calculator(pricing_engine)
+    elif st.session_state.page == "clv_prediction":
+        render_clv_prediction(df)
+    elif st.session_state.page == "ab_testing":
+        render_ab_testing()
     elif st.session_state.page == "fraud_detection":
         render_fraud_detection()
     elif st.session_state.page == "portfolio_analytics":
@@ -550,6 +560,517 @@ def render_fraud_detection():
                 st.warning(flag)
         else:
             st.success("✅ No major red flags detected")
+
+
+def render_clv_prediction(df):
+    """Customer Lifetime Value prediction page"""
+    st.markdown("""
+    <div class="main-header" style="background: linear-gradient(135deg, #7c3aed, #3b82f6);">
+        <h1>💎 Customer Lifetime Value (CLV)</h1>
+        <p>Predict customer value for strategic pricing decisions</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Business context
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("Avg Customer Lifespan", "8 Years", "UK Insurance")
+    with col2:
+        st.metric("Avg Renewal Rate", "82%", "Industry Benchmark")
+    with col3:
+        st.metric("Cross-sell Lift", "+35%", "With CLV Targeting")
+
+    st.markdown("---")
+
+    # CLV Calculator
+    st.markdown("### 💰 Calculate Customer Lifetime Value")
+    
+    with st.form("clv_form"):
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.markdown("#### 👤 Customer Profile")
+            age_group = st.selectbox("Age Group", ['16-25', '26-39', '40-64', '65+'], index=2)
+            income_level = st.selectbox("Income Level", ['poverty', 'working_class', 'middle_class', 'upper_class'], index=2)
+            credit_score = st.slider("Credit Score", 0.3, 1.0, 0.75, 0.05)
+            years_customer = st.number_input("Years as Customer", 0, 20, 3)
+        
+        with col2:
+            st.markdown("#### 📋 Policy Details")
+            annual_premium = st.number_input("Annual Premium (£)", 300, 2000, 650)
+            claims_count = st.number_input("Claims (Last 3 Years)", 0, 5, 0)
+            risk_score = st.slider("Risk Score", 0.1, 0.6, 0.25, 0.05)
+            vehicle_type = st.selectbox("Vehicle Type", ['small_hatchback', 'family_sedan', 'suv', 'sports_car', 'luxury_sedan'])
+        
+        with col3:
+            st.markdown("#### 👨‍👩‍👧 Demographics")
+            married = st.checkbox("Married", True)
+            children = st.checkbox("Has Children", True)
+            region = st.selectbox("Region", ['London', 'South East', 'South West', 'North West', 'Scotland'])
+            acquisition = st.selectbox("Acquisition Channel", ['direct', 'comparison_site', 'broker', 'referral'])
+        
+        calculate_clv = st.form_submit_button("💎 Calculate CLV", use_container_width=True)
+
+    if calculate_clv:
+        # CLV Calculation Logic
+        st.markdown("### 📊 CLV Analysis Results")
+        
+        # Base renewal rate
+        renewal_rates = {'16-25': 0.65, '26-39': 0.78, '40-64': 0.85, '65+': 0.80}
+        base_renewal = renewal_rates.get(age_group, 0.75)
+        
+        # Adjustments
+        tenure_bonus = min(years_customer * 0.02, 0.10)
+        claims_penalty = min(claims_count * 0.05, 0.15)
+        credit_factor = (credit_score - 0.5) * 0.1
+        family_bonus = 0.03 if married else 0
+        family_bonus += 0.02 if children else 0
+        
+        renewal_prob = min(0.95, max(0.3, base_renewal + tenure_bonus - claims_penalty + credit_factor + family_bonus))
+        
+        # Project CLV
+        discount_rate = 0.08
+        profit_margin = 0.12
+        expense_ratio = 0.28
+        
+        clv = 0
+        yearly_values = []
+        survival = 1.0
+        
+        # Acquisition costs
+        acq_costs = {'direct': 80, 'comparison_site': 120, 'broker': 150, 'referral': 40}
+        cac = acq_costs.get(acquisition, 100)
+        
+        for year in range(10):
+            survival *= renewal_prob if year > 0 else 1.0
+            if survival < 0.05:
+                break
+            
+            # Revenue and costs
+            revenue = annual_premium * survival
+            expected_claims = risk_score * 0.122 * 3500 * survival
+            expenses = revenue * expense_ratio
+            profit = revenue - expected_claims - expenses
+            
+            # Cross-sell (starts year 2)
+            cross_sell = 0
+            if year >= 1:
+                if income_level in ['middle_class', 'upper_class']:
+                    cross_sell += 0.15 * 450 * profit_margin  # Home
+                if children:
+                    cross_sell += 0.10 * 300 * profit_margin  # Life
+                cross_sell *= survival
+            
+            total = profit + cross_sell
+            pv = total / (1 + discount_rate) ** year
+            
+            yearly_values.append({
+                'year': year + 1,
+                'survival': survival,
+                'profit': profit,
+                'cross_sell': cross_sell,
+                'pv': pv
+            })
+            clv += pv
+        
+        net_clv = clv - cac
+        
+        # Determine segment
+        if net_clv >= 1500:
+            segment, segment_color = "Platinum 💎", "#7c3aed"
+        elif net_clv >= 800:
+            segment, segment_color = "Gold 🥇", "#f59e0b"
+        elif net_clv >= 400:
+            segment, segment_color = "Silver 🥈", "#6b7280"
+        else:
+            segment, segment_color = "Bronze 🥉", "#b45309"
+        
+        # Display results
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.markdown(f"""
+            <div class="premium-card" style="background: linear-gradient(135deg, {segment_color}, #3b82f6);">
+                <h3>💎 Customer Lifetime Value</h3>
+                <h2>£{net_clv:,.0f}</h2>
+                <p>{segment} Customer</p>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown(f"""
+            <div class="metric-card">
+                <h3>📈 Renewal Probability</h3>
+                <h2 style="color: {'#059669' if renewal_prob > 0.75 else '#ea580c'}">{renewal_prob:.1%}</h2>
+                <p>Expected retention rate</p>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col3:
+            acceptable_discount = min(15, max(0, (net_clv - 500) / 100 * 2))
+            st.markdown(f"""
+            <div class="metric-card">
+                <h3>💰 Acceptable Discount</h3>
+                <h2 style="color: #3b82f6">Up to {acceptable_discount:.0f}%</h2>
+                <p>To retain high-CLV customer</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+        # CLV Breakdown Chart
+        st.markdown("### 📈 CLV Projection Over Time")
+        
+        years = [v['year'] for v in yearly_values]
+        profits = [v['profit'] for v in yearly_values]
+        cross_sells = [v['cross_sell'] for v in yearly_values]
+        survivals = [v['survival'] * 100 for v in yearly_values]
+        
+        fig = go.Figure()
+        fig.add_trace(go.Bar(name='Policy Profit', x=years, y=profits, marker_color='#3b82f6'))
+        fig.add_trace(go.Bar(name='Cross-sell Revenue', x=years, y=cross_sells, marker_color='#7c3aed'))
+        fig.add_trace(go.Scatter(name='Survival %', x=years, y=survivals, yaxis='y2', 
+                                  line=dict(color='#059669', width=3), mode='lines+markers'))
+        
+        fig.update_layout(
+            barmode='stack',
+            title="Yearly Value Contribution",
+            xaxis_title="Year",
+            yaxis_title="Value (£)",
+            yaxis2=dict(title="Survival %", overlaying='y', side='right', range=[0, 100]),
+            template="plotly_white",
+            height=400,
+            legend=dict(orientation="h", yanchor="bottom", y=1.02)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+        # Cross-sell opportunities
+        st.markdown("### 🛒 Cross-sell Opportunities")
+        
+        cross_sell_products = []
+        if income_level in ['middle_class', 'upper_class']:
+            cross_sell_products.append({"Product": "Home Insurance", "Probability": "15%", "Annual Value": "£450", "Expected": "£67.50"})
+        if children:
+            cross_sell_products.append({"Product": "Life Insurance", "Probability": "12%", "Annual Value": "£300", "Expected": "£36.00"})
+        if income_level == 'upper_class':
+            cross_sell_products.append({"Product": "Umbrella Policy", "Probability": "8%", "Annual Value": "£200", "Expected": "£16.00"})
+        cross_sell_products.append({"Product": "Travel Insurance", "Probability": "10%", "Annual Value": "£120", "Expected": "£12.00"})
+        
+        if cross_sell_products:
+            st.dataframe(pd.DataFrame(cross_sell_products), use_container_width=True, hide_index=True)
+
+        # Strategic recommendation
+        st.markdown("### 💡 Strategic Recommendation")
+        
+        if net_clv >= 1000:
+            st.success(f"""
+            **🌟 High-Value Customer - Retention Priority**
+            
+            • Accept lower margins (up to {acceptable_discount:.0f}% discount) to retain
+            • Prioritize for premium service and fast claims processing
+            • Proactive cross-sell engagement recommended
+            • Consider loyalty rewards program eligibility
+            """)
+        elif net_clv >= 500:
+            st.info("""
+            **📊 Standard Customer - Balanced Approach**
+            
+            • Apply standard pricing with minimal discounts
+            • Focus on efficient service delivery
+            • Opportunistic cross-selling when appropriate
+            • Monitor for upgrade to Gold segment
+            """)
+        else:
+            st.warning("""
+            **⚠️ Low-Value Customer - Efficiency Focus**
+            
+            • Ensure risk-adequate pricing (no discounts)
+            • Automate service interactions where possible
+            • Consider digital-only service channel
+            • Monitor claims experience closely
+            """)
+
+
+def render_ab_testing():
+    """A/B Testing Framework page"""
+    st.markdown("""
+    <div class="main-header" style="background: linear-gradient(135deg, #059669, #3b82f6);">
+        <h1>🧪 A/B Testing Framework</h1>
+        <p>Experiment with pricing strategies using statistical rigor</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Business context
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("Active Experiments", "3", "Running")
+    with col2:
+        st.metric("Avg Test Duration", "30 Days", "Industry Standard")
+    with col3:
+        st.metric("Revenue Lift Potential", "+8%", "With Optimization")
+
+    st.markdown("---")
+
+    # Tabs for different sections
+    tab1, tab2, tab3 = st.tabs(["🧪 Run Experiment", "📊 Price Sensitivity", "📈 Results Dashboard"])
+
+    with tab1:
+        st.markdown("### 🧪 Configure A/B Test Experiment")
+        
+        with st.form("ab_test_form"):
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("#### Experiment Setup")
+                exp_name = st.text_input("Experiment Name", "Price Discount Test")
+                segment = st.selectbox("Target Segment", 
+                    ['all', 'low_risk', 'medium_risk', 'high_risk', 'very_high_risk', 
+                     'young_drivers', 'mature_drivers', 'urban', 'rural'])
+                sample_size = st.number_input("Sample Size (per group)", 500, 10000, 1000, 100)
+                confidence = st.select_slider("Confidence Level", [0.90, 0.95, 0.99], 0.95)
+            
+            with col2:
+                st.markdown("#### Pricing Strategy")
+                control_price = st.number_input("Control Price Modifier", 0.8, 1.2, 1.0, 0.01)
+                treatment_price = st.number_input("Treatment Price Modifier", 0.8, 1.2, 0.95, 0.01)
+                base_premium = st.number_input("Base Premium (£)", 400, 1200, 650, 50)
+                
+                price_change = (treatment_price - control_price) * 100
+                st.info(f"Price Change: **{price_change:+.0f}%** vs Control")
+            
+            run_experiment = st.form_submit_button("🚀 Run Experiment", use_container_width=True)
+
+        if run_experiment:
+            st.markdown("### 📊 Experiment Results")
+            
+            # Simulate experiment with price elasticity
+            elasticity_map = {
+                'all': -0.8, 'low_risk': -0.5, 'medium_risk': -0.8, 'high_risk': -1.2,
+                'very_high_risk': -1.5, 'young_drivers': -1.3, 'mature_drivers': -0.4,
+                'urban': -0.9, 'rural': -0.6
+            }
+            
+            base_conversion_map = {
+                'all': 0.12, 'low_risk': 0.18, 'medium_risk': 0.14, 'high_risk': 0.10,
+                'very_high_risk': 0.06, 'young_drivers': 0.08, 'mature_drivers': 0.16,
+                'urban': 0.11, 'rural': 0.13
+            }
+            
+            elasticity = elasticity_map.get(segment, -0.8)
+            base_conv = base_conversion_map.get(segment, 0.12)
+            
+            # Control group
+            control_conv_rate = base_conv
+            np.random.seed(42)
+            control_conversions = np.random.binomial(sample_size, control_conv_rate)
+            control_revenue = control_conversions * base_premium * control_price
+            
+            # Treatment group
+            price_change_pct = (treatment_price - 1) * 100
+            demand_change = elasticity * price_change_pct / 100
+            treatment_conv_rate = np.clip(base_conv * (1 + demand_change), 0.01, 0.5)
+            treatment_conversions = np.random.binomial(sample_size, treatment_conv_rate)
+            treatment_revenue = treatment_conversions * base_premium * treatment_price
+            
+            # Statistical test
+            from scipy import stats
+            p1 = control_conversions / sample_size
+            p2 = treatment_conversions / sample_size
+            p_pool = (control_conversions + treatment_conversions) / (2 * sample_size)
+            se = np.sqrt(p_pool * (1 - p_pool) * 2 / sample_size) if p_pool > 0 else 0.01
+            z_score = (p2 - p1) / se if se > 0 else 0
+            p_value = 2 * (1 - stats.norm.cdf(abs(z_score)))
+            
+            lift = ((p2 - p1) / p1 * 100) if p1 > 0 else 0
+            is_significant = p_value < (1 - confidence)
+            
+            # Display results
+            col1, col2, col3, col4 = st.columns(4)
+            
+            with col1:
+                st.metric("Control Conversion", f"{p1:.1%}", f"{control_conversions} sales")
+            with col2:
+                st.metric("Treatment Conversion", f"{p2:.1%}", f"{treatment_conversions} sales")
+            with col3:
+                delta_color = "normal" if lift > 0 else "inverse"
+                st.metric("Conversion Lift", f"{lift:+.1f}%", delta_color=delta_color)
+            with col4:
+                sig_text = "✅ Significant" if is_significant else "❌ Not Significant"
+                st.metric("P-Value", f"{p_value:.4f}", sig_text)
+
+            # Revenue comparison
+            st.markdown("### 💰 Revenue Impact")
+            
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("Control Revenue", f"£{control_revenue:,.0f}")
+            with col2:
+                st.metric("Treatment Revenue", f"£{treatment_revenue:,.0f}")
+            with col3:
+                rev_lift = ((treatment_revenue - control_revenue) / control_revenue * 100) if control_revenue > 0 else 0
+                st.metric("Revenue Lift", f"{rev_lift:+.1f}%")
+
+            # Visualization
+            fig = go.Figure()
+            fig.add_trace(go.Bar(
+                name='Conversion Rate',
+                x=['Control', 'Treatment'],
+                y=[p1 * 100, p2 * 100],
+                marker_color=['#3b82f6', '#059669'],
+                text=[f"{p1:.1%}", f"{p2:.1%}"],
+                textposition='outside'
+            ))
+            fig.update_layout(
+                title="Conversion Rate Comparison",
+                yaxis_title="Conversion Rate (%)",
+                template="plotly_white",
+                height=350
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+            # Recommendation
+            st.markdown("### 💡 Recommendation")
+            if is_significant and lift > 0 and treatment_revenue > control_revenue:
+                st.success(f"""
+                **✅ IMPLEMENT: Strong positive results!**
+                
+                • {lift:.1f}% conversion lift is statistically significant (p={p_value:.4f})
+                • Revenue increased by £{treatment_revenue - control_revenue:,.0f} ({rev_lift:.1f}%)
+                • Recommend rolling out {price_change:+.0f}% price change to {segment} segment
+                """)
+            elif is_significant and lift > 0 and treatment_revenue < control_revenue:
+                st.warning(f"""
+                **⚠️ CAUTION: Mixed results**
+                
+                • Conversions up {lift:.1f}% but revenue down £{control_revenue - treatment_revenue:,.0f}
+                • Lower price attracts more customers but reduces margin
+                • Consider profit margin impact before implementing
+                """)
+            elif is_significant and lift < 0:
+                st.error(f"""
+                **❌ REJECT: Negative impact detected**
+                
+                • {abs(lift):.1f}% conversion decrease is statistically significant
+                • Do not implement this pricing strategy
+                • Consider testing smaller price changes
+                """)
+            else:
+                st.info(f"""
+                **📊 INCONCLUSIVE: More data needed**
+                
+                • Results not statistically significant (p={p_value:.4f} > {1-confidence:.2f})
+                • Recommend extending test duration or increasing sample size
+                • Required sample size for 10% MDE: ~{int(2 * 16 * base_conv * (1-base_conv) / (0.1 * base_conv)**2):,}
+                """)
+
+    with tab2:
+        st.markdown("### 📊 Price Sensitivity Analysis")
+        
+        segment_sens = st.selectbox("Select Segment for Analysis", 
+            ['low_risk', 'medium_risk', 'high_risk', 'young_drivers', 'mature_drivers'],
+            key="sens_segment")
+        
+        # Generate sensitivity data
+        elasticity_map = {
+            'low_risk': -0.5, 'medium_risk': -0.8, 'high_risk': -1.2,
+            'young_drivers': -1.3, 'mature_drivers': -0.4
+        }
+        base_conversion_map = {
+            'low_risk': 0.18, 'medium_risk': 0.14, 'high_risk': 0.10,
+            'young_drivers': 0.08, 'mature_drivers': 0.16
+        }
+        
+        elasticity = elasticity_map.get(segment_sens, -0.8)
+        base_conv = base_conversion_map.get(segment_sens, 0.12)
+        base_premium = 650
+        
+        price_modifiers = np.linspace(0.8, 1.2, 9)
+        sensitivity_data = []
+        
+        for mod in price_modifiers:
+            price_change = (mod - 1) * 100
+            demand_change = elasticity * price_change / 100
+            conv_rate = np.clip(base_conv * (1 + demand_change), 0.01, 0.5)
+            revenue_per_1000 = 1000 * conv_rate * base_premium * mod
+            
+            sensitivity_data.append({
+                'Price Change': f"{price_change:+.0f}%",
+                'Price': f"£{base_premium * mod:.0f}",
+                'Conversion': f"{conv_rate:.1%}",
+                'Revenue/1000': f"£{revenue_per_1000:,.0f}"
+            })
+        
+        st.dataframe(pd.DataFrame(sensitivity_data), use_container_width=True, hide_index=True)
+        
+        # Elasticity explanation
+        st.info(f"""
+        **Price Elasticity for {segment_sens.replace('_', ' ').title()}: {elasticity}**
+        
+        • Elasticity < -1: Price sensitive (high risk, young drivers)
+        • Elasticity > -1: Price inelastic (low risk, mature drivers)
+        • 1% price increase → {abs(elasticity):.1f}% conversion decrease
+        """)
+        
+        # Optimal price finder
+        st.markdown("### 🎯 Revenue-Optimal Price Point")
+        
+        optimal_mod = price_modifiers[np.argmax([
+            1000 * np.clip(base_conv * (1 + elasticity * (m-1)), 0.01, 0.5) * base_premium * m 
+            for m in price_modifiers
+        ])]
+        optimal_change = (optimal_mod - 1) * 100
+        
+        st.success(f"""
+        **Optimal price for {segment_sens.replace('_', ' ').title()}: {optimal_change:+.0f}% vs base**
+        
+        • Optimal premium: £{base_premium * optimal_mod:.0f}
+        • This maximizes expected revenue per visitor
+        • A/B test recommended before full rollout
+        """)
+
+    with tab3:
+        st.markdown("### 📈 Experiment Results Dashboard")
+        
+        # Sample completed experiments
+        experiments_data = [
+            {"Experiment": "5% Discount - High Risk", "Segment": "high_risk", "Lift": "+12.3%", "P-Value": "0.0021", "Status": "✅ Significant", "Action": "Implemented"},
+            {"Experiment": "10% Increase - Low Risk", "Segment": "low_risk", "Lift": "-4.8%", "P-Value": "0.0156", "Status": "✅ Significant", "Action": "Rejected"},
+            {"Experiment": "3% Discount - All", "Segment": "all", "Lift": "+2.1%", "P-Value": "0.1842", "Status": "❌ Not Sig", "Action": "Extended"},
+            {"Experiment": "Urban Premium Test", "Segment": "urban", "Lift": "+8.7%", "P-Value": "0.0089", "Status": "✅ Significant", "Action": "Implemented"},
+            {"Experiment": "Young Driver Discount", "Segment": "young_drivers", "Lift": "+15.2%", "P-Value": "0.0003", "Status": "✅ Significant", "Action": "Implemented"}
+        ]
+        
+        st.dataframe(pd.DataFrame(experiments_data), use_container_width=True, hide_index=True)
+        
+        # Key insights
+        st.markdown("### 💡 Key Insights from A/B Testing")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("""
+            **✅ What Works:**
+            - Small discounts (3-5%) for price-sensitive segments
+            - Targeted offers for high-risk, young drivers
+            - Urban-specific pricing strategies
+            """)
+        
+        with col2:
+            st.markdown("""
+            **❌ What Doesn't Work:**
+            - Price increases for loyal segments
+            - Blanket discounts across all customers
+            - Large price changes (>10%)
+            """)
+        
+        # Business impact
+        st.markdown("### 💰 Cumulative Business Impact")
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Revenue Lift", "+£2.3M", "From implemented tests")
+        with col2:
+            st.metric("Conversion Improvement", "+8.4%", "Across optimized segments")
+        with col3:
+            st.metric("Tests Run", "47", "In last 12 months")
 
 
 def render_model_performance():
