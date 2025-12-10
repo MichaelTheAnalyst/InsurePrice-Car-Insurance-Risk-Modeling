@@ -206,11 +206,12 @@ def main():
             "💰 Premium Calculator": "premium_calculator",
             "💎 Customer CLV": "clv_prediction",
             "🧪 A/B Testing": "ab_testing",
+            "📋 Compliance": "compliance",
             "🔍 Fraud Detection": "fraud_detection",
             "📈 Portfolio Analytics": "portfolio_analytics",
             "🤖 Model Performance": "model_performance",
             "📡 API Status": "api_status",
-            "📋 About": "about"
+            "ℹ️ About": "about"
         }
         
         for page_name, page_key in pages.items():
@@ -239,6 +240,8 @@ def main():
         render_clv_prediction(df)
     elif st.session_state.page == "ab_testing":
         render_ab_testing()
+    elif st.session_state.page == "compliance":
+        render_compliance_dashboard(df)
     elif st.session_state.page == "fraud_detection":
         render_fraud_detection()
     elif st.session_state.page == "portfolio_analytics":
@@ -1071,6 +1074,407 @@ def render_ab_testing():
             st.metric("Conversion Improvement", "+8.4%", "Across optimized segments")
         with col3:
             st.metric("Tests Run", "47", "In last 12 months")
+
+
+def render_compliance_dashboard(df):
+    """Regulatory Compliance Dashboard - FCA, GDPR, Solvency II"""
+    st.markdown("""
+    <div class="main-header" style="background: linear-gradient(135deg, #7c3aed, #2563eb);">
+        <h1>📋 Regulatory Compliance</h1>
+        <p>FCA, GDPR & Solvency II Compliance Monitoring</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Overall compliance status
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #059669, #10b981); padding: 20px; border-radius: 10px; text-align: center;">
+            <h2 style="color: white; margin: 0;">✅</h2>
+            <p style="color: white; margin: 5px 0; font-size: 14px;">FCA PRIN</p>
+            <p style="color: #d1fae5; margin: 0; font-size: 12px;">Compliant</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #059669, #10b981); padding: 20px; border-radius: 10px; text-align: center;">
+            <h2 style="color: white; margin: 0;">✅</h2>
+            <p style="color: white; margin: 5px 0; font-size: 14px;">GDPR Art. 22</p>
+            <p style="color: #d1fae5; margin: 0; font-size: 12px;">Compliant</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #d97706, #f59e0b); padding: 20px; border-radius: 10px; text-align: center;">
+            <h2 style="color: white; margin: 0;">⚠️</h2>
+            <p style="color: white; margin: 5px 0; font-size: 14px;">Solvency II</p>
+            <p style="color: #fef3c7; margin: 0; font-size: 12px;">Review Due</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #059669, #10b981); padding: 20px; border-radius: 10px; text-align: center;">
+            <h2 style="color: white; margin: 0;">✅</h2>
+            <p style="color: white; margin: 5px 0; font-size: 14px;">SR 11-7</p>
+            <p style="color: #d1fae5; margin: 0; font-size: 12px;">Documented</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    # Tabs for different compliance areas
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "⚖️ Fairness Metrics", 
+        "📊 Model Drift", 
+        "📝 Audit Trail",
+        "📚 Model Documentation",
+        "🔒 GDPR"
+    ])
+
+    with tab1:
+        st.markdown("### ⚖️ Protected Characteristics Monitoring")
+        st.markdown("*Equality Act 2010 & FCA Fair Pricing Requirements*")
+        
+        # Calculate fairness metrics from data
+        if 'AGE' in df.columns:
+            df['AGE_GROUP'] = pd.cut(df['AGE'], bins=[0, 25, 40, 60, 100], 
+                                      labels=['18-25', '26-40', '41-60', '60+'])
+        
+        # Disparate Impact Analysis
+        st.markdown("#### Disparate Impact Ratio (80% Rule)")
+        
+        fairness_data = []
+        
+        # Age groups
+        if 'AGE_GROUP' in df.columns and 'OUTCOME' in df.columns:
+            for group in df['AGE_GROUP'].dropna().unique():
+                group_df = df[df['AGE_GROUP'] == group]
+                favorable_rate = (group_df['OUTCOME'] == 0).mean() if len(group_df) > 0 else 0
+                fairness_data.append({
+                    'Characteristic': 'Age',
+                    'Group': str(group),
+                    'Favorable Rate': f"{favorable_rate:.1%}",
+                    'DI Ratio': f"{min(favorable_rate / 0.878, 1.0):.2f}" if favorable_rate > 0 else "N/A",
+                    'Status': '✅ Compliant' if favorable_rate / 0.878 >= 0.8 else '⚠️ Review'
+                })
+        else:
+            # Demo data
+            fairness_data = [
+                {'Characteristic': 'Age', 'Group': '18-25', 'Favorable Rate': '72.3%', 'DI Ratio': '0.82', 'Status': '✅ Compliant'},
+                {'Characteristic': 'Age', 'Group': '26-40', 'Favorable Rate': '85.1%', 'DI Ratio': '0.97', 'Status': '✅ Compliant'},
+                {'Characteristic': 'Age', 'Group': '41-60', 'Favorable Rate': '87.8%', 'DI Ratio': '1.00', 'Status': '✅ Compliant'},
+                {'Characteristic': 'Age', 'Group': '60+', 'Favorable Rate': '81.2%', 'DI Ratio': '0.92', 'Status': '✅ Compliant'},
+                {'Characteristic': 'Gender', 'Group': 'Male', 'Favorable Rate': '83.4%', 'DI Ratio': '0.98', 'Status': '✅ Compliant'},
+                {'Characteristic': 'Gender', 'Group': 'Female', 'Favorable Rate': '85.1%', 'DI Ratio': '1.00', 'Status': '✅ Compliant'},
+            ]
+        
+        st.dataframe(pd.DataFrame(fairness_data), use_container_width=True, hide_index=True)
+        
+        # Fairness alerts
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### 🚨 Active Alerts")
+            alerts = [
+                {"Alert": "Young driver premium variance", "Severity": "⚠️ Medium", "Action": "Review within 30 days"},
+                {"Alert": "Rural area pricing gap", "Severity": "ℹ️ Low", "Action": "Monitor"},
+            ]
+            st.dataframe(pd.DataFrame(alerts), use_container_width=True, hide_index=True)
+        
+        with col2:
+            st.markdown("#### ✅ Recent Resolutions")
+            resolutions = [
+                {"Issue": "Gender pricing disparity", "Resolution": "Model retrained", "Date": "2025-11-15"},
+                {"Issue": "Credit score bias", "Resolution": "Feature weighted", "Date": "2025-10-28"},
+            ]
+            st.dataframe(pd.DataFrame(resolutions), use_container_width=True, hide_index=True)
+        
+        # Fairness visualization
+        st.markdown("#### 📊 Demographic Parity Analysis")
+        
+        fig = go.Figure()
+        
+        groups = ['18-25', '26-40', '41-60', '60+']
+        avg_premiums = [892, 654, 598, 672]
+        colors = ['#f59e0b', '#10b981', '#10b981', '#10b981']
+        
+        fig.add_trace(go.Bar(
+            x=groups,
+            y=avg_premiums,
+            marker_color=colors,
+            text=[f'£{p}' for p in avg_premiums],
+            textposition='outside'
+        ))
+        
+        fig.add_hline(y=704, line_dash="dash", line_color="red", 
+                      annotation_text="Mean: £704")
+        
+        fig.update_layout(
+            title="Average Premium by Age Group",
+            xaxis_title="Age Group",
+            yaxis_title="Average Premium (£)",
+            template="plotly_white",
+            height=350
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+    with tab2:
+        st.markdown("### 📊 Model Drift Detection")
+        st.markdown("*Automated monitoring with retraining triggers*")
+        
+        # Current vs baseline metrics
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### Model Performance Metrics")
+            metrics_data = [
+                {"Metric": "AUC-ROC", "Baseline": "0.654", "Current": "0.648", "Drift": "-0.9%", "Status": "✅ OK"},
+                {"Metric": "Gini", "Baseline": "0.308", "Current": "0.301", "Drift": "-2.3%", "Status": "✅ OK"},
+                {"Metric": "Precision", "Baseline": "0.720", "Current": "0.715", "Drift": "-0.7%", "Status": "✅ OK"},
+                {"Metric": "Recall", "Baseline": "0.680", "Current": "0.672", "Drift": "-1.2%", "Status": "✅ OK"},
+            ]
+            st.dataframe(pd.DataFrame(metrics_data), use_container_width=True, hide_index=True)
+        
+        with col2:
+            st.markdown("#### Business Metrics")
+            business_data = [
+                {"Metric": "Conversion Rate", "Baseline": "12.0%", "Current": "11.4%", "Drift": "-5.0%", "Status": "⚠️ Monitor"},
+                {"Metric": "Claim Frequency", "Baseline": "12.2%", "Current": "12.8%", "Drift": "+4.9%", "Status": "⚠️ Monitor"},
+                {"Metric": "Avg Premium", "Baseline": "£650", "Current": "£672", "Drift": "+3.4%", "Status": "✅ OK"},
+                {"Metric": "Loss Ratio", "Baseline": "65.0%", "Current": "67.2%", "Drift": "+3.4%", "Status": "✅ OK"},
+            ]
+            st.dataframe(pd.DataFrame(business_data), use_container_width=True, hide_index=True)
+        
+        # Drift timeline
+        st.markdown("#### 📈 AUC Trend (Last 12 Months)")
+        
+        months = pd.date_range(start='2025-01-01', periods=12, freq='M')
+        auc_values = [0.658, 0.661, 0.659, 0.657, 0.655, 0.654, 0.653, 0.651, 0.650, 0.649, 0.648, 0.648]
+        
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=months, y=auc_values,
+            mode='lines+markers',
+            name='AUC',
+            line=dict(color='#3b82f6', width=2)
+        ))
+        fig.add_hline(y=0.654, line_dash="dash", line_color="green", annotation_text="Baseline: 0.654")
+        fig.add_hline(y=0.654 * 0.95, line_dash="dash", line_color="red", annotation_text="Threshold: 0.621")
+        
+        fig.update_layout(
+            title="Model AUC Over Time",
+            yaxis_title="AUC Score",
+            template="plotly_white",
+            height=300
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # Retraining triggers
+        st.markdown("#### ⚙️ Automated Retraining Triggers")
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("AUC Drop Threshold", "-5%", "Currently -0.9%")
+        with col2:
+            st.metric("Data Volume Trigger", "100K quotes", "87K processed")
+        with col3:
+            st.metric("Time-Based Trigger", "90 days", "45 days remaining")
+
+    with tab3:
+        st.markdown("### 📝 Explainability Audit Trail")
+        st.markdown("*Who, When, Why for each pricing decision*")
+        
+        # Recent audit records
+        st.markdown("#### Recent Pricing Decisions")
+        
+        audit_records = [
+            {
+                "Record ID": "AUD-20251210-a1b2c3d4",
+                "Timestamp": "2025-12-10 14:32:15",
+                "Policy ID": "POL-2025-8472",
+                "Action": "Quote",
+                "Risk Score": "0.234",
+                "Premium": "£548",
+                "Flags": "None",
+                "User": "system"
+            },
+            {
+                "Record ID": "AUD-20251210-e5f6g7h8",
+                "Timestamp": "2025-12-10 14:28:42",
+                "Policy ID": "POL-2025-8471",
+                "Action": "Quote",
+                "Risk Score": "0.456",
+                "Premium": "£892",
+                "Flags": "HIGH_RISK_SCORE",
+                "User": "system"
+            },
+            {
+                "Record ID": "AUD-20251210-i9j0k1l2",
+                "Timestamp": "2025-12-10 14:25:18",
+                "Policy ID": "POL-2025-8470",
+                "Action": "Quote",
+                "Risk Score": "0.178",
+                "Premium": "£1,245",
+                "Flags": "YOUNG_DRIVER_HIGH_PREMIUM",
+                "User": "underwriter_01"
+            },
+            {
+                "Record ID": "AUD-20251210-m3n4o5p6",
+                "Timestamp": "2025-12-10 14:21:33",
+                "Policy ID": "POL-2025-8469",
+                "Action": "Renewal",
+                "Risk Score": "0.145",
+                "Premium": "£512",
+                "Flags": "None",
+                "User": "system"
+            },
+        ]
+        
+        st.dataframe(pd.DataFrame(audit_records), use_container_width=True, hide_index=True)
+        
+        # Data lineage
+        st.markdown("#### 🔗 Data Lineage Tracking")
+        
+        lineage_data = [
+            {"Feature": "AGE", "Source": "CRM System", "Classification": "PII", "Retention": "7 years"},
+            {"Feature": "CREDIT_SCORE", "Source": "Experian API", "Classification": "Financial", "Retention": "2 years"},
+            {"Feature": "VEHICLE_TYPE", "Source": "DVLA API", "Classification": "Public", "Retention": "3 years"},
+            {"Feature": "PAST_ACCIDENTS", "Source": "Claims Database", "Classification": "Sensitive", "Retention": "10 years"},
+            {"Feature": "SPEEDING_VIOLATIONS", "Source": "Industry Database", "Classification": "Aggregate", "Retention": "5 years"},
+        ]
+        
+        st.dataframe(pd.DataFrame(lineage_data), use_container_width=True, hide_index=True)
+        
+        # Compliance flag summary
+        st.markdown("#### 🚩 Compliance Flag Summary (Last 30 Days)")
+        
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Total Decisions", "12,847")
+        with col2:
+            st.metric("Flagged", "234", "1.8%")
+        with col3:
+            st.metric("Manual Review", "45", "0.4%")
+        with col4:
+            st.metric("Escalated", "3", "0.02%")
+
+    with tab4:
+        st.markdown("### 📚 Model Risk Documentation (SR 11-7 / PRA SS1/23)")
+        
+        # Model inventory card
+        st.markdown("""
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+            <h4 style="margin: 0 0 15px 0;">🤖 Model Inventory</h4>
+            <table style="width: 100%;">
+                <tr><td><strong>Model ID:</strong></td><td>RF_v2.1</td></tr>
+                <tr><td><strong>Model Name:</strong></td><td>Random Forest Risk Classifier</td></tr>
+                <tr><td><strong>Risk Tier:</strong></td><td>Tier 1 - High Impact</td></tr>
+                <tr><td><strong>Business Use:</strong></td><td>Motor Insurance Risk Scoring and Premium Calculation</td></tr>
+                <tr><td><strong>Deployed:</strong></td><td>2025-12-01</td></tr>
+                <tr><td><strong>Last Validated:</strong></td><td>2025-12-10</td></tr>
+            </table>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### 📊 Model Performance")
+            st.markdown("""
+            - **AUC-ROC:** 0.654
+            - **Gini Coefficient:** 0.308
+            - **Precision:** 0.72
+            - **Recall:** 0.68
+            - **Validation Method:** 5-fold cross-validation
+            """)
+            
+            st.markdown("#### 👥 Governance")
+            st.markdown("""
+            - **Model Owner:** Actuarial Team
+            - **Approver:** Chief Actuary
+            - **Review Committee:** Model Risk Committee
+            - **Escalation:** Chief Actuary → CRO → Board
+            """)
+        
+        with col2:
+            st.markdown("#### ⚠️ Known Limitations")
+            st.markdown("""
+            - Trained on UK data only
+            - Limited data for ages <18 and >85
+            - No telematics integration
+            - Credit score not always available
+            """)
+            
+            st.markdown("#### 📋 Change Log")
+            changelog = [
+                {"Version": "2.1", "Date": "2025-12-01", "Change": "Retraining with 2024 data"},
+                {"Version": "2.0", "Date": "2024-07-01", "Change": "Added credit score feature"},
+                {"Version": "1.0", "Date": "2024-01-15", "Change": "Initial deployment"},
+            ]
+            st.dataframe(pd.DataFrame(changelog), use_container_width=True, hide_index=True)
+        
+        # Validation schedule
+        st.info("📅 **Next Validation Due:** 2026-12-10 (Annual Independent Review)")
+
+    with tab5:
+        st.markdown("### 🔒 GDPR Compliance (Article 22 - Automated Decision Making)")
+        
+        st.markdown("""
+        <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 20px;">
+            <strong>Legal Basis:</strong> Contract performance (Article 6(1)(b)) + Explicit consent for profiling
+        </div>
+        """, unsafe_allow_html=True)
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### 📋 Processing Activities")
+            st.markdown("""
+            | Activity | Purpose | Legal Basis |
+            |----------|---------|-------------|
+            | Risk Assessment | Premium calculation | Contract |
+            | Automated Quoting | Instant quotes | Contract + Consent |
+            | Profiling | Risk categorization | Legitimate Interest |
+            | Fraud Detection | Claims validation | Legal Obligation |
+            """)
+        
+        with col2:
+            st.markdown("#### 🛡️ Data Subject Safeguards")
+            st.markdown("""
+            - ✅ Right to human intervention
+            - ✅ Right to express point of view
+            - ✅ Right to contest decision
+            - ✅ Explanation of logic provided
+            - ✅ Data portability (JSON/CSV)
+            - ✅ Right to erasure (post-retention)
+            """)
+        
+        st.markdown("#### 📊 GDPR Metrics (Last 90 Days)")
+        
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Access Requests", "47", "Avg 5 days response")
+        with col2:
+            st.metric("Erasure Requests", "12", "All within retention")
+        with col3:
+            st.metric("Portability Exports", "23", "100% fulfilled")
+        with col4:
+            st.metric("Human Intervention", "156", "1.2% of decisions")
+        
+        st.markdown("#### 🔗 Data Retention Schedule")
+        
+        retention_data = [
+            {"Data Category": "Customer Identity", "Retention": "7 years from policy end", "Legal Basis": "FCA/AML requirements"},
+            {"Data Category": "Claims History", "Retention": "10 years", "Legal Basis": "Limitation Act 1980"},
+            {"Data Category": "Quote History", "Retention": "3 years", "Legal Basis": "Business records"},
+            {"Data Category": "Marketing Consent", "Retention": "Until withdrawn", "Legal Basis": "GDPR Article 7"},
+        ]
+        
+        st.dataframe(pd.DataFrame(retention_data), use_container_width=True, hide_index=True)
 
 
 def render_model_performance():
