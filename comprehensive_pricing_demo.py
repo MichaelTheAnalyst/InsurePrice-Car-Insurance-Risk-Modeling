@@ -114,14 +114,15 @@ def main():
         params = result['parameters']
 
         print("Actuarial Calculation:")
-        print(".2f")
-        print(".1f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
+        print(f"  1. Expected Loss = {case['risk_score']:.3f} × 12.2% × £3,500 = £{breakdown['expected_loss']:.2f}")
+        print(f"  2. Safety Loading = {params['safety_loading']:.1f}x")
+        print(f"  3. Safety-Loaded Loss = £{breakdown['safety_loaded_loss']:.2f}")
+        print(f"  4. + Expenses (35%) = £{breakdown['expenses']:.2f}")
+        print(f"  5. + Profit (15%) = £{breakdown['profit']:.2f}")
+        print(f"  6. + Risk Margin (8%) = £{breakdown['risk_margin']:.2f}")
+        print(f"  7. - Investment Credit (4%) = £{breakdown['investment_credit']:.2f}")
+        print(f"  ═══════════════════════════════════════")
+        print(f"  FINAL PREMIUM = £{result['final_premium']:.2f}")
 
         # Market comparison
         market_ratio = result['final_premium'] / uk_avg_premium
@@ -139,10 +140,10 @@ def main():
         # Key ratios
         ratios = result['ratios']
         print("\nKey Ratios:")
-        print(".3f")
-        print(".3f")
-        print(".3f")
-        print(".3f")
+        print(f"  Loss Ratio: {ratios['loss_ratio']:.3f}")
+        print(f"  Expense Ratio: {ratios['expense_ratio']:.3f}")
+        print(f"  Profit Ratio: {ratios['profit_ratio']:.3f}")
+        print(f"  Combined Ratio: {ratios['combined_ratio']:.3f}")
 
     print("\n🏆 REALISTIC UK CAR INSURANCE PREMIUM STRUCTURE")
     print("-" * 60)

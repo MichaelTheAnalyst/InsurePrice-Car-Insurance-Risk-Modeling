@@ -371,8 +371,8 @@ class InsuranceFairnessAnalyzer:
         print("OVERVIEW:")
         print("-" * 30)
         print(f"Total Policies Analyzed: {len(self.predictions_df):,}")
-        print(".1f")
-        print(".2f")
+        print(f"Overall Claim Rate: {self.predictions_df['OUTCOME'].mean()*100:.1f}%")
+        print(f"Average Premium: £{self.predictions_df['calculated_premium'].mean():.2f}")
 
         # Age-based fairness analysis
         print("\\nAGE-BASED FAIRNESS ANALYSIS:")
@@ -387,8 +387,8 @@ class InsuranceFairnessAnalyzer:
             for age, metrics in age_fairness.items():
                 premium = metrics['premium_stats']['mean']
                 risk = metrics['risk_stats']['risk_mean'] if metrics['risk_stats'] else 'N/A'
-                claims = ".1%" if metrics['claim_rate'] is not None else 'N/A'
-                print("4s")
+                claims = f"{metrics['claim_rate']*100:.1f}%" if metrics['claim_rate'] is not None else 'N/A'
+                print(f"{age:9s} | {metrics['sample_size']:6d} | £{premium:10.2f} | {risk if isinstance(risk, str) else f'{risk:.4f}':10s} | {claims}")
 
         # Gender-based fairness analysis
         print("\\nGENDER-BASED FAIRNESS ANALYSIS:")
@@ -399,7 +399,7 @@ class InsuranceFairnessAnalyzer:
             print("Premium Statistics by Gender:")
             for gender, metrics in gender_fairness.items():
                 premium = metrics['premium_stats']['mean']
-                print(".1f")
+                print(f"  {gender}: Average Premium £{premium:.2f}, Sample Size: {metrics['sample_size']}, Claim Rate: {metrics['claim_rate']*100:.1f}%")
 
         # Disparate impact analysis
         print("\\nDISPARATE IMPACT ANALYSIS:")
@@ -409,11 +409,11 @@ class InsuranceFairnessAnalyzer:
 
         age_disparate = self.analyze_disparate_impact('AGE')
         if age_disparate:
-            print("\\nAge-Based Disparate Impact (High Premium Threshold):")
+            print("\nAge-Based Disparate Impact (High Premium Threshold):")
             for age, metrics in age_disparate.items():
                 ratio = metrics['impact_ratio']
                 status = "⚠️ POTENTIAL BIAS" if metrics['is_disparate'] else "✅ FAIR"
-                print(".2f")
+                print(f"  {age}: Impact Ratio = {ratio:.2f} {status}")
 
         # Predictive fairness
         print("\\nPREDICTIVE FAIRNESS ANALYSIS:")
@@ -431,7 +431,7 @@ class InsuranceFairnessAnalyzer:
                 fpr = metrics['false_positive_rate']
                 ppv = metrics['positive_predictive_value']
                 acc = metrics['accuracy']
-                print("4s")
+                print(f"{age:4s} | {metrics['sample_size']:6d} | {tpr:.3f} | {fpr:.3f} | {ppv:.3f} | {acc:.3f}")
 
         # Recommendations
         print("\\n💡 FAIRNESS RECOMMENDATIONS:")

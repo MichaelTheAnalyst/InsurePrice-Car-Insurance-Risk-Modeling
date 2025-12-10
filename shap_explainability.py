@@ -179,7 +179,7 @@ class SHAPExplainabilityAnalyzer:
                 display_feature = self._decode_feature_name(feature)
                 display_value = self._get_feature_value(idx, feature)
 
-                print(".3f")
+                print(f"      {i}. {display_feature}: {shap_value:.3f} ({direction}, {impact} impact)")
     def analyze_global_feature_importance(self):
         """Analyze global SHAP feature importance."""
         print("\\n🌍 Global SHAP Feature Importance Analysis")
@@ -213,7 +213,7 @@ class SHAPExplainabilityAnalyzer:
             else:
                 importance = "Low"
 
-            print("2d")
+            print(f"   {i:2d}. {feature}: {shap_value:.4f} ({importance} importance)")
 
         return feature_importance
 

@@ -121,13 +121,13 @@ def main():
         market_comp = result['market_comparison']
 
         print("Actuarial Calculation:")
-        print(".2f")
-        print(".3f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
-        print(".2f")
+        print(f"  Expected Loss: £{breakdown['expected_loss']:.2f}")
+        print(f"  Loading Factor: {breakdown['loading_factor']:.3f}")
+        print(f"  Gross Premium: £{breakdown['gross_premium']:.2f}")
+        print(f"  Expenses: £{breakdown['expenses']:.2f}")
+        print(f"  Profit: £{breakdown['profit']:.2f}")
+        print(f"  Risk Margin: £{breakdown['risk_margin']:.2f}")
+        print(f"  Final Premium: £{result['final_premium']:.2f}")
 
         # Market positioning
         ratio_to_market = market_comp['ratio_to_market']
@@ -143,11 +143,11 @@ def main():
         print(f"vs Market Average (£{target_market_premium}): {ratio_to_market:.2f}x - {market_pos}")
 
         print("\nPremium Composition (% of Final Premium):")
-        print(".1f")
-        print(".1f")
-        print(".1f")
-        print(".1f")
-        print(".1f")
+        print(f"  Loss Ratio: {ratios['loss_ratio']*100:.1f}%")
+        print(f"  Expense Ratio: {ratios['expense_ratio']*100:.1f}%")
+        print(f"  Profit Ratio: {ratios['profit_ratio']*100:.1f}%")
+        print(f"  Risk Ratio: {ratios['risk_ratio']*100:.1f}%")
+        print(f"  Combined Ratio: {ratios['combined_ratio']*100:.1f}%")
 
         print(f"\nCombined Ratio: {ratios['combined_ratio']:.3f} ({'✅ Profitable' if ratios['combined_ratio'] < 1 else '❌ Loss-Making'})")
 

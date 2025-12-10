@@ -82,10 +82,10 @@ def test_risk_scoring() -> Dict[str, Any]:
         if response.status_code == 200:
             data = response.json()
             print("✅ Risk scoring successful")
-            print(".3f")
+            print(f"   Risk Score: {data['risk_score']:.3f}")
             print(f"   Risk Category: {data['risk_category']}")
-            print(".3f")
-            print(".3f")
+            print(f"   Confidence Lower: {data['confidence_interval']['lower_bound']:.3f}")
+            print(f"   Confidence Upper: {data['confidence_interval']['upper_bound']:.3f}")
             return data
         else:
             print(f"❌ Risk scoring failed: {response.status_code}")
@@ -132,9 +132,9 @@ def test_premium_quote() -> Dict[str, Any]:
         if response.status_code == 200:
             data = response.json()
             print("✅ Premium quote successful")
-            print(".2f")
-            print(".2f")
-            print(".3f")
+            print(f"   Annual Premium: £{data['annual_premium']:.2f}")
+            print(f"   Monthly Premium: £{data['monthly_premium']:.2f}")
+            print(f"   Risk Score: {data['risk_score']:.3f}")
             print(f"   Coverage: {data['coverage_details']['coverage_type']}")
             print(f"   NCD Years: {data['coverage_details']['ncd_years']}")
             print(f"   Voluntary Excess: £{data['coverage_details']['voluntary_excess']}")
@@ -228,8 +228,8 @@ def test_portfolio_analysis() -> Dict[str, Any]:
             data = response.json()
             print("✅ Portfolio analysis successful")
             print(f"   Total Policies: {data['portfolio_summary']['total_policies']}")
-            print(".3f")
-            print(".2f")
+            print(f"   Average Risk Score: {data['portfolio_summary']['average_risk_score']:.3f}")
+            print(f"   Total Premium: £{data['portfolio_summary']['total_annual_premium']:.2f}")
             print(f"   Risk Distribution: {data['risk_distribution']}")
 
             if data['recommendations']:
@@ -281,12 +281,12 @@ def test_model_explanation() -> Dict[str, Any]:
             data = response.json()
             print("✅ Model explanation successful")
             print(f"   Policy ID: {data['policy_id']}")
-            print(".3f")
+            print(f"   Risk Score: {data['risk_score']:.3f}")
 
             print("   Top Contributing Factors:")
             for i, factor in enumerate(data['top_factors'][:3], 1):
                 direction = "↑ Increases Risk" if factor['shap_value'] > 0 else "↓ Decreases Risk"
-                print(".3f")
+                print(f"     {i}. {factor['feature']}: {factor['shap_value']:.3f} ({direction})")
 
             return data
         else:
@@ -337,7 +337,7 @@ def main():
     passed = 0
     for test_name, success in tests:
         status = "✅ PASS" if success else "❌ FAIL"
-        print("15")
+        print(f"  {test_name:20s} {status}")
         if success:
             passed += 1
 

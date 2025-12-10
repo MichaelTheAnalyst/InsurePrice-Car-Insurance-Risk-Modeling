@@ -175,8 +175,8 @@ class InsuranceClaimPredictor:
         }
 
         print(f"\n📊 {model_name} Results:")
-        print(".4f")
-        print(".4f")
+        print(f"   AUC Score: {auc:.4f}")
+        print(f"   Gini Coefficient: {gini:.4f}")
 
         return auc, gini
 

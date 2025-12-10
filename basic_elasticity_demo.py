@@ -96,10 +96,10 @@ def main():
     valid_points = results_df[results_df['retention'] > 0.8]
     if len(valid_points) > 0:
         optimal = valid_points.loc[valid_points['profit_change'].idxmax()]
-        print("
-Optimal Strategy:"        print(".0f")
-        print(".1f")
-        print(".2f")
+        print("\nOptimal Strategy:")
+        print(f"  Price Change: {optimal['price_change']:.0f}%")
+        print(f"  Expected Retention: {optimal['retention']:.1%}")
+        print(f"  Profit Change: £{optimal['profit_change']:.2f} per customer")
 
     # Create visualization
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))

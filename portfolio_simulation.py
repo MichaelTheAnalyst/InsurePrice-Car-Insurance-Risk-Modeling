@@ -103,8 +103,8 @@ class PortfolioProfitSimulator:
 
         self.portfolio = portfolio
         print(f"✅ Portfolio generated: {len(portfolio)} policies")
-        print(".3f")
-        print(".2f")
+        print(f"   Average risk score: {portfolio['risk_score'].mean():.3f}")
+        print(f"   Average premium: £{portfolio['premium'].mean():.2f}")
         print(f"   Risk categories: {portfolio['risk_category'].value_counts().to_dict()}")
 
         return portfolio
@@ -188,10 +188,10 @@ class PortfolioProfitSimulator:
 
         self.simulation_results = pd.DataFrame(portfolio_results)
         print("✅ Monte Carlo simulation complete")
-        print(".3f")
-        print(".3f")
-        print(".3f")
-        print(".3f")
+        print(f"   Average loss ratio: {self.simulation_results['loss_ratio'].mean():.3f}")
+        print(f"   Average combined ratio: {self.simulation_results['combined_ratio'].mean():.3f}")
+        print(f"   Average profit margin: {self.simulation_results['profit_margin'].mean():.3f}")
+        print(f"   Profit margin std dev: {self.simulation_results['profit_margin'].std():.3f}")
 
         return self.simulation_results
 
@@ -400,20 +400,20 @@ class PortfolioProfitSimulator:
         print("PORTFOLIO OVERVIEW:")
         print("-" * 30)
         print(f"Total Policies: {len(self.portfolio):,}")
-        print(".3f")
-        print(".2f")
+        print(f"Average Risk Score: {self.portfolio['risk_score'].mean():.3f}")
+        print(f"Average Premium: £{self.portfolio['premium'].mean():.2f}")
         print(f"Risk Distribution: {self.portfolio['risk_category'].value_counts().to_dict()}")
 
         # Simulation results summary
-        print("\\nMONTE CARLO SIMULATION RESULTS:")
+        print("\nMONTE CARLO SIMULATION RESULTS:")
         print("-" * 40)
         results = self.simulation_results
-        print(".3f")
-        print(".3f")
-        print(".3f")
-        print(".3f")
-        print(".3f")
-        print(".1%")
+        print(f"Average Loss Ratio: {results['loss_ratio'].mean():.3f}")
+        print(f"Loss Ratio Std Dev: {results['loss_ratio'].std():.3f}")
+        print(f"Average Combined Ratio: {results['combined_ratio'].mean():.3f}")
+        print(f"Combined Ratio Std Dev: {results['combined_ratio'].std():.3f}")
+        print(f"Average Profit Margin: {results['profit_margin'].mean():.3f}")
+        print(f"Profit Margin Range: {results['profit_margin'].min():.1%} to {results['profit_margin'].max():.1%}")
 
         # Profitability assessment
         profit_margin = results['profit_margin'].mean()
@@ -421,38 +421,38 @@ class PortfolioProfitSimulator:
         loss_ratio = results['loss_ratio'].mean()
         combined_ratio = results['combined_ratio'].mean()
 
-        print("\\nPROFITABILITY ASSESSMENT:")
+        print("\nPROFITABILITY ASSESSMENT:")
         print("-" * 30)
         if profit_margin > 0:
             print("✅ PROFITABLE PORTFOLIO")
         else:
             print("❌ UNPROFITABLE PORTFOLIO")
-        print(".1%")
-        print(".1%")
-        print(".3f")
-        print(".3f")
+        print(f"Average Profit Margin: {profit_margin:.1%}")
+        print(f"Profit Volatility: {profit_volatility:.1%}")
+        print(f"Average Loss Ratio: {loss_ratio:.3f}")
+        print(f"Average Combined Ratio: {combined_ratio:.3f}")
 
         # Risk assessment
-        print("\\nRISK ASSESSMENT:")
+        print("\nRISK ASSESSMENT:")
         print("-" * 20)
         var_95 = np.percentile(results['profit_margin'], 5)  # 95% VaR
         cvar_95 = results[results['profit_margin'] <= var_95]['profit_margin'].mean()
-        print(".1%")
-        print(".1%")
+        print(f"95% Value at Risk (VaR): {var_95:.1%}")
+        print(f"95% Conditional VaR (CVaR): {cvar_95:.1%}")
         # Scenario analysis
         print("\\nSCENARIO ANALYSIS:")
         print("-" * 20)
         for scenario_name, scenario_data in self.scenarios.items():
-            print(f"\\n{scenario_name}:")
+            print(f"\n{scenario_name}:")
             print(f"  Loss Ratio: {scenario_data['avg_loss_ratio']:.3f}")
             print(f"  Combined Ratio: {scenario_data['avg_combined_ratio']:.3f}")
-            print(".1%")
-            print(".1%")
+            print(f"  Profit Margin: {scenario_data['avg_profit_margin']:.1%}")
+            print(f"  Profit Volatility: {scenario_data['profit_volatility']:.1%}")
             # Scenario comparison
             base_profit = self.scenarios['Base Case']['avg_profit_margin']
             scenario_profit = scenario_data['avg_profit_margin']
             profit_change = scenario_profit - base_profit
-            print(".1%")
+            print(f"  vs Base Case: {profit_change:+.1%}")
             if profit_change > 0:
                 print("    ✅ Improves profitability")
             elif profit_change < 0:

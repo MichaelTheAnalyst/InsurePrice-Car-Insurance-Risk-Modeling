@@ -325,15 +325,15 @@ if __name__ == "__main__":
 
     print("\nRISK FACTOR CORRELATIONS:")
     print("-" * 40)
-    print(".3f")
-    print(".3f")
-    print(".3f")
+    print(f"Speeding vs Outcome: {df['SPEEDING_VIOLATIONS'].corr(df['OUTCOME']):.3f}")
+    print(f"Past Accidents vs Outcome: {df['PAST_ACCIDENTS'].corr(df['OUTCOME']):.3f}")
+    print(f"Credit Score vs Outcome: {df['CREDIT_SCORE'].corr(df['OUTCOME']):.3f}")
 
     print("\nDATA QUALITY CHECKS:")
     print("-" * 40)
     print(f"Missing values: {df.isnull().sum().sum()}")
     print(f"Duplicate IDs: {df.ID.duplicated().sum()}")
-    print(".1f")
+    print(f"Claim Rate: {df.OUTCOME.mean() * 100:.1f}%")
 
     print("\nSAMPLE RECORDS:")
     print("-" * 40)

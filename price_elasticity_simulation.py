@@ -134,7 +134,7 @@ class PriceElasticitySimulator:
             pct = count / len(df) * 100
             elasticity = segment_sensitivities[segment]['elasticity']
             churn_rate = segment_sensitivities[segment]['churn_base_rate']
-            print(".1f")
+            print(f"   {segment}: {count} customers ({pct:.1f}%), Elasticity: {elasticity}, Churn: {churn_rate:.1f}%")
 
     def simulate_price_elasticity(self, price_changes=np.arange(-0.3, 0.31, 0.05)):
         """
@@ -206,7 +206,7 @@ class PriceElasticitySimulator:
             })
 
         self.elasticity_results = pd.DataFrame(results)
-        print("✅ Simulated price elasticity across"        print(".0f")
+        print(f"✅ Simulated price elasticity across {len(price_changes):.0f} price scenarios")
         return self.elasticity_results
 
     def optimize_pricing_strategy(self):
@@ -240,10 +240,10 @@ class PriceElasticitySimulator:
             }
 
             print("🏆 OPTIMAL PRICING STRATEGY FOUND:")
-            print(".1f")
-            print(".1f")
-            print(".2f")
-            print(".2f")
+            print(f"   Price Change: {optimal_result['price_change_pct']*100:.1f}%")
+            print(f"   Expected Retention: {optimal_result['overall_retention']:.1%}")
+            print(f"   Profit Change: £{optimal_result['profit_change_per_customer']:.2f} per customer")
+            print(f"   Revenue Change: £{optimal_result['revenue_change_per_customer']:.2f} per customer")
         else:
             print("⚠️ No optimal strategy found with retention > 80%")
             self.optimal_pricing = None

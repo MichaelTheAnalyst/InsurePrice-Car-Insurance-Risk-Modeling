@@ -31,7 +31,7 @@ def main():
     # Load data
     df = pd.read_csv('Sample_Priced_Policies.csv')
     print(f"✅ Loaded {len(df):,} customer records")
-    print(".2f")
+    print(f"   Average Premium: £{df['CALCULATED_PREMIUM'].mean():.2f}")
 
     # Create customer segments based on risk scores
     conditions = [
@@ -56,7 +56,7 @@ def main():
     for segment, elasticity in elasticities.items():
         count = (df['segment'] == segment).sum()
         pct = count / len(df) * 100
-        print(".1f")
+        print(f"  {segment}: {count} customers ({pct:.1f}%), Elasticity: {elasticity}")
 
     # Simulate price changes from -30% to +30%
     price_changes = np.arange(-0.3, 0.31, 0.05)
@@ -110,8 +110,8 @@ def main():
     results_df = pd.DataFrame(results)
 
     print("✅ Simulation complete!")
-    print(".0f")
-    print(".0f")
+    print(f"   Price Range: {price_changes.min()*100:.0f}% to {price_changes.max()*100:.0f}%")
+    print(f"   Scenarios Tested: {len(price_changes):.0f}")
 
     # Find optimal pricing strategy
     valid_points = results_df[results_df['retention_rate'] > 0.8]  # Keep retention > 80%
@@ -119,11 +119,11 @@ def main():
         optimal_idx = valid_points['profit_change'].idxmax()
         optimal = valid_points.loc[optimal_idx]
 
-        print("
-🏆 OPTIMAL PRICING STRATEGY FOUND:"        print(".1f")
-        print(".1f")
-        print(".2f")
-        print(".2f")
+        print("\n🏆 OPTIMAL PRICING STRATEGY FOUND:")
+        print(f"   Price Change: {optimal['price_change_pct']*100:.1f}%")
+        print(f"   Expected Retention: {optimal['retention_rate']:.1%}")
+        print(f"   Revenue Change: £{optimal['revenue_change']:.2f} per customer")
+        print(f"   Profit Change: £{optimal['profit_change']:.2f} per customer")
     else:
         print("\n⚠️ No optimal strategy found maintaining 80% retention")
 

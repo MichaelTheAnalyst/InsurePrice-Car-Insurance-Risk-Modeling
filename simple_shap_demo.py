@@ -127,7 +127,7 @@ def create_simple_shap_analysis():
                 'DRIVING_EXPERIENCE': 'Limited Experience'
             }.get(feature, feature.replace('_', ' ').title())
 
-            print(".3f")
+            print(f"      {i}. {feature_name}: {shap_val:.3f} ({direction})")
 
     print("\\n🌍 GLOBAL FEATURE IMPORTANCE ANALYSIS")
     print("-" * 50)
@@ -168,7 +168,7 @@ def create_simple_shap_analysis():
             'DRIVING_EXPERIENCE': 'Driving Experience'
         }.get(feature, feature.replace('_', ' ').title())
 
-        print("2d")
+        print(f"   {i:2d}. {feature_name}: {importance:.4f}")
 
     print("\\n💡 BUSINESS INSIGHTS FROM SHAP ANALYSIS")
     print("-" * 50)

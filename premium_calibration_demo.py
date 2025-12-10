@@ -82,10 +82,10 @@ def main():
 
         # Show ratios
         print("  Key Ratios:")
-        print(".3f")
-        print(".3f")
-        print(".3f")
-        print(".3f")
+        print(f"    Loss Ratio: {ratios['loss_ratio']:.3f}")
+        print(f"    Expense Ratio: {ratios['expense_ratio']:.3f}")
+        print(f"    Combined Ratio: {ratios['combined_ratio']:.3f}")
+        print(f"    Profit Ratio: {ratios['profit_ratio']:.3f}")
 
     print("\n🏆 PREMIUM RANGE SUMMARY")
     print("-" * 50)
@@ -113,18 +113,18 @@ def main():
     print("Portfolio Analysis (1,000 policies):")
     print(f"  Average Premium: £{batch_results['calculated_premium'].mean():.2f}")
     print(f"  Premium Range: £{batch_results['calculated_premium'].min():.2f} - £{batch_results['calculated_premium'].max():.2f}")
-    print(".3f")
-    print(".3f")
-    print(".3f")
-    print(".3f")
+    print(f"  Average Risk Score: {sample_risks.mean():.3f}")
+    print(f"  Average Loss Ratio: {batch_results['loss_ratio'].mean():.3f}")
+    print(f"  Average Combined Ratio: {batch_results['combined_ratio'].mean():.3f}")
+    print(f"  Average Expense Ratio: {batch_results['expense_ratio'].mean():.3f}")
 
     # Profitability check
     combined_ratio = batch_results['combined_ratio'].mean()
     profitable_pct = (batch_results['combined_ratio'] < 1).mean() * 100
 
     print("\n💰 Profitability Analysis:")
-    print(".3f")
-    print(".1f")
+    print(f"  Average Combined Ratio: {combined_ratio:.3f}")
+    print(f"  Profitable Policies: {profitable_pct:.1f}%")
     print("✅ All policies profitable!" if profitable_pct == 100 else f"⚠️ {100-profitable_pct:.1f}% policies loss-making")
 
     print("\n" + "=" * 50)
