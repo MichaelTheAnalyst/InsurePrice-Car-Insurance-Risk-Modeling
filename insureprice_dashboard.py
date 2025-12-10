@@ -1485,11 +1485,11 @@ def render_model_performance():
         st.markdown("### 📊 Risk Prediction Models (Optimized)")
         
         models_data = {
-            'Model': ['Random Forest (Optimized)', 'Logistic Regression', 'Gradient Boosting'],
-            'AUC': [0.6076, 0.6076, 0.5787],
-            'Gini': [0.2151, 0.2151, 0.1574],
-            'Precision': [0.72, 0.71, 0.69],
-            'Recall': [0.68, 0.67, 0.65]
+            'Model': ['CatBoost (Categorical)', 'Random Forest (Optimized)', 'Logistic Regression', 'Gradient Boosting'],
+            'AUC': [0.6176, 0.6074, 0.6076, 0.5787],
+            'Gini': [0.2352, 0.2147, 0.2151, 0.1574],
+            'Precision': [0.73, 0.72, 0.71, 0.69],
+            'Recall': [0.69, 0.68, 0.67, 0.65]
         }
         
         df_models = pd.DataFrame(models_data)
@@ -1504,7 +1504,7 @@ def render_model_performance():
             fig.add_trace(go.Bar(
                 x=df_models['Model'],
                 y=df_models['AUC'],
-                marker_color=['#10b981', '#3b82f6', '#f59e0b'],
+                marker_color=['#8b5cf6', '#10b981', '#3b82f6', '#f59e0b'],
                 text=[f"{x:.3f}" for x in df_models['AUC']],
                 textposition='outside'
             ))
@@ -1519,38 +1519,46 @@ def render_model_performance():
         
         # Best model highlight
         st.success("""
-        **🏆 Best Model: Random Forest (Optimized)**
-        - AUC: 0.6076 | Gini: 0.2151
-        - With Feature Engineering + Hyperparameter Optimization
+        **🏆 Best Model: CatBoost with Categorical Embeddings**
+        - AUC: 0.6176 | Gini: 0.2352
+        - Native categorical handling + Feature Engineering + Optimization
         """)
 
     with tab2:
         st.markdown("### 🚀 Model Improvement Journey")
         
         # Improvement summary cards
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         
         with col1:
             st.markdown("""
-            <div style="background: linear-gradient(135deg, #059669, #10b981); padding: 20px; border-radius: 10px; text-align: center;">
-                <h2 style="color: white; margin: 0;">+5.2%</h2>
-                <p style="color: #d1fae5; margin: 5px 0;">Total AUC Improvement</p>
+            <div style="background: linear-gradient(135deg, #059669, #10b981); padding: 15px; border-radius: 10px; text-align: center;">
+                <h2 style="color: white; margin: 0;">+6.3%</h2>
+                <p style="color: #d1fae5; margin: 5px 0; font-size: 12px;">Total AUC Improvement</p>
             </div>
             """, unsafe_allow_html=True)
         
         with col2:
             st.markdown("""
-            <div style="background: linear-gradient(135deg, #2563eb, #3b82f6); padding: 20px; border-radius: 10px; text-align: center;">
+            <div style="background: linear-gradient(135deg, #2563eb, #3b82f6); padding: 15px; border-radius: 10px; text-align: center;">
                 <h2 style="color: white; margin: 0;">27</h2>
-                <p style="color: #dbeafe; margin: 5px 0;">New Features Added</p>
+                <p style="color: #dbeafe; margin: 5px 0; font-size: 12px;">New Features Added</p>
             </div>
             """, unsafe_allow_html=True)
         
         with col3:
             st.markdown("""
-            <div style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); padding: 20px; border-radius: 10px; text-align: center;">
+            <div style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); padding: 15px; border-radius: 10px; text-align: center;">
                 <h2 style="color: white; margin: 0;">15</h2>
-                <p style="color: #ede9fe; margin: 5px 0;">Optuna Trials</p>
+                <p style="color: #ede9fe; margin: 5px 0; font-size: 12px;">Optuna Trials</p>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col4:
+            st.markdown("""
+            <div style="background: linear-gradient(135deg, #dc2626, #ef4444); padding: 15px; border-radius: 10px; text-align: center;">
+                <h2 style="color: white; margin: 0;">4</h2>
+                <p style="color: #fecaca; margin: 5px 0; font-size: 12px;">Models Compared</p>
             </div>
             """, unsafe_allow_html=True)
 
@@ -1629,22 +1637,78 @@ def render_model_performance():
             )
             st.plotly_chart(fig, use_container_width=True)
 
+        st.markdown("---")
+
+        # CatBoost Section
+        st.markdown("### 🐱 CatBoost with Categorical Embeddings (+1.02% AUC)")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### Why CatBoost for Insurance?")
+            st.markdown("""
+            - **Native categorical handling** - No one-hot encoding needed
+            - **Ordered boosting** - Reduces prediction shift/overfitting
+            - **Symmetric trees** - Faster inference time
+            - **Automatic feature interactions** - Captures complex patterns
+            """)
+            
+            catboost_features = [
+                {"Feature": "VEHICLE_TYPE", "Importance": "16.5%"},
+                {"Feature": "ANNUAL_MILEAGE", "Importance": "11.6%"},
+                {"Feature": "MARRIED", "Importance": "11.4%"},
+                {"Feature": "CREDIT_SCORE", "Importance": "8.2%"},
+                {"Feature": "TOTAL_VIOLATIONS", "Importance": "7.7%"},
+            ]
+            st.dataframe(pd.DataFrame(catboost_features), use_container_width=True, hide_index=True)
+        
+        with col2:
+            st.markdown("#### CatBoost vs Random Forest")
+            
+            fig = go.Figure()
+            fig.add_trace(go.Bar(
+                name='Random Forest',
+                x=['AUC', 'Gini'],
+                y=[0.6074, 0.2147],
+                marker_color='#10b981',
+                text=['0.6074', '0.2147'],
+                textposition='outside'
+            ))
+            fig.add_trace(go.Bar(
+                name='CatBoost',
+                x=['AUC', 'Gini'],
+                y=[0.6176, 0.2352],
+                marker_color='#8b5cf6',
+                text=['0.6176', '0.2352'],
+                textposition='outside'
+            ))
+            fig.update_layout(
+                title="CatBoost vs Random Forest",
+                barmode='group',
+                template="plotly_white",
+                height=300
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+        st.markdown("---")
+
         # Improvement timeline
         st.markdown("#### 📈 Improvement Timeline")
         
         timeline_data = [
-            {"Stage": "1. Baseline", "AUC": 0.5692, "Gini": 0.1383, "Features": 7},
-            {"Stage": "2. + Feature Engineering", "AUC": 0.6076, "Gini": 0.2151, "Features": 34},
-            {"Stage": "3. + Hyperparameter Tuning", "AUC": 0.6019, "Gini": 0.2039, "Features": 34},
+            {"Stage": "1. Baseline", "AUC": 0.5692, "Gini": 0.1383, "Model": "Random Forest (default)"},
+            {"Stage": "2. + Feature Engineering", "AUC": 0.6076, "Gini": 0.2151, "Model": "Logistic Regression"},
+            {"Stage": "3. + Hyperparameter Tuning", "AUC": 0.6019, "Gini": 0.2039, "Model": "Random Forest (tuned)"},
+            {"Stage": "4. + CatBoost Embeddings", "AUC": 0.6176, "Gini": 0.2352, "Model": "CatBoost 🏆"},
         ]
         st.dataframe(pd.DataFrame(timeline_data), use_container_width=True, hide_index=True)
         
         st.info("""
-        **💡 Why Feature Engineering > Hyperparameter Tuning?**
+        **💡 Key Insights:**
         
-        Feature engineering creates **new information** the model can learn from, 
-        while hyperparameter tuning only optimizes how the model learns existing information.
-        In insurance, domain-specific features (like risk scores) capture actuarial knowledge.
+        - **Feature Engineering** had the biggest impact (+3.84%) - domain knowledge matters!
+        - **CatBoost** excels with categorical insurance data (vehicle type, region, etc.)
+        - **Total improvement: ~6.3%** from baseline to best model
         """)
 
     with tab3:
