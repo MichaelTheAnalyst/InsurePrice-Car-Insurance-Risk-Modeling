@@ -153,58 +153,89 @@ class ModelExplanationResponse(BaseModel):
     timestamp: str = Field(..., description="Request timestamp")
 
 def load_models_and_data():
-    """Load trained models and preprocessing objects."""
+    """
+    Load pre-trained models and preprocessing objects from disk.
+    
+    This function loads models saved by train_and_save_models.py,
+    eliminating the 5-15 second training delay on every API startup.
+    
+    If saved models don't exist, falls back to training new models.
+    """
     global models, scaler, feature_names, explainer
 
+    import os
+    MODEL_DIR = 'models'
+    
     try:
-        # Load models (simplified - in production, load from saved files)
-        from sklearn.ensemble import RandomForestClassifier
-        from sklearn.preprocessing import StandardScaler, LabelEncoder
         import shap
+        
+        # Check if pre-trained models exist
+        model_path = os.path.join(MODEL_DIR, 'random_forest_model.joblib')
+        scaler_path = os.path.join(MODEL_DIR, 'scaler.joblib')
+        metadata_path = os.path.join(MODEL_DIR, 'model_metadata.joblib')
+        
+        if os.path.exists(model_path) and os.path.exists(scaler_path):
+            # Load pre-trained models (fast path - ~0.5 seconds)
+            logger.info("📦 Loading pre-trained models from disk...")
+            
+            models['Random Forest'] = joblib.load(model_path)
+            scaler = joblib.load(scaler_path)
+            metadata = joblib.load(metadata_path)
+            feature_names = metadata['feature_names']
+            
+            # Initialize SHAP explainer with loaded model
+            explainer = shap.TreeExplainer(models['Random Forest'])
+            
+            logger.info(f"✅ Pre-trained models loaded successfully (version: {metadata['model_version']})")
+            logger.info(f"   • Model trained on: {metadata['trained_on']}")
+            logger.info(f"   • Features: {len(feature_names)}")
+            return True
+        
+        else:
+            # Fallback: Train models if not found (slow path - 5-15 seconds)
+            logger.warning("⚠️ Pre-trained models not found. Training new models...")
+            logger.warning("   Run 'python train_and_save_models.py' to create persistent models")
+            
+            from sklearn.ensemble import RandomForestClassifier
+            from sklearn.preprocessing import StandardScaler, LabelEncoder
 
-        # For demonstration, we'll recreate the model training
-        # In production, load from joblib files
-        logger.info("Loading models and preprocessing objects...")
+            # Load sample data for model training
+            df = pd.read_csv('Enhanced_Synthetic_Car_Insurance_Claims.csv')
 
-        # Load sample data for model training
-        df = pd.read_csv('Enhanced_Synthetic_Car_Insurance_Claims.csv')
+            # Prepare features
+            exclude_cols = ['ID', 'POSTAL_CODE', 'CLAIM_AMOUNT']
+            feature_cols = [col for col in df.columns if col not in exclude_cols + ['OUTCOME']]
+            X = df[feature_cols].copy()
+            y = df['OUTCOME'].copy()
 
-        # Prepare features (same as in modeling)
-        exclude_cols = ['ID', 'POSTAL_CODE', 'CLAIM_AMOUNT']
-        feature_cols = [col for col in df.columns if col not in exclude_cols + ['OUTCOME']]
-        X = df[feature_cols].copy()
-        y = df['OUTCOME'].copy()
+            # Encode categorical variables
+            categorical_cols = X.select_dtypes(include=['object']).columns
+            for col in categorical_cols:
+                le = LabelEncoder()
+                X[col] = le.fit_transform(X[col])
 
-        # Encode categorical variables
-        categorical_cols = X.select_dtypes(include=['object']).columns
-        label_encoders = {}
-        for col in categorical_cols:
-            le = LabelEncoder()
-            X[col] = le.fit_transform(X[col])
-            label_encoders[col] = le
+            # Scale numerical features
+            numerical_cols = X.select_dtypes(include=[np.number]).columns
+            scaler = StandardScaler()
+            X[numerical_cols] = scaler.fit_transform(X[numerical_cols])
 
-        # Scale numerical features
-        numerical_cols = X.select_dtypes(include=[np.number]).columns
-        scaler = StandardScaler()
-        X[numerical_cols] = scaler.fit_transform(X[numerical_cols])
+            feature_names = list(X.columns)
 
-        feature_names = list(X.columns)
+            # Train Random Forest model
+            rf_model = RandomForestClassifier(
+                n_estimators=100,
+                max_depth=10,
+                random_state=42,
+                n_jobs=-1
+            )
+            rf_model.fit(X, y)
+            models['Random Forest'] = rf_model
 
-        # Train Random Forest model
-        rf_model = RandomForestClassifier(
-            n_estimators=100,
-            max_depth=10,
-            random_state=42,
-            n_jobs=-1
-        )
-        rf_model.fit(X, y)
-        models['Random Forest'] = rf_model
+            # Initialize SHAP explainer
+            explainer = shap.TreeExplainer(rf_model)
 
-        # Initialize SHAP explainer
-        explainer = shap.TreeExplainer(rf_model)
-
-        logger.info("✅ Models and data loaded successfully")
-        return True
+            logger.info("✅ Models trained successfully (fallback mode)")
+            return True
 
     except Exception as e:
         logger.error(f"❌ Failed to load models: {str(e)}")
