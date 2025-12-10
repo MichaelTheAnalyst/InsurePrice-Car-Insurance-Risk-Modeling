@@ -734,11 +734,48 @@ def render_api_status():
 
     # API Documentation links
     st.markdown("### 📚 Documentation")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("[📖 Interactive API Docs (Swagger)](http://localhost:8000/docs)")
-    with col2:
-        st.markdown("[📘 Alternative Docs (ReDoc)](http://localhost:8000/redoc)")
+    
+    if api_online:
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("""
+            <a href="http://localhost:8000/docs" target="_blank" style="
+                display: inline-block;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+            ">📖 Interactive API Docs (Swagger)</a>
+            """, unsafe_allow_html=True)
+        with col2:
+            st.markdown("""
+            <a href="http://localhost:8000/redoc" target="_blank" style="
+                display: inline-block;
+                padding: 10px 20px;
+                background: linear-gradient(135deg, #059669, #047857);
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+            ">📘 Alternative Docs (ReDoc)</a>
+            """, unsafe_allow_html=True)
+        
+        st.info("💡 Click the buttons above to open API documentation in a new browser tab")
+    else:
+        st.warning("""
+        ⚠️ **API Server is Offline** - Documentation links require the API to be running.
+        
+        **To start the API server:**
+        ```bash
+        python run_api.py
+        ```
+        
+        Once running, the documentation will be available at:
+        - **Swagger UI**: http://localhost:8000/docs
+        - **ReDoc**: http://localhost:8000/redoc
+        """)
 
 
 def render_risk_assessment(df, pricing_engine):
