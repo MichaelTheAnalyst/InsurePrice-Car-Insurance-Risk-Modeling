@@ -272,8 +272,10 @@ def generate_synthetic_data(num_rows=10000):
     return df
 
 if __name__ == "__main__":
+    import os
     df = generate_synthetic_data()
-    output_path = r'c:\Users\mn3g24\OneDrive - University of Southampton\Desktop\projects\InsurePrice\InsurePrice\Enhanced_Synthetic_Car_Insurance_Claims.csv'
+    # Use relative path that works on any machine
+    output_path = os.path.join(os.path.dirname(__file__), 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
     df.to_csv(output_path, index=False)
     print(f"Enhanced synthetic dataset saved to {output_path}")
 
