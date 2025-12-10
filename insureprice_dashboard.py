@@ -37,10 +37,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 import warnings
-import folium
-from folium.plugins import MarkerCluster, HeatMap
-from streamlit_folium import folium_static
-import branca.colormap as cm
 warnings.filterwarnings('ignore')
 
 # Import project modules
@@ -429,7 +425,7 @@ def render_dashboard(df, pricing_engine):
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-    # Interactive Regional Risk Map
+    # Interactive Regional Risk Analysis - Modern Pin Markers Design
     st.markdown("### 🗺️ Interactive Regional Risk Analysis")
 
     # Calculate regional claim rates and statistics
@@ -437,20 +433,20 @@ def render_dashboard(df, pricing_engine):
     regional_data.columns = ['Region', 'Claim_Rate', 'Policy_Count']
     regional_data['Claim_Rate'] *= 100
 
-    # Add risk category and color coding
-    def get_risk_category(rate):
-        if rate < 10:
-            return "Low Risk", "#10b981", "🟢"
-        elif rate < 15:
-            return "Medium Risk", "#f59e0b", "🟠"
+    # Risk categorization with colors
+    def get_risk_info(rate: float):
+        if rate < 11:
+            return "Low Risk", "#059669", "🟢"
+        elif rate < 13:
+            return "Medium Risk", "#d97706", "🟠"
         else:
-            return "High Risk", "#ef4444", "🔴"
+            return "High Risk", "#dc2626", "🔴"
 
     regional_data[['Risk_Category', 'Color', 'Icon']] = regional_data['Claim_Rate'].apply(
-        lambda x: pd.Series(get_risk_category(x))
+        lambda x: pd.Series(get_risk_info(x))
     )
 
-    # UK region coordinates (approximate centers)
+    # UK region coordinates
     region_coords = {
         'London': [51.5074, -0.1278],
         'Scotland': [56.4907, -4.2026],
@@ -465,93 +461,122 @@ def render_dashboard(df, pricing_engine):
         'Wales': [52.1307, -3.7837]
     }
 
-    # Add coordinates to regional data
     regional_data['Latitude'] = regional_data['Region'].map(lambda x: region_coords.get(x, [54.0, -2.0])[0])
     regional_data['Longitude'] = regional_data['Region'].map(lambda x: region_coords.get(x, [54.0, -2.0])[1])
 
-    # Create interactive map
-    m = folium.Map(
-        location=[54.0, -2.0],
-        zoom_start=6,
-        tiles='CartoDB positron',
-        control_scale=True
-    )
+    # Create two-column layout: Map + Bar Chart
+    map_col, chart_col = st.columns([3, 2])
 
-    # Add title
-    title_html = '''
-        <div style="position: fixed; top: 10px; left: 50px; z-index: 1000; background: rgba(255,255,255,0.8);
-                    padding: 10px; border-radius: 5px; font-family: Arial; font-size: 14px; font-weight: bold;">
-            🗺️ UK Insurance Risk Heatmap - Click markers for details
-        </div>
-    '''
-    m.get_root().html.add_child(folium.Element(title_html))
+    with map_col:
+        # Create map with SMALL FIXED-SIZE pin markers (no bubbles!)
+        map_fig = go.Figure()
 
-    # Create marker cluster for better performance
-    marker_cluster = MarkerCluster().add_to(m)
+        # Add markers for each region - FIXED SMALL SIZE
+        for idx, row in regional_data.iterrows():
+            map_fig.add_trace(go.Scattermapbox(
+                lat=[row['Latitude']],
+                lon=[row['Longitude']],
+                mode='markers+text',
+                marker=dict(
+                    size=14,  # Fixed small size
+                    color=row['Color'],
+                    opacity=0.9
+                ),
+                text=row['Region'][:3].upper(),  # Short label
+                textposition="top center",
+                textfont=dict(size=9, color='#1e3a8a', family='Arial Black'),
+                name=row['Region'],
+                hovertemplate=(
+                    f"<b>{row['Region']}</b><br>" +
+                    f"Claim Rate: {row['Claim_Rate']:.1f}%<br>" +
+                    f"Policies: {row['Policy_Count']:,}<br>" +
+                    f"Risk: {row['Risk_Category']}<br>" +
+                    "<extra></extra>"
+                ),
+                showlegend=False
+            ))
 
-    # Add markers for each region
-    for idx, row in regional_data.iterrows():
-        # Create popup content
-        popup_content = f"""
-        <div style="font-family: Arial; max-width: 250px;">
-            <h4 style="color: {row['Color']}; margin: 0; padding: 0;">
-                {row['Icon']} {row['Region']}
-            </h4>
-            <hr style="margin: 5px 0;">
-            <strong>Claim Rate:</strong> {row['Claim_Rate']:.1f}%<br>
-            <strong>Total Policies:</strong> {row['Policy_Count']:,}<br>
-            <strong>Risk Level:</strong> <span style="color: {row['Color']};">{row['Risk_Category']}</span><br>
-            <strong>Estimated Annual Claims:</strong> {int(row['Policy_Count'] * row['Claim_Rate'] / 100):,}
-        </div>
-        """
+        map_fig.update_layout(
+            mapbox=dict(
+                style="carto-positron",
+                center=dict(lat=54.0, lon=-2.5),
+                zoom=4.8
+            ),
+            margin=dict(l=0, r=0, t=30, b=0),
+            height=450,
+            title=dict(
+                text="<b>UK Risk Map</b> <span style='font-size:11px;color:#6b7280;'>(Hover for details)</span>",
+                font=dict(size=14, color='#1e3a8a')
+            ),
+            paper_bgcolor='rgba(0,0,0,0)'
+        )
 
-        # Calculate circle size based on policy count
-        radius = max(15, min(40, row['Policy_Count'] / 50))
+        st.plotly_chart(map_fig, use_container_width=True)
 
-        # Add circle marker
-        folium.CircleMarker(
-            location=[row['Latitude'], row['Longitude']],
-            radius=radius,
-            color=row['Color'],
-            fill=True,
-            fill_color=row['Color'],
-            fill_opacity=0.7,
-            popup=folium.Popup(popup_content, max_width=300),
-            tooltip=f"{row['Region']}: {row['Claim_Rate']:.1f}% claim rate"
-        ).add_to(marker_cluster)
+    with chart_col:
+        # Horizontal bar chart for claim rates - sorted by risk
+        sorted_data = regional_data.sort_values('Claim_Rate', ascending=True)
 
-    # Add heatmap layer for density visualization
-    heat_data = [[row['Latitude'], row['Longitude'], row['Claim_Rate']] for idx, row in regional_data.iterrows()]
-    HeatMap(heat_data, radius=25, blur=15, max_zoom=1).add_to(m)
+        bar_fig = go.Figure()
 
-    # Add layer control
-    folium.LayerControl().add_to(m)
+        bar_fig.add_trace(go.Bar(
+            y=sorted_data['Region'],
+            x=sorted_data['Claim_Rate'],
+            orientation='h',
+            marker=dict(
+                color=sorted_data['Color'],
+                line=dict(width=0)
+            ),
+            text=[f"{x:.1f}%" for x in sorted_data['Claim_Rate']],
+            textposition='outside',
+            textfont=dict(size=10, color='#374151'),
+            hovertemplate=(
+                "<b>%{y}</b><br>" +
+                "Claim Rate: %{x:.1f}%<br>" +
+                "<extra></extra>"
+            )
+        ))
 
-    # Add legend
-    legend_html = '''
-        <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background: rgba(255,255,255,0.9);
-                    padding: 15px; border-radius: 8px; border: 2px solid #ddd; font-family: Arial; font-size: 12px;">
-            <h4 style="margin: 0 0 10px 0; color: #1e3a8a;">Risk Legend</h4>
-            <div style="display: flex; align-items: center; margin: 5px 0;">
-                <div style="width: 15px; height: 15px; background: #10b981; border-radius: 50%; margin-right: 8px;"></div>
-                <span>🟢 Low Risk (< 10%)</span>
-            </div>
-            <div style="display: flex; align-items: center; margin: 5px 0;">
-                <div style="width: 15px; height: 15px; background: #f59e0b; border-radius: 50%; margin-right: 8px;"></div>
-                <span>🟠 Medium Risk (10-15%)</span>
-            </div>
-            <div style="display: flex; align-items: center; margin: 5px 0;">
-                <div style="width: 15px; height: 15px; background: #ef4444; border-radius: 50%; margin-right: 8px;"></div>
-                <span>🔴 High Risk (> 15%)</span>
-            </div>
-            <hr style="margin: 10px 0;">
-            <small><em>Circle size = Policy count<br>Heatmap = Claim rate density</em></small>
-        </div>
-    '''
-    m.get_root().html.add_child(folium.Element(legend_html))
+        bar_fig.update_layout(
+            title=dict(
+                text="<b>Claim Rate by Region</b>",
+                font=dict(size=14, color='#1e3a8a')
+            ),
+            xaxis=dict(
+                title="Claim Rate (%)",
+                showgrid=True,
+                gridcolor='#f3f4f6',
+                range=[0, max(sorted_data['Claim_Rate']) * 1.15]
+            ),
+            yaxis=dict(
+                title="",
+                showgrid=False
+            ),
+            height=450,
+            margin=dict(l=10, r=60, t=50, b=40),
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
+        )
 
-    # Display the map
-    folium_static(m, width=1000, height=600)
+        st.plotly_chart(bar_fig, use_container_width=True)
+
+    # Risk Legend
+    st.markdown("""
+    <div style="display: flex; justify-content: center; gap: 30px; padding: 10px 0; background: #f8fafc; border-radius: 8px; margin-top: -10px;">
+        <span style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 12px; height: 12px; background: #059669; border-radius: 50%;"></span>
+            <span style="font-size: 13px; color: #374151;">Low Risk (&lt;11%)</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 12px; height: 12px; background: #d97706; border-radius: 50%;"></span>
+            <span style="font-size: 13px; color: #374151;">Medium Risk (11-13%)</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 12px; height: 12px; background: #dc2626; border-radius: 50%;"></span>
+            <span style="font-size: 13px; color: #374151;">High Risk (&gt;13%)</span>
+        </span>
+    </div>
+    """, unsafe_allow_html=True)
 
     # Add summary statistics below the map
     st.markdown("### 📊 Regional Risk Summary")
