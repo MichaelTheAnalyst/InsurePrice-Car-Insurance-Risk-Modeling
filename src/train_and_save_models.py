@@ -27,9 +27,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# Constants
-MODEL_DIR = 'models'
-DATA_FILE = 'Enhanced_Synthetic_Car_Insurance_Claims.csv'
+# Constants - use paths relative to project root
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_DIR = os.path.join(PROJECT_ROOT, 'models')
+DATA_FILE = os.path.join(PROJECT_ROOT, 'data', 'processed', 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
 
 
 def ensure_model_directory():

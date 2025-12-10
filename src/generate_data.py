@@ -274,8 +274,9 @@ def generate_synthetic_data(num_rows=10000):
 if __name__ == "__main__":
     import os
     df = generate_synthetic_data()
-    # Use relative path that works on any machine
-    output_path = os.path.join(os.path.dirname(__file__), 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
+    # Use path relative to project root
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    output_path = os.path.join(PROJECT_ROOT, 'data', 'processed', 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
     df.to_csv(output_path, index=False)
     print(f"Enhanced synthetic dataset saved to {output_path}")
 

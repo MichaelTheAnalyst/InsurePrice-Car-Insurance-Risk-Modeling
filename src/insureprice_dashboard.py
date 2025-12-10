@@ -151,8 +151,11 @@ if 'page' not in st.session_state:
 @st.cache_data
 def load_data():
     """Load data and initialize engines"""
+    import os
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    DATA_FILE = os.path.join(PROJECT_ROOT, 'data', 'processed', 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
     try:
-        df = pd.read_csv('Enhanced_Synthetic_Car_Insurance_Claims.csv')
+        df = pd.read_csv(DATA_FILE)
         pricing_engine = ActuarialPricingEngine(
             base_claim_frequency=0.122,
             base_claim_severity=3500,

@@ -165,7 +165,10 @@ def load_models_and_data():
     global models, scaler, label_encoders, feature_names, explainer
 
     import os
-    MODEL_DIR = 'models'
+    # Use path relative to project root (parent of src/)
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    MODEL_DIR = os.path.join(PROJECT_ROOT, 'models')
+    DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed')
     
     try:
         import shap
@@ -204,7 +207,8 @@ def load_models_and_data():
             from sklearn.preprocessing import StandardScaler, LabelEncoder
 
             # Load sample data for model training
-            df = pd.read_csv('Enhanced_Synthetic_Car_Insurance_Claims.csv')
+            data_file = os.path.join(DATA_DIR, 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
+            df = pd.read_csv(data_file)
 
             # Prepare features
             exclude_cols = ['ID', 'POSTAL_CODE', 'CLAIM_AMOUNT']
