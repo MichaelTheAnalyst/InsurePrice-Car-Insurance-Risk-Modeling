@@ -52,6 +52,7 @@ app.add_middleware(
 # Global model and data storage
 models = {}
 scaler = None
+label_encoders = None
 feature_names = None
 explainer = None
 
@@ -161,7 +162,7 @@ def load_models_and_data():
     
     If saved models don't exist, falls back to training new models.
     """
-    global models, scaler, feature_names, explainer
+    global models, scaler, label_encoders, feature_names, explainer
 
     import os
     MODEL_DIR = 'models'
@@ -172,6 +173,7 @@ def load_models_and_data():
         # Check if pre-trained models exist
         model_path = os.path.join(MODEL_DIR, 'random_forest_model.joblib')
         scaler_path = os.path.join(MODEL_DIR, 'scaler.joblib')
+        encoders_path = os.path.join(MODEL_DIR, 'label_encoders.joblib')
         metadata_path = os.path.join(MODEL_DIR, 'model_metadata.joblib')
         
         if os.path.exists(model_path) and os.path.exists(scaler_path):
@@ -180,6 +182,7 @@ def load_models_and_data():
             
             models['Random Forest'] = joblib.load(model_path)
             scaler = joblib.load(scaler_path)
+            label_encoders = joblib.load(encoders_path)
             metadata = joblib.load(metadata_path)
             feature_names = metadata['feature_names']
             
@@ -189,6 +192,7 @@ def load_models_and_data():
             logger.info(f"✅ Pre-trained models loaded successfully (version: {metadata['model_version']})")
             logger.info(f"   • Model trained on: {metadata['trained_on']}")
             logger.info(f"   • Features: {len(feature_names)}")
+            logger.info(f"   • Label encoders: {len(label_encoders)}")
             return True
         
         else:
@@ -242,10 +246,10 @@ def load_models_and_data():
         return False
 
 def preprocess_driver_profile(driver_profile: DriverProfile) -> np.ndarray:
-    """Preprocess driver profile for model input."""
-    global scaler, feature_names
+    """Preprocess driver profile for model input using saved encoders and scaler."""
+    global scaler, label_encoders, feature_names
 
-    # Create feature dictionary
+    # Create feature dictionary matching training data columns
     features = {
         'AGE': driver_profile.age,
         'GENDER': driver_profile.gender,
@@ -253,48 +257,57 @@ def preprocess_driver_profile(driver_profile: DriverProfile) -> np.ndarray:
         'DRIVING_EXPERIENCE': driver_profile.driving_experience,
         'EDUCATION': driver_profile.education,
         'INCOME': driver_profile.income,
-        'VEHICLE_TYPE': driver_profile.vehicle_type,
-        'VEHICLE_YEAR': driver_profile.vehicle_year,
-        'ANNUAL_MILEAGE': driver_profile.annual_mileage,
         'CREDIT_SCORE': driver_profile.credit_score,
-        'SPEEDING_VIOLATIONS': driver_profile.speeding_violations,
-        'DUIS': driver_profile.duis,
-        'PAST_ACCIDENTS': driver_profile.past_accidents,
-        'VEHICLE_OWNERSHIP': driver_profile.vehicle_ownership,
-        'MARRIED': driver_profile.married,
-        'CHILDREN': driver_profile.children,
-        'SAFETY_RATING': driver_profile.safety_rating
+        'VEHICLE_OWNERSHIP': float(driver_profile.vehicle_ownership),
+        'VEHICLE_YEAR': driver_profile.vehicle_year,
+        'MARRIED': float(driver_profile.married),
+        'CHILDREN': float(driver_profile.children),
+        'ANNUAL_MILEAGE': driver_profile.annual_mileage,
+        'VEHICLE_TYPE': driver_profile.vehicle_type,
+        'SAFETY_RATING': driver_profile.safety_rating,
+        'SPEEDING_VIOLATIONS': float(driver_profile.speeding_violations),
+        'DUIS': float(driver_profile.duis),
+        'PAST_ACCIDENTS': float(driver_profile.past_accidents)
     }
 
     # Convert to DataFrame
     df = pd.DataFrame([features])
 
-    # Encode categorical variables (simplified - in production, use saved encoders)
-    categorical_mapping = {
-        'AGE': {'16-25': 0, '26-39': 1, '40-64': 2, '65+': 3},
-        'GENDER': {'female': 0, 'male': 1},
-        'REGION': {'London': 0, 'Scotland': 1, 'South West': 2, 'Wales': 3, 'West Midlands': 4,
-                  'North East': 5, 'East Anglia': 6, 'South East': 7, 'Yorkshire': 8,
-                  'East Midlands': 9, 'North West': 10},
-        'DRIVING_EXPERIENCE': {'0-2y': 0, '3-5y': 1, '6-9y': 2, '0-9y': 3, '10-19y': 4, '20-29y': 5, '30y+': 6},
-        'EDUCATION': {'none': 0, 'high_school': 1, 'university': 2, 'postgraduate': 3},
-        'INCOME': {'poverty': 0, 'working_class': 1, 'middle_class': 2, 'upper_class': 3},
-        'VEHICLE_TYPE': {'small_hatchback': 0, 'family_sedan': 1, 'suv': 2, 'sports_car': 3, 'luxury_sedan': 4, 'mpv': 5},
-        'VEHICLE_YEAR': {'before_2010': 0, '2010-2015': 1, '2016-2020': 2, 'after_2020': 3},
-        'SAFETY_RATING': {'basic': 0, 'standard': 1, 'advanced': 2}
-    }
+    # Apply label encoding using saved encoders
+    if label_encoders:
+        for col, encoder in label_encoders.items():
+            if col in df.columns:
+                try:
+                    df[col] = encoder.transform(df[col])
+                except ValueError:
+                    # Handle unseen labels by using 0
+                    df[col] = 0
+    else:
+        # Fallback: manual encoding if encoders not loaded
+        categorical_mapping = {
+            'AGE': {'16-25': 0, '26-39': 1, '40-64': 2, '65+': 3},
+            'GENDER': {'female': 0, 'male': 1},
+            'REGION': {'East Anglia': 0, 'East Midlands': 1, 'London': 2, 'North East': 3, 
+                      'North West': 4, 'Scotland': 5, 'South East': 6, 'South West': 7, 
+                      'Wales': 8, 'West Midlands': 9, 'Yorkshire': 10},
+            'DRIVING_EXPERIENCE': {'0-2y': 0, '0-9y': 1, '10-19y': 2, '20-29y': 3, '3-5y': 4, '30y+': 5, '6-9y': 6},
+            'EDUCATION': {'high_school': 0, 'none': 1, 'postgraduate': 2, 'university': 3},
+            'INCOME': {'middle_class': 0, 'poverty': 1, 'upper_class': 2, 'working_class': 3},
+            'VEHICLE_TYPE': {'family_sedan': 0, 'luxury_sedan': 1, 'mpv': 2, 'small_hatchback': 3, 'sports_car': 4, 'suv': 5},
+            'VEHICLE_YEAR': {'2010-2015': 0, '2016-2020': 1, 'after_2020': 2, 'before_2010': 3},
+            'SAFETY_RATING': {'advanced': 0, 'basic': 1, 'standard': 2}
+        }
+        for col, mapping in categorical_mapping.items():
+            if col in df.columns:
+                df[col] = df[col].map(mapping).fillna(0)
 
-    for col in df.columns:
-        if col in categorical_mapping and col != 'ANNUAL_MILEAGE' and col != 'CREDIT_SCORE':
-            df[col] = df[col].map(categorical_mapping.get(col, {})).fillna(0)
-
-    # Scale numerical features
-    numerical_cols = ['ANNUAL_MILEAGE', 'CREDIT_SCORE', 'SPEEDING_VIOLATIONS', 'DUIS', 'PAST_ACCIDENTS']
-    if scaler:
-        df[numerical_cols] = scaler.transform(df[numerical_cols])
-
-    # Ensure correct column order
+    # Ensure correct column order BEFORE scaling
     df = df[feature_names]
+
+    # Scale ALL features using saved scaler (scaler was fitted on all columns after encoding)
+    if scaler:
+        df_scaled = scaler.transform(df)
+        return df_scaled
 
     return df.values
 
