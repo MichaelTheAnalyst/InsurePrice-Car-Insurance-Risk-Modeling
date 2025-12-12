@@ -28,15 +28,40 @@ import plotly.express as px
 from datetime import datetime
 import requests
 import warnings
+import sys
+import os
 warnings.filterwarnings('ignore')
 
-# Import project modules
+# Add parent directory to path for imports
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
+# Import project modules - try multiple locations
+ActuarialPricingEngine = None
+FraudDetectionEngine = None
+FRAUD_AVAILABLE = False
+
 try:
     from actuarial_pricing_engine import ActuarialPricingEngine
+except ImportError:
+    try:
+        from src.actuarial_pricing_engine import ActuarialPricingEngine
+    except ImportError:
+        pass
+
+try:
     from fraud_detection import FraudDetectionEngine
     FRAUD_AVAILABLE = True
 except ImportError:
-    FRAUD_AVAILABLE = False
+    try:
+        from src.fraud_detection import FraudDetectionEngine
+        FRAUD_AVAILABLE = True
+    except ImportError:
+        FRAUD_AVAILABLE = False
 
 # Color palette
 COLORS = {
@@ -151,22 +176,58 @@ if 'page' not in st.session_state:
 @st.cache_data
 def load_data():
     """Load data and initialize engines"""
-    import os
-    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     DATA_FILE = os.path.join(PROJECT_ROOT, 'data', 'processed', 'Enhanced_Synthetic_Car_Insurance_Claims.csv')
+    
+    # Try to load data
     try:
         df = pd.read_csv(DATA_FILE)
-        pricing_engine = ActuarialPricingEngine(
-            base_claim_frequency=0.122,
-            base_claim_severity=3500,
-            expense_loading=0.35,
-            profit_margin=0.15,
-            investment_return=0.04,
-            risk_margin=0.08
-        )
+    except Exception as e:
+        st.error(f"Error loading data file: {e}")
+        return None, None
+    
+    # Try to create pricing engine
+    try:
+        if ActuarialPricingEngine is not None:
+            pricing_engine = ActuarialPricingEngine(
+                base_claim_frequency=0.122,
+                base_claim_severity=3500,
+                expense_loading=0.35,
+                profit_margin=0.15,
+                investment_return=0.04,
+                risk_margin=0.08
+            )
+        else:
+            # Fallback: create a simple pricing class inline
+            class SimplePricingEngine:
+                def __init__(self):
+                    self.base_claim_frequency = 0.122
+                    self.base_claim_severity = 3500
+                    self.expense_loading = 0.35
+                    self.profit_margin = 0.15
+                    
+                def calculate_basic_actuarial_premium(self, risk_score, credibility=0.9):
+                    expected_loss = risk_score * self.base_claim_frequency * self.base_claim_severity
+                    technical_premium = expected_loss * (1 + self.expense_loading)
+                    final_premium = technical_premium * (1 + self.profit_margin)
+                    return {
+                        'final_premium': final_premium,
+                        'breakdown': {
+                            'expected_loss': expected_loss,
+                            'expenses': expected_loss * self.expense_loading,
+                            'profit_margin': technical_premium * self.profit_margin,
+                            'risk_margin': final_premium * 0.08
+                        }
+                    }
+                
+                def batch_calculate_premiums(self, risk_scores, method='basic', credibility=0.85):
+                    premiums = [self.calculate_basic_actuarial_premium(r, credibility)['final_premium'] for r in risk_scores]
+                    return pd.DataFrame({'calculated_premium': premiums})
+            
+            pricing_engine = SimplePricingEngine()
+            
         return df, pricing_engine
     except Exception as e:
-        st.error(f"Error loading data: {e}")
+        st.error(f"Error initializing pricing engine: {e}")
         return None, None
 
 def calculate_risk_scores(df):

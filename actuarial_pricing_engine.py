@@ -69,11 +69,12 @@ class ActuarialPricingEngine:
             'combined_ratio': 1.00       # Break-even point
         }
 
-        print("🏗️ Actuarial Pricing Engine Initialized")
-        print(f"   Base Claim Frequency: {self.base_claim_frequency:.3f}")
-        print(f"   Base Claim Severity: £{self.base_claim_severity:,.0f}")
-        print(f"   Expense Loading: {self.expense_loading:.1%}")
-        print(f"   Profit Margin: {self.profit_margin:.1%}")
+        # Engine initialized - suppressing print for dashboard compatibility
+        # print("Actuarial Pricing Engine Initialized")
+        # print(f"   Base Claim Frequency: {self.base_claim_frequency:.3f}")
+        # print(f"   Base Claim Severity: £{self.base_claim_severity:,.0f}")
+        # print(f"   Expense Loading: {self.expense_loading:.1%}")
+        # print(f"   Profit Margin: {self.profit_margin:.1%}")
 
     def calculate_basic_actuarial_premium(self,
                                          risk_score: float,
