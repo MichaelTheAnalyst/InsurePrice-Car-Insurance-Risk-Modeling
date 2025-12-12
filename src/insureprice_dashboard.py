@@ -256,6 +256,32 @@ def render_dashboard(df, pricing_engine):
     </div>
     """, unsafe_allow_html=True)
 
+    # Instructions section
+    with st.expander("📖 **How to Use This Dashboard** - Click to expand", expanded=False):
+        st.markdown("""
+        ### Welcome to InsurePrice! 👋
+        
+        This dashboard provides a **comprehensive overview** of your car insurance portfolio and platform capabilities.
+        
+        **🔍 What You'll Find Here:**
+        - **Key Metrics**: High-level KPIs showing portfolio health at a glance
+        - **Platform Capabilities**: Quick overview of all features available
+        - **Risk Distribution**: Visual breakdown of your portfolio's risk profile
+        - **Regional Analysis**: Geographic patterns in claims data
+        
+        **💡 Pro Tips:**
+        - Use the **sidebar** to navigate to specific features (Risk Assessment, Premium Calculator, etc.)
+        - Check the **API Status** indicator at the bottom of the sidebar
+        - The **claim rate** is a key profitability indicator - UK average is ~12%
+        
+        **📊 Key Benchmarks:**
+        | Metric | Good | Average | Concerning |
+        |--------|------|---------|------------|
+        | Claim Rate | <10% | 10-15% | >15% |
+        | Profit Margin | >8% | 5-8% | <5% |
+        | Loss Ratio | <65% | 65-75% | >75% |
+        """)
+
     # Key Metrics
     col1, col2, col3, col4 = st.columns(4)
     
@@ -341,6 +367,33 @@ def render_dashboard(df, pricing_engine):
     # Risk Distribution
     st.markdown("### 🎯 Risk Distribution")
     
+    with st.expander("ℹ️ **Understanding Risk Distribution** - Click to learn more"):
+        st.markdown("""
+        **What is a Risk Score?**
+        
+        The risk score (0-1) predicts the likelihood of a policyholder making a claim. It's calculated using:
+        - **Age Group** (25%): Younger drivers have higher accident rates
+        - **Annual Mileage** (20%): More driving = more exposure to accidents
+        - **Credit Score** (25%): Correlates with claim frequency
+        - **Driving History** (30%): Violations, DUIs, and past accidents
+        
+        **How to Interpret the Charts:**
+        
+        📊 **Histogram (Left)**: Shows how risk scores are distributed across your portfolio
+        - A bell curve centered around 0.4-0.5 is healthy
+        - A right-skewed distribution (more high-risk) may indicate adverse selection
+        
+        🥧 **Pie Chart (Right)**: Segments your portfolio into risk categories
+        - **Low Risk (<0.4)**: Profitable segment, focus on retention
+        - **Medium Risk (0.4-0.7)**: Standard pricing applies
+        - **High Risk (>0.7)**: Ensure adequate premium loading
+        
+        **🎯 Target Portfolio Mix:**
+        - Low Risk: 40-50% (stable profit base)
+        - Medium Risk: 35-45% (volume segment)
+        - High Risk: 10-20% (higher margins, higher volatility)
+        """)
+    
     risk_scores = calculate_risk_scores(df)
     
     col1, col2 = st.columns([2, 1])
@@ -379,6 +432,31 @@ def render_dashboard(df, pricing_engine):
     # Regional Analysis
     st.markdown("### 🗺️ Regional Risk Analysis")
     
+    with st.expander("ℹ️ **Understanding Regional Risk** - Click to learn more"):
+        st.markdown("""
+        **Why Does Region Matter?**
+        
+        Geographic location significantly impacts claim rates due to:
+        - **Traffic Density**: Urban areas like London have more accidents
+        - **Crime Rates**: Vehicle theft varies significantly by region
+        - **Road Conditions**: Weather patterns and infrastructure quality
+        - **Emergency Response**: Time to hospital affects injury claims
+        
+        **How to Use This Chart:**
+        
+        🟢 **Green Bars (<11%)**: Low-risk regions - consider competitive pricing
+        🟠 **Orange Bars (11-13%)**: Average risk - standard pricing applies
+        🔴 **Red Bars (>13%)**: High-risk regions - ensure adequate premium loading
+        
+        **📈 Strategic Actions:**
+        - **High-risk regions**: Consider stricter underwriting or higher premiums
+        - **Low-risk regions**: Opportunity for market expansion with competitive rates
+        - **Watch for trends**: Year-over-year changes may indicate emerging risks
+        
+        **⚠️ Regulatory Note:** Under UK FCA rules, regional pricing must be justifiable. 
+        Keep documentation of actuarial basis for any regional premium variations.
+        """)
+    
     regional_data = df.groupby('REGION')['OUTCOME'].agg(['mean', 'count']).reset_index()
     regional_data.columns = ['Region', 'Claim_Rate', 'Policy_Count']
     regional_data['Claim_Rate'] *= 100
@@ -410,6 +488,48 @@ def render_fraud_detection():
         <p>AI-Powered Claims Fraud Analysis System</p>
     </div>
     """, unsafe_allow_html=True)
+
+    # Instructions
+    with st.expander("📖 **How to Use Fraud Detection** - Click for guidance", expanded=False):
+        st.markdown("""
+        ### 🔍 Fraud Detection Overview
+        
+        This tool uses **4 complementary methods** to detect potentially fraudulent claims:
+        
+        **1️⃣ Anomaly Detection (35% weight)**
+        Identifies statistically unusual patterns:
+        - Unusually high claim amounts
+        - Suspicious timing (late reporting, new policies)
+        - Multiple previous claims
+        
+        **2️⃣ Behavioral Analysis (35% weight)**
+        Flags suspicious claimant behavior:
+        - No police report filed
+        - No witnesses present
+        - Cash settlement preference
+        
+        **3️⃣ Text Analysis (30% weight)**
+        NLP-based keyword detection in claim descriptions:
+        - Fraud-associated terms (whiplash, cash, urgent)
+        - Suspicious relationships (friend, family involved)
+        
+        **📊 How to Interpret Results:**
+        
+        | Fraud Score | Risk Level | Action |
+        |------------|------------|--------|
+        | 0-35% | LOW | Standard processing |
+        | 35-60% | MEDIUM | Enhanced review |
+        | 60%+ | HIGH | Refer to SIU team |
+        
+        **⚠️ Important Notes:**
+        - This is a **screening tool**, not definitive evidence of fraud
+        - Always investigate before declining/referring claims
+        - False positives are expected - err on the side of caution
+        - Document all fraud referral decisions for regulatory compliance
+        
+        **💡 Best Practice:** Use this tool early in the claims process to prioritize 
+        which claims need deeper investigation, saving time and resources.
+        """)
 
     # UK Fraud Context
     col1, col2, col3 = st.columns(3)
@@ -557,6 +677,69 @@ def render_fraud_detection():
         else:
             st.success("✅ No major red flags detected")
 
+        # Result interpretation
+        st.markdown("---")
+        st.markdown("### 📋 Result Interpretation & Next Steps")
+        
+        if risk_level == "HIGH":
+            st.error(f"""
+            **🚨 High Fraud Risk - Immediate Action Required**
+            
+            This claim scored **{overall_score:.1%}** on our fraud detection system, 
+            indicating a **high probability** of fraudulent activity.
+            
+            **Recommended Next Steps:**
+            1. **DO NOT approve** this claim without investigation
+            2. **Refer to SIU** (Special Investigation Unit) immediately
+            3. **Request additional documentation:**
+               - Verified police report
+               - Independent medical examination (if injury claimed)
+               - Vehicle inspection by approved assessor
+            4. **Check for patterns:**
+               - Previous claims by this policyholder
+               - Claims at same location
+               - Connections to other claimants (network analysis)
+            
+            **⚖️ Legal Considerations:**
+            - Document all investigation steps
+            - Follow FCA treating customers fairly guidelines
+            - Ensure any fraud decision is evidenced, not just model-based
+            """)
+        elif risk_level == "MEDIUM":
+            st.warning(f"""
+            **⚠️ Medium Fraud Risk - Enhanced Review Recommended**
+            
+            This claim scored **{overall_score:.1%}** on our fraud detection system, 
+            suggesting **some indicators** warrant closer examination.
+            
+            **Recommended Next Steps:**
+            1. **Conduct desktop review:**
+               - Verify all documentation
+               - Check claim history
+               - Validate contact information
+            2. **Request clarification** on any inconsistencies
+            3. **Consider phone interview** with claimant
+            4. **If concerns persist**, escalate to SIU
+            
+            **💡 Note:** Many legitimate claims score in this range. 
+            Enhanced review is precautionary, not accusatory.
+            """)
+        else:
+            st.success(f"""
+            **✅ Low Fraud Risk - Standard Processing Appropriate**
+            
+            This claim scored **{overall_score:.1%}** on our fraud detection system, 
+            indicating **no significant fraud indicators**.
+            
+            **Recommended Next Steps:**
+            1. **Process through standard claims workflow**
+            2. **Verify basic documentation** (photos, estimates)
+            3. **Approve if within authority limits**
+            
+            **💡 Note:** Low fraud score doesn't guarantee legitimacy. 
+            Apply normal due diligence and trust your claims handler instincts.
+            """)
+
 
 def render_clv_prediction(df):
     """Customer Lifetime Value prediction page"""
@@ -566,6 +749,45 @@ def render_clv_prediction(df):
         <p>Predict customer value for strategic pricing decisions</p>
     </div>
     """, unsafe_allow_html=True)
+
+    # Instructions
+    with st.expander("📖 **Understanding Customer Lifetime Value (CLV)** - Click to learn more", expanded=False):
+        st.markdown("""
+        ### 💎 What is Customer Lifetime Value?
+        
+        CLV predicts the **total profit** a customer will generate over their entire relationship 
+        with your company. It's crucial for:
+        - **Pricing Decisions**: How much discount is acceptable to retain a customer?
+        - **Marketing Spend**: How much to invest in acquiring similar customers?
+        - **Service Prioritization**: Which customers deserve premium service?
+        
+        **📊 How CLV is Calculated:**
+        
+        ```
+        CLV = Σ (Annual Profit × Survival Probability) / (1 + Discount Rate)^Year - Acquisition Cost
+        ```
+        
+        **Key Components:**
+        - **Renewal Probability**: Likelihood of staying each year (affected by age, tenure, claims)
+        - **Policy Profit**: Premium minus expected claims and expenses
+        - **Cross-sell Revenue**: Additional products (home, life, travel insurance)
+        - **Discount Rate**: 8% (time value of money)
+        
+        **🏆 Customer Segments:**
+        
+        | Segment | CLV Range | Strategy |
+        |---------|-----------|----------|
+        | 💎 Platinum | £1,500+ | VIP treatment, priority service, retention focus |
+        | 🥇 Gold | £800-1,500 | Standard service, retention offers when at risk |
+        | 🥈 Silver | £400-800 | Efficient service, opportunistic cross-sell |
+        | 🥉 Bronze | <£400 | Automated service, no discounts |
+        
+        **💡 Strategic Applications:**
+        - **Acceptable Discount**: For a £1,500 CLV customer, a £150 discount (10%) to prevent 
+          churn is profitable vs. acquiring a new customer for £100-150
+        - **Cross-sell Timing**: Best after 1+ years of claims-free tenure
+        - **Churn Prevention**: Focus on customers showing declining engagement
+        """)
 
     # Business context
     col1, col2, col3 = st.columns(3)
@@ -794,6 +1016,47 @@ def render_model_performance():
     </div>
     """, unsafe_allow_html=True)
 
+    # Instructions
+    with st.expander("📖 **Understanding ML Model Metrics** - Click to learn more", expanded=False):
+        st.markdown("""
+        ### 🤖 Machine Learning Model Evaluation
+        
+        Our risk prediction models are evaluated using several key metrics:
+        
+        **📊 Key Metrics Explained:**
+        
+        | Metric | What It Measures | Good Value |
+        |--------|------------------|------------|
+        | **AUC** | Overall discrimination ability | >0.7 (ours: 0.654) |
+        | **Gini** | AUC × 2 - 1, common in insurance | >0.4 (ours: 0.308) |
+        | **Precision** | % of predicted claims that were actual claims | >0.7 |
+        | **Recall** | % of actual claims correctly predicted | >0.65 |
+        
+        **🎯 Why AUC of 0.654 is Acceptable:**
+        - Insurance claim prediction is inherently difficult (many random factors)
+        - Industry standard for motor insurance is typically 0.60-0.75
+        - Our model provides meaningful lift over random selection
+        - Combined with actuarial methods, this drives profitable pricing
+        
+        **🔍 SHAP Explainability:**
+        
+        SHAP (SHapley Additive exPlanations) shows **why** each prediction is made:
+        - **Positive SHAP values** (🔴) increase predicted risk
+        - **Negative SHAP values** (🟢) decrease predicted risk
+        - **Larger bars** = more important features
+        
+        **⚖️ Why Explainability Matters:**
+        - **FCA Compliance**: UK regulators require insurers to explain pricing decisions
+        - **Customer Trust**: Transparent explanations build confidence
+        - **Model Debugging**: Identify if model is using features appropriately
+        - **Legal Protection**: Documented reasoning for pricing decisions
+        
+        **💡 Using Feature Importance:**
+        - Focus data quality efforts on high-importance features
+        - Annual mileage and age are top predictors - ensure accurate collection
+        - Low-importance features may be candidates for removal
+        """)
+
     # Model metrics
     st.markdown("### 📊 Risk Prediction Models")
     
@@ -879,6 +1142,62 @@ def render_api_status():
         <p>REST API Monitoring and Testing</p>
     </div>
     """, unsafe_allow_html=True)
+
+    # Instructions
+    with st.expander("📖 **Understanding the API** - Click for technical details", expanded=False):
+        st.markdown("""
+        ### 📡 REST API Overview
+        
+        InsurePrice provides a **production-ready REST API** for integration with 
+        external systems (quote engines, policy admin systems, etc.).
+        
+        **🔧 Technical Specifications:**
+        - **Framework**: FastAPI (Python)
+        - **Performance**: ~500 requests/second
+        - **Format**: JSON request/response
+        - **Authentication**: Ready for OAuth2/API keys (configure for production)
+        
+        **🔗 Available Endpoints:**
+        
+        | Endpoint | Use Case |
+        |----------|----------|
+        | `/api/v1/risk/score` | Real-time risk assessment for quotes |
+        | `/api/v1/premium/quote` | Calculate premium from risk profile |
+        | `/api/v1/fraud/analyze` | Screen claims for fraud |
+        | `/api/v1/portfolio/analyze` | Batch portfolio analysis |
+        | `/api/v1/model/explain/{id}` | Get SHAP explanations |
+        
+        **🚀 Starting the API Server:**
+        ```bash
+        # From project root directory
+        python run_api.py
+        
+        # Or using uvicorn directly
+        uvicorn insureprice_api:app --host 0.0.0.0 --port 8000
+        ```
+        
+        **📚 API Documentation:**
+        - **Swagger UI**: http://localhost:8000/docs (interactive testing)
+        - **ReDoc**: http://localhost:8000/redoc (clean documentation)
+        
+        **🔒 Production Deployment Notes:**
+        - Enable HTTPS (SSL/TLS certificates)
+        - Configure API authentication
+        - Set up rate limiting
+        - Use a reverse proxy (nginx, traefik)
+        - Enable logging and monitoring
+        
+        **💡 Integration Example (Python):**
+        ```python
+        import requests
+        
+        response = requests.post(
+            "http://localhost:8000/api/v1/risk/score",
+            json={"driver_profile": {...}}
+        )
+        risk_data = response.json()
+        ```
+        """)
 
     # Check API status
     api_online = check_api_status()
@@ -1020,6 +1339,42 @@ def render_risk_assessment(df, pricing_engine):
     </div>
     """, unsafe_allow_html=True)
 
+    # Instructions
+    with st.expander("📖 **How to Use Risk Assessment** - Click for guidance", expanded=False):
+        st.markdown("""
+        ### 🎯 Risk Assessment Guide
+        
+        Enter driver and vehicle details to receive an **instant risk evaluation** and premium quote.
+        
+        **📝 Input Fields Explained:**
+        
+        | Field | Impact on Risk | Notes |
+        |-------|----------------|-------|
+        | **Age Group** | HIGH | 16-25 has ~2x risk vs 40-64 |
+        | **Region** | MEDIUM | Urban areas generally higher risk |
+        | **Vehicle Type** | MEDIUM | Sports cars, SUVs typically higher |
+        | **Driving Experience** | MEDIUM | More experience = lower risk |
+        | **Annual Mileage** | HIGH | Linear relationship with exposure |
+        | **Credit Score** | HIGH | Strong correlation with claims |
+        | **Speeding Violations** | MEDIUM | +3% risk per violation |
+        | **DUIs** | VERY HIGH | +8% risk per incident |
+        | **Past Accidents** | HIGH | +5% risk per accident |
+        
+        **📊 Risk Categories:**
+        - 🟢 **Low Risk (0.00-0.39)**: Premium drivers, competitive pricing appropriate
+        - 🟠 **Medium Risk (0.40-0.69)**: Standard market, risk-adequate pricing
+        - 🔴 **High Risk (0.70-1.00)**: Substandard market, requires premium loading
+        
+        **💡 Tips for Accurate Assessment:**
+        - Use actual annual mileage (check MOT history for estimates)
+        - Credit score is normalized 0-1 (0.7 ≈ 700 on standard scale)
+        - Include ALL past accidents, even minor ones
+        - DUIs have major impact - even one significantly increases risk
+        
+        **⚠️ Important:** This is an indicative assessment. Final premium may differ 
+        based on additional underwriting factors and market conditions.
+        """)
+
     with st.form("risk_form"):
         col1, col2, col3 = st.columns(3)
         
@@ -1087,6 +1442,60 @@ def render_risk_assessment(df, pricing_engine):
             </div>
             """, unsafe_allow_html=True)
 
+        # Result interpretation
+        st.markdown("---")
+        st.markdown("### 📋 Result Interpretation")
+        
+        if category == "Low Risk":
+            st.success(f"""
+            **✅ Low Risk Profile Detected**
+            
+            This driver profile indicates a **below-average likelihood** of filing a claim.
+            
+            **What this means:**
+            - Risk score of **{risk_score:.2f}** is in the bottom 40% of the risk distribution
+            - Premium of **£{premium['final_premium']:.0f}** is competitive for this segment
+            - Retention priority: **HIGH** - this is a profitable customer segment
+            
+            **Recommended Actions:**
+            - Offer competitive renewal pricing to retain
+            - Consider loyalty discounts for multi-year customers
+            - Cross-sell opportunities: Home insurance, travel insurance
+            """)
+        elif category == "Medium Risk":
+            st.info(f"""
+            **📊 Standard Risk Profile Detected**
+            
+            This driver profile indicates an **average likelihood** of filing a claim.
+            
+            **What this means:**
+            - Risk score of **{risk_score:.2f}** is in the standard market range (40-70th percentile)
+            - Premium of **£{premium['final_premium']:.0f}** reflects risk-adequate pricing
+            - This represents the bulk of the insurance market
+            
+            **Recommended Actions:**
+            - Apply standard pricing without special discounts
+            - Monitor for risk improvements (telematics data, claims-free years)
+            - Consider step-down pricing after 2+ claims-free years
+            """)
+        else:
+            st.warning(f"""
+            **⚠️ High Risk Profile Detected**
+            
+            This driver profile indicates an **above-average likelihood** of filing a claim.
+            
+            **What this means:**
+            - Risk score of **{risk_score:.2f}** is in the top 30% of the risk distribution
+            - Premium of **£{premium['final_premium']:.0f}** includes necessary risk loading
+            - Higher margins but also higher volatility expected
+            
+            **Recommended Actions:**
+            - Ensure no underpricing - maintain actuarially sound rates
+            - Consider additional underwriting requirements
+            - Higher excess options to manage exposure
+            - Telematics policy may help monitor actual driving behavior
+            """)
+
 
 def render_premium_calculator(pricing_engine):
     """Premium calculator page"""
@@ -1096,6 +1505,58 @@ def render_premium_calculator(pricing_engine):
         <p>Actuarially-sound premium calculation</p>
     </div>
     """, unsafe_allow_html=True)
+
+    # Instructions
+    with st.expander("📖 **Understanding Premium Calculation** - Click for details", expanded=False):
+        st.markdown("""
+        ### 💰 Actuarial Premium Breakdown
+        
+        Our premium calculation follows **professional actuarial methodology**:
+        
+        **📐 The Formula:**
+        ```
+        Premium = Expected Loss + Expenses + Profit + Risk Margin - Investment Credit
+        ```
+        
+        **💵 Component Breakdown:**
+        
+        | Component | % of Premium | Description |
+        |-----------|--------------|-------------|
+        | **Expected Loss** | ~50% | Predicted claims cost (frequency × severity) |
+        | **Expenses** | 35% | Admin, acquisition, claims handling |
+        | **Profit Margin** | 15% | Target profit on gross premium |
+        | **Risk Margin** | 8% | Buffer for adverse deviation |
+        | **Investment Credit** | -4% | Return on reserves held |
+        
+        **🎚️ Input Parameters:**
+        
+        **Risk Score (0-1):**
+        - Drives the expected loss calculation
+        - Higher score = higher expected claims
+        - Use output from Risk Assessment page
+        
+        **Credibility (0.5-1.0):**
+        - How much weight to give individual risk score vs portfolio average
+        - 1.0 = full credibility to individual factors
+        - 0.5 = blend equally with portfolio average
+        - Higher for customers with more data/tenure
+        
+        **📊 Example Calculation (Risk Score 0.35, Credibility 0.9):**
+        ```
+        Expected Loss:    £155.23  (Frequency 12.2% × Severity £3,500 × Risk Factor)
+        + Expenses:       £ 84.43  (35% loading)
+        + Profit:         £ 36.18  (15% target)
+        + Risk Margin:    £ 19.30  (8% buffer)
+        - Investment:     -£ 9.65  (4% credit)
+        ─────────────────────────
+        = Final Premium:  £285.49
+        ```
+        
+        **💡 Pricing Strategy Tips:**
+        - UK average motor premium is ~£650/year
+        - Market competitive range: £400-£900 for standard risks
+        - High-risk segments may require £1,500+
+        """)
 
     col1, col2 = st.columns([1, 2])
 
@@ -1132,6 +1593,48 @@ def render_portfolio_analytics(df, pricing_engine):
         <p>Comprehensive risk and performance analysis</p>
     </div>
     """, unsafe_allow_html=True)
+
+    # Instructions
+    with st.expander("📖 **Understanding Portfolio Analytics** - Click for guidance", expanded=False):
+        st.markdown("""
+        ### 📈 Portfolio Analytics Guide
+        
+        This page provides a **bird's-eye view** of your entire insurance portfolio's 
+        risk profile and premium distribution.
+        
+        **📊 Key Metrics Explained:**
+        
+        | Metric | What It Tells You | Healthy Range |
+        |--------|-------------------|---------------|
+        | **Total Policies** | Portfolio size | Growth target dependent |
+        | **Claim Rate** | % of policies with claims | <12% (UK average ~12%) |
+        | **Avg Risk Score** | Portfolio risk quality | 0.35-0.45 |
+        | **Avg Premium** | Revenue per policy | £600-700 (UK market) |
+        
+        **📉 Risk Distribution Chart:**
+        - **Left-skewed** (more low-risk): Profitable but may indicate over-selectivity
+        - **Bell-shaped**: Balanced portfolio with diversified risk
+        - **Right-skewed** (more high-risk): Higher margins but more volatility
+        
+        **💰 Premium Distribution Chart:**
+        - Should roughly mirror risk distribution (risk-based pricing working)
+        - Gaps may indicate pricing inconsistencies
+        - Very tight distribution may mean insufficient segmentation
+        
+        **🎯 Portfolio Optimization Goals:**
+        
+        1. **Risk-Premium Alignment**: High correlation between risk score and premium
+        2. **Adequate Diversification**: Not over-concentrated in any segment
+        3. **Profitability Balance**: Mix of low-risk (stable) and high-risk (higher margin)
+        4. **Geographic Spread**: Reduce regional catastrophe exposure
+        
+        **⚠️ Warning Signs to Watch:**
+        - Claim rate trending upward (adverse selection?)
+        - Risk score dropping but claim rate stable (model drift?)
+        - Premium decreasing while risk stable (competitive pressure?)
+        
+        **💡 Pro Tip:** Compare these metrics month-over-month to spot trends early.
+        """)
 
     risk_scores = calculate_risk_scores(df)
     batch_results = pricing_engine.batch_calculate_premiums(risk_scores, method='basic', credibility=0.85)

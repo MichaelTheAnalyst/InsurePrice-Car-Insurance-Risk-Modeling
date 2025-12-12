@@ -314,3 +314,4 @@ if ($success) {
 } else {
     Write-ColorOutput "❌ Setup failed. Please check the error messages above." "Red"
 }
+

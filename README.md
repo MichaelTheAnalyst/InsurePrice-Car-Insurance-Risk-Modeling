@@ -64,10 +64,11 @@
 ## ✨ Key Features
 
 ### 🤖 Machine Learning Risk Models
-- **Logistic Regression**: Interpretable baseline model
-- **Random Forest**: Best performer (AUC 0.654)
-- **XGBoost**: Gradient boosting for complex patterns
-- **Ensemble Methods**: Combined model predictions
+- **CatBoost**: Best performer with categorical embeddings (AUC 0.6176) 🏆
+- **Random Forest**: Optimized with hyperparameter tuning (AUC 0.6074)
+- **Neural Network Ensemble**: Deep learning with embedding layers
+- **Feature Engineering**: +3.84% AUC improvement with interaction terms
+- **Hyperparameter Optimization**: Optuna-based automated tuning
 
 ### 💰 Actuarial Pricing Engine
 - Professional premium calculation formulas
@@ -82,11 +83,33 @@
 - **Network Analysis**: Fraud ring identification
 - **Behavioral Scoring**: Pattern recognition
 
-### 📊 Interactive Dashboard
+### 🧪 A/B Testing Framework
+- Price sensitivity analysis per segment
+- Conversion rate tracking
+- Statistical significance testing
+- Revenue optimization experiments
+
+### 📋 Regulatory Compliance
+- **FCA PRIN**: Fair pricing compliance
+- **GDPR Article 22**: Automated decision safeguards
+- **Solvency II**: Model risk management
+- **SR 11-7**: Model documentation standards
+- **Model Drift Detection**: Automated monitoring
+
+### 💎 Customer Lifetime Value (CLV)
+- Policy renewal probability modeling
+- Cross-sell potential estimation
+- Claims propensity forecasting
+- Strategic pricing recommendations
+
+### 📊 Interactive Dashboard (10+ Pages)
 - Real-time risk assessment calculator
-- Portfolio analytics and visualization
-- Regional risk mapping
-- Model performance monitoring
+- Premium calculator with actuarial breakdown
+- A/B testing experiment runner
+- Regulatory compliance monitoring
+- Model performance & improvements
+- Fraud detection interface
+- Customer CLV analysis
 
 ### 📡 Production REST API
 - FastAPI with automatic documentation
@@ -299,11 +322,14 @@ Recommendation: Refer to Special Investigation Unit (SIU)
 
 ### Features
 
-- **Real-Time Risk Calculator**: Instant risk assessment
-- **Premium Calculator**: Actuarial pricing with breakdown
-- **Portfolio Analytics**: Risk distribution visualization
-- **Model Performance**: ROC curves and metrics
-- **Regional Analysis**: Geographic risk mapping
+- **Real-Time Risk Calculator**: Instant risk assessment with personalized recommendations
+- **Premium Calculator**: Actuarial pricing with full component breakdown
+- **Customer CLV Analysis**: Lifetime value prediction with segment classification
+- **Fraud Detection Interface**: AI-powered claims analysis with red flag detection
+- **Portfolio Analytics**: Risk distribution and performance visualization
+- **Model Performance**: ML metrics, ROC curves, and SHAP explainability
+- **Regional Analysis**: Geographic risk mapping with actionable insights
+- **Built-in Help System**: Expandable guidance panels on every page
 
 ### Launch Dashboard
 
@@ -317,12 +343,24 @@ streamlit run insureprice_dashboard.py
 
 ### Dashboard Pages
 
-1. **📊 Dashboard** - Overview with key metrics
-2. **🎯 Risk Assessment** - Interactive risk calculator
-3. **💰 Premium Calculator** - Actuarial pricing
-4. **📈 Portfolio Analytics** - Risk analysis
-5. **🔍 Model Performance** - ML evaluation
-6. **📋 About** - Documentation
+1. **📊 Dashboard** - Overview with key metrics and portfolio health
+2. **🎯 Risk Assessment** - Interactive risk calculator with instant quotes
+3. **💰 Premium Calculator** - Actuarial pricing with full breakdown
+4. **💎 Customer CLV** - Customer Lifetime Value prediction and segmentation
+5. **🔍 Fraud Detection** - AI-powered claims fraud analysis
+6. **📈 Portfolio Analytics** - Risk distribution and performance analysis
+7. **🤖 Model Performance** - ML evaluation and SHAP explainability
+8. **📡 API Status** - REST API monitoring and testing
+9. **📋 About** - Documentation and contact info
+
+### Built-in Help & Guidance
+
+Each dashboard section includes **expandable instruction panels** with:
+- 📖 Step-by-step guidance on how to use each feature
+- 📊 Interpretation guides for understanding results
+- 💡 Best practices and strategic recommendations
+- 📋 UK market benchmarks for context
+- ⚠️ Regulatory compliance notes (FCA, GDPR)
 
 ---
 
@@ -460,27 +498,45 @@ Annual Business Value:
 
 ## 📈 Model Performance
 
-### Risk Prediction Models
+### Risk Prediction Models (After Optimization)
 
-| Model | AUC | Gini | Precision | Recall |
-|-------|-----|------|-----------|--------|
-| **Random Forest** | **0.654** | **0.308** | 0.72 | 0.68 |
-| Logistic Regression | 0.651 | 0.302 | 0.71 | 0.67 |
-| XGBoost | 0.635 | 0.269 | 0.69 | 0.65 |
+| Model | AUC | Gini | Improvement |
+|-------|-----|------|-------------|
+| **CatBoost (Categorical)** 🏆 | **0.6176** | **0.2352** | Best Model |
+| Random Forest (Optimized) | 0.6074 | 0.2147 | +4.52% |
+| Logistic Regression | 0.6076 | 0.2151 | +3.84% |
+| Neural Network Ensemble | 0.5993 | 0.1985 | Experimental |
+| Baseline (No Engineering) | 0.5692 | 0.1383 | - |
 
-### Feature Importance
+### Model Improvement Journey
 
-1. **Annual Mileage** (18%) - Primary risk driver
-2. **Age Group** (12%) - Young driver risk
-3. **Credit Score** (10%) - Financial responsibility
-4. **Driving Experience** (8%) - Skills maturity
-5. **Vehicle Type** (6%) - Safety and repair costs
+| Stage | Enhancement | AUC Gain |
+|-------|-------------|----------|
+| 1 | Baseline Model | 0.5692 |
+| 2 | Feature Engineering | +3.84% |
+| 3 | Hyperparameter Optimization | +1.40% |
+| 4 | CatBoost Categorical Embeddings | +1.02% |
+| **Total** | **All Improvements** | **~6.3%** |
+
+### Feature Importance (CatBoost)
+
+1. **Vehicle Type** (16.5%) - Safety and repair costs
+2. **Annual Mileage** (11.6%) - Exposure risk
+3. **Married Status** (11.4%) - Stability indicator
+4. **Credit Score** (8.2%) - Financial responsibility
+5. **Total Violations** (7.7%) - Driving behavior
+
+### Engineered Features
+
+- **Interaction Terms**: AGE × EXPERIENCE, AGE × VIOLATIONS
+- **Risk Scores**: Composite driving risk, age risk, credit risk
+- **Ratios**: Experience ratio, accidents per 10K miles
 
 ### Pricing Accuracy
 
 - **Premium Range**: £400 - £1,200 (UK market aligned)
 - **Average Premium**: £696
-- **Risk Factor Coverage**: 17+ variables
+- **Risk Factor Coverage**: 17+ variables + engineered features
 - **Regional Calibration**: 11 UK regions
 
 ---

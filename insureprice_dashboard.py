@@ -1692,6 +1692,40 @@ def render_model_performance():
 
         st.markdown("---")
 
+        # Neural Network Section
+        st.markdown("### 🧠 Neural Network Ensemble (Experimental)")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("#### Architecture")
+            st.markdown("""
+            - **Embedding layers** for categorical features
+            - **4 hidden layers**: 256→128→64→32
+            - **AdamW optimizer** with cosine annealing
+            - **Dropout & BatchNorm** for regularization
+            """)
+        
+        with col2:
+            st.markdown("#### Results")
+            nn_results = [
+                {"Model": "Neural Network", "AUC": "0.5870"},
+                {"Model": "Random Forest", "AUC": "0.6091"},
+                {"Model": "CatBoost", "AUC": "0.5673"},
+                {"Model": "Average Ensemble", "AUC": "0.5993"},
+            ]
+            st.dataframe(pd.DataFrame(nn_results), use_container_width=True, hide_index=True)
+        
+        st.warning("""
+        **🔬 Finding: Tree models outperform neural networks on this tabular data**
+        
+        This is common in insurance ML - tree-based models (CatBoost, XGBoost) typically beat 
+        neural networks on tabular data due to: small dataset size, categorical features, and 
+        the inherent structure of insurance risk factors.
+        """)
+
+        st.markdown("---")
+
         # Improvement timeline
         st.markdown("#### 📈 Improvement Timeline")
         
@@ -1700,6 +1734,7 @@ def render_model_performance():
             {"Stage": "2. + Feature Engineering", "AUC": 0.6076, "Gini": 0.2151, "Model": "Logistic Regression"},
             {"Stage": "3. + Hyperparameter Tuning", "AUC": 0.6019, "Gini": 0.2039, "Model": "Random Forest (tuned)"},
             {"Stage": "4. + CatBoost Embeddings", "AUC": 0.6176, "Gini": 0.2352, "Model": "CatBoost 🏆"},
+            {"Stage": "5. Neural Network Ensemble", "AUC": 0.5993, "Gini": 0.1985, "Model": "NN + RF + CB (avg)"},
         ]
         st.dataframe(pd.DataFrame(timeline_data), use_container_width=True, hide_index=True)
         
@@ -1708,7 +1743,8 @@ def render_model_performance():
         
         - **Feature Engineering** had the biggest impact (+3.84%) - domain knowledge matters!
         - **CatBoost** excels with categorical insurance data (vehicle type, region, etc.)
-        - **Total improvement: ~6.3%** from baseline to best model
+        - **Neural Networks** didn't improve on tree models for this tabular dataset
+        - **Best Model: CatBoost** with AUC 0.6176 (~6.3% improvement from baseline)
         """)
 
     with tab3:

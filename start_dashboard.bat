@@ -84,3 +84,4 @@ echo.
 echo 👋 Dashboard stopped successfully
 echo Press any key to exit...
 pause >nul
+

@@ -214,3 +214,4 @@ try {
 } finally {
     Write-Log "👋 Dashboard launcher finished" "INFO"
 }
+

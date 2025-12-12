@@ -21,3 +21,4 @@ try:
 except Exception as e:
     print(f"❌ Connection error: {e}")
     print("Make sure to start the API server with: python run_api.py")
+

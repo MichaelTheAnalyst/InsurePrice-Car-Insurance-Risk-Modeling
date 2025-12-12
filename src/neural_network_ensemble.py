@@ -2,12 +2,51 @@
 Neural Network Ensemble for Insurance Risk Modeling
 =====================================================
 
-Combines deep learning with traditional ML models:
-- Neural network with categorical embeddings
-- Ensemble with CatBoost and Random Forest
-- Stacking for optimal predictions
+OVERVIEW
+--------
+This module implements an advanced ensemble approach for predicting insurance claim 
+risk by combining deep learning with traditional machine learning models. The ensemble
+strategy typically outperforms any single model by leveraging the strengths of different
+algorithmic approaches.
 
-Expected AUC improvement: +3-5%
+MODELS INCLUDED
+---------------
+1. Neural Network with Categorical Embeddings
+   - Learns dense representations of categorical features (e.g., vehicle type, region)
+   - Captures non-linear interactions between features
+   - Deep architecture with batch normalization and dropout for regularization
+
+2. Random Forest
+   - Robust tree-based ensemble that handles feature interactions naturally
+   - Less prone to overfitting with proper hyperparameter tuning
+   - Provides feature importance rankings
+
+3. CatBoost (if available)
+   - State-of-the-art gradient boosting algorithm
+   - Excellent handling of categorical features
+   - Often achieves best individual model performance
+
+4. Meta-Learner (Stacking)
+   - Logistic regression that learns optimal weights for combining model predictions
+   - Produces final calibrated probability estimates
+
+WHY ENSEMBLE?
+-------------
+- Different models capture different patterns in the data
+- Reduces variance and can reduce bias
+- More robust predictions than single models
+- Typical AUC improvement: +3-5% over single best model
+
+HOW TO USE
+----------
+1. Basic usage:
+   >>> from neural_network_ensemble import NeuralNetworkEnsemble, load_data
+   >>> df = load_data()
+   >>> ensemble = NeuralNetworkEnsemble()
+   >>> results = ensemble.train_ensemble(df)
+
+2. Run as standalone script:
+   $ python neural_network_ensemble.py
 
 Author: Masood Nazari
 Business Intelligence Analyst | Data Science | AI | Clinical Research

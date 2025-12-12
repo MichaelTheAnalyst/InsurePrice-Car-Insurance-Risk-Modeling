@@ -345,3 +345,4 @@ async def get_fraud_keywords():
 
 # Initialize engine when module loads
 initialize_fraud_engine()
+
