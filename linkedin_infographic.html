@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsurePrice - LinkedIn Infographic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .infographic {
+            width: 1080px;
+            height: 1350px;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            border-radius: 24px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animated background elements */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .bg-glow-1 {
+            background: #3b82f6;
+            top: -200px;
+            right: -200px;
+        }
+
+        .bg-glow-2 {
+            background: #8b5cf6;
+            bottom: -200px;
+            left: -200px;
+        }
+
+        .bg-glow-3 {
+            background: #06b6d4;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            opacity: 0.08;
+        }
+
+        /* Grid pattern overlay */
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .title .highlight {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .stat-value.blue { color: #3b82f6; }
+        .stat-value.purple { color: #8b5cf6; }
+        .stat-value.cyan { color: #06b6d4; }
+
+        .stat-label {
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Features Grid */
+        .features-section {
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:nth-child(1) { --accent: #3b82f6; }
+        .feature-card:nth-child(2) { --accent: #8b5cf6; }
+        .feature-card:nth-child(3) { --accent: #06b6d4; }
+        .feature-card:nth-child(4) { --accent: #10b981; }
+        .feature-card:nth-child(5) { --accent: #f59e0b; }
+        .feature-card:nth-child(6) { --accent: #ef4444; }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .feature-metric {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #06b6d4;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .author-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Decorative elements */
+        .corner-accent {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .corner-accent-1 {
+            top: -100px;
+            right: -100px;
+        }
+
+        .corner-accent-2 {
+            bottom: -100px;
+            left: -100px;
+        }
+
+        /* Print/Screenshot optimization */
+        @media print {
+            body {
+                background: #0f172a;
+            }
+            .infographic {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <!-- Background Effects -->
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+        <div class="bg-glow bg-glow-3"></div>
+        <div class="grid-overlay"></div>
+        <div class="corner-accent corner-accent-1"></div>
+        <div class="corner-accent corner-accent-2"></div>
+
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <div class="badge">🚀 Data Science Project</div>
+                <h1 class="title">
+                    <span class="highlight">InsurePrice</span><br>
+                    AI Insurance Platform
+                </h1>
+                <p class="subtitle">Enterprise-Grade Risk Modeling & Pricing Engine</p>
+            </div>
+
+            <!-- Key Stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-value blue">0.6176</div>
+                    <div class="stat-label">AUC Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value purple">£2.06M</div>
+                    <div class="stat-label">Annual Value</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value cyan">8.4%</div>
+                    <div class="stat-label">Profit Margin</div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-section">
+                <div class="section-title">Core Capabilities</div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-title">6 ML Models</div>
+                        <div class="feature-desc">CatBoost, Neural Networks, Random Forest, XGBoost + Ensemble</div>
+                        <div class="feature-metric">+8.5% AUC lift</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-title">Fraud Detection</div>
+                        <div class="feature-desc">NLP analysis, anomaly detection, network analysis for fraud rings</div>
+                        <div class="feature-metric">£60M savings</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Actuarial Pricing</div>
+                        <div class="feature-desc">Monte Carlo simulation, loss ratios, combined ratio analysis</div>
+                        <div class="feature-metric">200ms quotes</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <div class="feature-title">Customer CLV</div>
+                        <div class="feature-desc">Lifetime value prediction, segment scoring, retention strategy</div>
+                        <div class="feature-metric">4 segments</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <div class="feature-title">Explainable AI</div>
+                        <div class="feature-desc">SHAP analysis, feature importance, FCA-compliant decisions</div>
+                        <div class="feature-metric">100% transparent</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📡</div>
+                        <div class="feature-title">Production API</div>
+                        <div class="feature-desc">FastAPI backend, real-time scoring, Swagger documentation</div>
+                        <div class="feature-metric">500 req/sec</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">CatBoost</span>
+                <span class="tech-pill">PyTorch</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">Streamlit</span>
+                <span class="tech-pill">SHAP</span>
+                <span class="tech-pill">Optuna</span>
+                <span class="tech-pill">Plotly</span>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="author">
+                    <div class="author-avatar">MN</div>
+                    <div class="author-info">
+                        <h3>Masood Nazari</h3>
+                        <p>BI Analyst | Data Science | AI</p>
+                    </div>
+                </div>
+                <a href="#" class="cta">
+                    View Full Project →
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
