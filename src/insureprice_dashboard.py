@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 """
-🚗 InsurePrice Interactive Dashboard
-====================================
+InsurePrice Interactive Dashboard
+==================================
 
 A comprehensive, AI-powered car insurance platform featuring:
 - Real-time risk assessment and premium calculation
@@ -32,9 +33,16 @@ import sys
 import os
 warnings.filterwarnings('ignore')
 
-# Add parent directory to path for imports
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+# Add directories to path for imports
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Check if we're in src/ or root
+if os.path.basename(CURRENT_DIR) == 'src':
+    PROJECT_ROOT = os.path.dirname(CURRENT_DIR)
+else:
+    PROJECT_ROOT = CURRENT_DIR
+    
+SRC_DIR = os.path.join(PROJECT_ROOT, 'src')
+
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 if SRC_DIR not in sys.path:
@@ -1647,11 +1655,11 @@ def render_premium_calculator(pricing_engine):
 
 
 def render_portfolio_analytics(df, pricing_engine):
-    """Portfolio analytics page"""
+    """Portfolio analytics page - Enhanced deep-dive analysis"""
     st.markdown("""
     <div class="main-header">
         <h1>📈 Portfolio Analytics</h1>
-        <p>Comprehensive risk and performance analysis</p>
+        <p>Comprehensive risk, performance, and profitability analysis</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1660,69 +1668,617 @@ def render_portfolio_analytics(df, pricing_engine):
         st.markdown("""
         ### 📈 Portfolio Analytics Guide
         
-        This page provides a **bird's-eye view** of your entire insurance portfolio's 
-        risk profile and premium distribution.
+        This page provides **deep-dive analysis** of your insurance portfolio covering:
         
-        **📊 Key Metrics Explained:**
+        **📊 Section Overview:**
         
-        | Metric | What It Tells You | Healthy Range |
-        |--------|-------------------|---------------|
-        | **Total Policies** | Portfolio size | Growth target dependent |
-        | **Claim Rate** | % of policies with claims | <12% (UK average ~12%) |
-        | **Avg Risk Score** | Portfolio risk quality | 0.35-0.45 |
-        | **Avg Premium** | Revenue per policy | £600-700 (UK market) |
+        | Section | What It Shows | Key Decisions It Supports |
+        |---------|---------------|---------------------------|
+        | **Executive Summary** | High-level KPIs | Board reporting, quick health check |
+        | **Financial Performance** | Loss ratio, combined ratio | Profitability monitoring |
+        | **Risk Distribution** | Portfolio risk profile | Underwriting strategy |
+        | **Segment Analysis** | Performance by demographics | Pricing adjustments |
+        | **Geographic Analysis** | Regional concentration | Catastrophe risk management |
+        | **Profitability Matrix** | Segment-level P&L | Portfolio optimization |
+        | **Risk-Premium Alignment** | Pricing effectiveness | Rate adequacy review |
+        | **Monte Carlo Projection** | Future profit scenarios | Capital planning |
         
-        **📉 Risk Distribution Chart:**
-        - **Left-skewed** (more low-risk): Profitable but may indicate over-selectivity
-        - **Bell-shaped**: Balanced portfolio with diversified risk
-        - **Right-skewed** (more high-risk): Higher margins but more volatility
+        **🎯 Key Actuarial Ratios:**
         
-        **💰 Premium Distribution Chart:**
-        - Should roughly mirror risk distribution (risk-based pricing working)
-        - Gaps may indicate pricing inconsistencies
-        - Very tight distribution may mean insufficient segmentation
+        | Ratio | Formula | Target | Concern Level |
+        |-------|---------|--------|---------------|
+        | **Loss Ratio** | Claims / Premium | <65% | >75% |
+        | **Expense Ratio** | Expenses / Premium | <30% | >35% |
+        | **Combined Ratio** | Loss + Expense | <95% | >100% |
+        | **Profit Margin** | 1 - Combined Ratio | >5% | <0% |
         
-        **🎯 Portfolio Optimization Goals:**
-        
-        1. **Risk-Premium Alignment**: High correlation between risk score and premium
-        2. **Adequate Diversification**: Not over-concentrated in any segment
-        3. **Profitability Balance**: Mix of low-risk (stable) and high-risk (higher margin)
-        4. **Geographic Spread**: Reduce regional catastrophe exposure
-        
-        **⚠️ Warning Signs to Watch:**
-        - Claim rate trending upward (adverse selection?)
-        - Risk score dropping but claim rate stable (model drift?)
-        - Premium decreasing while risk stable (competitive pressure?)
-        
-        **💡 Pro Tip:** Compare these metrics month-over-month to spot trends early.
+        **💡 How to Use This Page:**
+        1. Start with **Executive Summary** for quick health check
+        2. Dive into **Segment Analysis** to identify problem areas
+        3. Use **Profitability Matrix** to find optimization opportunities
+        4. Check **Monte Carlo** for risk-adjusted capital needs
         """)
 
+    # Calculate core metrics
     risk_scores = calculate_risk_scores(df)
     batch_results = pricing_engine.batch_calculate_premiums(risk_scores, method='basic', credibility=0.85)
+    df['risk_score'] = risk_scores
+    df['premium'] = batch_results['calculated_premium']
+    
+    # Financial calculations
+    avg_severity = 3500  # Base claim severity
+    total_premium = df['premium'].sum()
+    expected_claims = (df['OUTCOME'] * avg_severity).sum()
+    actual_claim_rate = df['OUTCOME'].mean()
+    
+    loss_ratio = expected_claims / total_premium if total_premium > 0 else 0
+    expense_ratio = 0.28  # Industry standard
+    combined_ratio = loss_ratio + expense_ratio
+    profit_margin = 1 - combined_ratio
+    
+    # ==================== EXECUTIVE SUMMARY ====================
+    st.markdown("### 📊 Executive Summary")
+    
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    with col1:
+        st.metric("Total Policies", f"{len(df):,}", help="Number of active policies in portfolio")
+    with col2:
+        claim_delta = f"{(actual_claim_rate - 0.12)*100:+.1f}%" if actual_claim_rate != 0.12 else "On target"
+        st.metric("Claim Rate", f"{actual_claim_rate*100:.1f}%", delta=claim_delta, delta_color="inverse")
+    with col3:
+        st.metric("Avg Premium", f"£{df['premium'].mean():.0f}", help="Average annual premium")
+    with col4:
+        st.metric("Total GWP", f"£{total_premium/1e6:.2f}M", help="Gross Written Premium")
+    with col5:
+        margin_color = "normal" if profit_margin > 0.05 else "inverse"
+        st.metric("Profit Margin", f"{profit_margin*100:.1f}%", delta_color=margin_color)
+
+    # ==================== FINANCIAL PERFORMANCE ====================
+    st.markdown("### 💰 Financial Performance")
+    
+    with st.expander("ℹ️ **Understanding Financial Ratios** - Click to learn more"):
+        st.markdown("""
+        **Loss Ratio** = Total Claims / Total Premium
+        - Measures how much of premium goes to paying claims
+        - Lower is better (more profit retained)
+        - UK motor average: 65-70%
+        
+        **Combined Ratio** = Loss Ratio + Expense Ratio  
+        - Total cost per £1 of premium
+        - <100% means profit, >100% means loss
+        - Target: <95% for healthy margin
+        
+        **Expense Ratio** = Operating Costs / Premium
+        - Acquisition, admin, claims handling costs
+        - Industry benchmark: 25-30%
+        """)
     
     col1, col2, col3, col4 = st.columns(4)
+    
     with col1:
-        st.metric("Total Policies", f"{len(df):,}")
+        loss_color = COLORS['accent_green'] if loss_ratio < 0.65 else COLORS['accent_orange'] if loss_ratio < 0.75 else COLORS['warning_red']
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {loss_color}">
+            <h3>📉 Loss Ratio</h3>
+            <h2 style="color: {loss_color}">{loss_ratio*100:.1f}%</h2>
+            <p>Target: &lt;65%</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
     with col2:
-        st.metric("Claim Rate", f"{df['OUTCOME'].mean()*100:.1f}%")
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>📋 Expense Ratio</h3>
+            <h2 style="color: {COLORS['secondary_blue']}">{expense_ratio*100:.1f}%</h2>
+            <p>Industry: 28%</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
     with col3:
-        st.metric("Avg Risk Score", f"{risk_scores.mean():.3f}")
+        combined_color = COLORS['accent_green'] if combined_ratio < 0.95 else COLORS['accent_orange'] if combined_ratio < 1.0 else COLORS['warning_red']
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {combined_color}">
+            <h3>⚖️ Combined Ratio</h3>
+            <h2 style="color: {combined_color}">{combined_ratio*100:.1f}%</h2>
+            <p>Target: &lt;95%</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
     with col4:
-        st.metric("Avg Premium", f"£{batch_results['calculated_premium'].mean():.0f}")
+        profit_color = COLORS['accent_green'] if profit_margin > 0.08 else COLORS['accent_orange'] if profit_margin > 0 else COLORS['warning_red']
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {profit_color}">
+            <h3>📈 Underwriting Profit</h3>
+            <h2 style="color: {profit_color}">£{(total_premium * profit_margin)/1000:.0f}K</h2>
+            <p>Margin: {profit_margin*100:.1f}%</p>
+        </div>
+        """, unsafe_allow_html=True)
 
+    # ==================== RISK & PREMIUM DISTRIBUTION ====================
+    st.markdown("### 📊 Risk & Premium Distribution")
+    
     col1, col2 = st.columns(2)
     
     with col1:
+        # Risk distribution with segments
         fig = go.Figure()
-        fig.add_trace(go.Histogram(x=risk_scores, nbinsx=25, marker_color=COLORS['secondary_blue']))
-        fig.update_layout(title="Risk Distribution", xaxis_title="Risk Score", template="plotly_white", height=350)
+        
+        low_risk = risk_scores[risk_scores < 0.4]
+        med_risk = risk_scores[(risk_scores >= 0.4) & (risk_scores < 0.7)]
+        high_risk = risk_scores[risk_scores >= 0.7]
+        
+        fig.add_trace(go.Histogram(x=low_risk, name='Low Risk', marker_color=COLORS['accent_green'], opacity=0.7))
+        fig.add_trace(go.Histogram(x=med_risk, name='Medium Risk', marker_color=COLORS['accent_orange'], opacity=0.7))
+        fig.add_trace(go.Histogram(x=high_risk, name='High Risk', marker_color=COLORS['warning_red'], opacity=0.7))
+        
+        fig.update_layout(
+            title="Risk Score Distribution by Category",
+            xaxis_title="Risk Score",
+            yaxis_title="Policy Count",
+            barmode='overlay',
+            template="plotly_white",
+            height=350,
+            legend=dict(orientation="h", yanchor="bottom", y=1.02)
+        )
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Risk segment summary
+        st.markdown(f"""
+        | Segment | Count | % of Portfolio | Avg Premium |
+        |---------|-------|----------------|-------------|
+        | 🟢 Low Risk | {len(low_risk):,} | {len(low_risk)/len(df)*100:.1f}% | £{df[df['risk_score']<0.4]['premium'].mean():.0f} |
+        | 🟠 Medium Risk | {len(med_risk):,} | {len(med_risk)/len(df)*100:.1f}% | £{df[(df['risk_score']>=0.4)&(df['risk_score']<0.7)]['premium'].mean():.0f} |
+        | 🔴 High Risk | {len(high_risk):,} | {len(high_risk)/len(df)*100:.1f}% | £{df[df['risk_score']>=0.7]['premium'].mean():.0f} |
+        """)
 
     with col2:
+        # Premium distribution
         fig = go.Figure()
-        fig.add_trace(go.Histogram(x=batch_results['calculated_premium'], nbinsx=25, marker_color=COLORS['accent_green']))
-        fig.update_layout(title="Premium Distribution", xaxis_title="Premium (£)", template="plotly_white", height=350)
+        fig.add_trace(go.Histogram(
+            x=df['premium'],
+            nbinsx=30,
+            marker_color=COLORS['premium_purple'],
+            opacity=0.8
+        ))
+        
+        # Add vertical lines for benchmarks
+        fig.add_vline(x=df['premium'].mean(), line_dash="dash", line_color=COLORS['warning_red'], 
+                      annotation_text=f"Mean: £{df['premium'].mean():.0f}")
+        fig.add_vline(x=df['premium'].median(), line_dash="dot", line_color=COLORS['accent_green'],
+                      annotation_text=f"Median: £{df['premium'].median():.0f}")
+        
+        fig.update_layout(
+            title="Premium Distribution",
+            xaxis_title="Annual Premium (£)",
+            yaxis_title="Policy Count",
+            template="plotly_white",
+            height=350
+        )
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Premium stats
+        st.markdown(f"""
+        | Statistic | Value |
+        |-----------|-------|
+        | Mean Premium | £{df['premium'].mean():.0f} |
+        | Median Premium | £{df['premium'].median():.0f} |
+        | Std Deviation | £{df['premium'].std():.0f} |
+        | Min Premium | £{df['premium'].min():.0f} |
+        | Max Premium | £{df['premium'].max():.0f} |
+        """)
+
+    # ==================== SEGMENT ANALYSIS ====================
+    st.markdown("### 👥 Segment Performance Analysis")
+    
+    with st.expander("ℹ️ **How to Read Segment Analysis**"):
+        st.markdown("""
+        **What to look for:**
+        - **High claim rate + Low premium** = Underpriced segment (ACTION NEEDED)
+        - **Low claim rate + High premium** = Profitable segment (protect & grow)
+        - **High concentration** = Diversification risk
+        
+        **Color coding:**
+        - 🟢 Green: Performing well
+        - 🟠 Orange: Watch closely
+        - 🔴 Red: Action required
+        """)
+    
+    tab1, tab2, tab3 = st.tabs(["📅 By Age Group", "🗺️ By Region", "🚗 By Vehicle Type"])
+    
+    with tab1:
+        age_analysis = df.groupby('AGE').agg({
+            'OUTCOME': ['mean', 'sum', 'count'],
+            'premium': 'mean',
+            'risk_score': 'mean'
+        }).round(3)
+        age_analysis.columns = ['Claim_Rate', 'Total_Claims', 'Policy_Count', 'Avg_Premium', 'Avg_Risk']
+        age_analysis['Claim_Rate'] = age_analysis['Claim_Rate'] * 100
+        age_analysis['% of Portfolio'] = (age_analysis['Policy_Count'] / len(df) * 100).round(1)
+        age_analysis = age_analysis.reset_index()
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            fig = go.Figure()
+            colors = [COLORS['warning_red'] if r > 14 else COLORS['accent_orange'] if r > 11 else COLORS['accent_green'] 
+                     for r in age_analysis['Claim_Rate']]
+            fig.add_trace(go.Bar(
+                x=age_analysis['AGE'],
+                y=age_analysis['Claim_Rate'],
+                marker_color=colors,
+                text=[f"{r:.1f}%" for r in age_analysis['Claim_Rate']],
+                textposition='outside'
+            ))
+            fig.update_layout(title="Claim Rate by Age Group", yaxis_title="Claim Rate (%)", 
+                            template="plotly_white", height=350)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with col2:
+            fig = go.Figure()
+            fig.add_trace(go.Bar(
+                x=age_analysis['AGE'],
+                y=age_analysis['Avg_Premium'],
+                marker_color=COLORS['secondary_blue'],
+                text=[f"£{p:.0f}" for p in age_analysis['Avg_Premium']],
+                textposition='outside'
+            ))
+            fig.update_layout(title="Average Premium by Age Group", yaxis_title="Premium (£)", 
+                            template="plotly_white", height=350)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        st.dataframe(age_analysis[['AGE', 'Policy_Count', '% of Portfolio', 'Claim_Rate', 'Avg_Premium', 'Avg_Risk']], 
+                    use_container_width=True, hide_index=True)
+    
+    with tab2:
+        region_analysis = df.groupby('REGION').agg({
+            'OUTCOME': ['mean', 'count'],
+            'premium': 'mean',
+            'risk_score': 'mean'
+        }).round(3)
+        region_analysis.columns = ['Claim_Rate', 'Policy_Count', 'Avg_Premium', 'Avg_Risk']
+        region_analysis['Claim_Rate'] = region_analysis['Claim_Rate'] * 100
+        region_analysis['% of Portfolio'] = (region_analysis['Policy_Count'] / len(df) * 100).round(1)
+        region_analysis = region_analysis.reset_index().sort_values('Claim_Rate', ascending=False)
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            fig = go.Figure()
+            colors = [COLORS['warning_red'] if r > 14 else COLORS['accent_orange'] if r > 11 else COLORS['accent_green'] 
+                     for r in region_analysis['Claim_Rate']]
+            fig.add_trace(go.Bar(
+                y=region_analysis['REGION'],
+                x=region_analysis['Claim_Rate'],
+                orientation='h',
+                marker_color=colors,
+                text=[f"{r:.1f}%" for r in region_analysis['Claim_Rate']],
+                textposition='outside'
+            ))
+            fig.update_layout(title="Claim Rate by Region", xaxis_title="Claim Rate (%)", 
+                            template="plotly_white", height=400)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with col2:
+            # Concentration risk pie chart
+            fig = go.Figure(data=[go.Pie(
+                labels=region_analysis['REGION'],
+                values=region_analysis['Policy_Count'],
+                hole=0.4,
+                textinfo='percent+label'
+            )])
+            fig.update_layout(title="Geographic Concentration", height=400)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        # Concentration warning
+        max_concentration = region_analysis['% of Portfolio'].max()
+        if max_concentration > 25:
+            st.warning(f"⚠️ **Concentration Risk**: {region_analysis.iloc[0]['REGION']} represents {max_concentration:.1f}% of portfolio. Consider diversification.")
+    
+    with tab3:
+        vehicle_analysis = df.groupby('VEHICLE_TYPE').agg({
+            'OUTCOME': ['mean', 'count'],
+            'premium': 'mean',
+            'risk_score': 'mean'
+        }).round(3)
+        vehicle_analysis.columns = ['Claim_Rate', 'Policy_Count', 'Avg_Premium', 'Avg_Risk']
+        vehicle_analysis['Claim_Rate'] = vehicle_analysis['Claim_Rate'] * 100
+        vehicle_analysis['% of Portfolio'] = (vehicle_analysis['Policy_Count'] / len(df) * 100).round(1)
+        vehicle_analysis = vehicle_analysis.reset_index().sort_values('Claim_Rate', ascending=False)
+        
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=vehicle_analysis['Avg_Premium'],
+            y=vehicle_analysis['Claim_Rate'],
+            mode='markers+text',
+            marker=dict(
+                size=vehicle_analysis['Policy_Count'] / 50,
+                color=vehicle_analysis['Avg_Risk'],
+                colorscale='RdYlGn_r',
+                showscale=True,
+                colorbar=dict(title="Risk Score")
+            ),
+            text=vehicle_analysis['VEHICLE_TYPE'],
+            textposition='top center'
+        ))
+        fig.update_layout(
+            title="Vehicle Type: Premium vs Claim Rate (bubble size = policy count)",
+            xaxis_title="Average Premium (£)",
+            yaxis_title="Claim Rate (%)",
+            template="plotly_white",
+            height=450
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+    # ==================== RISK-PREMIUM ALIGNMENT ====================
+    st.markdown("### 🎯 Risk-Premium Alignment")
+    
+    with st.expander("ℹ️ **Understanding Risk-Premium Alignment**"):
+        st.markdown("""
+        **What this shows:** How well your premiums correlate with risk scores.
+        
+        **Ideal scenario:** Strong positive correlation (r > 0.8) - higher risk = higher premium
+        
+        **Warning signs:**
+        - Flat line = No risk differentiation in pricing
+        - Scattered points = Inconsistent pricing
+        - Negative correlation = Inverted pricing (serious issue!)
+        
+        **The regression line** shows the expected premium for each risk level.
+        Points far from the line indicate pricing anomalies.
+        """)
+    
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        # Sample for performance
+        sample_df = df.sample(min(2000, len(df)))
+        
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=sample_df['risk_score'],
+            y=sample_df['premium'],
+            mode='markers',
+            marker=dict(
+                color=sample_df['OUTCOME'],
+                colorscale=[[0, COLORS['accent_green']], [1, COLORS['warning_red']]],
+                size=6,
+                opacity=0.6
+            ),
+            name='Policies',
+            hovertemplate='Risk: %{x:.2f}<br>Premium: £%{y:.0f}<br>Claim: %{marker.color}'
+        ))
+        
+        # Add trend line
+        z = np.polyfit(sample_df['risk_score'], sample_df['premium'], 1)
+        p = np.poly1d(z)
+        x_line = np.linspace(sample_df['risk_score'].min(), sample_df['risk_score'].max(), 100)
+        fig.add_trace(go.Scatter(
+            x=x_line,
+            y=p(x_line),
+            mode='lines',
+            line=dict(color=COLORS['warning_red'], width=3, dash='dash'),
+            name='Trend Line'
+        ))
+        
+        fig.update_layout(
+            title="Risk Score vs Premium (Green=No Claim, Red=Claim)",
+            xaxis_title="Risk Score",
+            yaxis_title="Premium (£)",
+            template="plotly_white",
+            height=450
+        )
+        st.plotly_chart(fig, use_container_width=True)
+    
+    with col2:
+        correlation = df['risk_score'].corr(df['premium'])
+        
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>📊 Correlation</h3>
+            <h2 style="color: {'#059669' if correlation > 0.7 else '#ea580c' if correlation > 0.4 else '#dc2626'}">{correlation:.3f}</h2>
+            <p>{'Strong' if correlation > 0.7 else 'Moderate' if correlation > 0.4 else 'Weak'} alignment</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Interpretation
+        if correlation > 0.7:
+            st.success("✅ **Excellent pricing alignment** - Risk is well reflected in premiums")
+        elif correlation > 0.4:
+            st.info("📊 **Moderate alignment** - Consider reviewing pricing factors")
+        else:
+            st.warning("⚠️ **Weak alignment** - Pricing may not adequately reflect risk")
+        
+        # Additional stats
+        st.markdown(f"""
+        **Pricing Statistics:**
+        - Premium per 0.1 risk: £{z[0]*0.1:.0f}
+        - Base premium: £{z[1]:.0f}
+        - R-squared: {correlation**2:.3f}
+        """)
+
+    # ==================== PROFITABILITY MATRIX ====================
+    st.markdown("### 💎 Profitability Matrix")
+    
+    with st.expander("ℹ️ **How to Read the Profitability Matrix**"):
+        st.markdown("""
+        **This heatmap shows expected profit margin by Age and Region.**
+        
+        **Color interpretation:**
+        - 🟢 **Green** = Profitable segments (target for growth)
+        - 🟡 **Yellow** = Break-even segments (monitor closely)
+        - 🔴 **Red** = Unprofitable segments (review pricing or exit)
+        
+        **Strategic actions:**
+        - Expand marketing in green segments
+        - Increase rates in red segments
+        - Investigate yellow segments for optimization
+        """)
+    
+    # Calculate profitability by Age x Region
+    profit_matrix = df.groupby(['AGE', 'REGION']).apply(
+        lambda x: (x['premium'].mean() - x['OUTCOME'].mean() * avg_severity) / x['premium'].mean() * 100
+    ).unstack(fill_value=0)
+    
+    fig = go.Figure(data=go.Heatmap(
+        z=profit_matrix.values,
+        x=profit_matrix.columns,
+        y=profit_matrix.index,
+        colorscale='RdYlGn',
+        zmid=10,
+        text=np.round(profit_matrix.values, 1),
+        texttemplate='%{text}%',
+        textfont={"size": 10},
+        colorbar=dict(title="Profit Margin %")
+    ))
+    
+    fig.update_layout(
+        title="Expected Profit Margin by Age Group and Region",
+        xaxis_title="Region",
+        yaxis_title="Age Group",
+        template="plotly_white",
+        height=400
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    # ==================== MONTE CARLO PROJECTION ====================
+    st.markdown("### 🎲 Monte Carlo Profit Projection")
+    
+    with st.expander("ℹ️ **Understanding Monte Carlo Simulation**"):
+        st.markdown("""
+        **What is Monte Carlo simulation?**
+        
+        We run 1,000 random scenarios to project possible portfolio outcomes, 
+        accounting for uncertainty in:
+        - Claim frequency variation
+        - Claim severity variation
+        - Portfolio mix changes
+        
+        **Key outputs:**
+        - **Expected Profit**: Most likely outcome
+        - **95% VaR**: Worst case in 95% of scenarios
+        - **Profit Distribution**: Range of possible outcomes
+        
+        **Use this for:**
+        - Capital planning and reserving
+        - Risk appetite decisions
+        - Reinsurance strategy
+        """)
+    
+    # Simple Monte Carlo simulation
+    n_simulations = 1000
+    base_premium = total_premium
+    base_claims = expected_claims
+    
+    np.random.seed(42)
+    simulated_profits = []
+    
+    for _ in range(n_simulations):
+        # Simulate claim frequency variation (+/- 20%)
+        freq_factor = np.random.normal(1, 0.1)
+        # Simulate severity variation (+/- 15%)
+        sev_factor = np.random.normal(1, 0.08)
+        
+        sim_claims = base_claims * freq_factor * sev_factor
+        sim_profit = base_premium - sim_claims - (base_premium * expense_ratio)
+        simulated_profits.append(sim_profit / 1000)  # Convert to thousands
+    
+    simulated_profits = np.array(simulated_profits)
+    
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        fig = go.Figure()
+        fig.add_trace(go.Histogram(
+            x=simulated_profits,
+            nbinsx=50,
+            marker_color=COLORS['premium_purple'],
+            opacity=0.7
+        ))
+        
+        # Add VaR line
+        var_95 = np.percentile(simulated_profits, 5)
+        fig.add_vline(x=var_95, line_dash="dash", line_color=COLORS['warning_red'],
+                     annotation_text=f"95% VaR: £{var_95:.0f}K")
+        
+        # Add expected value
+        expected = np.mean(simulated_profits)
+        fig.add_vline(x=expected, line_dash="solid", line_color=COLORS['accent_green'],
+                     annotation_text=f"Expected: £{expected:.0f}K")
+        
+        fig.update_layout(
+            title="Simulated Annual Profit Distribution (1,000 scenarios)",
+            xaxis_title="Profit (£000s)",
+            yaxis_title="Frequency",
+            template="plotly_white",
+            height=400
+        )
+        st.plotly_chart(fig, use_container_width=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>📊 Expected Profit</h3>
+            <h2 style="color: {COLORS['accent_green']}">£{expected:.0f}K</h2>
+            <p>Mean of simulations</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {COLORS['warning_red']}">
+            <h3>⚠️ 95% VaR</h3>
+            <h2 style="color: {COLORS['warning_red']}">£{var_95:.0f}K</h2>
+            <p>Worst 5% scenarios</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        prob_profit = (simulated_profits > 0).mean() * 100
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3>✅ Profit Probability</h3>
+            <h2 style="color: {COLORS['secondary_blue']}">{prob_profit:.1f}%</h2>
+            <p>Chance of profit</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # ==================== ACTIONABLE INSIGHTS ====================
+    st.markdown("### 💡 Actionable Insights")
+    
+    insights = []
+    
+    # Check loss ratio
+    if loss_ratio > 0.70:
+        insights.append(("🔴", "High Loss Ratio", f"Loss ratio of {loss_ratio*100:.1f}% exceeds 70% threshold. Review underwriting criteria and consider rate increases."))
+    elif loss_ratio > 0.65:
+        insights.append(("🟠", "Elevated Loss Ratio", f"Loss ratio of {loss_ratio*100:.1f}% approaching concerning levels. Monitor closely."))
+    else:
+        insights.append(("🟢", "Healthy Loss Ratio", f"Loss ratio of {loss_ratio*100:.1f}% is within target range."))
+    
+    # Check concentration
+    max_region_pct = region_analysis['% of Portfolio'].max()
+    if max_region_pct > 30:
+        insights.append(("🔴", "High Geographic Concentration", f"Single region represents {max_region_pct:.1f}% of portfolio. Catastrophe risk is elevated."))
+    elif max_region_pct > 20:
+        insights.append(("🟠", "Moderate Concentration", f"Consider expanding in underrepresented regions for better diversification."))
+    
+    # Check risk-premium correlation
+    if correlation < 0.5:
+        insights.append(("🔴", "Pricing Misalignment", "Risk scores not well reflected in premiums. Urgent pricing review needed."))
+    elif correlation < 0.7:
+        insights.append(("🟠", "Pricing Can Be Improved", "Consider adding more risk factors to pricing model."))
+    
+    # Check high-risk segment
+    high_risk_pct = len(high_risk) / len(df) * 100
+    if high_risk_pct > 25:
+        insights.append(("🟠", "High-Risk Exposure", f"{high_risk_pct:.1f}% of portfolio is high-risk. Ensure adequate pricing and reserves."))
+    
+    for icon, title, description in insights:
+        if icon == "🔴":
+            st.error(f"**{icon} {title}**: {description}")
+        elif icon == "🟠":
+            st.warning(f"**{icon} {title}**: {description}")
+        else:
+            st.success(f"**{icon} {title}**: {description}")
 
 
 def render_about():
