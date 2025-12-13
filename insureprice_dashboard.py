@@ -22,6 +22,7 @@ Project: InsurePrice Car Insurance Risk Modeling
 """
 
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -72,21 +73,39 @@ except ImportError:
         FRAUD_AVAILABLE = False
 
 # Color palette
+# Color palette - Premium Fintech Theme
 COLORS = {
-    'primary_blue': '#1e3a8a',
-    'secondary_blue': '#3b82f6',
-    'accent_green': '#059669',
-    'accent_orange': '#ea580c',
-    'warning_red': '#dc2626',
-    'premium_purple': '#7c3aed',
-    'neutral_gray': '#6b7280',
-    'light_bg': '#f8fafc'
+    'primary_blue': '#0f172a',    # Deep Slate
+    'secondary_blue': '#3b82f6',  # Bright Blue
+    'accent_green': '#10b981',    # Emerald
+    'accent_orange': '#f59e0b',   # Amber
+    'warning_red': '#e11d48',     # Rose
+    'premium_purple': '#7c3aed',  # Violet
+    'neutral_gray': '#64748b',    # Slate 500
+    'light_bg': '#f8fafc',        # Slate 50
+    'white': '#ffffff',
+    'text_dark': '#1e293b'
+}
+
+# UK Region Coordinates for Map
+REGION_COORDS = {
+    'Scotland': {'lat': 56.4907, 'lon': -4.2026},
+    'Wales': {'lat': 52.1307, 'lon': -3.7837},
+    'East Anglia': {'lat': 52.2405, 'lon': 0.9027},
+    'North West': {'lat': 53.4808, 'lon': -2.2426},
+    'Yorkshire': {'lat': 53.9591, 'lon': -1.0815},
+    'North East': {'lat': 54.9783, 'lon': -1.6178},
+    'South East': {'lat': 51.1, 'lon': -0.4},
+    'South West': {'lat': 50.7, 'lon': -3.5},
+    'London': {'lat': 51.5074, 'lon': -0.1278},
+    'East Midlands': {'lat': 52.9548, 'lon': -1.1581},
+    'West Midlands': {'lat': 52.4862, 'lon': -1.8904}
 }
 
 # Page config
 st.set_page_config(
-    page_title="🚗 InsurePrice Platform",
-    page_icon="🚗",
+    page_title="InsurePrice | Advanced Risk Modeling",
+    page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -94,85 +113,183 @@ st.set_page_config(
 # Custom CSS
 st.markdown("""
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+    }
+
+    /* Main Container */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* Headers */
+    h1, h2, h3 {
+        font-weight: 700;
+        letter-spacing: -0.025em;
+    }
+
     .main-header {
-        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: white;
-        padding: 1.5rem 2rem;
-        border-radius: 12px;
-        margin-bottom: 1.5rem;
-        text-align: center;
+        padding: 2.5rem 3rem;
+        border-radius: 16px;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    .main-header h1 { margin: 0; font-size: 2rem; }
-    .main-header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+    .main-header h1 { 
+        margin: 0; 
+        font-size: 2.5rem; 
+        font-weight: 800;
+        background: linear-gradient(to right, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .main-header p { 
+        margin: 0.75rem 0 0 0; 
+        opacity: 0.9; 
+        font-size: 1.1rem;
+        color: #e2e8f0;
+        font-weight: 400;
+    }
     
+    /* Cards */
     .metric-card {
-        background: white;
-        padding: 1.2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(30, 58, 138, 0.1);
-        border-left: 4px solid #3b82f6;
-        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 5px solid #3b82f6;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        height: 100%;
     }
-    .metric-card h3 { color: #1e3a8a; margin: 0 0 0.3rem 0; font-size: 0.9rem; }
-    .metric-card h2 { margin: 0; font-size: 1.8rem; }
-    .metric-card p { color: #6b7280; margin: 0.3rem 0 0 0; font-size: 0.8rem; }
-    
-    .risk-low { border-left-color: #059669; }
-    .risk-medium { border-left-color: #ea580c; }
-    .risk-high { border-left-color: #dc2626; }
-    
-    .premium-card {
-        background: linear-gradient(135deg, #7c3aed, #3b82f6);
-        color: white;
-        padding: 1.2rem;
-        border-radius: 10px;
-        text-align: center;
+    .metric-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-color: #3b82f6;
     }
-    .premium-card h3 { margin: 0; font-size: 0.9rem; opacity: 0.9; }
-    .premium-card h2 { margin: 0.3rem 0; font-size: 2rem; }
-    .premium-card p { margin: 0; font-size: 0.8rem; opacity: 0.8; }
-    
-    .fraud-card {
-        background: linear-gradient(135deg, #dc2626, #ea580c);
-        color: white;
-        padding: 1.2rem;
-        border-radius: 10px;
-        text-align: center;
-    }
-    .fraud-low {
-        background: linear-gradient(135deg, #059669, #10b981);
-    }
-    .fraud-medium {
-        background: linear-gradient(135deg, #ea580c, #f59e0b);
-    }
-    .fraud-high {
-        background: linear-gradient(135deg, #dc2626, #ef4444);
-    }
-    
-    .api-status {
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        display: inline-block;
+    .metric-card h3 { 
+        color: #64748b; 
+        margin: 0 0 0.5rem 0; 
+        font-size: 0.875rem; 
+        text-transform: uppercase;
         font-weight: 600;
+        letter-spacing: 0.05em;
     }
-    .api-online { background: #059669; color: white; }
-    .api-offline { background: #dc2626; color: white; }
+    .metric-card h2 { 
+        margin: 0; 
+        font-size: 2.25rem; 
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        color: #0f172a;
+    }
+    .metric-card p { 
+        color: #64748b; 
+        margin: 0.5rem 0 0 0; 
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
     
+    .risk-low { border-left-color: #10b981; }
+    .risk-medium { border-left-color: #f59e0b; }
+    .risk-high { border-left-color: #e11d48; }
+    
+    /* Premium & Fraud Cards - Consolidating styles */
+    .premium-card, .fraud-card {
+        color: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+    .premium-card:hover, .fraud-card:hover { transform: translateY(-3px); }
+
+    .premium-card { background: linear-gradient(135deg, #7c3aed, #4f46e5); }
+    .fraud-card { background: linear-gradient(135deg, #e11d48, #be123c); }
+    
+    .fraud-low { background: linear-gradient(135deg, #10b981, #059669); }
+    .fraud-medium { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .fraud-high { background: linear-gradient(135deg, #e11d48, #be123c); }
+    
+    .premium-card h3, .fraud-card h3 { color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
+    .premium-card h2, .fraud-card h2 { color: white; margin: 0.5rem 0; }
+    .premium-card p, .fraud-card p { color: rgba(255,255,255,0.8); }
+
+    /* Buttons */
     .stButton>button {
-        background: linear-gradient(135deg, #059669, #3b82f6);
+        background: linear-gradient(to right, #3b82f6, #2563eb);
         color: white;
         border: none;
         border-radius: 8px;
-        padding: 0.6rem 1.2rem;
+        padding: 0.75rem 1.5rem;
         font-weight: 600;
+        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        transition: all 0.2s;
+        width: 100%;
+    }
+    .stButton>button:hover {
+        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+        transform: translateY(-1px);
     }
     
+    /* Feature Box & Interactive Elements */
     .feature-box {
         background: white;
-        padding: 1rem;
-        border-radius: 10px;
-        border: 1px solid #e5e7eb;
-        margin-bottom: 0.5rem;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 1rem;
+        transition: all 0.2s;
+    }
+    .feature-box:hover {
+        border-color: #3b82f6;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .feature-box h4 { margin: 0 0 0.5rem 0; color: #1e293b; font-weight: 600; }
+    .feature-box p { margin: 0; color: #64748b; font-size: 0.9rem; }
+    
+    /* Status Pills */
+    .api-status {
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+    .api-online { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .api-offline { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+    /* Custom Streamlit Elements Overrides */
+    div[data-baseweb="select"] > div {
+        border-radius: 8px;
+        border-color: #e2e8f0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -180,6 +297,76 @@ st.markdown("""
 # Session state
 if 'page' not in st.session_state:
     st.session_state.page = 'dashboard'
+
+def inject_custom_interactions():
+    """Injects custom JavaScript for cursor follower and card tilt calculations"""
+    js = """
+    <script>
+        try {
+            const doc = window.parent.document;
+            
+            // 1. Cursor Follower
+            if (!doc.getElementById('cursor-glow')) {
+                const cursor = doc.createElement('div');
+                cursor.id = 'cursor-glow';
+                cursor.style.cssText = `
+                    position: fixed;
+                    width: 400px;
+                    height: 400px;
+                    border-radius: 50%;
+                    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(124, 58, 237, 0.05) 40%, transparent 70%);
+                    pointer-events: none;
+                    z-index: 0;
+                    transform: translate(-50%, -50%);
+                    transition: opacity 0.5s ease;
+                    mix-blend-mode: multiply;
+                `;
+                doc.body.appendChild(cursor);
+                doc.body.style.overflowX = 'hidden';
+                
+                doc.addEventListener('mousemove', (e) => {
+                    requestAnimationFrame(() => {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    });
+                });
+            }
+            
+            // 2. 3D Tilt Effect
+            const cards = doc.querySelectorAll('.metric-card, .premium-card, .fraud-card, .stMetric');
+            
+            cards.forEach(card => {
+                // Ensure card has 3d preservation
+                card.style.transformStyle = 'preserve-3d';
+                card.style.transition = 'transform 0.1s ease';
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    // Normalize to -1 to 1
+                    const rotateX = ((y - centerY) / centerY) * -4; // Max deg
+                    const rotateY = ((x - centerX) / centerX) * 4;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transition = 'transform 0.5s ease';
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
+            });
+            
+        } catch (e) {
+            console.log("Interaction injection error: ", e);
+        }
+    </script>
+    """
+    components.html(js, height=0, width=0)
 
 @st.cache_data
 def load_data():
@@ -256,6 +443,7 @@ def check_api_status():
 
 def main():
     """Main application"""
+    inject_custom_interactions()
     df, pricing_engine = load_data()
     
     if df is None:
@@ -268,22 +456,33 @@ def main():
         st.caption("Enterprise Insurance Platform")
         st.markdown("---")
         
-        pages = {
-            "📊 Dashboard": "dashboard",
-            "🎯 Risk Assessment": "risk_assessment",
-            "💰 Premium Calculator": "premium_calculator",
-            "💎 Customer CLV": "clv_prediction",
-            "🔍 Fraud Detection": "fraud_detection",
-            "📈 Portfolio Analytics": "portfolio_analytics",
-            "🧠 Advanced ML": "advanced_ml",
-            "🤖 Model Performance": "model_performance",
-            "📡 API Status": "api_status",
-            "📋 About": "about"
-        }
-        
-        for page_name, page_key in pages.items():
-            if st.button(page_name, key=page_key, use_container_width=True):
-                st.session_state.page = page_key
+        # Dashboard
+        if st.button("📊 Dashboard", key="dashboard", use_container_width=True):
+            st.session_state.page = "dashboard"
+            
+        st.markdown("### Core Modules")
+        if st.button("🎯 Risk Assessment", key="risk_assessment", use_container_width=True):
+            st.session_state.page = "risk_assessment"
+        if st.button("💰 Premium Calculator", key="premium_calculator", use_container_width=True):
+            st.session_state.page = "premium_calculator"
+            
+        st.markdown("### Analytics")
+        if st.button("💎 Customer CLV", key="clv_prediction", use_container_width=True):
+            st.session_state.page = "clv_prediction"
+        if st.button("🔍 Fraud Detection", key="fraud_detection", use_container_width=True):
+            st.session_state.page = "fraud_detection"
+        if st.button("📈 Portfolio Analytics", key="portfolio_analytics", use_container_width=True):
+            st.session_state.page = "portfolio_analytics"
+            
+        st.markdown("### Advanced")
+        if st.button("🧠 Advanced ML", key="advanced_ml", use_container_width=True):
+            st.session_state.page = "advanced_ml"
+        if st.button("🤖 Model Performance", key="model_performance", use_container_width=True):
+            st.session_state.page = "model_performance"
+        if st.button("📝 System Info", key="about", use_container_width=True):
+            st.session_state.page = "about"
+        if st.button("📡 API Monitor", key="api_status", use_container_width=True):
+            st.session_state.page = "api_status"
         
         st.markdown("---")
         
@@ -321,10 +520,11 @@ def main():
 
 def render_dashboard(df, pricing_engine):
     """Main dashboard"""
+    # Main Header
     st.markdown("""
     <div class="main-header">
-        <h1>🚗 InsurePrice Dashboard</h1>
-        <p>Enterprise Car Insurance Risk Modeling & Pricing Platform</p>
+        <h1>Dashboard Overview</h1>
+        <p>Real-time analytics for your insurance portfolio risk and performance</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -364,9 +564,9 @@ def render_dashboard(df, pricing_engine):
     with col1:
         st.markdown(f"""
         <div class="metric-card">
-            <h3>📋 Total Policies</h3>
+            <h3>Total Policies</h3>
             <h2 style="color: {COLORS['secondary_blue']}">{total_policies:,}</h2>
-            <p>Active in portfolio</p>
+            <p>Active Portfolio</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -374,18 +574,18 @@ def render_dashboard(df, pricing_engine):
         color = COLORS['warning_red'] if claim_rate > 15 else COLORS['accent_green']
         st.markdown(f"""
         <div class="metric-card">
-            <h3>⚠️ Claim Rate</h3>
+            <h3>Claim Rate</h3>
             <h2 style="color: {color}">{claim_rate:.1f}%</h2>
-            <p>Annual frequency</p>
+            <p>Annual Frequency</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col3:
         st.markdown(f"""
         <div class="metric-card">
-            <h3>💷 Avg Premium</h3>
+            <h3>Avg Premium</h3>
             <h2 style="color: {COLORS['accent_green']}">£{avg_premium}</h2>
-            <p>UK market average</p>
+            <p>Market Average</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -393,9 +593,9 @@ def render_dashboard(df, pricing_engine):
         profit_margin = 8.4
         st.markdown(f"""
         <div class="metric-card">
-            <h3>📈 Profit Margin</h3>
+            <h3>Profit Margin</h3>
             <h2 style="color: {COLORS['premium_purple']}">{profit_margin}%</h2>
-            <p>vs 5-7% industry</p>
+            <p>Industry: 5-7%</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -483,7 +683,10 @@ def render_dashboard(df, pricing_engine):
             xaxis_title="Risk Score (0-1)",
             yaxis_title="Number of Policies",
             template="plotly_white",
-            height=350
+            height=350,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -498,7 +701,14 @@ def render_dashboard(df, pricing_engine):
             marker_colors=[COLORS['accent_green'], COLORS['accent_orange'], COLORS['warning_red']],
             hole=0.5
         )])
-        fig.update_layout(title="Risk Categories", showlegend=True, height=350)
+        fig.update_layout(
+            title="Risk Categories", 
+            showlegend=True, 
+            height=350,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
+        )
         st.plotly_chart(fig, use_container_width=True)
 
     # Regional Analysis
@@ -534,28 +744,107 @@ def render_dashboard(df, pricing_engine):
     regional_data['Claim_Rate'] *= 100
     regional_data = regional_data.sort_values('Claim_Rate', ascending=True)
     
-    fig = go.Figure()
-    fig.add_trace(go.Bar(
-        y=regional_data['Region'],
-        x=regional_data['Claim_Rate'],
-        orientation='h',
-        marker_color=[COLORS['accent_green'] if x < 11 else COLORS['accent_orange'] if x < 13 else COLORS['warning_red'] for x in regional_data['Claim_Rate']],
-        text=[f"{x:.1f}%" for x in regional_data['Claim_Rate']],
-        textposition='outside'
-    ))
-    fig.update_layout(
-        title="Claim Rate by UK Region",
-        xaxis_title="Claim Rate (%)",
-        height=400,
-        template="plotly_white"
-    )
-    st.plotly_chart(fig, use_container_width=True)
+    # Add coordinates for map
+    regional_data['lat'] = regional_data['Region'].map(lambda x: REGION_COORDS.get(x, {}).get('lat'))
+    regional_data['lon'] = regional_data['Region'].map(lambda x: REGION_COORDS.get(x, {}).get('lon'))
+    
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        # Premium Interactive Map
+        fig = go.Figure()
+        
+        # Custom colorscale matching our theme
+        custom_colorscale = [
+            [0.0, '#10b981'],    # Emerald (low risk)
+            [0.3, '#22c55e'],    # Green
+            [0.5, '#eab308'],    # Yellow/Amber
+            [0.7, '#f97316'],    # Orange
+            [1.0, '#e11d48']     # Rose (high risk)
+        ]
+        
+        fig.add_trace(go.Scattermapbox(
+            lat=regional_data['lat'],
+            lon=regional_data['lon'],
+            mode='markers+text',
+            marker=go.scattermapbox.Marker(
+                size=regional_data['Policy_Count'] / 12,
+                color=regional_data['Claim_Rate'],
+                colorscale=custom_colorscale,
+                showscale=True,
+                colorbar=dict(
+                    title=dict(text="Risk %", font=dict(size=12, family='Inter')),
+                    thickness=15,
+                    len=0.6,
+                    bgcolor='rgba(255,255,255,0.8)',
+                    bordercolor='#e2e8f0',
+                    borderwidth=1,
+                    tickfont=dict(size=10, family='Inter')
+                ),
+                opacity=0.9,
+                sizemin=20
+            ),
+            text=regional_data['Region'],
+            textfont=dict(size=10, color='white', family='Inter'),
+            textposition='middle center',
+            hovertemplate="<b style='font-size:14px'>%{text}</b><br><br>" +
+                          "📊 <b>Claim Rate:</b> %{marker.color:.1f}%<br>" +
+                          "📋 <b>Policies:</b> %{customdata[0]:,}<extra></extra>",
+            customdata=regional_data[['Policy_Count']]
+        ))
+        
+        fig.update_layout(
+            mapbox_style="carto-darkmatter",
+            mapbox=dict(
+                center=dict(lat=54.2, lon=-2.5),
+                zoom=5
+            ),
+            height=500,
+            margin={"r":10,"t":10,"l":10,"b":10},
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            hoverlabel=dict(
+                bgcolor='rgba(15, 23, 42, 0.95)',
+                font_size=12,
+                font_family='Inter',
+                font_color='white',
+                bordercolor='#3b82f6'
+            )
+        )
+        st.plotly_chart(fig, use_container_width=True)
+    
+    with col2:
+        # Premium styled summary panel
+        highest = regional_data.iloc[-1]
+        lowest = regional_data.iloc[0]
+        avg_rate = regional_data['Claim_Rate'].mean()
+        
+        st.markdown(f"""<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; padding: 1.5rem; color: white; height: 100%;">
+<h3 style="margin: 0 0 1rem 0; font-size: 1rem; color: #94a3b8; font-weight: 600;">📍 REGIONAL INSIGHTS</h3>
+<div style="background: rgba(225, 29, 72, 0.15); border-left: 3px solid #e11d48; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;">
+<div style="font-size: 0.75rem; color: #f87171;">HIGHEST RISK</div>
+<div style="font-size: 1.25rem; font-weight: 700;">{highest['Region']}</div>
+<div style="font-size: 0.875rem; color: #f87171;">{highest['Claim_Rate']:.1f}% claim rate</div>
+</div>
+<div style="background: rgba(16, 185, 129, 0.15); border-left: 3px solid #10b981; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;">
+<div style="font-size: 0.75rem; color: #34d399;">LOWEST RISK</div>
+<div style="font-size: 1.25rem; font-weight: 700;">{lowest['Region']}</div>
+<div style="font-size: 0.875rem; color: #34d399;">{lowest['Claim_Rate']:.1f}% claim rate</div>
+</div>
+<div style="background: rgba(59, 130, 246, 0.15); border-left: 3px solid #3b82f6; padding: 0.75rem; border-radius: 8px;">
+<div style="font-size: 0.75rem; color: #60a5fa;">PORTFOLIO AVG</div>
+<div style="font-size: 1.25rem; font-weight: 700;">{avg_rate:.1f}%</div>
+<div style="font-size: 0.875rem; color: #60a5fa;">national average</div>
+</div>
+<div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; font-size: 0.75rem; color: #64748b;">🔵 Bubble size = Volume<br>🎨 Color = Risk level</div>
+</div>""", unsafe_allow_html=True)
 
 
 def render_fraud_detection():
     """Fraud detection page"""
     st.markdown("""
-    <div class="main-header" style="background: linear-gradient(135deg, #dc2626, #ea580c);">
+    <div class="main-header">
         <h1>🔍 Fraud Detection</h1>
         <p>AI-Powered Claims Fraud Analysis System</p>
     </div>
@@ -725,7 +1014,10 @@ def render_fraud_detection():
             yaxis_title="Score",
             yaxis_range=[0, 1.1],
             template="plotly_white",
-            height=350
+            height=350,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -816,8 +1108,8 @@ def render_fraud_detection():
 def render_clv_prediction(df):
     """Customer Lifetime Value prediction page"""
     st.markdown("""
-    <div class="main-header" style="background: linear-gradient(135deg, #7c3aed, #3b82f6);">
-        <h1>💎 Customer Lifetime Value (CLV)</h1>
+    <div class="main-header">
+        <h1>💎 Customer Lifetime Value</h1>
         <p>Predict customer value for strategic pricing decisions</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1028,7 +1320,10 @@ def render_clv_prediction(df):
             yaxis2=dict(title="Survival %", overlaying='y', side='right', range=[0, 100]),
             template="plotly_white",
             height=400,
-            legend=dict(orientation="h", yanchor="bottom", y=1.02)
+            legend=dict(orientation="h", yanchor="bottom", y=1.02),
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -1145,10 +1440,10 @@ def render_model_performance():
         df_models = pd.DataFrame(models_data)
         
         # Highlight best model
-        st.markdown("""
-        <div class="metric-card" style="border-left-color: #7c3aed; margin-bottom: 1rem;">
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {COLORS['premium_purple']}; margin-bottom: 1rem;">
             <h3>🏆 Best Model: CatBoost</h3>
-            <h2 style="color: #7c3aed;">AUC 0.6176 | Gini 0.2352</h2>
+            <h2 style="color: {COLORS['premium_purple']};">AUC 0.6176 | Gini 0.2352</h2>
             <p>+8.5% improvement over baseline through feature engineering & hyperparameter optimization</p>
         </div>
         """, unsafe_allow_html=True)
@@ -1182,7 +1477,10 @@ def render_model_performance():
                 yaxis_range=[0.5, 0.7],
                 template="plotly_white",
                 height=400,
-                xaxis_tickangle=-45
+                xaxis_tickangle=-45,
+                font={'family': 'Inter', 'color': COLORS['text_dark']},
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
             )
             st.plotly_chart(fig, use_container_width=True)
         
@@ -1212,7 +1510,10 @@ def render_model_performance():
             yaxis_title="AUC Score",
             yaxis_range=[0.55, 0.65],
             template="plotly_white",
-            height=350
+            height=350,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -1272,7 +1573,10 @@ def render_model_performance():
             yaxis_title="True Positive Rate",
             template="plotly_white",
             height=500,
-            legend=dict(x=0.6, y=0.2)
+            legend=dict(x=0.6, y=0.2),
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
         
@@ -1343,7 +1647,10 @@ def render_model_performance():
                 xaxis_title="Predicted Probability",
                 yaxis_title="Actual Probability",
                 template="plotly_white",
-                height=400
+                height=400,
+                font={'family': 'Inter', 'color': COLORS['text_dark']},
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
             )
             st.plotly_chart(fig, use_container_width=True)
         
@@ -1413,7 +1720,10 @@ def render_model_performance():
                 title="Top 12 Features by SHAP Importance",
                 xaxis_title="Importance (%)",
                 template="plotly_white",
-                height=500
+                height=500,
+                font={'family': 'Inter', 'color': COLORS['text_dark']},
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
             )
             st.plotly_chart(fig, use_container_width=True)
             
@@ -2204,7 +2514,10 @@ def render_portfolio_analytics(df, pricing_engine):
             barmode='overlay',
             template="plotly_white",
             height=350,
-            legend=dict(orientation="h", yanchor="bottom", y=1.02)
+            legend=dict(orientation="h", yanchor="bottom", y=1.02),
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
         
@@ -2238,7 +2551,10 @@ def render_portfolio_analytics(df, pricing_engine):
             xaxis_title="Annual Premium (£)",
             yaxis_title="Policy Count",
             template="plotly_white",
-            height=350
+            height=350,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
         
@@ -2296,7 +2612,10 @@ def render_portfolio_analytics(df, pricing_engine):
                 textposition='outside'
             ))
             fig.update_layout(title="Claim Rate by Age Group", yaxis_title="Claim Rate (%)", 
-                            template="plotly_white", height=350)
+                            template="plotly_white", height=350,
+                            font={'family': 'Inter', 'color': COLORS['text_dark']},
+                            paper_bgcolor='rgba(0,0,0,0)',
+                            plot_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig, use_container_width=True)
         
         with col2:
@@ -2309,7 +2628,10 @@ def render_portfolio_analytics(df, pricing_engine):
                 textposition='outside'
             ))
             fig.update_layout(title="Average Premium by Age Group", yaxis_title="Premium (£)", 
-                            template="plotly_white", height=350)
+                            template="plotly_white", height=350,
+                            font={'family': 'Inter', 'color': COLORS['text_dark']},
+                            paper_bgcolor='rgba(0,0,0,0)',
+                            plot_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig, use_container_width=True)
         
         st.dataframe(age_analysis[['AGE', 'Policy_Count', '% of Portfolio', 'Claim_Rate', 'Avg_Premium', 'Avg_Risk']], 
@@ -2326,22 +2648,48 @@ def render_portfolio_analytics(df, pricing_engine):
         region_analysis['% of Portfolio'] = (region_analysis['Policy_Count'] / len(df) * 100).round(1)
         region_analysis = region_analysis.reset_index().sort_values('Claim_Rate', ascending=False)
         
-        col1, col2 = st.columns(2)
+        # Add coordinates
+        region_analysis['lat'] = region_analysis['REGION'].map(lambda x: REGION_COORDS.get(x, {}).get('lat'))
+        region_analysis['lon'] = region_analysis['REGION'].map(lambda x: REGION_COORDS.get(x, {}).get('lon'))
+        
+        col1, col2 = st.columns([2, 1])
         
         with col1:
+            # Interactive Map
             fig = go.Figure()
-            colors = [COLORS['warning_red'] if r > 14 else COLORS['accent_orange'] if r > 11 else COLORS['accent_green'] 
-                     for r in region_analysis['Claim_Rate']]
-            fig.add_trace(go.Bar(
-                y=region_analysis['REGION'],
-                x=region_analysis['Claim_Rate'],
-                orientation='h',
-                marker_color=colors,
-                text=[f"{r:.1f}%" for r in region_analysis['Claim_Rate']],
-                textposition='outside'
+            
+            fig.add_trace(go.Scattermapbox(
+                lat=region_analysis['lat'],
+                lon=region_analysis['lon'],
+                mode='markers',
+                marker=go.scattermapbox.Marker(
+                    size=region_analysis['Policy_Count'] / 20,  # Scale bubble size
+                    color=region_analysis['Claim_Rate'],
+                    colorscale='RdYlGn_r',
+                    showscale=True,
+                    opacity=0.8
+                ),
+                text=region_analysis['REGION'],
+                hovertemplate="<b>%{text}</b><br>" +
+                              "Policies: %{marker.size:.0f}0<br>" +  # Approx rescaling
+                              "Claim Rate: %{marker.color:.1f}%<br>" +
+                              "Avg Premium: £%{customdata[0]:.0f}<extra></extra>",
+                customdata=region_analysis[['Avg_Premium']]
             ))
-            fig.update_layout(title="Claim Rate by Region", xaxis_title="Claim Rate (%)", 
-                            template="plotly_white", height=400)
+            
+            fig.update_layout(
+                title="Regional Risk Map (Bubble Size=Volume, Color=Risk)",
+                mapbox_style="carto-positron",
+                mapbox=dict(
+                    center=dict(lat=54.5, lon=-2),
+                    zoom=5
+                ),
+                height=500,
+                margin={"r":0,"t":40,"l":0,"b":0},
+                font={'family': 'Inter', 'color': COLORS['text_dark']},
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
+            )
             st.plotly_chart(fig, use_container_width=True)
         
         with col2:
@@ -2352,7 +2700,10 @@ def render_portfolio_analytics(df, pricing_engine):
                 hole=0.4,
                 textinfo='percent+label'
             )])
-            fig.update_layout(title="Geographic Concentration", height=400)
+            fig.update_layout(title="Geographic Concentration", height=400,
+                            font={'family': 'Inter', 'color': COLORS['text_dark']},
+                            paper_bgcolor='rgba(0,0,0,0)',
+                            plot_bgcolor='rgba(0,0,0,0)')
             st.plotly_chart(fig, use_container_width=True)
         
         # Concentration warning
@@ -2669,7 +3020,7 @@ def render_portfolio_analytics(df, pricing_engine):
 def render_advanced_ml(df):
     """Advanced ML & Analytics page - showcasing all ML capabilities"""
     st.markdown("""
-    <div class="main-header" style="background: linear-gradient(135deg, #7c3aed, #3b82f6);">
+    <div class="main-header">
         <h1>🧠 Advanced ML & Analytics</h1>
         <p>CatBoost, Neural Networks, Feature Engineering, A/B Testing & Compliance</p>
     </div>
@@ -2741,7 +3092,10 @@ def render_advanced_ml(df):
             yaxis_title="AUC Score",
             yaxis_range=[0.5, 0.7],
             template="plotly_white",
-            height=400
+            height=400,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
     
@@ -2830,7 +3184,10 @@ def render_advanced_ml(df):
             template="plotly_white",
             height=450,
             barmode='stack',
-            legend=dict(orientation="h", yanchor="bottom", y=1.02)
+            legend=dict(orientation="h", yanchor="bottom", y=1.02),
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
     
@@ -3047,28 +3404,28 @@ def render_advanced_ml(df):
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.markdown("""
-        <div class="metric-card" style="border-left-color: #059669;">
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {COLORS['accent_green']};">
             <h3>✅ FCA Compliance</h3>
-            <h2 style="color: #059669;">COMPLIANT</h2>
+            <h2 style="color: {COLORS['accent_green']};">COMPLIANT</h2>
             <p>PRIN 6: Fair treatment</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
-        st.markdown("""
-        <div class="metric-card" style="border-left-color: #059669;">
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {COLORS['accent_green']};">
             <h3>✅ GDPR Article 22</h3>
-            <h2 style="color: #059669;">COMPLIANT</h2>
+            <h2 style="color: {COLORS['accent_green']};">COMPLIANT</h2>
             <p>Explainable AI via SHAP</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
-        st.markdown("""
-        <div class="metric-card" style="border-left-color: #ea580c;">
+        st.markdown(f"""
+        <div class="metric-card" style="border-left-color: {COLORS['accent_orange']};">
             <h3>⚠️ Model Drift</h3>
-            <h2 style="color: #ea580c;">MONITORING</h2>
+            <h2 style="color: {COLORS['accent_orange']};">MONITORING</h2>
             <p>Last check: Today</p>
         </div>
         """, unsafe_allow_html=True)
@@ -3097,7 +3454,10 @@ def render_advanced_ml(df):
             title="Claim Rate by Gender",
             yaxis_title="Claim Rate (%)",
             template="plotly_white",
-            height=300
+            height=300,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
         
@@ -3126,7 +3486,10 @@ def render_advanced_ml(df):
             title="Claim Rate by Age Group",
             yaxis_title="Claim Rate (%)",
             template="plotly_white",
-            height=300
+            height=300,
+            font={'family': 'Inter', 'color': COLORS['text_dark']},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)'
         )
         st.plotly_chart(fig, use_container_width=True)
         
@@ -3164,7 +3527,10 @@ def render_advanced_ml(df):
         yaxis_title="AUC Score",
         yaxis_range=[0.55, 0.65],
         template="plotly_white",
-        height=350
+        height=350,
+        font={'family': 'Inter', 'color': COLORS['text_dark']},
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)'
     )
     st.plotly_chart(fig, use_container_width=True)
     
