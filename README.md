@@ -11,9 +11,10 @@
 
 **🏆 Complete End-to-End Insurance Technology Platform**
 
-*Production-ready ML-powered risk assessment, actuarial pricing, fraud detection, and portfolio optimization*
+*Production-ready ML-powered risk assessment, actuarial pricing, fraud detection, and portfolio optimization.*
+*Featuring new **GenAI & IoT Prototypes** for 2026.*
 
-[🚀 Quick Start](#-quick-start) • [📡 API Docs](#-rest-api) • [🔍 Fraud Detection](#-fraud-detection) • [📊 Dashboard](#-interactive-dashboard) • [💰 Business Value](#-business-value)
+[🚀 Quick Start](#-quick-start) • [📡 API Docs](#-rest-api) • [🔍 Fraud Detection](#-fraud-detection) • [⚡ Next-Gen Prototypes](#-next-gen-prototypes-new)
 
 </div>
 
@@ -23,6 +24,7 @@
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
+- [Next-Gen Prototypes (New)](#-next-gen-prototypes-new)
 - [Quick Start](#-quick-start)
 - [REST API](#-rest-api)
 - [Fraud Detection](#-fraud-detection)
@@ -30,7 +32,6 @@
 - [Project Structure](#-project-structure)
 - [Tech Stack](#-tech-stack)
 - [Business Value](#-business-value)
-- [Model Performance](#-model-performance)
 - [Contact](#-contact)
 
 ---
@@ -39,6 +40,8 @@
 
 **InsurePrice** is a comprehensive, enterprise-grade car insurance platform that transforms traditional insurance operations through advanced machine learning, actuarial science, and AI-powered analytics.
 
+In **December 2025**, the platform was expanded with three cutting-edge R&D prototypes demonstrating the future of **InsurTech 2.0**: Digital Twins, Peer-to-Peer Communities, and IoT-driven Preventative Maintenance.
+
 ### What This Platform Delivers
 
 | Capability | Description | Business Impact |
@@ -46,18 +49,9 @@
 | **Risk Prediction** | ML models predicting claim probability | AUC 0.65+, accurate underwriting |
 | **Actuarial Pricing** | Professional premium calculation | £400-£1,200 market-aligned |
 | **Fraud Detection** | Real-time claims fraud analysis | £60M potential savings (5% improvement) |
-| **REST API** | Production-ready endpoints | Enterprise system integration |
-| **Interactive Dashboard** | Real-time analytics platform | Operational efficiency |
-| **Portfolio Simulation** | Monte Carlo profit analysis | 8.4% profit margin |
-| **Explainable AI** | SHAP-based model transparency | Regulatory compliance |
-| **Fairness Analysis** | Bias detection and mitigation | FCA compliance |
-
-### UK Market Context
-
-- **Market Size**: £15 billion annual premium revenue
-- **Fraud Cost**: £1.2 billion annually
-- **Digital Gap**: Most insurers use 20+ year old pricing models
-- **Opportunity**: Data-driven insurers outperform by 15-25%
+| **Risk Digital Twin** | **[NEW]** Monte Carlo commute simulation | Granular, hyper-personalized risk scoring |
+| **P2P Village Pools** | **[NEW]** Community-based insurance | Lower premiums, cashback dividends |
+| **Preventative Bond** | **[NEW]** IoT-triggered repair payments | Accident prevention vs. claims processing |
 
 ---
 
@@ -68,55 +62,42 @@
 - **Random Forest**: Optimized with hyperparameter tuning (AUC 0.6074)
 - **Neural Network Ensemble**: Deep learning with embedding layers
 - **Feature Engineering**: +3.84% AUC improvement with interaction terms
-- **Hyperparameter Optimization**: Optuna-based automated tuning
 
 ### 💰 Actuarial Pricing Engine
 - Professional premium calculation formulas
 - Risk-based pricing with 17+ factors
 - NCD (No Claims Discount) integration
 - Voluntary excess adjustments
-- Coverage type variations
 
 ### 🔍 Real-Time Fraud Detection
 - **Anomaly Detection**: Isolation Forest for unusual patterns
 - **NLP Analysis**: 40+ fraud indicator keywords
 - **Network Analysis**: Fraud ring identification
-- **Behavioral Scoring**: Pattern recognition
 
-### 🧪 A/B Testing Framework
-- Price sensitivity analysis per segment
-- Conversion rate tracking
-- Statistical significance testing
-- Revenue optimization experiments
+---
 
-### 📋 Regulatory Compliance
-- **FCA PRIN**: Fair pricing compliance
-- **GDPR Article 22**: Automated decision safeguards
-- **Solvency II**: Model risk management
-- **SR 11-7**: Model documentation standards
-- **Model Drift Detection**: Automated monitoring
+## ⚡ Next-Gen Prototypes (New)
 
-### 💎 Customer Lifetime Value (CLV)
-- Policy renewal probability modeling
-- Cross-sell potential estimation
-- Claims propensity forecasting
-- Strategic pricing recommendations
+Added in **v2.1 (Dec 2025)**, these experimental features showcase the future of insurance:
 
-### 📊 Interactive Dashboard (10+ Pages)
-- Real-time risk assessment calculator
-- Premium calculator with actuarial breakdown
-- A/B testing experiment runner
-- Regulatory compliance monitoring
-- Model performance & improvements
-- Fraud detection interface
-- Customer CLV analysis
+### 1. 🧬 Risk Twin Simulator
+*A "Digital Twin" of the driver that simulates their daily commute 10,000 times.*
+- **Methodology**: Monte Carlo Simulation.
+- **Data Source**: Uses real historical UK weather/traffic data (`UK_Driving_Conditions_2025.csv`).
+- **Value**: Instead of guessing risk, we *simulate* it based on exact route, driver fatigue, and environmental conditions.
 
-### 📡 Production REST API
-- FastAPI with automatic documentation
-- Real-time risk scoring endpoints
-- Premium calculation API
-- Fraud analysis endpoints
-- SHAP explainability API
+### 2. 🏘️ Peer-to-Peer "Village" Pools
+*Why pay for bad drivers? Join a "Village" of similar people.*
+- **Logic**: Assigns users to micro-communities (e.g., "Night Owls", "Safe Commuters") based on telemetry.
+- **Smart Contract**: Automates "End of Month" reconciliation. If Claims < Premiums, the Surplus is paid back as a **Dividend**.
+- **Data**: Built on a synthetic population of **50,000 users** (`The_Village_Population.csv`).
+
+### 3. 🛠️ Preventative Maintenance Bond
+*Insurance that pays you to fix your car BEFORE you crash.*
+- **Concept**: Parametric insurance linked to IoT Telematics.
+- **Mechanism**: Monitors Brake Wear (%) and Tyre Tread (mm).
+- **Trigger**: If `Risk > 80%`, the policy **automatically credits £250** for immediate repairs at a partner garage.
+- **Goal**: Cheaper to pay £250 for tyres than £15,000 for a hydroplaning accident.
 
 ---
 
@@ -134,233 +115,42 @@ pip install -r requirements.txt
 pip install -r requirements_api.txt
 ```
 
-### Option 1: Launch REST API
+### 1. Generate Synthetic Data (Required for Prototypes)
+We generate 50,000+ records for the new features:
 
 ```bash
-# Start the API server
-python run_api.py
+# 1. Generate Village Population (50,000 users)
+python scripts/generate_village_population.py
 
-# API available at:
-# - Interactive Docs: http://localhost:8000/docs
-# - Health Check: http://localhost:8000/health
+# 2. Generate Weather/Traffic History (365 days)
+python scripts/generate_weather_traffic.py
+
+# 3. Generate IoT Maintenance Records (Tyres/Brakes)
+python scripts/generate_maintenance_data.py
 ```
 
-### Option 2: Launch Dashboard
+### 2. Launch Dashboard
+Access the full platform including the new prototypes:
 
 ```bash
-# Start the Streamlit dashboard
-python run_dashboard.py
-
-# Dashboard available at: http://localhost:8501
+streamlit run insureprice_dashboard.py
 ```
-
-### Option 3: Run Analysis Pipeline
-
-```bash
-# Generate enhanced synthetic data
-python generate_data.py
-
-# Train risk prediction models
-python baseline_modeling.py
-
-# Run pricing engine
-python pricing_engine.py
-
-# Portfolio simulation
-python portfolio_simulation.py
-
-# Fraud detection demo
-python fraud_detection.py
-```
-
----
-
-## 📡 REST API
-
-### API Endpoints Overview
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/v1/risk/score` | Real-time risk scoring |
-| `POST` | `/api/v1/premium/quote` | Premium calculation |
-| `POST` | `/api/v1/portfolio/analyze` | Portfolio analysis |
-| `GET` | `/api/v1/model/explain/{id}` | SHAP explanations |
-| `POST` | `/api/v1/fraud/analyze` | Fraud detection |
-| `POST` | `/api/v1/fraud/batch` | Batch fraud analysis |
-| `GET` | `/api/v1/fraud/rings` | Fraud ring detection |
-| `GET` | `/health` | Health check |
-
-### Example: Risk Scoring
-
-```python
-import requests
-
-profile = {
-    "age": "26-39",
-    "gender": "male",
-    "region": "London",
-    "driving_experience": "10-19y",
-    "vehicle_type": "family_sedan",
-    "annual_mileage": 12000.0,
-    "credit_score": 0.75,
-    "past_accidents": 1,
-    "safety_rating": "standard"
-}
-
-response = requests.post(
-    "http://localhost:8000/api/v1/risk/score",
-    json={"driver_profile": profile}
-)
-
-result = response.json()
-print(f"Risk Score: {result['risk_score']:.3f}")
-print(f"Risk Category: {result['risk_category']}")
-```
-
-### Example: Premium Quote
-
-```python
-quote_request = {
-    "driver_profile": profile,
-    "coverage_type": "comprehensive",
-    "voluntary_excess": 200,
-    "ncd_years": 3
-}
-
-response = requests.post(
-    "http://localhost:8000/api/v1/premium/quote",
-    json=quote_request
-)
-
-result = response.json()
-print(f"Annual Premium: £{result['annual_premium']:.2f}")
-print(f"Monthly Premium: £{result['monthly_premium']:.2f}")
-```
-
-### API Performance
-
-| Endpoint | Response Time | Throughput |
-|----------|--------------|------------|
-| Risk Score | ~150ms | 500 req/sec |
-| Premium Quote | ~200ms | 400 req/sec |
-| Portfolio Analysis | ~800ms | 50 req/sec |
-| Fraud Analysis | ~200ms | 300 req/sec |
-
----
-
-## 🔍 Fraud Detection
-
-### UK Insurance Fraud Context
-
-- **Annual Cost**: £1.2 billion
-- **Target Improvement**: 5%
-- **Potential Savings**: £60 million
-
-### Detection Methods
-
-| Method | Technology | Purpose |
-|--------|------------|---------|
-| **Anomaly Detection** | Isolation Forest | Statistical outliers |
-| **NLP Analysis** | Keyword/Pattern | Text red flags |
-| **Network Analysis** | Graph Algorithms | Fraud rings |
-| **Behavioral Analysis** | Pattern Recognition | Suspicious behaviors |
-
-### Fraud Red Flag Keywords
-
-**High Risk**:
-`whiplash`, `neck pain`, `cash settlement`, `total loss`, `unwitnessed`
-
-**Suspicious Patterns**:
-`friend`, `family member`, `preferred garage`, `no receipt`, `approximate`
-
-### Example: Fraud Analysis
-
-```python
-claim = {
-    "claim_id": "CLM-001",
-    "claim_amount": 12500,
-    "days_to_report": 45,
-    "previous_claims": 4,
-    "description": "Rear ended at night. No witnesses. Whiplash. Cash settlement preferred.",
-    "police_report": False,
-    "witnesses": 0,
-    "cash_settlement_requested": True
-}
-
-response = requests.post(
-    "http://localhost:8000/api/v1/fraud/analyze",
-    json={"claim": claim}
-)
-
-result = response.json()
-print(f"Fraud Score: {result['overall_fraud_score']:.1%}")
-print(f"Risk Level: {result['risk_level']}")
-print(f"Recommendation: {result['recommendation']}")
-```
-
-### Sample Output
-
-```
-🚨 FRAUD ANALYSIS RESULTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Fraud Score: 60.4%
-Risk Level: HIGH
-Confidence: HIGH
-
-Component Scores:
-  Anomaly Detection:    ████████████░░░░░░░░ 64.8%
-  Text Analysis:        ████████████████████ 100.0%
-  Network Analysis:     ░░░░░░░░░░░░░░░░░░░░ 0.0%
-  Behavioral Analysis:  ████████████████░░░░ 80.0%
-
-Recommendation: Refer to Special Investigation Unit (SIU)
-```
+*Navigate using the Sidebar to access "Risk Twin", "Village Pools", etc.*
 
 ---
 
 ## 📊 Interactive Dashboard
 
-### Features
-
-- **Real-Time Risk Calculator**: Instant risk assessment with personalized recommendations
-- **Premium Calculator**: Actuarial pricing with full component breakdown
-- **Customer CLV Analysis**: Lifetime value prediction with segment classification
-- **Fraud Detection Interface**: AI-powered claims analysis with red flag detection
-- **Portfolio Analytics**: Risk distribution and performance visualization
-- **Model Performance**: ML metrics, ROC curves, and SHAP explainability
-- **Regional Analysis**: Geographic risk mapping with actionable insights
-- **Built-in Help System**: Expandable guidance panels on every page
-
-### Launch Dashboard
-
-```bash
-# Option 1: Launcher script
-python run_dashboard.py
-
-# Option 2: Direct Streamlit
-streamlit run insureprice_dashboard.py
-```
-
-### Dashboard Pages
-
-1. **📊 Dashboard** - Overview with key metrics and portfolio health
-2. **🎯 Risk Assessment** - Interactive risk calculator with instant quotes
-3. **💰 Premium Calculator** - Actuarial pricing with full breakdown
-4. **💎 Customer CLV** - Customer Lifetime Value prediction and segmentation
-5. **🔍 Fraud Detection** - AI-powered claims fraud analysis
-6. **📈 Portfolio Analytics** - Risk distribution and performance analysis
-7. **🤖 Model Performance** - ML evaluation and SHAP explainability
-8. **📡 API Status** - REST API monitoring and testing
-9. **📋 About** - Documentation and contact info
-
-### Built-in Help & Guidance
-
-Each dashboard section includes **expandable instruction panels** with:
-- 📖 Step-by-step guidance on how to use each feature
-- 📊 Interpretation guides for understanding results
-- 💡 Best practices and strategic recommendations
-- 📋 UK market benchmarks for context
-- ⚠️ Regulatory compliance notes (FCA, GDPR)
+### Pages Overview
+1.  **📊 Dashboard**: Main portfolio overview.
+2.  **🎯 Risk Assessment**: Classic actuarial pricing.
+3.  **💎 Customer CLV**: Lifetime value prediction.
+4.  **🔍 Fraud Detection**: AI Claims analysis.
+5.  **📈 Portfolio Analytics**: Deep dive stats.
+6.  **🤖 Model Performance**: ML Metrics.
+7.  **🧬 Risk Twin**: (New) Commute Simulator.
+8.  **🏘️ Village Pools**: (New) P2P Insurance.
+9.  **🛠️ Preventative Bond**: (New) IoT Maintenance.
 
 ---
 
@@ -369,175 +159,48 @@ Each dashboard section includes **expandable instruction panels** with:
 ```
 InsurePrice/
 ├── 📊 Data & Models
-│   ├── Enhanced_Synthetic_Car_Insurance_Claims.csv  # 10,000 records
-│   ├── Sample_Priced_Policies.csv                   # Priced samples
-│   ├── generate_data.py                             # Data generation
-│   └── baseline_modeling.py                         # ML model training
+│   ├── data/The_Village_Population.csv          # [NEW] 50k User profiles
+│   ├── data/Vehicle_Maintenance_Records.csv     # [NEW] IoT Health data
+│   ├── data/UK_Driving_Conditions_2025.csv      # [NEW] Environmental data
+│   └── ...
+│
+├── ⚡ Next-Gen Prototypes [NEW]
+│   ├── src/simulation/digital_twin.py           # Monte Carlo Engine
+│   ├── src/p2p/community_pool.py                # Village Logic
+│   ├── src/maintenance/bond_engine.py           # IoT Bond Logic
+│   └── pages/                                   # Streamlit Independent Pages
+│       ├── 1_Risk_Twin.py
+│       ├── 2_Village_Pools.py
+│       └── 3_Preventative_Bond.py
 │
 ├── 💰 Pricing Engine
-│   ├── pricing_engine.py                            # Main pricing engine
-│   ├── actuarial_pricing_engine.py                  # Actuarial formulas
-│   ├── premium_calibration_demo.py                  # Calibration demo
-│   └── corrected_actuarial_pricing.py               # Enhanced pricing
+│   ├── pricing_engine.py                        # Main pricing engine
+│   └── ...
 │
 ├── 🔍 Fraud Detection
-│   ├── fraud_detection.py                           # Core fraud engine
-│   └── fraud_api.py                                 # Fraud API endpoints
+│   ├── fraud_detection.py                       # Core fraud engine
+│   └── ...
 │
-├── 📡 REST API
-│   ├── insureprice_api.py                           # Main API application
-│   ├── run_api.py                                   # API launcher
-│   ├── test_api.py                                  # API tests
-│   └── requirements_api.txt                         # API dependencies
+├── 📜 Scripts [NEW]
+│   ├── generate_village_population.py
+│   ├── generate_weather_traffic.py
+│   └── generate_maintenance_data.py
 │
-├── 📊 Dashboard
-│   ├── insureprice_dashboard.py                     # Streamlit dashboard
-│   ├── run_dashboard.py                             # Dashboard launcher
-│   └── visualization_dashboard.py                   # Visualizations
-│
-├── 📈 Analysis & Reports
-│   ├── data_exploration.py                          # EDA script
-│   ├── portfolio_simulation.py                      # Monte Carlo simulation
-│   ├── fairness_bias_analysis.py                    # Fairness analysis
-│   ├── shap_explainability.py                       # SHAP analysis
-│   └── price_elasticity_simulation.py               # Elasticity modeling
-│
-├── 📓 Notebooks
-│   └── InsurePrice_Car_Insurance_Risk_Modeling.ipynb
-│
-├── 📋 Configuration
-│   ├── requirements.txt                             # Core dependencies
-│   ├── requirements_api.txt                         # API dependencies
-│   └── README.md                                    # This file
-│
-└── 📊 Visualizations
-    ├── roc_curves_baseline.png
-    ├── premium_distribution_analysis.png
-    ├── portfolio_simulation_results.png
-    ├── fairness_bias_analysis.png
-    └── [other visualization files]
+└── 📊 Dashboard
+    └── insureprice_dashboard.py                 # Main App Entry point
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Core Technologies
-
-| Category | Technology | Purpose |
-|----------|------------|---------|
-| **Language** | Python 3.8+ | Core implementation |
-| **ML Framework** | scikit-learn, XGBoost | Risk models |
-| **API Framework** | FastAPI | REST API |
-| **Dashboard** | Streamlit | Interactive UI |
-| **Data Processing** | pandas, NumPy | Data manipulation |
-| **Visualization** | Matplotlib, Seaborn, Plotly | Charts |
-| **Explainability** | SHAP | Model interpretation |
-| **Network Analysis** | NetworkX | Fraud rings |
-| **NLP** | sklearn TF-IDF | Text analysis |
-
-### Key Dependencies
-
-```
-# Core ML
-pandas>=1.5.0
-numpy>=1.21.0
-scikit-learn>=1.2.0
-xgboost>=1.7.0
-shap>=0.48.0
-
-# API
-fastapi>=0.104.0
-uvicorn>=0.24.0
-pydantic>=2.5.0
-
-# Dashboard
-streamlit>=1.28.0
-plotly>=5.15.0
-
-# Analysis
-scipy>=1.9.0
-networkx>=3.0.0
-```
-
----
-
-## 💰 Business Value
-
-### Financial Impact Summary
-
-| Metric | Value | Industry Benchmark |
-|--------|-------|-------------------|
-| **Risk Prediction AUC** | 0.654 | 0.60-0.70 ✅ |
-| **Portfolio Profit Margin** | 8.4% | 5-7% ✅ |
-| **Loss Ratio** | 28.5% | 55-70% ✅ |
-| **Combined Ratio** | 56.5% | <100% ✅ |
-| **Fraud Detection Savings** | £60M potential | 5% improvement |
-
-### ROI Projection (100,000 Policy Portfolio)
-
-```
-Annual Business Value:
-├── Improved Profit Margin:     £840,000
-├── Fraud Prevention:           £600,000
-├── Reduced Loss Ratio:         £270,000
-├── Operational Efficiency:     £150,000
-├── Customer Retention:         £200,000
-└── Total Annual Benefit:     £2,060,000
-```
-
-### Competitive Advantages
-
-- **Real-Time Decisions**: Instant underwriting vs days
-- **Fraud Prevention**: AI-powered detection
-- **Fair Pricing**: Verified no bias
-- **Regulatory Compliance**: Explainable AI
-- **Customer Trust**: Transparent pricing
-
----
-
-## 📈 Model Performance
-
-### Risk Prediction Models (After Optimization)
-
-| Model | AUC | Gini | Improvement |
-|-------|-----|------|-------------|
-| **CatBoost (Categorical)** 🏆 | **0.6176** | **0.2352** | Best Model |
-| Random Forest (Optimized) | 0.6074 | 0.2147 | +4.52% |
-| Logistic Regression | 0.6076 | 0.2151 | +3.84% |
-| Neural Network Ensemble | 0.5993 | 0.1985 | Experimental |
-| Baseline (No Engineering) | 0.5692 | 0.1383 | - |
-
-### Model Improvement Journey
-
-| Stage | Enhancement | AUC Gain |
-|-------|-------------|----------|
-| 1 | Baseline Model | 0.5692 |
-| 2 | Feature Engineering | +3.84% |
-| 3 | Hyperparameter Optimization | +1.40% |
-| 4 | CatBoost Categorical Embeddings | +1.02% |
-| **Total** | **All Improvements** | **~6.3%** |
-
-### Feature Importance (CatBoost)
-
-1. **Vehicle Type** (16.5%) - Safety and repair costs
-2. **Annual Mileage** (11.6%) - Exposure risk
-3. **Married Status** (11.4%) - Stability indicator
-4. **Credit Score** (8.2%) - Financial responsibility
-5. **Total Violations** (7.7%) - Driving behavior
-
-### Engineered Features
-
-- **Interaction Terms**: AGE × EXPERIENCE, AGE × VIOLATIONS
-- **Risk Scores**: Composite driving risk, age risk, credit risk
-- **Ratios**: Experience ratio, accidents per 10K miles
-
-### Pricing Accuracy
-
-- **Premium Range**: £400 - £1,200 (UK market aligned)
-- **Average Premium**: £696
-- **Risk Factor Coverage**: 17+ variables + engineered features
-- **Regional Calibration**: 11 UK regions
+| Category | Technology |
+|----------|------------|
+| **Core** | Python 3.8+, Streamlit, FastAPI |
+| **ML/AI** | scikit-learn, XGBoost, CatBoost, SHAP |
+| **New Prototypes** | **Monte Carlo Simulation**, **Rule-Based Smart Contracts** |
+| **Visualization** | Plotly (Interactive Gauges, Maps), Matplotlib |
+| **Data** | pandas, NumPy (Vectorized operations) |
 
 ---
 
@@ -568,31 +231,8 @@ Annual Business Value:
 ---
 
 ## 📄 License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🙏 Acknowledgments
-
-- **UK Department for Transport**: Accident statistics
-- **Association of British Insurers (ABI)**: Industry benchmarks
-- **XGBoost Community**: ML framework
-- **SHAP Developers**: Explainability tools
-- **FastAPI Team**: API framework
-
----
-
 <div align="center">
-
-**🚗 InsurePrice** - *Transforming Car Insurance Through Data Science*
-
-**Version 2.0.0** | **December 2025**
-
----
-
-Made with ❤️ for the insurance industry
-
-[⬆️ Back to Top](#-insureprice-enterprise-car-insurance-risk-modeling--pricing-platform)
-
+**🚗 InsurePrice v2.1** - *Innovating Insurance with AI*
 </div>
