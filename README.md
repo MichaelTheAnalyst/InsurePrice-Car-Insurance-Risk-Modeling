@@ -99,6 +99,13 @@ Added in **v2.1 (Dec 2025)**, these experimental features showcase the future of
 - **Trigger**: If `Risk > 80%`, the policy **automatically credits £250** for immediate repairs at a partner garage.
 - **Goal**: Cheaper to pay £250 for tyres than £15,000 for a hydroplaning accident.
 
+### 4. 🍃 Carbon-to-Credit Gamification
+*Drive Green, Mine Crypto.*
+- **Concept**: Verifiable eco-driving earns "InsureCoin" tokens.
+- **Engine**: Calculates a "Mining Hashrate" based on **Avg RPM** and **Driving Smoothness**.
+- **Incentive**: Carbon-negative driving (Tier 1) mines credits that automatically offset your premium bill.
+- **Data**: 50,000 synthetic "Driver Eco Profiles" (`Driver_Eco_Profiles.csv`).
+
 ---
 
 ## 🚀 Quick Start
@@ -127,6 +134,9 @@ python scripts/generate_weather_traffic.py
 
 # 3. Generate IoT Maintenance Records (Tyres/Brakes)
 python scripts/generate_maintenance_data.py
+
+# 4. Generate Eco-Driving Profiles (RPM/Smoothness)
+python scripts/generate_eco_data.py
 ```
 
 ### 2. Launch Dashboard
@@ -151,6 +161,7 @@ streamlit run insureprice_dashboard.py
 7.  **🧬 Risk Twin**: (New) Commute Simulator.
 8.  **🏘️ Village Pools**: (New) P2P Insurance.
 9.  **🛠️ Preventative Bond**: (New) IoT Maintenance.
+10. **🍃 Eco-Credits**: (New) Crypto Mining Gamification.
 
 ---
 
@@ -161,6 +172,7 @@ InsurePrice/
 ├── 📊 Data & Models
 │   ├── data/The_Village_Population.csv          # [NEW] 50k User profiles
 │   ├── data/Vehicle_Maintenance_Records.csv     # [NEW] IoT Health data
+│   ├── data/Driver_Eco_Profiles.csv             # [NEW] Eco-Driving stats
 │   ├── data/UK_Driving_Conditions_2025.csv      # [NEW] Environmental data
 │   └── ...
 │
@@ -168,10 +180,12 @@ InsurePrice/
 │   ├── src/simulation/digital_twin.py           # Monte Carlo Engine
 │   ├── src/p2p/community_pool.py                # Village Logic
 │   ├── src/maintenance/bond_engine.py           # IoT Bond Logic
+│   ├── src/gamification/carbon_engine.py        # Carbon Mining Logic
 │   └── pages/                                   # Streamlit Independent Pages
 │       ├── 1_Risk_Twin.py
 │       ├── 2_Village_Pools.py
-│       └── 3_Preventative_Bond.py
+│       ├── 3_Preventative_Bond.py
+│       └── 4_Eco_Credits.py
 │
 ├── 💰 Pricing Engine
 │   ├── pricing_engine.py                        # Main pricing engine
@@ -184,7 +198,8 @@ InsurePrice/
 ├── 📜 Scripts [NEW]
 │   ├── generate_village_population.py
 │   ├── generate_weather_traffic.py
-│   └── generate_maintenance_data.py
+│   ├── generate_maintenance_data.py
+│   └── generate_eco_data.py
 │
 └── 📊 Dashboard
     └── insureprice_dashboard.py                 # Main App Entry point
