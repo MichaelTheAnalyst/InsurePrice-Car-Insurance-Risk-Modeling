@@ -1,0 +1,3286 @@
+date,region,weather_condition,traffic_baseline,visibility_meters
+2025-01-01,London,Rain,Gridlock,3822
+2025-01-02,London,Rain,Heavy,3494
+2025-01-03,London,Rain,Heavy,819
+2025-01-04,London,Rain,Heavy,2483
+2025-01-05,London,Clear,Light,10000
+2025-01-06,London,Rain,Gridlock,524
+2025-01-07,London,Rain,Heavy,1025
+2025-01-08,London,Clear,Gridlock,10000
+2025-01-09,London,Rain,Gridlock,3606
+2025-01-10,London,Rain,Heavy,2485
+2025-01-11,London,Fog,Moderate,2091
+2025-01-12,London,Rain,Light,1413
+2025-01-13,London,Clear,Gridlock,10000
+2025-01-14,London,Fog,Heavy,1635
+2025-01-15,London,Rain,Gridlock,3893
+2025-01-16,London,Clear,Gridlock,10000
+2025-01-17,London,Fog,Gridlock,4961
+2025-01-18,London,Rain,Moderate,1325
+2025-01-19,London,Clear,Light,10000
+2025-01-20,London,Rain,Gridlock,4043
+2025-01-21,London,Snow,Heavy,2112
+2025-01-22,London,Clear,Gridlock,10000
+2025-01-23,London,Rain,Heavy,441
+2025-01-24,London,Rain,Heavy,2328
+2025-01-25,London,Rain,Heavy,250
+2025-01-26,London,Rain,Light,4648
+2025-01-27,London,Rain,Gridlock,2823
+2025-01-28,London,Fog,Heavy,2740
+2025-01-29,London,Fog,Gridlock,920
+2025-01-30,London,Clear,Heavy,10000
+2025-01-31,London,Rain,Gridlock,613
+2025-02-01,London,Rain,Moderate,1728
+2025-02-02,London,Fog,Light,1772
+2025-02-03,London,Rain,Gridlock,1647
+2025-02-04,London,Rain,Gridlock,3677
+2025-02-05,London,Rain,Heavy,2088
+2025-02-06,London,Fog,Heavy,1356
+2025-02-07,London,Rain,Gridlock,759
+2025-02-08,London,Rain,Light,3798
+2025-02-09,London,Rain,Light,713
+2025-02-10,London,Fog,Gridlock,3354
+2025-02-11,London,Rain,Heavy,1341
+2025-02-12,London,Rain,Heavy,3746
+2025-02-13,London,Storm,Gridlock,904
+2025-02-14,London,Rain,Heavy,1757
+2025-02-15,London,Rain,Moderate,4981
+2025-02-16,London,Clear,Light,10000
+2025-02-17,London,Clear,Gridlock,10000
+2025-02-18,London,Storm,Gridlock,658
+2025-02-19,London,Clear,Gridlock,10000
+2025-02-20,London,Fog,Heavy,1419
+2025-02-21,London,Rain,Gridlock,1893
+2025-02-22,London,Fog,Light,2435
+2025-02-23,London,Fog,Moderate,4111
+2025-02-24,London,Rain,Heavy,673
+2025-02-25,London,Rain,Heavy,3773
+2025-02-26,London,Rain,Heavy,3220
+2025-02-27,London,Rain,Gridlock,3241
+2025-02-28,London,Fog,Gridlock,1495
+2025-03-01,London,Rain,Moderate,3233
+2025-03-02,London,Clear,Moderate,10000
+2025-03-03,London,Clear,Gridlock,10000
+2025-03-04,London,Rain,Heavy,210
+2025-03-05,London,Clear,Heavy,10000
+2025-03-06,London,Clear,Gridlock,10000
+2025-03-07,London,Clear,Gridlock,10000
+2025-03-08,London,Rain,Light,1743
+2025-03-09,London,Storm,Light,2535
+2025-03-10,London,Storm,Heavy,1009
+2025-03-11,London,Fog,Gridlock,4692
+2025-03-12,London,Rain,Gridlock,2255
+2025-03-13,London,Storm,Heavy,1110
+2025-03-14,London,Storm,Gridlock,3220
+2025-03-15,London,Storm,Light,2350
+2025-03-16,London,Clear,Moderate,10000
+2025-03-17,London,Clear,Gridlock,10000
+2025-03-18,London,Storm,Gridlock,3913
+2025-03-19,London,Clear,Heavy,10000
+2025-03-20,London,Clear,Heavy,10000
+2025-03-21,London,Fog,Gridlock,2856
+2025-03-22,London,Rain,Light,2505
+2025-03-23,London,Storm,Moderate,4181
+2025-03-24,London,Rain,Gridlock,4545
+2025-03-25,London,Clear,Heavy,10000
+2025-03-26,London,Rain,Gridlock,4196
+2025-03-27,London,Rain,Heavy,1765
+2025-03-28,London,Clear,Gridlock,10000
+2025-03-29,London,Clear,Moderate,10000
+2025-03-30,London,Clear,Heavy,10000
+2025-03-31,London,Rain,Heavy,4192
+2025-04-01,London,Rain,Heavy,4515
+2025-04-02,London,Rain,Gridlock,880
+2025-04-03,London,Rain,Heavy,166
+2025-04-04,London,Clear,Gridlock,10000
+2025-04-05,London,Clear,Heavy,10000
+2025-04-06,London,Rain,Light,609
+2025-04-07,London,Clear,Gridlock,10000
+2025-04-08,London,Rain,Gridlock,2344
+2025-04-09,London,Clear,Heavy,10000
+2025-04-10,London,Clear,Heavy,10000
+2025-04-11,London,Clear,Gridlock,10000
+2025-04-12,London,Clear,Light,10000
+2025-04-13,London,Rain,Moderate,1685
+2025-04-14,London,Clear,Heavy,10000
+2025-04-15,London,Rain,Heavy,3780
+2025-04-16,London,Rain,Gridlock,4661
+2025-04-17,London,Rain,Gridlock,945
+2025-04-18,London,Rain,Gridlock,3796
+2025-04-19,London,Rain,Light,2788
+2025-04-20,London,Fog,Moderate,3963
+2025-04-21,London,Clear,Heavy,10000
+2025-04-22,London,Clear,Gridlock,10000
+2025-04-23,London,Clear,Heavy,10000
+2025-04-24,London,Rain,Heavy,4024
+2025-04-25,London,Clear,Gridlock,10000
+2025-04-26,London,Fog,Moderate,3398
+2025-04-27,London,Storm,Moderate,2554
+2025-04-28,London,Rain,Gridlock,1621
+2025-04-29,London,Clear,Heavy,10000
+2025-04-30,London,Storm,Gridlock,2376
+2025-05-01,London,Rain,Gridlock,645
+2025-05-02,London,Fog,Gridlock,445
+2025-05-03,London,Storm,Moderate,4410
+2025-05-04,London,Clear,Heavy,10000
+2025-05-05,London,Storm,Gridlock,3190
+2025-05-06,London,Clear,Gridlock,10000
+2025-05-07,London,Rain,Gridlock,2206
+2025-05-08,London,Storm,Gridlock,4779
+2025-05-09,London,Rain,Heavy,4896
+2025-05-10,London,Clear,Moderate,10000
+2025-05-11,London,Rain,Light,1592
+2025-05-12,London,Rain,Heavy,2731
+2025-05-13,London,Clear,Heavy,10000
+2025-05-14,London,Rain,Gridlock,1730
+2025-05-15,London,Storm,Gridlock,3191
+2025-05-16,London,Rain,Heavy,2264
+2025-05-17,London,Rain,Heavy,4184
+2025-05-18,London,Rain,Light,4899
+2025-05-19,London,Rain,Heavy,4974
+2025-05-20,London,Fog,Gridlock,4335
+2025-05-21,London,Rain,Heavy,978
+2025-05-22,London,Clear,Heavy,10000
+2025-05-23,London,Storm,Gridlock,2983
+2025-05-24,London,Storm,Heavy,1300
+2025-05-25,London,Rain,Light,1306
+2025-05-26,London,Clear,Gridlock,10000
+2025-05-27,London,Rain,Gridlock,1403
+2025-05-28,London,Storm,Gridlock,717
+2025-05-29,London,Clear,Gridlock,10000
+2025-05-30,London,Clear,Heavy,10000
+2025-05-31,London,Clear,Light,10000
+2025-06-01,London,Clear,Light,10000
+2025-06-02,London,Clear,Gridlock,10000
+2025-06-03,London,Clear,Heavy,10000
+2025-06-04,London,Fog,Gridlock,1994
+2025-06-05,London,Clear,Gridlock,10000
+2025-06-06,London,Clear,Heavy,10000
+2025-06-07,London,Rain,Heavy,4998
+2025-06-08,London,Rain,Light,4834
+2025-06-09,London,Rain,Gridlock,434
+2025-06-10,London,Clear,Gridlock,10000
+2025-06-11,London,Clear,Gridlock,10000
+2025-06-12,London,Clear,Gridlock,10000
+2025-06-13,London,Clear,Heavy,10000
+2025-06-14,London,Clear,Light,10000
+2025-06-15,London,Clear,Moderate,10000
+2025-06-16,London,Rain,Heavy,1624
+2025-06-17,London,Clear,Gridlock,10000
+2025-06-18,London,Clear,Gridlock,10000
+2025-06-19,London,Clear,Gridlock,10000
+2025-06-20,London,Clear,Gridlock,10000
+2025-06-21,London,Clear,Moderate,10000
+2025-06-22,London,Clear,Light,10000
+2025-06-23,London,Clear,Gridlock,10000
+2025-06-24,London,Clear,Gridlock,10000
+2025-06-25,London,Clear,Gridlock,10000
+2025-06-26,London,Clear,Gridlock,10000
+2025-06-27,London,Fog,Gridlock,2882
+2025-06-28,London,Clear,Light,10000
+2025-06-29,London,Storm,Light,4350
+2025-06-30,London,Clear,Heavy,10000
+2025-07-01,London,Clear,Gridlock,10000
+2025-07-02,London,Clear,Heavy,10000
+2025-07-03,London,Clear,Gridlock,10000
+2025-07-04,London,Clear,Gridlock,10000
+2025-07-05,London,Clear,Moderate,10000
+2025-07-06,London,Clear,Light,10000
+2025-07-07,London,Clear,Gridlock,10000
+2025-07-08,London,Clear,Heavy,10000
+2025-07-09,London,Clear,Heavy,10000
+2025-07-10,London,Clear,Gridlock,10000
+2025-07-11,London,Clear,Heavy,10000
+2025-07-12,London,Rain,Light,1326
+2025-07-13,London,Storm,Moderate,105
+2025-07-14,London,Clear,Heavy,10000
+2025-07-15,London,Clear,Heavy,10000
+2025-07-16,London,Clear,Gridlock,10000
+2025-07-17,London,Clear,Heavy,10000
+2025-07-18,London,Clear,Heavy,10000
+2025-07-19,London,Clear,Light,10000
+2025-07-20,London,Clear,Light,10000
+2025-07-21,London,Clear,Heavy,10000
+2025-07-22,London,Rain,Gridlock,116
+2025-07-23,London,Clear,Gridlock,10000
+2025-07-24,London,Rain,Gridlock,2522
+2025-07-25,London,Clear,Gridlock,10000
+2025-07-26,London,Clear,Light,10000
+2025-07-27,London,Clear,Heavy,10000
+2025-07-28,London,Clear,Heavy,10000
+2025-07-29,London,Clear,Heavy,10000
+2025-07-30,London,Rain,Gridlock,292
+2025-07-31,London,Clear,Gridlock,10000
+2025-08-01,London,Rain,Gridlock,695
+2025-08-02,London,Storm,Light,4339
+2025-08-03,London,Clear,Moderate,10000
+2025-08-04,London,Clear,Heavy,10000
+2025-08-05,London,Clear,Gridlock,10000
+2025-08-06,London,Clear,Gridlock,10000
+2025-08-07,London,Clear,Heavy,10000
+2025-08-08,London,Clear,Heavy,10000
+2025-08-09,London,Clear,Light,10000
+2025-08-10,London,Clear,Heavy,10000
+2025-08-11,London,Clear,Heavy,10000
+2025-08-12,London,Clear,Gridlock,10000
+2025-08-13,London,Clear,Heavy,10000
+2025-08-14,London,Fog,Gridlock,4479
+2025-08-15,London,Fog,Heavy,1620
+2025-08-16,London,Fog,Moderate,3693
+2025-08-17,London,Rain,Light,922
+2025-08-18,London,Rain,Gridlock,2948
+2025-08-19,London,Clear,Heavy,10000
+2025-08-20,London,Rain,Gridlock,1368
+2025-08-21,London,Rain,Gridlock,4720
+2025-08-22,London,Clear,Gridlock,10000
+2025-08-23,London,Clear,Moderate,10000
+2025-08-24,London,Fog,Moderate,2020
+2025-08-25,London,Clear,Gridlock,10000
+2025-08-26,London,Clear,Gridlock,10000
+2025-08-27,London,Clear,Gridlock,10000
+2025-08-28,London,Storm,Gridlock,1000
+2025-08-29,London,Clear,Gridlock,10000
+2025-08-30,London,Clear,Moderate,10000
+2025-08-31,London,Clear,Moderate,10000
+2025-09-01,London,Clear,Gridlock,10000
+2025-09-02,London,Rain,Gridlock,2421
+2025-09-03,London,Rain,Gridlock,2005
+2025-09-04,London,Rain,Heavy,4156
+2025-09-05,London,Storm,Heavy,864
+2025-09-06,London,Clear,Moderate,10000
+2025-09-07,London,Storm,Light,3331
+2025-09-08,London,Rain,Gridlock,3581
+2025-09-09,London,Clear,Gridlock,10000
+2025-09-10,London,Clear,Gridlock,10000
+2025-09-11,London,Clear,Heavy,10000
+2025-09-12,London,Clear,Gridlock,10000
+2025-09-13,London,Clear,Light,10000
+2025-09-14,London,Clear,Light,10000
+2025-09-15,London,Fog,Heavy,2758
+2025-09-16,London,Clear,Heavy,10000
+2025-09-17,London,Rain,Heavy,586
+2025-09-18,London,Fog,Gridlock,524
+2025-09-19,London,Rain,Heavy,4908
+2025-09-20,London,Clear,Light,10000
+2025-09-21,London,Rain,Light,4430
+2025-09-22,London,Rain,Heavy,3170
+2025-09-23,London,Clear,Heavy,10000
+2025-09-24,London,Rain,Gridlock,4472
+2025-09-25,London,Rain,Gridlock,1001
+2025-09-26,London,Fog,Heavy,4574
+2025-09-27,London,Clear,Moderate,10000
+2025-09-28,London,Rain,Light,3107
+2025-09-29,London,Rain,Gridlock,996
+2025-09-30,London,Clear,Gridlock,10000
+2025-10-01,London,Storm,Heavy,1951
+2025-10-02,London,Rain,Gridlock,1873
+2025-10-03,London,Rain,Heavy,2856
+2025-10-04,London,Clear,Light,10000
+2025-10-05,London,Rain,Moderate,3360
+2025-10-06,London,Rain,Gridlock,2193
+2025-10-07,London,Storm,Gridlock,4033
+2025-10-08,London,Clear,Heavy,10000
+2025-10-09,London,Clear,Heavy,10000
+2025-10-10,London,Clear,Heavy,10000
+2025-10-11,London,Clear,Moderate,10000
+2025-10-12,London,Rain,Moderate,3644
+2025-10-13,London,Clear,Gridlock,10000
+2025-10-14,London,Clear,Gridlock,10000
+2025-10-15,London,Rain,Heavy,3627
+2025-10-16,London,Rain,Gridlock,2729
+2025-10-17,London,Storm,Heavy,4003
+2025-10-18,London,Clear,Light,10000
+2025-10-19,London,Rain,Moderate,3480
+2025-10-20,London,Clear,Gridlock,10000
+2025-10-21,London,Clear,Gridlock,10000
+2025-10-22,London,Rain,Gridlock,2139
+2025-10-23,London,Rain,Gridlock,4733
+2025-10-24,London,Clear,Heavy,10000
+2025-10-25,London,Storm,Moderate,4313
+2025-10-26,London,Clear,Moderate,10000
+2025-10-27,London,Rain,Gridlock,3078
+2025-10-28,London,Clear,Heavy,10000
+2025-10-29,London,Clear,Heavy,10000
+2025-10-30,London,Rain,Heavy,2108
+2025-10-31,London,Clear,Heavy,10000
+2025-11-01,London,Rain,Light,2761
+2025-11-02,London,Storm,Moderate,1835
+2025-11-03,London,Clear,Gridlock,10000
+2025-11-04,London,Clear,Gridlock,10000
+2025-11-05,London,Clear,Heavy,10000
+2025-11-06,London,Clear,Gridlock,10000
+2025-11-07,London,Rain,Heavy,4276
+2025-11-08,London,Clear,Light,10000
+2025-11-09,London,Storm,Light,2372
+2025-11-10,London,Clear,Gridlock,10000
+2025-11-11,London,Rain,Gridlock,4157
+2025-11-12,London,Rain,Gridlock,2758
+2025-11-13,London,Rain,Gridlock,3776
+2025-11-14,London,Rain,Gridlock,3409
+2025-11-15,London,Rain,Heavy,4040
+2025-11-16,London,Rain,Light,440
+2025-11-17,London,Clear,Heavy,10000
+2025-11-18,London,Storm,Gridlock,3344
+2025-11-19,London,Fog,Heavy,3611
+2025-11-20,London,Rain,Heavy,2717
+2025-11-21,London,Clear,Gridlock,10000
+2025-11-22,London,Clear,Moderate,10000
+2025-11-23,London,Clear,Light,10000
+2025-11-24,London,Rain,Heavy,2819
+2025-11-25,London,Rain,Gridlock,3571
+2025-11-26,London,Clear,Heavy,10000
+2025-11-27,London,Fog,Gridlock,3860
+2025-11-28,London,Clear,Heavy,10000
+2025-11-29,London,Clear,Light,10000
+2025-11-30,London,Rain,Moderate,1821
+2025-12-01,London,Storm,Gridlock,3480
+2025-12-02,London,Rain,Heavy,3550
+2025-12-03,London,Rain,Heavy,4438
+2025-12-04,London,Clear,Gridlock,10000
+2025-12-05,London,Rain,Gridlock,2284
+2025-12-06,London,Fog,Moderate,988
+2025-12-07,London,Rain,Heavy,3465
+2025-12-08,London,Rain,Heavy,4917
+2025-12-09,London,Clear,Gridlock,10000
+2025-12-10,London,Rain,Heavy,4371
+2025-12-11,London,Rain,Gridlock,3895
+2025-12-12,London,Fog,Heavy,3220
+2025-12-13,London,Rain,Moderate,1964
+2025-12-14,London,Rain,Moderate,2159
+2025-12-15,London,Storm,Gridlock,4926
+2025-12-16,London,Clear,Gridlock,10000
+2025-12-17,London,Rain,Gridlock,2732
+2025-12-18,London,Clear,Gridlock,10000
+2025-12-19,London,Fog,Gridlock,1468
+2025-12-20,London,Clear,Light,10000
+2025-12-21,London,Rain,Light,4022
+2025-12-22,London,Clear,Gridlock,10000
+2025-12-23,London,Clear,Gridlock,10000
+2025-12-24,London,Clear,Gridlock,10000
+2025-12-25,London,Fog,Gridlock,3980
+2025-12-26,London,Fog,Gridlock,2433
+2025-12-27,London,Rain,Moderate,1754
+2025-12-28,London,Rain,Light,1766
+2025-12-29,London,Rain,Gridlock,606
+2025-12-30,London,Fog,Gridlock,2769
+2025-12-31,London,Rain,Heavy,2453
+2025-01-01,South East,Rain,Heavy,1597
+2025-01-02,South East,Clear,Heavy,10000
+2025-01-03,South East,Rain,Gridlock,2114
+2025-01-04,South East,Clear,Light,10000
+2025-01-05,South East,Clear,Moderate,10000
+2025-01-06,South East,Clear,Heavy,10000
+2025-01-07,South East,Clear,Heavy,10000
+2025-01-08,South East,Fog,Heavy,2432
+2025-01-09,South East,Fog,Moderate,1937
+2025-01-10,South East,Fog,Gridlock,1090
+2025-01-11,South East,Fog,Moderate,935
+2025-01-12,South East,Rain,Moderate,2403
+2025-01-13,South East,Storm,Heavy,4861
+2025-01-14,South East,Rain,Moderate,2478
+2025-01-15,South East,Rain,Moderate,3154
+2025-01-16,South East,Rain,Heavy,3044
+2025-01-17,South East,Rain,Moderate,3603
+2025-01-18,South East,Rain,Heavy,88
+2025-01-19,South East,Rain,Moderate,1148
+2025-01-20,South East,Clear,Moderate,10000
+2025-01-21,South East,Rain,Heavy,3828
+2025-01-22,South East,Snow,Moderate,1038
+2025-01-23,South East,Fog,Heavy,4076
+2025-01-24,South East,Snow,Heavy,4715
+2025-01-25,South East,Fog,Light,2030
+2025-01-26,South East,Clear,Moderate,10000
+2025-01-27,South East,Rain,Heavy,2305
+2025-01-28,South East,Rain,Moderate,1034
+2025-01-29,South East,Fog,Heavy,640
+2025-01-30,South East,Rain,Heavy,4494
+2025-01-31,South East,Clear,Moderate,10000
+2025-02-01,South East,Fog,Moderate,576
+2025-02-02,South East,Rain,Light,3394
+2025-02-03,South East,Rain,Heavy,570
+2025-02-04,South East,Clear,Heavy,10000
+2025-02-05,South East,Clear,Heavy,10000
+2025-02-06,South East,Rain,Heavy,444
+2025-02-07,South East,Storm,Moderate,3910
+2025-02-08,South East,Clear,Light,10000
+2025-02-09,South East,Rain,Moderate,1617
+2025-02-10,South East,Rain,Heavy,2093
+2025-02-11,South East,Fog,Moderate,263
+2025-02-12,South East,Rain,Moderate,2986
+2025-02-13,South East,Rain,Moderate,2770
+2025-02-14,South East,Rain,Moderate,51
+2025-02-15,South East,Rain,Moderate,1999
+2025-02-16,South East,Clear,Light,10000
+2025-02-17,South East,Rain,Moderate,139
+2025-02-18,South East,Rain,Gridlock,3091
+2025-02-19,South East,Clear,Heavy,10000
+2025-02-20,South East,Snow,Moderate,684
+2025-02-21,South East,Clear,Gridlock,10000
+2025-02-22,South East,Clear,Moderate,10000
+2025-02-23,South East,Rain,Moderate,1763
+2025-02-24,South East,Rain,Heavy,4256
+2025-02-25,South East,Fog,Moderate,257
+2025-02-26,South East,Rain,Gridlock,459
+2025-02-27,South East,Rain,Moderate,4159
+2025-02-28,South East,Clear,Moderate,10000
+2025-03-01,South East,Clear,Light,10000
+2025-03-02,South East,Fog,Light,3688
+2025-03-03,South East,Rain,Heavy,3854
+2025-03-04,South East,Rain,Heavy,356
+2025-03-05,South East,Clear,Moderate,10000
+2025-03-06,South East,Rain,Heavy,361
+2025-03-07,South East,Storm,Heavy,804
+2025-03-08,South East,Rain,Light,402
+2025-03-09,South East,Fog,Light,208
+2025-03-10,South East,Rain,Gridlock,4661
+2025-03-11,South East,Rain,Heavy,1005
+2025-03-12,South East,Clear,Gridlock,10000
+2025-03-13,South East,Rain,Heavy,3861
+2025-03-14,South East,Fog,Gridlock,1847
+2025-03-15,South East,Rain,Heavy,4331
+2025-03-16,South East,Storm,Light,579
+2025-03-17,South East,Rain,Heavy,2964
+2025-03-18,South East,Rain,Heavy,4623
+2025-03-19,South East,Clear,Heavy,10000
+2025-03-20,South East,Storm,Moderate,4055
+2025-03-21,South East,Rain,Heavy,4526
+2025-03-22,South East,Rain,Moderate,3205
+2025-03-23,South East,Rain,Light,2988
+2025-03-24,South East,Clear,Heavy,10000
+2025-03-25,South East,Fog,Moderate,4605
+2025-03-26,South East,Clear,Gridlock,10000
+2025-03-27,South East,Rain,Heavy,3828
+2025-03-28,South East,Rain,Heavy,2941
+2025-03-29,South East,Fog,Light,2410
+2025-03-30,South East,Clear,Light,10000
+2025-03-31,South East,Clear,Heavy,10000
+2025-04-01,South East,Rain,Heavy,3618
+2025-04-02,South East,Rain,Heavy,1440
+2025-04-03,South East,Fog,Heavy,1006
+2025-04-04,South East,Clear,Gridlock,10000
+2025-04-05,South East,Clear,Light,10000
+2025-04-06,South East,Clear,Moderate,10000
+2025-04-07,South East,Clear,Moderate,10000
+2025-04-08,South East,Clear,Moderate,10000
+2025-04-09,South East,Rain,Heavy,325
+2025-04-10,South East,Storm,Gridlock,175
+2025-04-11,South East,Storm,Heavy,1258
+2025-04-12,South East,Rain,Light,3299
+2025-04-13,South East,Clear,Moderate,10000
+2025-04-14,South East,Clear,Moderate,10000
+2025-04-15,South East,Clear,Gridlock,10000
+2025-04-16,South East,Rain,Moderate,1414
+2025-04-17,South East,Clear,Heavy,10000
+2025-04-18,South East,Rain,Gridlock,4231
+2025-04-19,South East,Clear,Moderate,10000
+2025-04-20,South East,Storm,Light,3535
+2025-04-21,South East,Rain,Heavy,3769
+2025-04-22,South East,Fog,Heavy,1036
+2025-04-23,South East,Storm,Heavy,3122
+2025-04-24,South East,Clear,Heavy,10000
+2025-04-25,South East,Clear,Heavy,10000
+2025-04-26,South East,Clear,Moderate,10000
+2025-04-27,South East,Storm,Light,3282
+2025-04-28,South East,Rain,Gridlock,2682
+2025-04-29,South East,Clear,Heavy,10000
+2025-04-30,South East,Clear,Heavy,10000
+2025-05-01,South East,Rain,Gridlock,4164
+2025-05-02,South East,Fog,Heavy,1050
+2025-05-03,South East,Clear,Moderate,10000
+2025-05-04,South East,Clear,Light,10000
+2025-05-05,South East,Rain,Heavy,3197
+2025-05-06,South East,Rain,Heavy,4036
+2025-05-07,South East,Clear,Heavy,10000
+2025-05-08,South East,Clear,Heavy,10000
+2025-05-09,South East,Clear,Moderate,10000
+2025-05-10,South East,Rain,Moderate,2939
+2025-05-11,South East,Rain,Moderate,3915
+2025-05-12,South East,Storm,Gridlock,1997
+2025-05-13,South East,Clear,Heavy,10000
+2025-05-14,South East,Clear,Heavy,10000
+2025-05-15,South East,Rain,Heavy,2880
+2025-05-16,South East,Clear,Heavy,10000
+2025-05-17,South East,Rain,Moderate,1054
+2025-05-18,South East,Fog,Light,4481
+2025-05-19,South East,Rain,Gridlock,764
+2025-05-20,South East,Clear,Moderate,10000
+2025-05-21,South East,Rain,Moderate,1013
+2025-05-22,South East,Clear,Heavy,10000
+2025-05-23,South East,Clear,Gridlock,10000
+2025-05-24,South East,Rain,Light,1731
+2025-05-25,South East,Clear,Heavy,10000
+2025-05-26,South East,Fog,Heavy,1336
+2025-05-27,South East,Rain,Moderate,3704
+2025-05-28,South East,Clear,Heavy,10000
+2025-05-29,South East,Clear,Gridlock,10000
+2025-05-30,South East,Rain,Moderate,1895
+2025-05-31,South East,Rain,Light,2988
+2025-06-01,South East,Clear,Moderate,10000
+2025-06-02,South East,Clear,Heavy,10000
+2025-06-03,South East,Rain,Heavy,2475
+2025-06-04,South East,Clear,Gridlock,10000
+2025-06-05,South East,Rain,Heavy,1366
+2025-06-06,South East,Clear,Heavy,10000
+2025-06-07,South East,Rain,Moderate,195
+2025-06-08,South East,Rain,Light,1512
+2025-06-09,South East,Clear,Moderate,10000
+2025-06-10,South East,Rain,Gridlock,680
+2025-06-11,South East,Clear,Moderate,10000
+2025-06-12,South East,Clear,Heavy,10000
+2025-06-13,South East,Clear,Heavy,10000
+2025-06-14,South East,Clear,Moderate,10000
+2025-06-15,South East,Clear,Light,10000
+2025-06-16,South East,Clear,Heavy,10000
+2025-06-17,South East,Clear,Heavy,10000
+2025-06-18,South East,Clear,Heavy,10000
+2025-06-19,South East,Clear,Heavy,10000
+2025-06-20,South East,Rain,Heavy,1175
+2025-06-21,South East,Clear,Light,10000
+2025-06-22,South East,Clear,Light,10000
+2025-06-23,South East,Rain,Moderate,1964
+2025-06-24,South East,Clear,Heavy,10000
+2025-06-25,South East,Clear,Gridlock,10000
+2025-06-26,South East,Clear,Moderate,10000
+2025-06-27,South East,Clear,Heavy,10000
+2025-06-28,South East,Clear,Moderate,10000
+2025-06-29,South East,Clear,Light,10000
+2025-06-30,South East,Clear,Moderate,10000
+2025-07-01,South East,Clear,Heavy,10000
+2025-07-02,South East,Storm,Heavy,4261
+2025-07-03,South East,Clear,Heavy,10000
+2025-07-04,South East,Storm,Moderate,2384
+2025-07-05,South East,Rain,Light,2715
+2025-07-06,South East,Clear,Light,10000
+2025-07-07,South East,Rain,Heavy,1981
+2025-07-08,South East,Storm,Heavy,286
+2025-07-09,South East,Clear,Gridlock,10000
+2025-07-10,South East,Clear,Heavy,10000
+2025-07-11,South East,Rain,Heavy,335
+2025-07-12,South East,Clear,Moderate,10000
+2025-07-13,South East,Clear,Moderate,10000
+2025-07-14,South East,Clear,Gridlock,10000
+2025-07-15,South East,Rain,Heavy,3775
+2025-07-16,South East,Clear,Heavy,10000
+2025-07-17,South East,Clear,Heavy,10000
+2025-07-18,South East,Clear,Heavy,10000
+2025-07-19,South East,Clear,Moderate,10000
+2025-07-20,South East,Clear,Heavy,10000
+2025-07-21,South East,Rain,Moderate,455
+2025-07-22,South East,Clear,Gridlock,10000
+2025-07-23,South East,Rain,Heavy,610
+2025-07-24,South East,Clear,Gridlock,10000
+2025-07-25,South East,Clear,Gridlock,10000
+2025-07-26,South East,Rain,Moderate,3969
+2025-07-27,South East,Clear,Moderate,10000
+2025-07-28,South East,Clear,Moderate,10000
+2025-07-29,South East,Clear,Heavy,10000
+2025-07-30,South East,Storm,Heavy,4411
+2025-07-31,South East,Rain,Moderate,4309
+2025-08-01,South East,Clear,Moderate,10000
+2025-08-02,South East,Rain,Moderate,2996
+2025-08-03,South East,Storm,Moderate,2579
+2025-08-04,South East,Clear,Moderate,10000
+2025-08-05,South East,Clear,Gridlock,10000
+2025-08-06,South East,Clear,Gridlock,10000
+2025-08-07,South East,Clear,Heavy,10000
+2025-08-08,South East,Clear,Heavy,10000
+2025-08-09,South East,Clear,Moderate,10000
+2025-08-10,South East,Clear,Moderate,10000
+2025-08-11,South East,Clear,Moderate,10000
+2025-08-12,South East,Clear,Heavy,10000
+2025-08-13,South East,Clear,Moderate,10000
+2025-08-14,South East,Storm,Moderate,506
+2025-08-15,South East,Clear,Moderate,10000
+2025-08-16,South East,Clear,Moderate,10000
+2025-08-17,South East,Clear,Light,10000
+2025-08-18,South East,Clear,Heavy,10000
+2025-08-19,South East,Clear,Heavy,10000
+2025-08-20,South East,Clear,Heavy,10000
+2025-08-21,South East,Clear,Heavy,10000
+2025-08-22,South East,Rain,Heavy,1558
+2025-08-23,South East,Rain,Light,2094
+2025-08-24,South East,Clear,Moderate,10000
+2025-08-25,South East,Clear,Moderate,10000
+2025-08-26,South East,Clear,Gridlock,10000
+2025-08-27,South East,Clear,Moderate,10000
+2025-08-28,South East,Clear,Heavy,10000
+2025-08-29,South East,Clear,Heavy,10000
+2025-08-30,South East,Clear,Moderate,10000
+2025-08-31,South East,Clear,Moderate,10000
+2025-09-01,South East,Rain,Moderate,4318
+2025-09-02,South East,Clear,Heavy,10000
+2025-09-03,South East,Clear,Heavy,10000
+2025-09-04,South East,Rain,Heavy,4774
+2025-09-05,South East,Rain,Moderate,4769
+2025-09-06,South East,Rain,Light,3854
+2025-09-07,South East,Clear,Light,10000
+2025-09-08,South East,Rain,Gridlock,4250
+2025-09-09,South East,Clear,Heavy,10000
+2025-09-10,South East,Storm,Gridlock,3681
+2025-09-11,South East,Clear,Gridlock,10000
+2025-09-12,South East,Clear,Gridlock,10000
+2025-09-13,South East,Rain,Moderate,2899
+2025-09-14,South East,Clear,Light,10000
+2025-09-15,South East,Clear,Gridlock,10000
+2025-09-16,South East,Rain,Gridlock,2198
+2025-09-17,South East,Clear,Moderate,10000
+2025-09-18,South East,Rain,Heavy,3556
+2025-09-19,South East,Clear,Moderate,10000
+2025-09-20,South East,Storm,Moderate,3947
+2025-09-21,South East,Rain,Heavy,4581
+2025-09-22,South East,Rain,Heavy,612
+2025-09-23,South East,Clear,Moderate,10000
+2025-09-24,South East,Rain,Heavy,1623
+2025-09-25,South East,Clear,Heavy,10000
+2025-09-26,South East,Fog,Heavy,409
+2025-09-27,South East,Rain,Light,3043
+2025-09-28,South East,Clear,Light,10000
+2025-09-29,South East,Clear,Moderate,10000
+2025-09-30,South East,Storm,Heavy,419
+2025-10-01,South East,Clear,Moderate,10000
+2025-10-02,South East,Rain,Moderate,830
+2025-10-03,South East,Rain,Heavy,1361
+2025-10-04,South East,Rain,Light,571
+2025-10-05,South East,Clear,Heavy,10000
+2025-10-06,South East,Clear,Heavy,10000
+2025-10-07,South East,Rain,Heavy,3747
+2025-10-08,South East,Storm,Heavy,3293
+2025-10-09,South East,Clear,Gridlock,10000
+2025-10-10,South East,Rain,Heavy,1617
+2025-10-11,South East,Clear,Moderate,10000
+2025-10-12,South East,Clear,Moderate,10000
+2025-10-13,South East,Rain,Heavy,351
+2025-10-14,South East,Rain,Heavy,1809
+2025-10-15,South East,Clear,Heavy,10000
+2025-10-16,South East,Storm,Gridlock,3918
+2025-10-17,South East,Rain,Moderate,4358
+2025-10-18,South East,Rain,Moderate,3728
+2025-10-19,South East,Rain,Light,510
+2025-10-20,South East,Rain,Heavy,1426
+2025-10-21,South East,Rain,Heavy,2116
+2025-10-22,South East,Clear,Moderate,10000
+2025-10-23,South East,Rain,Gridlock,3350
+2025-10-24,South East,Clear,Heavy,10000
+2025-10-25,South East,Clear,Light,10000
+2025-10-26,South East,Rain,Heavy,1905
+2025-10-27,South East,Fog,Heavy,3131
+2025-10-28,South East,Rain,Gridlock,972
+2025-10-29,South East,Rain,Heavy,2597
+2025-10-30,South East,Rain,Gridlock,363
+2025-10-31,South East,Clear,Heavy,10000
+2025-11-01,South East,Clear,Heavy,10000
+2025-11-02,South East,Clear,Light,10000
+2025-11-03,South East,Clear,Heavy,10000
+2025-11-04,South East,Fog,Gridlock,2229
+2025-11-05,South East,Clear,Heavy,10000
+2025-11-06,South East,Rain,Heavy,1878
+2025-11-07,South East,Rain,Moderate,2502
+2025-11-08,South East,Clear,Light,10000
+2025-11-09,South East,Clear,Light,10000
+2025-11-10,South East,Rain,Gridlock,3342
+2025-11-11,South East,Rain,Moderate,4481
+2025-11-12,South East,Clear,Heavy,10000
+2025-11-13,South East,Clear,Heavy,10000
+2025-11-14,South East,Rain,Heavy,3309
+2025-11-15,South East,Fog,Light,4551
+2025-11-16,South East,Rain,Moderate,3024
+2025-11-17,South East,Fog,Heavy,4885
+2025-11-18,South East,Clear,Heavy,10000
+2025-11-19,South East,Clear,Heavy,10000
+2025-11-20,South East,Clear,Gridlock,10000
+2025-11-21,South East,Rain,Heavy,1886
+2025-11-22,South East,Clear,Moderate,10000
+2025-11-23,South East,Rain,Light,448
+2025-11-24,South East,Rain,Gridlock,124
+2025-11-25,South East,Rain,Gridlock,886
+2025-11-26,South East,Clear,Heavy,10000
+2025-11-27,South East,Clear,Moderate,10000
+2025-11-28,South East,Clear,Gridlock,10000
+2025-11-29,South East,Clear,Moderate,10000
+2025-11-30,South East,Clear,Heavy,10000
+2025-12-01,South East,Rain,Heavy,4726
+2025-12-02,South East,Fog,Moderate,2146
+2025-12-03,South East,Rain,Gridlock,2453
+2025-12-04,South East,Clear,Moderate,10000
+2025-12-05,South East,Rain,Heavy,4786
+2025-12-06,South East,Fog,Light,2906
+2025-12-07,South East,Clear,Moderate,10000
+2025-12-08,South East,Clear,Heavy,10000
+2025-12-09,South East,Rain,Gridlock,1481
+2025-12-10,South East,Clear,Heavy,10000
+2025-12-11,South East,Rain,Heavy,3341
+2025-12-12,South East,Fog,Gridlock,3521
+2025-12-13,South East,Fog,Light,254
+2025-12-14,South East,Rain,Light,1769
+2025-12-15,South East,Clear,Heavy,10000
+2025-12-16,South East,Rain,Heavy,739
+2025-12-17,South East,Rain,Heavy,1472
+2025-12-18,South East,Clear,Heavy,10000
+2025-12-19,South East,Snow,Heavy,1499
+2025-12-20,South East,Fog,Moderate,4310
+2025-12-21,South East,Storm,Light,3720
+2025-12-22,South East,Clear,Heavy,10000
+2025-12-23,South East,Rain,Gridlock,4529
+2025-12-24,South East,Snow,Moderate,4774
+2025-12-25,South East,Clear,Heavy,10000
+2025-12-26,South East,Fog,Heavy,4738
+2025-12-27,South East,Storm,Light,2140
+2025-12-28,South East,Clear,Moderate,10000
+2025-12-29,South East,Rain,Moderate,4343
+2025-12-30,South East,Fog,Heavy,3638
+2025-12-31,South East,Fog,Gridlock,3187
+2025-01-01,South West,Clear,Gridlock,10000
+2025-01-02,South West,Rain,Heavy,4733
+2025-01-03,South West,Clear,Heavy,10000
+2025-01-04,South West,Fog,Light,1777
+2025-01-05,South West,Fog,Light,2129
+2025-01-06,South West,Rain,Moderate,1141
+2025-01-07,South West,Fog,Heavy,2841
+2025-01-08,South West,Fog,Gridlock,831
+2025-01-09,South West,Clear,Heavy,10000
+2025-01-10,South West,Storm,Heavy,4592
+2025-01-11,South West,Rain,Light,4020
+2025-01-12,South West,Fog,Moderate,1061
+2025-01-13,South West,Fog,Heavy,1864
+2025-01-14,South West,Fog,Heavy,4452
+2025-01-15,South West,Clear,Moderate,10000
+2025-01-16,South West,Clear,Heavy,10000
+2025-01-17,South West,Fog,Heavy,4704
+2025-01-18,South West,Clear,Moderate,10000
+2025-01-19,South West,Rain,Light,3575
+2025-01-20,South West,Fog,Heavy,2974
+2025-01-21,South West,Fog,Heavy,4185
+2025-01-22,South West,Rain,Heavy,662
+2025-01-23,South West,Rain,Gridlock,662
+2025-01-24,South West,Rain,Heavy,1831
+2025-01-25,South West,Fog,Light,4008
+2025-01-26,South West,Snow,Light,1960
+2025-01-27,South West,Clear,Heavy,10000
+2025-01-28,South West,Rain,Gridlock,1579
+2025-01-29,South West,Rain,Moderate,1610
+2025-01-30,South West,Clear,Moderate,10000
+2025-01-31,South West,Fog,Heavy,3119
+2025-02-01,South West,Rain,Light,314
+2025-02-02,South West,Fog,Moderate,3040
+2025-02-03,South West,Rain,Heavy,1204
+2025-02-04,South West,Fog,Heavy,4129
+2025-02-05,South West,Rain,Gridlock,239
+2025-02-06,South West,Rain,Heavy,2643
+2025-02-07,South West,Rain,Heavy,1148
+2025-02-08,South West,Rain,Moderate,1724
+2025-02-09,South West,Fog,Light,4434
+2025-02-10,South West,Clear,Heavy,10000
+2025-02-11,South West,Rain,Heavy,205
+2025-02-12,South West,Rain,Moderate,4269
+2025-02-13,South West,Storm,Moderate,689
+2025-02-14,South West,Rain,Heavy,4678
+2025-02-15,South West,Clear,Light,10000
+2025-02-16,South West,Rain,Heavy,509
+2025-02-17,South West,Clear,Gridlock,10000
+2025-02-18,South West,Clear,Gridlock,10000
+2025-02-19,South West,Rain,Gridlock,2504
+2025-02-20,South West,Clear,Heavy,10000
+2025-02-21,South West,Rain,Heavy,4646
+2025-02-22,South West,Rain,Light,3967
+2025-02-23,South West,Rain,Light,473
+2025-02-24,South West,Rain,Gridlock,1800
+2025-02-25,South West,Clear,Heavy,10000
+2025-02-26,South West,Snow,Gridlock,2381
+2025-02-27,South West,Clear,Gridlock,10000
+2025-02-28,South West,Rain,Heavy,4778
+2025-03-01,South West,Clear,Moderate,10000
+2025-03-02,South West,Clear,Moderate,10000
+2025-03-03,South West,Rain,Moderate,335
+2025-03-04,South West,Clear,Heavy,10000
+2025-03-05,South West,Clear,Gridlock,10000
+2025-03-06,South West,Clear,Heavy,10000
+2025-03-07,South West,Rain,Heavy,117
+2025-03-08,South West,Fog,Moderate,4058
+2025-03-09,South West,Storm,Moderate,2574
+2025-03-10,South West,Fog,Heavy,2365
+2025-03-11,South West,Rain,Gridlock,1635
+2025-03-12,South West,Rain,Heavy,1349
+2025-03-13,South West,Clear,Heavy,10000
+2025-03-14,South West,Rain,Heavy,1108
+2025-03-15,South West,Fog,Moderate,3186
+2025-03-16,South West,Clear,Moderate,10000
+2025-03-17,South West,Clear,Gridlock,10000
+2025-03-18,South West,Rain,Moderate,4804
+2025-03-19,South West,Fog,Heavy,1623
+2025-03-20,South West,Rain,Heavy,4277
+2025-03-21,South West,Rain,Moderate,821
+2025-03-22,South West,Clear,Light,10000
+2025-03-23,South West,Rain,Heavy,1235
+2025-03-24,South West,Rain,Gridlock,1160
+2025-03-25,South West,Rain,Gridlock,3843
+2025-03-26,South West,Clear,Heavy,10000
+2025-03-27,South West,Clear,Moderate,10000
+2025-03-28,South West,Clear,Gridlock,10000
+2025-03-29,South West,Clear,Light,10000
+2025-03-30,South West,Clear,Moderate,10000
+2025-03-31,South West,Clear,Heavy,10000
+2025-04-01,South West,Rain,Moderate,1375
+2025-04-02,South West,Clear,Gridlock,10000
+2025-04-03,South West,Fog,Heavy,390
+2025-04-04,South West,Rain,Heavy,2479
+2025-04-05,South West,Clear,Moderate,10000
+2025-04-06,South West,Clear,Moderate,10000
+2025-04-07,South West,Rain,Gridlock,232
+2025-04-08,South West,Fog,Heavy,1567
+2025-04-09,South West,Storm,Moderate,3679
+2025-04-10,South West,Clear,Heavy,10000
+2025-04-11,South West,Rain,Gridlock,3054
+2025-04-12,South West,Rain,Moderate,3361
+2025-04-13,South West,Clear,Moderate,10000
+2025-04-14,South West,Storm,Heavy,223
+2025-04-15,South West,Clear,Heavy,10000
+2025-04-16,South West,Clear,Heavy,10000
+2025-04-17,South West,Rain,Moderate,1039
+2025-04-18,South West,Fog,Heavy,1824
+2025-04-19,South West,Rain,Moderate,3858
+2025-04-20,South West,Rain,Light,4056
+2025-04-21,South West,Rain,Heavy,251
+2025-04-22,South West,Clear,Heavy,10000
+2025-04-23,South West,Clear,Heavy,10000
+2025-04-24,South West,Storm,Heavy,820
+2025-04-25,South West,Rain,Moderate,3635
+2025-04-26,South West,Rain,Moderate,3471
+2025-04-27,South West,Clear,Light,10000
+2025-04-28,South West,Rain,Heavy,1906
+2025-04-29,South West,Clear,Heavy,10000
+2025-04-30,South West,Storm,Gridlock,1200
+2025-05-01,South West,Clear,Heavy,10000
+2025-05-02,South West,Rain,Gridlock,1180
+2025-05-03,South West,Rain,Moderate,424
+2025-05-04,South West,Rain,Moderate,3309
+2025-05-05,South West,Clear,Heavy,10000
+2025-05-06,South West,Rain,Heavy,3184
+2025-05-07,South West,Clear,Gridlock,10000
+2025-05-08,South West,Clear,Heavy,10000
+2025-05-09,South West,Clear,Heavy,10000
+2025-05-10,South West,Rain,Moderate,3030
+2025-05-11,South West,Rain,Light,4978
+2025-05-12,South West,Clear,Moderate,10000
+2025-05-13,South West,Clear,Heavy,10000
+2025-05-14,South West,Rain,Heavy,3596
+2025-05-15,South West,Rain,Heavy,1879
+2025-05-16,South West,Fog,Heavy,3809
+2025-05-17,South West,Clear,Heavy,10000
+2025-05-18,South West,Rain,Moderate,1950
+2025-05-19,South West,Storm,Heavy,3465
+2025-05-20,South West,Rain,Gridlock,1228
+2025-05-21,South West,Clear,Gridlock,10000
+2025-05-22,South West,Rain,Heavy,2359
+2025-05-23,South West,Rain,Heavy,4687
+2025-05-24,South West,Clear,Moderate,10000
+2025-05-25,South West,Clear,Light,10000
+2025-05-26,South West,Rain,Heavy,835
+2025-05-27,South West,Fog,Gridlock,4222
+2025-05-28,South West,Rain,Moderate,1986
+2025-05-29,South West,Clear,Heavy,10000
+2025-05-30,South West,Rain,Moderate,2402
+2025-05-31,South West,Rain,Light,4966
+2025-06-01,South West,Rain,Light,1427
+2025-06-02,South West,Clear,Moderate,10000
+2025-06-03,South West,Clear,Heavy,10000
+2025-06-04,South West,Clear,Gridlock,10000
+2025-06-05,South West,Clear,Heavy,10000
+2025-06-06,South West,Clear,Moderate,10000
+2025-06-07,South West,Clear,Moderate,10000
+2025-06-08,South West,Clear,Light,10000
+2025-06-09,South West,Storm,Gridlock,2201
+2025-06-10,South West,Clear,Heavy,10000
+2025-06-11,South West,Clear,Heavy,10000
+2025-06-12,South West,Clear,Gridlock,10000
+2025-06-13,South West,Rain,Gridlock,2096
+2025-06-14,South West,Storm,Heavy,316
+2025-06-15,South West,Clear,Light,10000
+2025-06-16,South West,Clear,Heavy,10000
+2025-06-17,South West,Clear,Moderate,10000
+2025-06-18,South West,Clear,Heavy,10000
+2025-06-19,South West,Clear,Gridlock,10000
+2025-06-20,South West,Fog,Heavy,2717
+2025-06-21,South West,Clear,Moderate,10000
+2025-06-22,South West,Clear,Light,10000
+2025-06-23,South West,Clear,Heavy,10000
+2025-06-24,South West,Rain,Heavy,4860
+2025-06-25,South West,Fog,Heavy,3586
+2025-06-26,South West,Rain,Gridlock,4227
+2025-06-27,South West,Clear,Heavy,10000
+2025-06-28,South West,Clear,Moderate,10000
+2025-06-29,South West,Clear,Heavy,10000
+2025-06-30,South West,Clear,Moderate,10000
+2025-07-01,South West,Clear,Heavy,10000
+2025-07-02,South West,Clear,Heavy,10000
+2025-07-03,South West,Clear,Moderate,10000
+2025-07-04,South West,Storm,Heavy,2817
+2025-07-05,South West,Rain,Heavy,4828
+2025-07-06,South West,Rain,Moderate,2417
+2025-07-07,South West,Clear,Heavy,10000
+2025-07-08,South West,Rain,Heavy,745
+2025-07-09,South West,Clear,Heavy,10000
+2025-07-10,South West,Storm,Heavy,2891
+2025-07-11,South West,Rain,Heavy,2744
+2025-07-12,South West,Clear,Light,10000
+2025-07-13,South West,Clear,Light,10000
+2025-07-14,South West,Clear,Gridlock,10000
+2025-07-15,South West,Rain,Gridlock,306
+2025-07-16,South West,Rain,Heavy,3225
+2025-07-17,South West,Clear,Heavy,10000
+2025-07-18,South West,Clear,Heavy,10000
+2025-07-19,South West,Clear,Light,10000
+2025-07-20,South West,Clear,Moderate,10000
+2025-07-21,South West,Clear,Heavy,10000
+2025-07-22,South West,Clear,Moderate,10000
+2025-07-23,South West,Rain,Heavy,2472
+2025-07-24,South West,Rain,Heavy,4595
+2025-07-25,South West,Rain,Heavy,2605
+2025-07-26,South West,Rain,Light,1288
+2025-07-27,South West,Fog,Light,1100
+2025-07-28,South West,Clear,Heavy,10000
+2025-07-29,South West,Rain,Heavy,486
+2025-07-30,South West,Clear,Heavy,10000
+2025-07-31,South West,Clear,Heavy,10000
+2025-08-01,South West,Clear,Heavy,10000
+2025-08-02,South West,Rain,Light,1639
+2025-08-03,South West,Clear,Moderate,10000
+2025-08-04,South West,Clear,Heavy,10000
+2025-08-05,South West,Rain,Gridlock,2357
+2025-08-06,South West,Clear,Heavy,10000
+2025-08-07,South West,Clear,Heavy,10000
+2025-08-08,South West,Clear,Moderate,10000
+2025-08-09,South West,Clear,Light,10000
+2025-08-10,South West,Rain,Light,1314
+2025-08-11,South West,Clear,Moderate,10000
+2025-08-12,South West,Clear,Heavy,10000
+2025-08-13,South West,Clear,Gridlock,10000
+2025-08-14,South West,Clear,Heavy,10000
+2025-08-15,South West,Rain,Heavy,4778
+2025-08-16,South West,Clear,Light,10000
+2025-08-17,South West,Rain,Light,868
+2025-08-18,South West,Clear,Gridlock,10000
+2025-08-19,South West,Clear,Gridlock,10000
+2025-08-20,South West,Clear,Heavy,10000
+2025-08-21,South West,Clear,Heavy,10000
+2025-08-22,South West,Clear,Heavy,10000
+2025-08-23,South West,Clear,Light,10000
+2025-08-24,South West,Rain,Moderate,978
+2025-08-25,South West,Clear,Moderate,10000
+2025-08-26,South West,Clear,Gridlock,10000
+2025-08-27,South West,Clear,Heavy,10000
+2025-08-28,South West,Clear,Gridlock,10000
+2025-08-29,South West,Clear,Heavy,10000
+2025-08-30,South West,Clear,Moderate,10000
+2025-08-31,South West,Clear,Light,10000
+2025-09-01,South West,Rain,Heavy,941
+2025-09-02,South West,Fog,Moderate,2838
+2025-09-03,South West,Fog,Gridlock,4794
+2025-09-04,South West,Rain,Heavy,2055
+2025-09-05,South West,Clear,Heavy,10000
+2025-09-06,South West,Rain,Light,1801
+2025-09-07,South West,Storm,Light,989
+2025-09-08,South West,Clear,Heavy,10000
+2025-09-09,South West,Clear,Gridlock,10000
+2025-09-10,South West,Clear,Heavy,10000
+2025-09-11,South West,Clear,Moderate,10000
+2025-09-12,South West,Rain,Heavy,2150
+2025-09-13,South West,Rain,Light,3223
+2025-09-14,South West,Clear,Light,10000
+2025-09-15,South West,Clear,Heavy,10000
+2025-09-16,South West,Rain,Heavy,2114
+2025-09-17,South West,Storm,Heavy,4686
+2025-09-18,South West,Rain,Gridlock,3309
+2025-09-19,South West,Clear,Heavy,10000
+2025-09-20,South West,Rain,Light,2562
+2025-09-21,South West,Rain,Heavy,3916
+2025-09-22,South West,Rain,Moderate,2272
+2025-09-23,South West,Fog,Moderate,3512
+2025-09-24,South West,Clear,Heavy,10000
+2025-09-25,South West,Rain,Heavy,2853
+2025-09-26,South West,Rain,Heavy,769
+2025-09-27,South West,Clear,Moderate,10000
+2025-09-28,South West,Storm,Moderate,4602
+2025-09-29,South West,Rain,Gridlock,3080
+2025-09-30,South West,Rain,Heavy,3335
+2025-10-01,South West,Clear,Gridlock,10000
+2025-10-02,South West,Rain,Gridlock,3326
+2025-10-03,South West,Rain,Heavy,1291
+2025-10-04,South West,Rain,Heavy,680
+2025-10-05,South West,Rain,Heavy,4579
+2025-10-06,South West,Rain,Heavy,327
+2025-10-07,South West,Clear,Heavy,10000
+2025-10-08,South West,Clear,Moderate,10000
+2025-10-09,South West,Rain,Heavy,510
+2025-10-10,South West,Fog,Heavy,3533
+2025-10-11,South West,Rain,Moderate,3223
+2025-10-12,South West,Clear,Light,10000
+2025-10-13,South West,Fog,Heavy,3363
+2025-10-14,South West,Rain,Gridlock,2345
+2025-10-15,South West,Clear,Gridlock,10000
+2025-10-16,South West,Rain,Heavy,3694
+2025-10-17,South West,Storm,Gridlock,3695
+2025-10-18,South West,Fog,Light,2399
+2025-10-19,South West,Rain,Light,1166
+2025-10-20,South West,Rain,Gridlock,669
+2025-10-21,South West,Fog,Gridlock,2430
+2025-10-22,South West,Rain,Heavy,3613
+2025-10-23,South West,Storm,Moderate,1940
+2025-10-24,South West,Rain,Heavy,2543
+2025-10-25,South West,Rain,Light,919
+2025-10-26,South West,Rain,Heavy,1333
+2025-10-27,South West,Fog,Heavy,3475
+2025-10-28,South West,Rain,Heavy,2945
+2025-10-29,South West,Storm,Heavy,3262
+2025-10-30,South West,Fog,Heavy,2069
+2025-10-31,South West,Clear,Heavy,10000
+2025-11-01,South West,Rain,Light,3721
+2025-11-02,South West,Rain,Moderate,3165
+2025-11-03,South West,Clear,Moderate,10000
+2025-11-04,South West,Clear,Gridlock,10000
+2025-11-05,South West,Clear,Heavy,10000
+2025-11-06,South West,Clear,Heavy,10000
+2025-11-07,South West,Fog,Heavy,2887
+2025-11-08,South West,Rain,Light,3997
+2025-11-09,South West,Rain,Light,1511
+2025-11-10,South West,Clear,Gridlock,10000
+2025-11-11,South West,Storm,Moderate,2702
+2025-11-12,South West,Rain,Heavy,2501
+2025-11-13,South West,Rain,Gridlock,3746
+2025-11-14,South West,Rain,Heavy,4419
+2025-11-15,South West,Storm,Light,742
+2025-11-16,South West,Clear,Moderate,10000
+2025-11-17,South West,Clear,Moderate,10000
+2025-11-18,South West,Storm,Moderate,4460
+2025-11-19,South West,Clear,Moderate,10000
+2025-11-20,South West,Clear,Moderate,10000
+2025-11-21,South West,Fog,Heavy,2830
+2025-11-22,South West,Rain,Moderate,2921
+2025-11-23,South West,Rain,Moderate,2379
+2025-11-24,South West,Fog,Moderate,2088
+2025-11-25,South West,Storm,Gridlock,4550
+2025-11-26,South West,Rain,Gridlock,133
+2025-11-27,South West,Rain,Heavy,4366
+2025-11-28,South West,Clear,Heavy,10000
+2025-11-29,South West,Rain,Light,3615
+2025-11-30,South West,Clear,Light,10000
+2025-12-01,South West,Fog,Heavy,1440
+2025-12-02,South West,Fog,Gridlock,3657
+2025-12-03,South West,Rain,Gridlock,339
+2025-12-04,South West,Fog,Heavy,328
+2025-12-05,South West,Fog,Heavy,4326
+2025-12-06,South West,Fog,Light,3882
+2025-12-07,South West,Clear,Light,10000
+2025-12-08,South West,Rain,Heavy,3206
+2025-12-09,South West,Rain,Heavy,391
+2025-12-10,South West,Rain,Gridlock,3159
+2025-12-11,South West,Rain,Heavy,3290
+2025-12-12,South West,Fog,Heavy,355
+2025-12-13,South West,Fog,Moderate,1185
+2025-12-14,South West,Fog,Light,4641
+2025-12-15,South West,Fog,Gridlock,3672
+2025-12-16,South West,Clear,Heavy,10000
+2025-12-17,South West,Rain,Moderate,321
+2025-12-18,South West,Clear,Heavy,10000
+2025-12-19,South West,Rain,Moderate,4399
+2025-12-20,South West,Rain,Heavy,4155
+2025-12-21,South West,Rain,Light,202
+2025-12-22,South West,Clear,Heavy,10000
+2025-12-23,South West,Fog,Heavy,2660
+2025-12-24,South West,Rain,Gridlock,4249
+2025-12-25,South West,Clear,Moderate,10000
+2025-12-26,South West,Fog,Moderate,216
+2025-12-27,South West,Fog,Light,3539
+2025-12-28,South West,Fog,Light,4727
+2025-12-29,South West,Rain,Gridlock,1588
+2025-12-30,South West,Clear,Heavy,10000
+2025-12-31,South West,Rain,Heavy,4337
+2025-01-01,East Anglia,Rain,Heavy,3904
+2025-01-02,East Anglia,Rain,Heavy,418
+2025-01-03,East Anglia,Clear,Gridlock,10000
+2025-01-04,East Anglia,Clear,Moderate,10000
+2025-01-05,East Anglia,Snow,Light,3436
+2025-01-06,East Anglia,Rain,Heavy,1042
+2025-01-07,East Anglia,Snow,Moderate,2290
+2025-01-08,East Anglia,Rain,Heavy,1049
+2025-01-09,East Anglia,Clear,Gridlock,10000
+2025-01-10,East Anglia,Rain,Heavy,1531
+2025-01-11,East Anglia,Fog,Moderate,2525
+2025-01-12,East Anglia,Rain,Moderate,932
+2025-01-13,East Anglia,Rain,Moderate,3327
+2025-01-14,East Anglia,Rain,Heavy,3112
+2025-01-15,East Anglia,Fog,Moderate,4609
+2025-01-16,East Anglia,Clear,Moderate,10000
+2025-01-17,East Anglia,Clear,Heavy,10000
+2025-01-18,East Anglia,Clear,Light,10000
+2025-01-19,East Anglia,Fog,Light,937
+2025-01-20,East Anglia,Fog,Heavy,4001
+2025-01-21,East Anglia,Rain,Heavy,1523
+2025-01-22,East Anglia,Clear,Heavy,10000
+2025-01-23,East Anglia,Storm,Heavy,2488
+2025-01-24,East Anglia,Rain,Moderate,3524
+2025-01-25,East Anglia,Fog,Moderate,2811
+2025-01-26,East Anglia,Fog,Light,251
+2025-01-27,East Anglia,Clear,Gridlock,10000
+2025-01-28,East Anglia,Clear,Heavy,10000
+2025-01-29,East Anglia,Rain,Heavy,4570
+2025-01-30,East Anglia,Clear,Heavy,10000
+2025-01-31,East Anglia,Clear,Heavy,10000
+2025-02-01,East Anglia,Rain,Moderate,2683
+2025-02-02,East Anglia,Rain,Light,3416
+2025-02-03,East Anglia,Clear,Gridlock,10000
+2025-02-04,East Anglia,Clear,Heavy,10000
+2025-02-05,East Anglia,Rain,Heavy,3604
+2025-02-06,East Anglia,Rain,Heavy,2899
+2025-02-07,East Anglia,Rain,Heavy,1356
+2025-02-08,East Anglia,Rain,Moderate,4705
+2025-02-09,East Anglia,Rain,Moderate,2605
+2025-02-10,East Anglia,Clear,Moderate,10000
+2025-02-11,East Anglia,Clear,Heavy,10000
+2025-02-12,East Anglia,Rain,Heavy,3044
+2025-02-13,East Anglia,Fog,Heavy,1863
+2025-02-14,East Anglia,Rain,Heavy,333
+2025-02-15,East Anglia,Rain,Light,866
+2025-02-16,East Anglia,Rain,Heavy,3541
+2025-02-17,East Anglia,Rain,Heavy,225
+2025-02-18,East Anglia,Rain,Heavy,1868
+2025-02-19,East Anglia,Rain,Moderate,1414
+2025-02-20,East Anglia,Fog,Heavy,3392
+2025-02-21,East Anglia,Fog,Heavy,3012
+2025-02-22,East Anglia,Rain,Moderate,2474
+2025-02-23,East Anglia,Rain,Moderate,3801
+2025-02-24,East Anglia,Rain,Gridlock,1184
+2025-02-25,East Anglia,Rain,Moderate,2834
+2025-02-26,East Anglia,Clear,Heavy,10000
+2025-02-27,East Anglia,Clear,Moderate,10000
+2025-02-28,East Anglia,Rain,Heavy,1387
+2025-03-01,East Anglia,Rain,Moderate,1679
+2025-03-02,East Anglia,Storm,Moderate,1623
+2025-03-03,East Anglia,Clear,Heavy,10000
+2025-03-04,East Anglia,Clear,Heavy,10000
+2025-03-05,East Anglia,Clear,Heavy,10000
+2025-03-06,East Anglia,Clear,Gridlock,10000
+2025-03-07,East Anglia,Clear,Heavy,10000
+2025-03-08,East Anglia,Rain,Light,344
+2025-03-09,East Anglia,Clear,Light,10000
+2025-03-10,East Anglia,Fog,Heavy,4713
+2025-03-11,East Anglia,Rain,Heavy,3691
+2025-03-12,East Anglia,Clear,Heavy,10000
+2025-03-13,East Anglia,Rain,Heavy,1408
+2025-03-14,East Anglia,Clear,Gridlock,10000
+2025-03-15,East Anglia,Clear,Light,10000
+2025-03-16,East Anglia,Clear,Light,10000
+2025-03-17,East Anglia,Rain,Moderate,4967
+2025-03-18,East Anglia,Clear,Heavy,10000
+2025-03-19,East Anglia,Clear,Heavy,10000
+2025-03-20,East Anglia,Clear,Heavy,10000
+2025-03-21,East Anglia,Storm,Moderate,974
+2025-03-22,East Anglia,Clear,Light,10000
+2025-03-23,East Anglia,Rain,Moderate,2718
+2025-03-24,East Anglia,Fog,Heavy,4214
+2025-03-25,East Anglia,Clear,Gridlock,10000
+2025-03-26,East Anglia,Rain,Heavy,326
+2025-03-27,East Anglia,Rain,Moderate,3977
+2025-03-28,East Anglia,Rain,Heavy,2641
+2025-03-29,East Anglia,Fog,Moderate,4767
+2025-03-30,East Anglia,Clear,Moderate,10000
+2025-03-31,East Anglia,Storm,Gridlock,1286
+2025-04-01,East Anglia,Storm,Moderate,2206
+2025-04-02,East Anglia,Rain,Moderate,2727
+2025-04-03,East Anglia,Rain,Gridlock,2992
+2025-04-04,East Anglia,Rain,Moderate,1750
+2025-04-05,East Anglia,Rain,Moderate,4640
+2025-04-06,East Anglia,Rain,Light,3368
+2025-04-07,East Anglia,Clear,Heavy,10000
+2025-04-08,East Anglia,Rain,Heavy,4807
+2025-04-09,East Anglia,Rain,Heavy,4783
+2025-04-10,East Anglia,Clear,Gridlock,10000
+2025-04-11,East Anglia,Clear,Heavy,10000
+2025-04-12,East Anglia,Clear,Light,10000
+2025-04-13,East Anglia,Rain,Moderate,2303
+2025-04-14,East Anglia,Clear,Heavy,10000
+2025-04-15,East Anglia,Clear,Heavy,10000
+2025-04-16,East Anglia,Rain,Heavy,2460
+2025-04-17,East Anglia,Rain,Heavy,3055
+2025-04-18,East Anglia,Fog,Heavy,498
+2025-04-19,East Anglia,Clear,Light,10000
+2025-04-20,East Anglia,Rain,Moderate,4238
+2025-04-21,East Anglia,Rain,Moderate,4390
+2025-04-22,East Anglia,Clear,Heavy,10000
+2025-04-23,East Anglia,Clear,Heavy,10000
+2025-04-24,East Anglia,Clear,Heavy,10000
+2025-04-25,East Anglia,Fog,Heavy,866
+2025-04-26,East Anglia,Storm,Moderate,3695
+2025-04-27,East Anglia,Rain,Light,1838
+2025-04-28,East Anglia,Rain,Gridlock,2513
+2025-04-29,East Anglia,Rain,Gridlock,3943
+2025-04-30,East Anglia,Rain,Heavy,3954
+2025-05-01,East Anglia,Rain,Gridlock,2522
+2025-05-02,East Anglia,Rain,Heavy,3866
+2025-05-03,East Anglia,Rain,Moderate,708
+2025-05-04,East Anglia,Fog,Moderate,4284
+2025-05-05,East Anglia,Clear,Heavy,10000
+2025-05-06,East Anglia,Fog,Gridlock,2657
+2025-05-07,East Anglia,Clear,Moderate,10000
+2025-05-08,East Anglia,Rain,Moderate,2389
+2025-05-09,East Anglia,Fog,Heavy,3170
+2025-05-10,East Anglia,Clear,Light,10000
+2025-05-11,East Anglia,Fog,Light,4366
+2025-05-12,East Anglia,Rain,Heavy,52
+2025-05-13,East Anglia,Clear,Heavy,10000
+2025-05-14,East Anglia,Clear,Heavy,10000
+2025-05-15,East Anglia,Rain,Heavy,3243
+2025-05-16,East Anglia,Clear,Gridlock,10000
+2025-05-17,East Anglia,Clear,Moderate,10000
+2025-05-18,East Anglia,Fog,Light,720
+2025-05-19,East Anglia,Fog,Heavy,4864
+2025-05-20,East Anglia,Clear,Heavy,10000
+2025-05-21,East Anglia,Rain,Heavy,3489
+2025-05-22,East Anglia,Rain,Gridlock,3435
+2025-05-23,East Anglia,Rain,Moderate,93
+2025-05-24,East Anglia,Rain,Light,1338
+2025-05-25,East Anglia,Clear,Light,10000
+2025-05-26,East Anglia,Clear,Heavy,10000
+2025-05-27,East Anglia,Rain,Heavy,853
+2025-05-28,East Anglia,Fog,Heavy,3695
+2025-05-29,East Anglia,Clear,Heavy,10000
+2025-05-30,East Anglia,Rain,Heavy,3641
+2025-05-31,East Anglia,Rain,Light,1004
+2025-06-01,East Anglia,Rain,Moderate,699
+2025-06-02,East Anglia,Clear,Moderate,10000
+2025-06-03,East Anglia,Clear,Heavy,10000
+2025-06-04,East Anglia,Clear,Gridlock,10000
+2025-06-05,East Anglia,Clear,Heavy,10000
+2025-06-06,East Anglia,Clear,Heavy,10000
+2025-06-07,East Anglia,Clear,Heavy,10000
+2025-06-08,East Anglia,Clear,Light,10000
+2025-06-09,East Anglia,Clear,Moderate,10000
+2025-06-10,East Anglia,Clear,Heavy,10000
+2025-06-11,East Anglia,Clear,Heavy,10000
+2025-06-12,East Anglia,Clear,Gridlock,10000
+2025-06-13,East Anglia,Rain,Heavy,4983
+2025-06-14,East Anglia,Rain,Moderate,253
+2025-06-15,East Anglia,Clear,Light,10000
+2025-06-16,East Anglia,Clear,Heavy,10000
+2025-06-17,East Anglia,Clear,Gridlock,10000
+2025-06-18,East Anglia,Rain,Heavy,1887
+2025-06-19,East Anglia,Clear,Heavy,10000
+2025-06-20,East Anglia,Rain,Gridlock,4600
+2025-06-21,East Anglia,Storm,Moderate,2428
+2025-06-22,East Anglia,Rain,Moderate,2785
+2025-06-23,East Anglia,Rain,Gridlock,1006
+2025-06-24,East Anglia,Rain,Gridlock,2555
+2025-06-25,East Anglia,Clear,Heavy,10000
+2025-06-26,East Anglia,Clear,Heavy,10000
+2025-06-27,East Anglia,Clear,Gridlock,10000
+2025-06-28,East Anglia,Rain,Moderate,999
+2025-06-29,East Anglia,Clear,Light,10000
+2025-06-30,East Anglia,Clear,Heavy,10000
+2025-07-01,East Anglia,Clear,Heavy,10000
+2025-07-02,East Anglia,Clear,Heavy,10000
+2025-07-03,East Anglia,Clear,Gridlock,10000
+2025-07-04,East Anglia,Clear,Heavy,10000
+2025-07-05,East Anglia,Clear,Moderate,10000
+2025-07-06,East Anglia,Clear,Moderate,10000
+2025-07-07,East Anglia,Storm,Heavy,2780
+2025-07-08,East Anglia,Clear,Moderate,10000
+2025-07-09,East Anglia,Clear,Heavy,10000
+2025-07-10,East Anglia,Rain,Heavy,2637
+2025-07-11,East Anglia,Clear,Heavy,10000
+2025-07-12,East Anglia,Storm,Heavy,2267
+2025-07-13,East Anglia,Rain,Moderate,4433
+2025-07-14,East Anglia,Clear,Heavy,10000
+2025-07-15,East Anglia,Clear,Heavy,10000
+2025-07-16,East Anglia,Fog,Moderate,3766
+2025-07-17,East Anglia,Clear,Heavy,10000
+2025-07-18,East Anglia,Storm,Moderate,967
+2025-07-19,East Anglia,Clear,Moderate,10000
+2025-07-20,East Anglia,Clear,Light,10000
+2025-07-21,East Anglia,Rain,Heavy,4238
+2025-07-22,East Anglia,Fog,Moderate,4579
+2025-07-23,East Anglia,Rain,Heavy,256
+2025-07-24,East Anglia,Rain,Gridlock,2740
+2025-07-25,East Anglia,Clear,Gridlock,10000
+2025-07-26,East Anglia,Rain,Moderate,994
+2025-07-27,East Anglia,Clear,Heavy,10000
+2025-07-28,East Anglia,Clear,Heavy,10000
+2025-07-29,East Anglia,Clear,Moderate,10000
+2025-07-30,East Anglia,Clear,Heavy,10000
+2025-07-31,East Anglia,Clear,Heavy,10000
+2025-08-01,East Anglia,Rain,Gridlock,4975
+2025-08-02,East Anglia,Clear,Moderate,10000
+2025-08-03,East Anglia,Storm,Moderate,2252
+2025-08-04,East Anglia,Rain,Heavy,4324
+2025-08-05,East Anglia,Clear,Gridlock,10000
+2025-08-06,East Anglia,Clear,Gridlock,10000
+2025-08-07,East Anglia,Clear,Gridlock,10000
+2025-08-08,East Anglia,Clear,Heavy,10000
+2025-08-09,East Anglia,Clear,Heavy,10000
+2025-08-10,East Anglia,Rain,Moderate,974
+2025-08-11,East Anglia,Clear,Heavy,10000
+2025-08-12,East Anglia,Clear,Heavy,10000
+2025-08-13,East Anglia,Clear,Heavy,10000
+2025-08-14,East Anglia,Clear,Moderate,10000
+2025-08-15,East Anglia,Clear,Moderate,10000
+2025-08-16,East Anglia,Storm,Moderate,633
+2025-08-17,East Anglia,Clear,Light,10000
+2025-08-18,East Anglia,Rain,Heavy,953
+2025-08-19,East Anglia,Clear,Moderate,10000
+2025-08-20,East Anglia,Rain,Heavy,686
+2025-08-21,East Anglia,Clear,Gridlock,10000
+2025-08-22,East Anglia,Clear,Gridlock,10000
+2025-08-23,East Anglia,Rain,Light,1929
+2025-08-24,East Anglia,Clear,Light,10000
+2025-08-25,East Anglia,Clear,Heavy,10000
+2025-08-26,East Anglia,Clear,Gridlock,10000
+2025-08-27,East Anglia,Clear,Heavy,10000
+2025-08-28,East Anglia,Clear,Moderate,10000
+2025-08-29,East Anglia,Clear,Heavy,10000
+2025-08-30,East Anglia,Clear,Light,10000
+2025-08-31,East Anglia,Clear,Light,10000
+2025-09-01,East Anglia,Fog,Moderate,275
+2025-09-02,East Anglia,Rain,Heavy,737
+2025-09-03,East Anglia,Rain,Gridlock,2203
+2025-09-04,East Anglia,Clear,Heavy,10000
+2025-09-05,East Anglia,Fog,Gridlock,2490
+2025-09-06,East Anglia,Storm,Light,894
+2025-09-07,East Anglia,Rain,Light,3159
+2025-09-08,East Anglia,Fog,Heavy,276
+2025-09-09,East Anglia,Rain,Moderate,1880
+2025-09-10,East Anglia,Rain,Heavy,2927
+2025-09-11,East Anglia,Storm,Gridlock,2082
+2025-09-12,East Anglia,Clear,Heavy,10000
+2025-09-13,East Anglia,Rain,Light,1680
+2025-09-14,East Anglia,Rain,Heavy,2942
+2025-09-15,East Anglia,Rain,Moderate,1495
+2025-09-16,East Anglia,Fog,Moderate,1716
+2025-09-17,East Anglia,Clear,Gridlock,10000
+2025-09-18,East Anglia,Clear,Gridlock,10000
+2025-09-19,East Anglia,Storm,Heavy,2103
+2025-09-20,East Anglia,Clear,Moderate,10000
+2025-09-21,East Anglia,Clear,Light,10000
+2025-09-22,East Anglia,Rain,Gridlock,3958
+2025-09-23,East Anglia,Clear,Heavy,10000
+2025-09-24,East Anglia,Clear,Heavy,10000
+2025-09-25,East Anglia,Fog,Heavy,3527
+2025-09-26,East Anglia,Rain,Heavy,3035
+2025-09-27,East Anglia,Rain,Moderate,2814
+2025-09-28,East Anglia,Clear,Light,10000
+2025-09-29,East Anglia,Rain,Moderate,3179
+2025-09-30,East Anglia,Clear,Gridlock,10000
+2025-10-01,East Anglia,Storm,Heavy,364
+2025-10-02,East Anglia,Clear,Gridlock,10000
+2025-10-03,East Anglia,Rain,Heavy,1774
+2025-10-04,East Anglia,Clear,Light,10000
+2025-10-05,East Anglia,Rain,Moderate,920
+2025-10-06,East Anglia,Storm,Heavy,1167
+2025-10-07,East Anglia,Rain,Heavy,1697
+2025-10-08,East Anglia,Clear,Heavy,10000
+2025-10-09,East Anglia,Rain,Gridlock,2811
+2025-10-10,East Anglia,Rain,Moderate,2481
+2025-10-11,East Anglia,Clear,Moderate,10000
+2025-10-12,East Anglia,Rain,Moderate,3122
+2025-10-13,East Anglia,Rain,Heavy,3841
+2025-10-14,East Anglia,Clear,Moderate,10000
+2025-10-15,East Anglia,Rain,Moderate,3001
+2025-10-16,East Anglia,Clear,Moderate,10000
+2025-10-17,East Anglia,Clear,Gridlock,10000
+2025-10-18,East Anglia,Clear,Moderate,10000
+2025-10-19,East Anglia,Clear,Moderate,10000
+2025-10-20,East Anglia,Clear,Heavy,10000
+2025-10-21,East Anglia,Rain,Gridlock,4535
+2025-10-22,East Anglia,Clear,Heavy,10000
+2025-10-23,East Anglia,Rain,Heavy,1306
+2025-10-24,East Anglia,Clear,Heavy,10000
+2025-10-25,East Anglia,Clear,Light,10000
+2025-10-26,East Anglia,Clear,Light,10000
+2025-10-27,East Anglia,Rain,Heavy,1079
+2025-10-28,East Anglia,Rain,Heavy,4083
+2025-10-29,East Anglia,Rain,Heavy,3847
+2025-10-30,East Anglia,Clear,Heavy,10000
+2025-10-31,East Anglia,Storm,Moderate,3409
+2025-11-01,East Anglia,Rain,Light,2797
+2025-11-02,East Anglia,Storm,Light,1428
+2025-11-03,East Anglia,Clear,Heavy,10000
+2025-11-04,East Anglia,Fog,Moderate,2913
+2025-11-05,East Anglia,Fog,Gridlock,4617
+2025-11-06,East Anglia,Clear,Gridlock,10000
+2025-11-07,East Anglia,Clear,Moderate,10000
+2025-11-08,East Anglia,Clear,Moderate,10000
+2025-11-09,East Anglia,Clear,Heavy,10000
+2025-11-10,East Anglia,Rain,Heavy,1323
+2025-11-11,East Anglia,Clear,Moderate,10000
+2025-11-12,East Anglia,Storm,Heavy,3131
+2025-11-13,East Anglia,Clear,Heavy,10000
+2025-11-14,East Anglia,Clear,Gridlock,10000
+2025-11-15,East Anglia,Rain,Light,4250
+2025-11-16,East Anglia,Rain,Light,2448
+2025-11-17,East Anglia,Clear,Heavy,10000
+2025-11-18,East Anglia,Clear,Heavy,10000
+2025-11-19,East Anglia,Clear,Heavy,10000
+2025-11-20,East Anglia,Rain,Gridlock,4294
+2025-11-21,East Anglia,Rain,Gridlock,3847
+2025-11-22,East Anglia,Clear,Light,10000
+2025-11-23,East Anglia,Clear,Moderate,10000
+2025-11-24,East Anglia,Storm,Moderate,1024
+2025-11-25,East Anglia,Rain,Moderate,938
+2025-11-26,East Anglia,Clear,Heavy,10000
+2025-11-27,East Anglia,Clear,Heavy,10000
+2025-11-28,East Anglia,Clear,Heavy,10000
+2025-11-29,East Anglia,Clear,Moderate,10000
+2025-11-30,East Anglia,Rain,Moderate,3673
+2025-12-01,East Anglia,Rain,Heavy,1058
+2025-12-02,East Anglia,Clear,Heavy,10000
+2025-12-03,East Anglia,Fog,Moderate,1766
+2025-12-04,East Anglia,Rain,Moderate,1310
+2025-12-05,East Anglia,Rain,Heavy,2849
+2025-12-06,East Anglia,Fog,Moderate,2916
+2025-12-07,East Anglia,Rain,Moderate,4989
+2025-12-08,East Anglia,Fog,Heavy,781
+2025-12-09,East Anglia,Storm,Heavy,3856
+2025-12-10,East Anglia,Fog,Heavy,4819
+2025-12-11,East Anglia,Clear,Moderate,10000
+2025-12-12,East Anglia,Rain,Heavy,4697
+2025-12-13,East Anglia,Storm,Moderate,4906
+2025-12-14,East Anglia,Rain,Light,4550
+2025-12-15,East Anglia,Rain,Moderate,2708
+2025-12-16,East Anglia,Rain,Heavy,3808
+2025-12-17,East Anglia,Clear,Heavy,10000
+2025-12-18,East Anglia,Clear,Gridlock,10000
+2025-12-19,East Anglia,Rain,Gridlock,4308
+2025-12-20,East Anglia,Clear,Light,10000
+2025-12-21,East Anglia,Fog,Moderate,318
+2025-12-22,East Anglia,Rain,Heavy,2772
+2025-12-23,East Anglia,Clear,Heavy,10000
+2025-12-24,East Anglia,Clear,Heavy,10000
+2025-12-25,East Anglia,Rain,Gridlock,1035
+2025-12-26,East Anglia,Rain,Moderate,4899
+2025-12-27,East Anglia,Snow,Moderate,4671
+2025-12-28,East Anglia,Fog,Light,4701
+2025-12-29,East Anglia,Clear,Heavy,10000
+2025-12-30,East Anglia,Fog,Heavy,2516
+2025-12-31,East Anglia,Rain,Heavy,4577
+2025-01-01,West Midlands,Clear,Heavy,10000
+2025-01-02,West Midlands,Rain,Gridlock,1123
+2025-01-03,West Midlands,Clear,Heavy,10000
+2025-01-04,West Midlands,Rain,Moderate,2495
+2025-01-05,West Midlands,Rain,Light,3957
+2025-01-06,West Midlands,Rain,Moderate,4574
+2025-01-07,West Midlands,Clear,Heavy,10000
+2025-01-08,West Midlands,Rain,Moderate,4281
+2025-01-09,West Midlands,Rain,Heavy,3608
+2025-01-10,West Midlands,Clear,Gridlock,10000
+2025-01-11,West Midlands,Fog,Heavy,1051
+2025-01-12,West Midlands,Rain,Light,2895
+2025-01-13,West Midlands,Fog,Heavy,2830
+2025-01-14,West Midlands,Rain,Heavy,2760
+2025-01-15,West Midlands,Fog,Heavy,1707
+2025-01-16,West Midlands,Clear,Moderate,10000
+2025-01-17,West Midlands,Fog,Heavy,3267
+2025-01-18,West Midlands,Clear,Moderate,10000
+2025-01-19,West Midlands,Rain,Heavy,1079
+2025-01-20,West Midlands,Rain,Moderate,4980
+2025-01-21,West Midlands,Fog,Heavy,1525
+2025-01-22,West Midlands,Clear,Heavy,10000
+2025-01-23,West Midlands,Fog,Gridlock,3412
+2025-01-24,West Midlands,Fog,Heavy,2856
+2025-01-25,West Midlands,Rain,Heavy,2173
+2025-01-26,West Midlands,Rain,Moderate,890
+2025-01-27,West Midlands,Clear,Heavy,10000
+2025-01-28,West Midlands,Clear,Heavy,10000
+2025-01-29,West Midlands,Rain,Heavy,3021
+2025-01-30,West Midlands,Clear,Heavy,10000
+2025-01-31,West Midlands,Rain,Heavy,3611
+2025-02-01,West Midlands,Clear,Light,10000
+2025-02-02,West Midlands,Clear,Light,10000
+2025-02-03,West Midlands,Rain,Heavy,1851
+2025-02-04,West Midlands,Clear,Moderate,10000
+2025-02-05,West Midlands,Fog,Gridlock,3842
+2025-02-06,West Midlands,Clear,Gridlock,10000
+2025-02-07,West Midlands,Fog,Heavy,3116
+2025-02-08,West Midlands,Clear,Moderate,10000
+2025-02-09,West Midlands,Rain,Light,1931
+2025-02-10,West Midlands,Fog,Heavy,4636
+2025-02-11,West Midlands,Rain,Moderate,125
+2025-02-12,West Midlands,Rain,Heavy,4972
+2025-02-13,West Midlands,Rain,Heavy,1952
+2025-02-14,West Midlands,Rain,Moderate,2109
+2025-02-15,West Midlands,Rain,Light,4398
+2025-02-16,West Midlands,Rain,Light,569
+2025-02-17,West Midlands,Fog,Moderate,2893
+2025-02-18,West Midlands,Clear,Heavy,10000
+2025-02-19,West Midlands,Rain,Heavy,1019
+2025-02-20,West Midlands,Rain,Gridlock,1454
+2025-02-21,West Midlands,Rain,Heavy,4373
+2025-02-22,West Midlands,Rain,Moderate,4606
+2025-02-23,West Midlands,Rain,Moderate,2124
+2025-02-24,West Midlands,Fog,Heavy,4983
+2025-02-25,West Midlands,Rain,Heavy,4369
+2025-02-26,West Midlands,Rain,Moderate,3989
+2025-02-27,West Midlands,Rain,Heavy,2131
+2025-02-28,West Midlands,Clear,Heavy,10000
+2025-03-01,West Midlands,Clear,Moderate,10000
+2025-03-02,West Midlands,Fog,Light,3456
+2025-03-03,West Midlands,Fog,Heavy,437
+2025-03-04,West Midlands,Clear,Moderate,10000
+2025-03-05,West Midlands,Rain,Heavy,327
+2025-03-06,West Midlands,Rain,Heavy,4763
+2025-03-07,West Midlands,Rain,Moderate,539
+2025-03-08,West Midlands,Rain,Moderate,2538
+2025-03-09,West Midlands,Rain,Moderate,1680
+2025-03-10,West Midlands,Rain,Heavy,1957
+2025-03-11,West Midlands,Rain,Heavy,193
+2025-03-12,West Midlands,Rain,Moderate,976
+2025-03-13,West Midlands,Rain,Gridlock,936
+2025-03-14,West Midlands,Clear,Heavy,10000
+2025-03-15,West Midlands,Rain,Light,3842
+2025-03-16,West Midlands,Fog,Heavy,370
+2025-03-17,West Midlands,Rain,Heavy,1181
+2025-03-18,West Midlands,Clear,Heavy,10000
+2025-03-19,West Midlands,Clear,Gridlock,10000
+2025-03-20,West Midlands,Clear,Moderate,10000
+2025-03-21,West Midlands,Fog,Gridlock,4801
+2025-03-22,West Midlands,Clear,Light,10000
+2025-03-23,West Midlands,Clear,Light,10000
+2025-03-24,West Midlands,Clear,Heavy,10000
+2025-03-25,West Midlands,Storm,Heavy,1065
+2025-03-26,West Midlands,Rain,Heavy,4566
+2025-03-27,West Midlands,Rain,Heavy,234
+2025-03-28,West Midlands,Fog,Moderate,4481
+2025-03-29,West Midlands,Clear,Light,10000
+2025-03-30,West Midlands,Storm,Light,4733
+2025-03-31,West Midlands,Clear,Heavy,10000
+2025-04-01,West Midlands,Fog,Gridlock,4205
+2025-04-02,West Midlands,Rain,Heavy,3529
+2025-04-03,West Midlands,Rain,Heavy,4714
+2025-04-04,West Midlands,Storm,Moderate,2710
+2025-04-05,West Midlands,Rain,Moderate,329
+2025-04-06,West Midlands,Clear,Moderate,10000
+2025-04-07,West Midlands,Fog,Moderate,4819
+2025-04-08,West Midlands,Storm,Heavy,4181
+2025-04-09,West Midlands,Storm,Heavy,2736
+2025-04-10,West Midlands,Rain,Gridlock,2826
+2025-04-11,West Midlands,Clear,Gridlock,10000
+2025-04-12,West Midlands,Rain,Moderate,712
+2025-04-13,West Midlands,Clear,Light,10000
+2025-04-14,West Midlands,Clear,Heavy,10000
+2025-04-15,West Midlands,Rain,Heavy,2064
+2025-04-16,West Midlands,Clear,Heavy,10000
+2025-04-17,West Midlands,Storm,Gridlock,2414
+2025-04-18,West Midlands,Clear,Moderate,10000
+2025-04-19,West Midlands,Clear,Moderate,10000
+2025-04-20,West Midlands,Storm,Moderate,2206
+2025-04-21,West Midlands,Fog,Heavy,2303
+2025-04-22,West Midlands,Clear,Moderate,10000
+2025-04-23,West Midlands,Rain,Heavy,4228
+2025-04-24,West Midlands,Clear,Moderate,10000
+2025-04-25,West Midlands,Fog,Gridlock,2388
+2025-04-26,West Midlands,Fog,Moderate,1584
+2025-04-27,West Midlands,Rain,Light,4982
+2025-04-28,West Midlands,Clear,Heavy,10000
+2025-04-29,West Midlands,Clear,Heavy,10000
+2025-04-30,West Midlands,Clear,Moderate,10000
+2025-05-01,West Midlands,Storm,Heavy,2625
+2025-05-02,West Midlands,Storm,Heavy,2290
+2025-05-03,West Midlands,Clear,Light,10000
+2025-05-04,West Midlands,Clear,Light,10000
+2025-05-05,West Midlands,Fog,Heavy,3044
+2025-05-06,West Midlands,Clear,Heavy,10000
+2025-05-07,West Midlands,Rain,Moderate,1694
+2025-05-08,West Midlands,Clear,Gridlock,10000
+2025-05-09,West Midlands,Rain,Gridlock,220
+2025-05-10,West Midlands,Clear,Light,10000
+2025-05-11,West Midlands,Clear,Light,10000
+2025-05-12,West Midlands,Rain,Gridlock,2308
+2025-05-13,West Midlands,Clear,Heavy,10000
+2025-05-14,West Midlands,Rain,Heavy,4040
+2025-05-15,West Midlands,Rain,Heavy,4356
+2025-05-16,West Midlands,Fog,Gridlock,4112
+2025-05-17,West Midlands,Clear,Light,10000
+2025-05-18,West Midlands,Clear,Heavy,10000
+2025-05-19,West Midlands,Rain,Heavy,2999
+2025-05-20,West Midlands,Clear,Heavy,10000
+2025-05-21,West Midlands,Rain,Gridlock,4473
+2025-05-22,West Midlands,Rain,Heavy,425
+2025-05-23,West Midlands,Clear,Gridlock,10000
+2025-05-24,West Midlands,Storm,Moderate,1943
+2025-05-25,West Midlands,Rain,Light,1702
+2025-05-26,West Midlands,Rain,Heavy,4865
+2025-05-27,West Midlands,Clear,Heavy,10000
+2025-05-28,West Midlands,Rain,Heavy,4405
+2025-05-29,West Midlands,Clear,Heavy,10000
+2025-05-30,West Midlands,Rain,Heavy,2526
+2025-05-31,West Midlands,Clear,Moderate,10000
+2025-06-01,West Midlands,Storm,Light,1127
+2025-06-02,West Midlands,Clear,Moderate,10000
+2025-06-03,West Midlands,Clear,Moderate,10000
+2025-06-04,West Midlands,Clear,Moderate,10000
+2025-06-05,West Midlands,Clear,Gridlock,10000
+2025-06-06,West Midlands,Rain,Heavy,996
+2025-06-07,West Midlands,Clear,Moderate,10000
+2025-06-08,West Midlands,Clear,Light,10000
+2025-06-09,West Midlands,Clear,Heavy,10000
+2025-06-10,West Midlands,Clear,Heavy,10000
+2025-06-11,West Midlands,Clear,Moderate,10000
+2025-06-12,West Midlands,Clear,Heavy,10000
+2025-06-13,West Midlands,Clear,Moderate,10000
+2025-06-14,West Midlands,Rain,Light,1261
+2025-06-15,West Midlands,Clear,Moderate,10000
+2025-06-16,West Midlands,Clear,Moderate,10000
+2025-06-17,West Midlands,Clear,Heavy,10000
+2025-06-18,West Midlands,Rain,Heavy,3886
+2025-06-19,West Midlands,Clear,Heavy,10000
+2025-06-20,West Midlands,Clear,Heavy,10000
+2025-06-21,West Midlands,Clear,Light,10000
+2025-06-22,West Midlands,Clear,Moderate,10000
+2025-06-23,West Midlands,Clear,Gridlock,10000
+2025-06-24,West Midlands,Clear,Heavy,10000
+2025-06-25,West Midlands,Clear,Heavy,10000
+2025-06-26,West Midlands,Clear,Heavy,10000
+2025-06-27,West Midlands,Clear,Heavy,10000
+2025-06-28,West Midlands,Rain,Heavy,742
+2025-06-29,West Midlands,Clear,Moderate,10000
+2025-06-30,West Midlands,Clear,Gridlock,10000
+2025-07-01,West Midlands,Clear,Heavy,10000
+2025-07-02,West Midlands,Clear,Gridlock,10000
+2025-07-03,West Midlands,Clear,Heavy,10000
+2025-07-04,West Midlands,Storm,Moderate,2130
+2025-07-05,West Midlands,Clear,Moderate,10000
+2025-07-06,West Midlands,Clear,Light,10000
+2025-07-07,West Midlands,Rain,Moderate,1614
+2025-07-08,West Midlands,Clear,Moderate,10000
+2025-07-09,West Midlands,Clear,Heavy,10000
+2025-07-10,West Midlands,Clear,Moderate,10000
+2025-07-11,West Midlands,Clear,Gridlock,10000
+2025-07-12,West Midlands,Clear,Light,10000
+2025-07-13,West Midlands,Clear,Light,10000
+2025-07-14,West Midlands,Rain,Gridlock,4867
+2025-07-15,West Midlands,Clear,Heavy,10000
+2025-07-16,West Midlands,Clear,Heavy,10000
+2025-07-17,West Midlands,Fog,Heavy,3306
+2025-07-18,West Midlands,Clear,Heavy,10000
+2025-07-19,West Midlands,Rain,Light,273
+2025-07-20,West Midlands,Clear,Moderate,10000
+2025-07-21,West Midlands,Clear,Moderate,10000
+2025-07-22,West Midlands,Clear,Heavy,10000
+2025-07-23,West Midlands,Rain,Heavy,1403
+2025-07-24,West Midlands,Clear,Heavy,10000
+2025-07-25,West Midlands,Clear,Moderate,10000
+2025-07-26,West Midlands,Clear,Moderate,10000
+2025-07-27,West Midlands,Clear,Moderate,10000
+2025-07-28,West Midlands,Clear,Gridlock,10000
+2025-07-29,West Midlands,Storm,Gridlock,4136
+2025-07-30,West Midlands,Clear,Heavy,10000
+2025-07-31,West Midlands,Clear,Moderate,10000
+2025-08-01,West Midlands,Clear,Heavy,10000
+2025-08-02,West Midlands,Storm,Light,1066
+2025-08-03,West Midlands,Fog,Moderate,4371
+2025-08-04,West Midlands,Clear,Heavy,10000
+2025-08-05,West Midlands,Clear,Moderate,10000
+2025-08-06,West Midlands,Fog,Gridlock,3049
+2025-08-07,West Midlands,Clear,Gridlock,10000
+2025-08-08,West Midlands,Storm,Heavy,1567
+2025-08-09,West Midlands,Clear,Light,10000
+2025-08-10,West Midlands,Clear,Heavy,10000
+2025-08-11,West Midlands,Clear,Gridlock,10000
+2025-08-12,West Midlands,Clear,Heavy,10000
+2025-08-13,West Midlands,Clear,Moderate,10000
+2025-08-14,West Midlands,Clear,Heavy,10000
+2025-08-15,West Midlands,Clear,Heavy,10000
+2025-08-16,West Midlands,Clear,Light,10000
+2025-08-17,West Midlands,Clear,Light,10000
+2025-08-18,West Midlands,Clear,Moderate,10000
+2025-08-19,West Midlands,Storm,Heavy,3553
+2025-08-20,West Midlands,Clear,Heavy,10000
+2025-08-21,West Midlands,Clear,Moderate,10000
+2025-08-22,West Midlands,Clear,Heavy,10000
+2025-08-23,West Midlands,Clear,Light,10000
+2025-08-24,West Midlands,Clear,Moderate,10000
+2025-08-25,West Midlands,Clear,Heavy,10000
+2025-08-26,West Midlands,Clear,Gridlock,10000
+2025-08-27,West Midlands,Clear,Heavy,10000
+2025-08-28,West Midlands,Storm,Heavy,1801
+2025-08-29,West Midlands,Clear,Heavy,10000
+2025-08-30,West Midlands,Storm,Light,3396
+2025-08-31,West Midlands,Clear,Moderate,10000
+2025-09-01,West Midlands,Rain,Heavy,3012
+2025-09-02,West Midlands,Rain,Moderate,3247
+2025-09-03,West Midlands,Clear,Heavy,10000
+2025-09-04,West Midlands,Clear,Heavy,10000
+2025-09-05,West Midlands,Rain,Heavy,1416
+2025-09-06,West Midlands,Rain,Light,4129
+2025-09-07,West Midlands,Rain,Heavy,2937
+2025-09-08,West Midlands,Clear,Gridlock,10000
+2025-09-09,West Midlands,Fog,Gridlock,3610
+2025-09-10,West Midlands,Clear,Heavy,10000
+2025-09-11,West Midlands,Rain,Heavy,1425
+2025-09-12,West Midlands,Clear,Heavy,10000
+2025-09-13,West Midlands,Rain,Light,4458
+2025-09-14,West Midlands,Clear,Light,10000
+2025-09-15,West Midlands,Clear,Moderate,10000
+2025-09-16,West Midlands,Fog,Heavy,1123
+2025-09-17,West Midlands,Clear,Heavy,10000
+2025-09-18,West Midlands,Clear,Heavy,10000
+2025-09-19,West Midlands,Rain,Moderate,4441
+2025-09-20,West Midlands,Rain,Light,3781
+2025-09-21,West Midlands,Clear,Light,10000
+2025-09-22,West Midlands,Rain,Heavy,4203
+2025-09-23,West Midlands,Clear,Heavy,10000
+2025-09-24,West Midlands,Clear,Heavy,10000
+2025-09-25,West Midlands,Clear,Heavy,10000
+2025-09-26,West Midlands,Storm,Moderate,1428
+2025-09-27,West Midlands,Clear,Light,10000
+2025-09-28,West Midlands,Rain,Light,1108
+2025-09-29,West Midlands,Fog,Moderate,2526
+2025-09-30,West Midlands,Rain,Moderate,3603
+2025-10-01,West Midlands,Fog,Heavy,4868
+2025-10-02,West Midlands,Rain,Heavy,2938
+2025-10-03,West Midlands,Rain,Moderate,3027
+2025-10-04,West Midlands,Clear,Moderate,10000
+2025-10-05,West Midlands,Clear,Light,10000
+2025-10-06,West Midlands,Rain,Heavy,1564
+2025-10-07,West Midlands,Clear,Moderate,10000
+2025-10-08,West Midlands,Rain,Heavy,2697
+2025-10-09,West Midlands,Rain,Gridlock,565
+2025-10-10,West Midlands,Rain,Heavy,1461
+2025-10-11,West Midlands,Clear,Light,10000
+2025-10-12,West Midlands,Rain,Moderate,3382
+2025-10-13,West Midlands,Rain,Heavy,3891
+2025-10-14,West Midlands,Fog,Moderate,3310
+2025-10-15,West Midlands,Clear,Gridlock,10000
+2025-10-16,West Midlands,Clear,Heavy,10000
+2025-10-17,West Midlands,Fog,Heavy,2582
+2025-10-18,West Midlands,Clear,Moderate,10000
+2025-10-19,West Midlands,Rain,Moderate,4137
+2025-10-20,West Midlands,Clear,Heavy,10000
+2025-10-21,West Midlands,Rain,Gridlock,1688
+2025-10-22,West Midlands,Storm,Heavy,1224
+2025-10-23,West Midlands,Clear,Heavy,10000
+2025-10-24,West Midlands,Fog,Moderate,848
+2025-10-25,West Midlands,Storm,Light,4354
+2025-10-26,West Midlands,Clear,Heavy,10000
+2025-10-27,West Midlands,Rain,Heavy,3496
+2025-10-28,West Midlands,Rain,Heavy,4739
+2025-10-29,West Midlands,Clear,Heavy,10000
+2025-10-30,West Midlands,Rain,Heavy,1540
+2025-10-31,West Midlands,Rain,Gridlock,4529
+2025-11-01,West Midlands,Storm,Light,4362
+2025-11-02,West Midlands,Clear,Moderate,10000
+2025-11-03,West Midlands,Clear,Heavy,10000
+2025-11-04,West Midlands,Rain,Moderate,2402
+2025-11-05,West Midlands,Clear,Heavy,10000
+2025-11-06,West Midlands,Clear,Heavy,10000
+2025-11-07,West Midlands,Clear,Gridlock,10000
+2025-11-08,West Midlands,Fog,Light,1022
+2025-11-09,West Midlands,Fog,Moderate,4042
+2025-11-10,West Midlands,Storm,Moderate,2231
+2025-11-11,West Midlands,Rain,Heavy,2428
+2025-11-12,West Midlands,Rain,Moderate,3603
+2025-11-13,West Midlands,Clear,Moderate,10000
+2025-11-14,West Midlands,Clear,Heavy,10000
+2025-11-15,West Midlands,Clear,Moderate,10000
+2025-11-16,West Midlands,Clear,Heavy,10000
+2025-11-17,West Midlands,Fog,Heavy,3847
+2025-11-18,West Midlands,Fog,Moderate,4018
+2025-11-19,West Midlands,Rain,Moderate,4853
+2025-11-20,West Midlands,Rain,Heavy,665
+2025-11-21,West Midlands,Fog,Gridlock,513
+2025-11-22,West Midlands,Fog,Light,3674
+2025-11-23,West Midlands,Fog,Moderate,739
+2025-11-24,West Midlands,Rain,Heavy,432
+2025-11-25,West Midlands,Rain,Heavy,1633
+2025-11-26,West Midlands,Fog,Heavy,660
+2025-11-27,West Midlands,Fog,Heavy,3374
+2025-11-28,West Midlands,Storm,Moderate,2989
+2025-11-29,West Midlands,Rain,Light,1123
+2025-11-30,West Midlands,Clear,Light,10000
+2025-12-01,West Midlands,Clear,Heavy,10000
+2025-12-02,West Midlands,Fog,Heavy,3712
+2025-12-03,West Midlands,Clear,Gridlock,10000
+2025-12-04,West Midlands,Rain,Heavy,401
+2025-12-05,West Midlands,Rain,Gridlock,1957
+2025-12-06,West Midlands,Rain,Heavy,4224
+2025-12-07,West Midlands,Rain,Light,1155
+2025-12-08,West Midlands,Rain,Gridlock,4048
+2025-12-09,West Midlands,Clear,Heavy,10000
+2025-12-10,West Midlands,Clear,Heavy,10000
+2025-12-11,West Midlands,Rain,Heavy,3689
+2025-12-12,West Midlands,Rain,Heavy,4902
+2025-12-13,West Midlands,Fog,Moderate,2731
+2025-12-14,West Midlands,Rain,Light,4993
+2025-12-15,West Midlands,Rain,Heavy,646
+2025-12-16,West Midlands,Rain,Heavy,2690
+2025-12-17,West Midlands,Storm,Heavy,3781
+2025-12-18,West Midlands,Clear,Heavy,10000
+2025-12-19,West Midlands,Rain,Heavy,1499
+2025-12-20,West Midlands,Clear,Light,10000
+2025-12-21,West Midlands,Fog,Moderate,2771
+2025-12-22,West Midlands,Clear,Moderate,10000
+2025-12-23,West Midlands,Clear,Heavy,10000
+2025-12-24,West Midlands,Fog,Heavy,265
+2025-12-25,West Midlands,Rain,Heavy,1756
+2025-12-26,West Midlands,Rain,Heavy,2203
+2025-12-27,West Midlands,Clear,Light,10000
+2025-12-28,West Midlands,Storm,Light,2971
+2025-12-29,West Midlands,Rain,Heavy,3561
+2025-12-30,West Midlands,Fog,Heavy,278
+2025-12-31,West Midlands,Rain,Gridlock,968
+2025-01-01,North West,Fog,Moderate,875
+2025-01-02,North West,Clear,Gridlock,10000
+2025-01-03,North West,Rain,Heavy,4615
+2025-01-04,North West,Fog,Moderate,3938
+2025-01-05,North West,Snow,Light,3014
+2025-01-06,North West,Rain,Gridlock,1917
+2025-01-07,North West,Storm,Moderate,3319
+2025-01-08,North West,Rain,Gridlock,4055
+2025-01-09,North West,Storm,Gridlock,3490
+2025-01-10,North West,Rain,Moderate,132
+2025-01-11,North West,Rain,Light,660
+2025-01-12,North West,Rain,Light,4604
+2025-01-13,North West,Snow,Heavy,2651
+2025-01-14,North West,Clear,Gridlock,10000
+2025-01-15,North West,Clear,Heavy,10000
+2025-01-16,North West,Rain,Heavy,1280
+2025-01-17,North West,Fog,Moderate,1960
+2025-01-18,North West,Clear,Light,10000
+2025-01-19,North West,Snow,Light,4965
+2025-01-20,North West,Snow,Moderate,228
+2025-01-21,North West,Rain,Heavy,1601
+2025-01-22,North West,Clear,Gridlock,10000
+2025-01-23,North West,Clear,Heavy,10000
+2025-01-24,North West,Fog,Gridlock,4010
+2025-01-25,North West,Snow,Heavy,3448
+2025-01-26,North West,Rain,Moderate,1054
+2025-01-27,North West,Rain,Heavy,376
+2025-01-28,North West,Rain,Heavy,2531
+2025-01-29,North West,Rain,Heavy,1911
+2025-01-30,North West,Fog,Heavy,178
+2025-01-31,North West,Clear,Heavy,10000
+2025-02-01,North West,Clear,Light,10000
+2025-02-02,North West,Rain,Light,4536
+2025-02-03,North West,Rain,Gridlock,597
+2025-02-04,North West,Clear,Heavy,10000
+2025-02-05,North West,Snow,Moderate,1640
+2025-02-06,North West,Snow,Heavy,855
+2025-02-07,North West,Rain,Heavy,3275
+2025-02-08,North West,Fog,Moderate,2510
+2025-02-09,North West,Clear,Heavy,10000
+2025-02-10,North West,Snow,Gridlock,2129
+2025-02-11,North West,Fog,Gridlock,666
+2025-02-12,North West,Rain,Heavy,1809
+2025-02-13,North West,Snow,Heavy,3211
+2025-02-14,North West,Rain,Gridlock,3218
+2025-02-15,North West,Clear,Light,10000
+2025-02-16,North West,Rain,Moderate,4201
+2025-02-17,North West,Rain,Heavy,4719
+2025-02-18,North West,Snow,Heavy,3615
+2025-02-19,North West,Rain,Heavy,4784
+2025-02-20,North West,Clear,Gridlock,10000
+2025-02-21,North West,Rain,Heavy,2544
+2025-02-22,North West,Rain,Moderate,2634
+2025-02-23,North West,Fog,Light,3287
+2025-02-24,North West,Rain,Heavy,4511
+2025-02-25,North West,Rain,Moderate,2326
+2025-02-26,North West,Snow,Heavy,2093
+2025-02-27,North West,Clear,Heavy,10000
+2025-02-28,North West,Snow,Moderate,2465
+2025-03-01,North West,Rain,Moderate,1414
+2025-03-02,North West,Rain,Moderate,201
+2025-03-03,North West,Clear,Gridlock,10000
+2025-03-04,North West,Rain,Heavy,606
+2025-03-05,North West,Clear,Heavy,10000
+2025-03-06,North West,Rain,Heavy,4704
+2025-03-07,North West,Fog,Moderate,204
+2025-03-08,North West,Rain,Light,4676
+2025-03-09,North West,Clear,Light,10000
+2025-03-10,North West,Rain,Heavy,1766
+2025-03-11,North West,Clear,Gridlock,10000
+2025-03-12,North West,Rain,Heavy,4322
+2025-03-13,North West,Clear,Heavy,10000
+2025-03-14,North West,Rain,Gridlock,3833
+2025-03-15,North West,Rain,Heavy,1119
+2025-03-16,North West,Rain,Moderate,1262
+2025-03-17,North West,Rain,Heavy,2561
+2025-03-18,North West,Clear,Heavy,10000
+2025-03-19,North West,Rain,Heavy,4293
+2025-03-20,North West,Clear,Heavy,10000
+2025-03-21,North West,Rain,Heavy,4344
+2025-03-22,North West,Rain,Light,773
+2025-03-23,North West,Clear,Heavy,10000
+2025-03-24,North West,Rain,Gridlock,447
+2025-03-25,North West,Fog,Heavy,4875
+2025-03-26,North West,Rain,Heavy,1801
+2025-03-27,North West,Rain,Heavy,2009
+2025-03-28,North West,Clear,Gridlock,10000
+2025-03-29,North West,Clear,Moderate,10000
+2025-03-30,North West,Fog,Moderate,1349
+2025-03-31,North West,Rain,Heavy,3929
+2025-04-01,North West,Rain,Gridlock,2881
+2025-04-02,North West,Clear,Gridlock,10000
+2025-04-03,North West,Rain,Heavy,3477
+2025-04-04,North West,Clear,Heavy,10000
+2025-04-05,North West,Fog,Moderate,3172
+2025-04-06,North West,Clear,Moderate,10000
+2025-04-07,North West,Rain,Heavy,865
+2025-04-08,North West,Clear,Heavy,10000
+2025-04-09,North West,Clear,Gridlock,10000
+2025-04-10,North West,Rain,Heavy,1082
+2025-04-11,North West,Rain,Moderate,4550
+2025-04-12,North West,Rain,Moderate,4567
+2025-04-13,North West,Fog,Moderate,596
+2025-04-14,North West,Clear,Heavy,10000
+2025-04-15,North West,Rain,Moderate,2216
+2025-04-16,North West,Clear,Moderate,10000
+2025-04-17,North West,Rain,Moderate,3055
+2025-04-18,North West,Fog,Heavy,920
+2025-04-19,North West,Rain,Light,4359
+2025-04-20,North West,Fog,Moderate,68
+2025-04-21,North West,Storm,Heavy,915
+2025-04-22,North West,Clear,Heavy,10000
+2025-04-23,North West,Rain,Moderate,2617
+2025-04-24,North West,Clear,Moderate,10000
+2025-04-25,North West,Rain,Gridlock,1185
+2025-04-26,North West,Clear,Light,10000
+2025-04-27,North West,Rain,Moderate,903
+2025-04-28,North West,Rain,Heavy,2776
+2025-04-29,North West,Fog,Heavy,4555
+2025-04-30,North West,Rain,Moderate,4231
+2025-05-01,North West,Clear,Gridlock,10000
+2025-05-02,North West,Clear,Heavy,10000
+2025-05-03,North West,Rain,Light,119
+2025-05-04,North West,Rain,Light,2057
+2025-05-05,North West,Rain,Heavy,2829
+2025-05-06,North West,Clear,Gridlock,10000
+2025-05-07,North West,Clear,Moderate,10000
+2025-05-08,North West,Rain,Heavy,3915
+2025-05-09,North West,Rain,Heavy,229
+2025-05-10,North West,Rain,Light,2673
+2025-05-11,North West,Rain,Heavy,4675
+2025-05-12,North West,Clear,Heavy,10000
+2025-05-13,North West,Rain,Gridlock,4547
+2025-05-14,North West,Clear,Heavy,10000
+2025-05-15,North West,Clear,Heavy,10000
+2025-05-16,North West,Clear,Heavy,10000
+2025-05-17,North West,Storm,Heavy,3285
+2025-05-18,North West,Rain,Light,3163
+2025-05-19,North West,Rain,Heavy,1003
+2025-05-20,North West,Rain,Heavy,2930
+2025-05-21,North West,Clear,Heavy,10000
+2025-05-22,North West,Clear,Moderate,10000
+2025-05-23,North West,Rain,Moderate,3303
+2025-05-24,North West,Clear,Light,10000
+2025-05-25,North West,Fog,Moderate,1323
+2025-05-26,North West,Rain,Gridlock,1181
+2025-05-27,North West,Storm,Heavy,3079
+2025-05-28,North West,Rain,Moderate,4427
+2025-05-29,North West,Fog,Heavy,303
+2025-05-30,North West,Rain,Heavy,3094
+2025-05-31,North West,Rain,Light,2942
+2025-06-01,North West,Clear,Light,10000
+2025-06-02,North West,Rain,Heavy,1848
+2025-06-03,North West,Rain,Heavy,304
+2025-06-04,North West,Clear,Moderate,10000
+2025-06-05,North West,Clear,Heavy,10000
+2025-06-06,North West,Clear,Gridlock,10000
+2025-06-07,North West,Storm,Light,1058
+2025-06-08,North West,Storm,Light,4808
+2025-06-09,North West,Storm,Heavy,304
+2025-06-10,North West,Clear,Heavy,10000
+2025-06-11,North West,Clear,Moderate,10000
+2025-06-12,North West,Clear,Gridlock,10000
+2025-06-13,North West,Rain,Moderate,2621
+2025-06-14,North West,Clear,Moderate,10000
+2025-06-15,North West,Clear,Light,10000
+2025-06-16,North West,Storm,Moderate,2715
+2025-06-17,North West,Clear,Gridlock,10000
+2025-06-18,North West,Clear,Heavy,10000
+2025-06-19,North West,Clear,Heavy,10000
+2025-06-20,North West,Clear,Gridlock,10000
+2025-06-21,North West,Storm,Light,704
+2025-06-22,North West,Rain,Light,3716
+2025-06-23,North West,Clear,Heavy,10000
+2025-06-24,North West,Storm,Gridlock,4993
+2025-06-25,North West,Rain,Gridlock,3069
+2025-06-26,North West,Clear,Heavy,10000
+2025-06-27,North West,Clear,Gridlock,10000
+2025-06-28,North West,Rain,Moderate,4136
+2025-06-29,North West,Clear,Moderate,10000
+2025-06-30,North West,Clear,Moderate,10000
+2025-07-01,North West,Clear,Heavy,10000
+2025-07-02,North West,Fog,Heavy,915
+2025-07-03,North West,Clear,Moderate,10000
+2025-07-04,North West,Clear,Heavy,10000
+2025-07-05,North West,Clear,Moderate,10000
+2025-07-06,North West,Rain,Light,4706
+2025-07-07,North West,Clear,Heavy,10000
+2025-07-08,North West,Clear,Heavy,10000
+2025-07-09,North West,Clear,Heavy,10000
+2025-07-10,North West,Fog,Moderate,2479
+2025-07-11,North West,Clear,Heavy,10000
+2025-07-12,North West,Storm,Light,4072
+2025-07-13,North West,Fog,Moderate,3201
+2025-07-14,North West,Clear,Heavy,10000
+2025-07-15,North West,Clear,Gridlock,10000
+2025-07-16,North West,Clear,Heavy,10000
+2025-07-17,North West,Rain,Heavy,3114
+2025-07-18,North West,Storm,Heavy,637
+2025-07-19,North West,Clear,Light,10000
+2025-07-20,North West,Rain,Light,3976
+2025-07-21,North West,Clear,Moderate,10000
+2025-07-22,North West,Rain,Heavy,2048
+2025-07-23,North West,Clear,Gridlock,10000
+2025-07-24,North West,Clear,Heavy,10000
+2025-07-25,North West,Clear,Heavy,10000
+2025-07-26,North West,Rain,Heavy,3882
+2025-07-27,North West,Clear,Light,10000
+2025-07-28,North West,Fog,Heavy,4923
+2025-07-29,North West,Clear,Heavy,10000
+2025-07-30,North West,Clear,Heavy,10000
+2025-07-31,North West,Clear,Heavy,10000
+2025-08-01,North West,Rain,Heavy,1266
+2025-08-02,North West,Rain,Light,134
+2025-08-03,North West,Rain,Light,1218
+2025-08-04,North West,Rain,Moderate,2576
+2025-08-05,North West,Clear,Gridlock,10000
+2025-08-06,North West,Clear,Heavy,10000
+2025-08-07,North West,Clear,Moderate,10000
+2025-08-08,North West,Clear,Heavy,10000
+2025-08-09,North West,Rain,Heavy,3387
+2025-08-10,North West,Clear,Heavy,10000
+2025-08-11,North West,Rain,Heavy,141
+2025-08-12,North West,Fog,Gridlock,1032
+2025-08-13,North West,Clear,Heavy,10000
+2025-08-14,North West,Rain,Heavy,1862
+2025-08-15,North West,Clear,Heavy,10000
+2025-08-16,North West,Clear,Light,10000
+2025-08-17,North West,Storm,Light,4422
+2025-08-18,North West,Clear,Heavy,10000
+2025-08-19,North West,Rain,Heavy,4126
+2025-08-20,North West,Clear,Heavy,10000
+2025-08-21,North West,Clear,Heavy,10000
+2025-08-22,North West,Storm,Gridlock,422
+2025-08-23,North West,Clear,Heavy,10000
+2025-08-24,North West,Clear,Moderate,10000
+2025-08-25,North West,Fog,Moderate,752
+2025-08-26,North West,Clear,Gridlock,10000
+2025-08-27,North West,Rain,Moderate,307
+2025-08-28,North West,Clear,Heavy,10000
+2025-08-29,North West,Rain,Gridlock,807
+2025-08-30,North West,Clear,Moderate,10000
+2025-08-31,North West,Clear,Light,10000
+2025-09-01,North West,Storm,Gridlock,253
+2025-09-02,North West,Fog,Moderate,2293
+2025-09-03,North West,Rain,Heavy,2011
+2025-09-04,North West,Storm,Heavy,578
+2025-09-05,North West,Fog,Gridlock,258
+2025-09-06,North West,Fog,Light,3386
+2025-09-07,North West,Rain,Light,2094
+2025-09-08,North West,Rain,Heavy,1149
+2025-09-09,North West,Rain,Moderate,1595
+2025-09-10,North West,Clear,Moderate,10000
+2025-09-11,North West,Rain,Heavy,1953
+2025-09-12,North West,Storm,Heavy,728
+2025-09-13,North West,Fog,Light,1657
+2025-09-14,North West,Rain,Moderate,1475
+2025-09-15,North West,Clear,Heavy,10000
+2025-09-16,North West,Rain,Heavy,1328
+2025-09-17,North West,Rain,Heavy,3853
+2025-09-18,North West,Rain,Gridlock,3533
+2025-09-19,North West,Clear,Heavy,10000
+2025-09-20,North West,Rain,Light,453
+2025-09-21,North West,Clear,Light,10000
+2025-09-22,North West,Fog,Moderate,1208
+2025-09-23,North West,Clear,Heavy,10000
+2025-09-24,North West,Clear,Moderate,10000
+2025-09-25,North West,Clear,Gridlock,10000
+2025-09-26,North West,Rain,Heavy,2114
+2025-09-27,North West,Clear,Moderate,10000
+2025-09-28,North West,Rain,Moderate,4648
+2025-09-29,North West,Rain,Moderate,3607
+2025-09-30,North West,Storm,Heavy,467
+2025-10-01,North West,Fog,Moderate,3478
+2025-10-02,North West,Rain,Heavy,2311
+2025-10-03,North West,Rain,Moderate,558
+2025-10-04,North West,Clear,Light,10000
+2025-10-05,North West,Rain,Moderate,3125
+2025-10-06,North West,Clear,Heavy,10000
+2025-10-07,North West,Clear,Heavy,10000
+2025-10-08,North West,Rain,Moderate,4862
+2025-10-09,North West,Clear,Heavy,10000
+2025-10-10,North West,Storm,Gridlock,4404
+2025-10-11,North West,Rain,Light,737
+2025-10-12,North West,Clear,Light,10000
+2025-10-13,North West,Rain,Heavy,3445
+2025-10-14,North West,Rain,Moderate,1817
+2025-10-15,North West,Clear,Heavy,10000
+2025-10-16,North West,Storm,Heavy,115
+2025-10-17,North West,Clear,Heavy,10000
+2025-10-18,North West,Rain,Light,2536
+2025-10-19,North West,Fog,Moderate,2493
+2025-10-20,North West,Rain,Heavy,3672
+2025-10-21,North West,Clear,Moderate,10000
+2025-10-22,North West,Rain,Heavy,4007
+2025-10-23,North West,Rain,Heavy,4404
+2025-10-24,North West,Clear,Heavy,10000
+2025-10-25,North West,Rain,Light,1979
+2025-10-26,North West,Rain,Moderate,3833
+2025-10-27,North West,Clear,Heavy,10000
+2025-10-28,North West,Clear,Gridlock,10000
+2025-10-29,North West,Clear,Heavy,10000
+2025-10-30,North West,Clear,Heavy,10000
+2025-10-31,North West,Rain,Heavy,2423
+2025-11-01,North West,Rain,Light,1143
+2025-11-02,North West,Clear,Moderate,10000
+2025-11-03,North West,Rain,Heavy,3982
+2025-11-04,North West,Rain,Heavy,3911
+2025-11-05,North West,Fog,Heavy,2883
+2025-11-06,North West,Rain,Moderate,3876
+2025-11-07,North West,Clear,Heavy,10000
+2025-11-08,North West,Clear,Moderate,10000
+2025-11-09,North West,Rain,Light,871
+2025-11-10,North West,Rain,Heavy,2447
+2025-11-11,North West,Rain,Heavy,3496
+2025-11-12,North West,Rain,Moderate,2757
+2025-11-13,North West,Rain,Moderate,3435
+2025-11-14,North West,Rain,Heavy,1632
+2025-11-15,North West,Clear,Light,10000
+2025-11-16,North West,Storm,Moderate,273
+2025-11-17,North West,Rain,Moderate,1978
+2025-11-18,North West,Storm,Gridlock,1067
+2025-11-19,North West,Clear,Gridlock,10000
+2025-11-20,North West,Clear,Heavy,10000
+2025-11-21,North West,Storm,Moderate,3090
+2025-11-22,North West,Fog,Heavy,3167
+2025-11-23,North West,Clear,Light,10000
+2025-11-24,North West,Rain,Gridlock,496
+2025-11-25,North West,Clear,Heavy,10000
+2025-11-26,North West,Storm,Gridlock,645
+2025-11-27,North West,Clear,Heavy,10000
+2025-11-28,North West,Fog,Heavy,3057
+2025-11-29,North West,Fog,Moderate,4051
+2025-11-30,North West,Rain,Heavy,3235
+2025-12-01,North West,Rain,Heavy,98
+2025-12-02,North West,Rain,Gridlock,436
+2025-12-03,North West,Rain,Heavy,3102
+2025-12-04,North West,Fog,Heavy,1657
+2025-12-05,North West,Rain,Heavy,1330
+2025-12-06,North West,Clear,Light,10000
+2025-12-07,North West,Fog,Heavy,257
+2025-12-08,North West,Rain,Moderate,487
+2025-12-09,North West,Fog,Heavy,3951
+2025-12-10,North West,Rain,Gridlock,4601
+2025-12-11,North West,Rain,Heavy,535
+2025-12-12,North West,Clear,Gridlock,10000
+2025-12-13,North West,Snow,Moderate,4933
+2025-12-14,North West,Rain,Moderate,1571
+2025-12-15,North West,Rain,Heavy,3392
+2025-12-16,North West,Fog,Heavy,4647
+2025-12-17,North West,Clear,Moderate,10000
+2025-12-18,North West,Clear,Moderate,10000
+2025-12-19,North West,Rain,Gridlock,897
+2025-12-20,North West,Rain,Light,4304
+2025-12-21,North West,Snow,Light,3370
+2025-12-22,North West,Rain,Heavy,3723
+2025-12-23,North West,Rain,Heavy,3341
+2025-12-24,North West,Fog,Heavy,3768
+2025-12-25,North West,Fog,Heavy,1131
+2025-12-26,North West,Clear,Heavy,10000
+2025-12-27,North West,Snow,Heavy,3547
+2025-12-28,North West,Clear,Light,10000
+2025-12-29,North West,Snow,Heavy,3447
+2025-12-30,North West,Fog,Moderate,3720
+2025-12-31,North West,Snow,Heavy,2501
+2025-01-01,North East,Snow,Heavy,4082
+2025-01-02,North East,Rain,Gridlock,4773
+2025-01-03,North East,Storm,Heavy,4191
+2025-01-04,North East,Fog,Light,1886
+2025-01-05,North East,Snow,Light,2608
+2025-01-06,North East,Snow,Gridlock,1557
+2025-01-07,North East,Snow,Moderate,2050
+2025-01-08,North East,Rain,Gridlock,1344
+2025-01-09,North East,Fog,Heavy,1803
+2025-01-10,North East,Rain,Heavy,2491
+2025-01-11,North East,Clear,Heavy,10000
+2025-01-12,North East,Snow,Light,4404
+2025-01-13,North East,Rain,Gridlock,2258
+2025-01-14,North East,Clear,Heavy,10000
+2025-01-15,North East,Snow,Moderate,1717
+2025-01-16,North East,Rain,Heavy,1873
+2025-01-17,North East,Fog,Heavy,596
+2025-01-18,North East,Rain,Light,2090
+2025-01-19,North East,Rain,Moderate,2692
+2025-01-20,North East,Fog,Moderate,3655
+2025-01-21,North East,Rain,Heavy,2165
+2025-01-22,North East,Snow,Gridlock,1537
+2025-01-23,North East,Fog,Heavy,1094
+2025-01-24,North East,Rain,Moderate,1632
+2025-01-25,North East,Rain,Light,1670
+2025-01-26,North East,Rain,Moderate,150
+2025-01-27,North East,Clear,Moderate,10000
+2025-01-28,North East,Rain,Heavy,4075
+2025-01-29,North East,Fog,Heavy,2053
+2025-01-30,North East,Rain,Heavy,3715
+2025-01-31,North East,Rain,Heavy,319
+2025-02-01,North East,Rain,Light,3458
+2025-02-02,North East,Clear,Light,10000
+2025-02-03,North East,Snow,Gridlock,411
+2025-02-04,North East,Fog,Heavy,4245
+2025-02-05,North East,Snow,Heavy,1102
+2025-02-06,North East,Fog,Heavy,4777
+2025-02-07,North East,Fog,Heavy,2179
+2025-02-08,North East,Rain,Light,3352
+2025-02-09,North East,Rain,Moderate,4207
+2025-02-10,North East,Clear,Moderate,10000
+2025-02-11,North East,Rain,Gridlock,1605
+2025-02-12,North East,Snow,Gridlock,510
+2025-02-13,North East,Rain,Heavy,1165
+2025-02-14,North East,Rain,Moderate,1974
+2025-02-15,North East,Clear,Heavy,10000
+2025-02-16,North East,Storm,Light,4724
+2025-02-17,North East,Clear,Heavy,10000
+2025-02-18,North East,Snow,Heavy,3919
+2025-02-19,North East,Clear,Heavy,10000
+2025-02-20,North East,Rain,Heavy,3812
+2025-02-21,North East,Clear,Gridlock,10000
+2025-02-22,North East,Snow,Light,1518
+2025-02-23,North East,Clear,Moderate,10000
+2025-02-24,North East,Fog,Heavy,2449
+2025-02-25,North East,Rain,Gridlock,107
+2025-02-26,North East,Clear,Heavy,10000
+2025-02-27,North East,Storm,Heavy,3192
+2025-02-28,North East,Clear,Heavy,10000
+2025-03-01,North East,Clear,Light,10000
+2025-03-02,North East,Rain,Moderate,860
+2025-03-03,North East,Clear,Gridlock,10000
+2025-03-04,North East,Fog,Heavy,2620
+2025-03-05,North East,Rain,Heavy,646
+2025-03-06,North East,Rain,Moderate,4701
+2025-03-07,North East,Fog,Heavy,3747
+2025-03-08,North East,Clear,Light,10000
+2025-03-09,North East,Rain,Moderate,2976
+2025-03-10,North East,Storm,Gridlock,4426
+2025-03-11,North East,Rain,Heavy,4017
+2025-03-12,North East,Clear,Moderate,10000
+2025-03-13,North East,Clear,Heavy,10000
+2025-03-14,North East,Rain,Heavy,2510
+2025-03-15,North East,Rain,Moderate,4374
+2025-03-16,North East,Rain,Light,4936
+2025-03-17,North East,Clear,Moderate,10000
+2025-03-18,North East,Clear,Heavy,10000
+2025-03-19,North East,Clear,Heavy,10000
+2025-03-20,North East,Rain,Heavy,3533
+2025-03-21,North East,Rain,Heavy,1820
+2025-03-22,North East,Rain,Light,3265
+2025-03-23,North East,Rain,Moderate,1761
+2025-03-24,North East,Rain,Heavy,1442
+2025-03-25,North East,Fog,Gridlock,155
+2025-03-26,North East,Rain,Heavy,1145
+2025-03-27,North East,Rain,Moderate,4591
+2025-03-28,North East,Clear,Gridlock,10000
+2025-03-29,North East,Clear,Heavy,10000
+2025-03-30,North East,Rain,Moderate,1351
+2025-03-31,North East,Fog,Heavy,995
+2025-04-01,North East,Storm,Heavy,1467
+2025-04-02,North East,Rain,Heavy,128
+2025-04-03,North East,Rain,Gridlock,275
+2025-04-04,North East,Rain,Heavy,4887
+2025-04-05,North East,Clear,Light,10000
+2025-04-06,North East,Fog,Light,753
+2025-04-07,North East,Rain,Moderate,4760
+2025-04-08,North East,Clear,Gridlock,10000
+2025-04-09,North East,Storm,Heavy,1014
+2025-04-10,North East,Storm,Moderate,2126
+2025-04-11,North East,Fog,Moderate,1366
+2025-04-12,North East,Clear,Heavy,10000
+2025-04-13,North East,Clear,Moderate,10000
+2025-04-14,North East,Rain,Heavy,1063
+2025-04-15,North East,Clear,Heavy,10000
+2025-04-16,North East,Storm,Heavy,4066
+2025-04-17,North East,Storm,Heavy,819
+2025-04-18,North East,Clear,Gridlock,10000
+2025-04-19,North East,Fog,Light,1614
+2025-04-20,North East,Clear,Moderate,10000
+2025-04-21,North East,Rain,Moderate,4035
+2025-04-22,North East,Clear,Heavy,10000
+2025-04-23,North East,Fog,Heavy,4524
+2025-04-24,North East,Rain,Heavy,405
+2025-04-25,North East,Clear,Heavy,10000
+2025-04-26,North East,Rain,Light,125
+2025-04-27,North East,Fog,Light,2399
+2025-04-28,North East,Fog,Gridlock,442
+2025-04-29,North East,Storm,Moderate,2825
+2025-04-30,North East,Storm,Heavy,80
+2025-05-01,North East,Rain,Heavy,4121
+2025-05-02,North East,Rain,Gridlock,920
+2025-05-03,North East,Rain,Light,2789
+2025-05-04,North East,Rain,Light,4183
+2025-05-05,North East,Rain,Moderate,1706
+2025-05-06,North East,Rain,Heavy,2834
+2025-05-07,North East,Rain,Gridlock,4029
+2025-05-08,North East,Rain,Moderate,1364
+2025-05-09,North East,Rain,Moderate,1278
+2025-05-10,North East,Clear,Light,10000
+2025-05-11,North East,Rain,Heavy,4214
+2025-05-12,North East,Rain,Heavy,2313
+2025-05-13,North East,Rain,Heavy,381
+2025-05-14,North East,Clear,Moderate,10000
+2025-05-15,North East,Storm,Gridlock,777
+2025-05-16,North East,Clear,Heavy,10000
+2025-05-17,North East,Clear,Light,10000
+2025-05-18,North East,Rain,Heavy,1059
+2025-05-19,North East,Rain,Moderate,4359
+2025-05-20,North East,Clear,Heavy,10000
+2025-05-21,North East,Fog,Heavy,4661
+2025-05-22,North East,Rain,Moderate,577
+2025-05-23,North East,Rain,Moderate,3784
+2025-05-24,North East,Fog,Moderate,1226
+2025-05-25,North East,Clear,Light,10000
+2025-05-26,North East,Clear,Heavy,10000
+2025-05-27,North East,Rain,Heavy,2563
+2025-05-28,North East,Rain,Gridlock,1146
+2025-05-29,North East,Clear,Heavy,10000
+2025-05-30,North East,Rain,Heavy,1044
+2025-05-31,North East,Rain,Moderate,891
+2025-06-01,North East,Clear,Heavy,10000
+2025-06-02,North East,Clear,Moderate,10000
+2025-06-03,North East,Clear,Heavy,10000
+2025-06-04,North East,Clear,Heavy,10000
+2025-06-05,North East,Clear,Heavy,10000
+2025-06-06,North East,Clear,Heavy,10000
+2025-06-07,North East,Storm,Light,1858
+2025-06-08,North East,Clear,Light,10000
+2025-06-09,North East,Clear,Heavy,10000
+2025-06-10,North East,Clear,Heavy,10000
+2025-06-11,North East,Clear,Heavy,10000
+2025-06-12,North East,Clear,Heavy,10000
+2025-06-13,North East,Fog,Gridlock,3040
+2025-06-14,North East,Clear,Moderate,10000
+2025-06-15,North East,Clear,Moderate,10000
+2025-06-16,North East,Clear,Heavy,10000
+2025-06-17,North East,Clear,Gridlock,10000
+2025-06-18,North East,Clear,Moderate,10000
+2025-06-19,North East,Clear,Moderate,10000
+2025-06-20,North East,Clear,Gridlock,10000
+2025-06-21,North East,Storm,Light,387
+2025-06-22,North East,Clear,Heavy,10000
+2025-06-23,North East,Clear,Heavy,10000
+2025-06-24,North East,Clear,Heavy,10000
+2025-06-25,North East,Clear,Heavy,10000
+2025-06-26,North East,Clear,Heavy,10000
+2025-06-27,North East,Rain,Gridlock,1048
+2025-06-28,North East,Clear,Light,10000
+2025-06-29,North East,Clear,Light,10000
+2025-06-30,North East,Clear,Heavy,10000
+2025-07-01,North East,Clear,Moderate,10000
+2025-07-02,North East,Clear,Moderate,10000
+2025-07-03,North East,Clear,Gridlock,10000
+2025-07-04,North East,Clear,Gridlock,10000
+2025-07-05,North East,Clear,Light,10000
+2025-07-06,North East,Clear,Moderate,10000
+2025-07-07,North East,Rain,Moderate,611
+2025-07-08,North East,Clear,Heavy,10000
+2025-07-09,North East,Storm,Moderate,2973
+2025-07-10,North East,Clear,Moderate,10000
+2025-07-11,North East,Clear,Moderate,10000
+2025-07-12,North East,Clear,Moderate,10000
+2025-07-13,North East,Rain,Light,1159
+2025-07-14,North East,Clear,Gridlock,10000
+2025-07-15,North East,Clear,Heavy,10000
+2025-07-16,North East,Rain,Moderate,2041
+2025-07-17,North East,Clear,Gridlock,10000
+2025-07-18,North East,Clear,Moderate,10000
+2025-07-19,North East,Clear,Moderate,10000
+2025-07-20,North East,Clear,Moderate,10000
+2025-07-21,North East,Clear,Heavy,10000
+2025-07-22,North East,Clear,Moderate,10000
+2025-07-23,North East,Clear,Heavy,10000
+2025-07-24,North East,Clear,Heavy,10000
+2025-07-25,North East,Clear,Gridlock,10000
+2025-07-26,North East,Clear,Moderate,10000
+2025-07-27,North East,Rain,Light,3383
+2025-07-28,North East,Clear,Moderate,10000
+2025-07-29,North East,Clear,Moderate,10000
+2025-07-30,North East,Storm,Moderate,3335
+2025-07-31,North East,Clear,Heavy,10000
+2025-08-01,North East,Rain,Heavy,4813
+2025-08-02,North East,Clear,Light,10000
+2025-08-03,North East,Rain,Moderate,4891
+2025-08-04,North East,Clear,Gridlock,10000
+2025-08-05,North East,Clear,Heavy,10000
+2025-08-06,North East,Clear,Moderate,10000
+2025-08-07,North East,Clear,Moderate,10000
+2025-08-08,North East,Clear,Heavy,10000
+2025-08-09,North East,Rain,Moderate,4431
+2025-08-10,North East,Clear,Moderate,10000
+2025-08-11,North East,Clear,Heavy,10000
+2025-08-12,North East,Clear,Heavy,10000
+2025-08-13,North East,Rain,Heavy,3632
+2025-08-14,North East,Clear,Moderate,10000
+2025-08-15,North East,Storm,Heavy,3233
+2025-08-16,North East,Clear,Light,10000
+2025-08-17,North East,Clear,Moderate,10000
+2025-08-18,North East,Clear,Gridlock,10000
+2025-08-19,North East,Clear,Heavy,10000
+2025-08-20,North East,Clear,Heavy,10000
+2025-08-21,North East,Clear,Heavy,10000
+2025-08-22,North East,Clear,Heavy,10000
+2025-08-23,North East,Clear,Light,10000
+2025-08-24,North East,Clear,Light,10000
+2025-08-25,North East,Clear,Moderate,10000
+2025-08-26,North East,Clear,Gridlock,10000
+2025-08-27,North East,Clear,Heavy,10000
+2025-08-28,North East,Clear,Heavy,10000
+2025-08-29,North East,Clear,Gridlock,10000
+2025-08-30,North East,Clear,Heavy,10000
+2025-08-31,North East,Rain,Light,1844
+2025-09-01,North East,Clear,Heavy,10000
+2025-09-02,North East,Storm,Moderate,3895
+2025-09-03,North East,Clear,Heavy,10000
+2025-09-04,North East,Rain,Heavy,4858
+2025-09-05,North East,Rain,Heavy,787
+2025-09-06,North East,Storm,Moderate,1938
+2025-09-07,North East,Fog,Light,798
+2025-09-08,North East,Rain,Heavy,559
+2025-09-09,North East,Rain,Gridlock,2991
+2025-09-10,North East,Rain,Moderate,4282
+2025-09-11,North East,Clear,Heavy,10000
+2025-09-12,North East,Storm,Heavy,3717
+2025-09-13,North East,Rain,Light,751
+2025-09-14,North East,Clear,Moderate,10000
+2025-09-15,North East,Clear,Heavy,10000
+2025-09-16,North East,Rain,Heavy,4706
+2025-09-17,North East,Clear,Heavy,10000
+2025-09-18,North East,Rain,Moderate,1619
+2025-09-19,North East,Rain,Gridlock,3282
+2025-09-20,North East,Rain,Moderate,2830
+2025-09-21,North East,Clear,Heavy,10000
+2025-09-22,North East,Rain,Heavy,2875
+2025-09-23,North East,Rain,Heavy,114
+2025-09-24,North East,Clear,Heavy,10000
+2025-09-25,North East,Rain,Heavy,282
+2025-09-26,North East,Rain,Heavy,970
+2025-09-27,North East,Clear,Heavy,10000
+2025-09-28,North East,Clear,Light,10000
+2025-09-29,North East,Rain,Moderate,873
+2025-09-30,North East,Clear,Moderate,10000
+2025-10-01,North East,Rain,Heavy,2900
+2025-10-02,North East,Rain,Heavy,3356
+2025-10-03,North East,Fog,Gridlock,3768
+2025-10-04,North East,Clear,Heavy,10000
+2025-10-05,North East,Rain,Moderate,445
+2025-10-06,North East,Clear,Moderate,10000
+2025-10-07,North East,Rain,Heavy,139
+2025-10-08,North East,Rain,Heavy,1054
+2025-10-09,North East,Clear,Heavy,10000
+2025-10-10,North East,Fog,Gridlock,2512
+2025-10-11,North East,Rain,Moderate,4044
+2025-10-12,North East,Rain,Moderate,1618
+2025-10-13,North East,Fog,Heavy,1786
+2025-10-14,North East,Clear,Heavy,10000
+2025-10-15,North East,Rain,Heavy,1064
+2025-10-16,North East,Rain,Gridlock,4508
+2025-10-17,North East,Clear,Moderate,10000
+2025-10-18,North East,Rain,Moderate,4120
+2025-10-19,North East,Rain,Moderate,4207
+2025-10-20,North East,Rain,Heavy,647
+2025-10-21,North East,Clear,Heavy,10000
+2025-10-22,North East,Rain,Heavy,859
+2025-10-23,North East,Rain,Heavy,3788
+2025-10-24,North East,Clear,Heavy,10000
+2025-10-25,North East,Fog,Moderate,2732
+2025-10-26,North East,Rain,Moderate,1281
+2025-10-27,North East,Fog,Heavy,4311
+2025-10-28,North East,Rain,Heavy,1675
+2025-10-29,North East,Clear,Heavy,10000
+2025-10-30,North East,Clear,Moderate,10000
+2025-10-31,North East,Clear,Gridlock,10000
+2025-11-01,North East,Rain,Moderate,1024
+2025-11-02,North East,Rain,Heavy,3548
+2025-11-03,North East,Clear,Heavy,10000
+2025-11-04,North East,Rain,Moderate,4086
+2025-11-05,North East,Storm,Heavy,2853
+2025-11-06,North East,Rain,Gridlock,893
+2025-11-07,North East,Clear,Heavy,10000
+2025-11-08,North East,Rain,Light,3435
+2025-11-09,North East,Clear,Moderate,10000
+2025-11-10,North East,Clear,Moderate,10000
+2025-11-11,North East,Rain,Moderate,4184
+2025-11-12,North East,Clear,Gridlock,10000
+2025-11-13,North East,Rain,Heavy,1708
+2025-11-14,North East,Rain,Gridlock,1016
+2025-11-15,North East,Clear,Light,10000
+2025-11-16,North East,Rain,Moderate,3239
+2025-11-17,North East,Rain,Heavy,1491
+2025-11-18,North East,Storm,Heavy,4303
+2025-11-19,North East,Storm,Heavy,4657
+2025-11-20,North East,Clear,Heavy,10000
+2025-11-21,North East,Clear,Gridlock,10000
+2025-11-22,North East,Rain,Moderate,316
+2025-11-23,North East,Rain,Heavy,4847
+2025-11-24,North East,Rain,Heavy,3865
+2025-11-25,North East,Rain,Heavy,4697
+2025-11-26,North East,Rain,Heavy,3441
+2025-11-27,North East,Clear,Moderate,10000
+2025-11-28,North East,Rain,Gridlock,2780
+2025-11-29,North East,Rain,Moderate,2493
+2025-11-30,North East,Clear,Moderate,10000
+2025-12-01,North East,Rain,Heavy,2886
+2025-12-02,North East,Clear,Heavy,10000
+2025-12-03,North East,Clear,Heavy,10000
+2025-12-04,North East,Fog,Heavy,2322
+2025-12-05,North East,Storm,Gridlock,3450
+2025-12-06,North East,Clear,Moderate,10000
+2025-12-07,North East,Fog,Heavy,1608
+2025-12-08,North East,Rain,Gridlock,4489
+2025-12-09,North East,Fog,Gridlock,1528
+2025-12-10,North East,Clear,Gridlock,10000
+2025-12-11,North East,Fog,Heavy,1432
+2025-12-12,North East,Storm,Moderate,1944
+2025-12-13,North East,Fog,Light,1070
+2025-12-14,North East,Clear,Light,10000
+2025-12-15,North East,Storm,Moderate,3652
+2025-12-16,North East,Clear,Heavy,10000
+2025-12-17,North East,Snow,Heavy,2812
+2025-12-18,North East,Snow,Moderate,4138
+2025-12-19,North East,Rain,Heavy,3790
+2025-12-20,North East,Clear,Moderate,10000
+2025-12-21,North East,Fog,Heavy,3946
+2025-12-22,North East,Storm,Heavy,2552
+2025-12-23,North East,Storm,Heavy,242
+2025-12-24,North East,Rain,Moderate,141
+2025-12-25,North East,Fog,Heavy,2966
+2025-12-26,North East,Rain,Moderate,2563
+2025-12-27,North East,Clear,Light,10000
+2025-12-28,North East,Rain,Light,3029
+2025-12-29,North East,Storm,Heavy,647
+2025-12-30,North East,Fog,Heavy,1927
+2025-12-31,North East,Clear,Heavy,10000
+2025-01-01,Scotland,Fog,Heavy,4136
+2025-01-02,Scotland,Rain,Heavy,2258
+2025-01-03,Scotland,Clear,Gridlock,10000
+2025-01-04,Scotland,Clear,Moderate,10000
+2025-01-05,Scotland,Snow,Light,1805
+2025-01-06,Scotland,Snow,Heavy,2372
+2025-01-07,Scotland,Snow,Heavy,3323
+2025-01-08,Scotland,Fog,Heavy,2238
+2025-01-09,Scotland,Clear,Moderate,10000
+2025-01-10,Scotland,Fog,Heavy,4896
+2025-01-11,Scotland,Fog,Light,1044
+2025-01-12,Scotland,Rain,Light,4622
+2025-01-13,Scotland,Snow,Heavy,3462
+2025-01-14,Scotland,Rain,Heavy,4348
+2025-01-15,Scotland,Rain,Heavy,1403
+2025-01-16,Scotland,Clear,Heavy,10000
+2025-01-17,Scotland,Snow,Heavy,72
+2025-01-18,Scotland,Clear,Moderate,10000
+2025-01-19,Scotland,Clear,Moderate,10000
+2025-01-20,Scotland,Rain,Heavy,3786
+2025-01-21,Scotland,Rain,Heavy,2148
+2025-01-22,Scotland,Rain,Heavy,4884
+2025-01-23,Scotland,Rain,Gridlock,2027
+2025-01-24,Scotland,Snow,Heavy,3291
+2025-01-25,Scotland,Fog,Light,1637
+2025-01-26,Scotland,Rain,Heavy,3546
+2025-01-27,Scotland,Fog,Heavy,2225
+2025-01-28,Scotland,Fog,Heavy,3899
+2025-01-29,Scotland,Rain,Heavy,1844
+2025-01-30,Scotland,Fog,Heavy,1129
+2025-01-31,Scotland,Rain,Heavy,4773
+2025-02-01,Scotland,Fog,Light,1635
+2025-02-02,Scotland,Rain,Light,4739
+2025-02-03,Scotland,Rain,Moderate,1116
+2025-02-04,Scotland,Rain,Heavy,4955
+2025-02-05,Scotland,Fog,Heavy,4914
+2025-02-06,Scotland,Snow,Heavy,4616
+2025-02-07,Scotland,Rain,Moderate,839
+2025-02-08,Scotland,Rain,Moderate,914
+2025-02-09,Scotland,Fog,Moderate,3836
+2025-02-10,Scotland,Clear,Moderate,10000
+2025-02-11,Scotland,Snow,Heavy,2761
+2025-02-12,Scotland,Snow,Moderate,471
+2025-02-13,Scotland,Fog,Heavy,996
+2025-02-14,Scotland,Clear,Heavy,10000
+2025-02-15,Scotland,Rain,Light,1997
+2025-02-16,Scotland,Fog,Light,1211
+2025-02-17,Scotland,Fog,Heavy,3983
+2025-02-18,Scotland,Rain,Heavy,3492
+2025-02-19,Scotland,Rain,Heavy,155
+2025-02-20,Scotland,Rain,Heavy,792
+2025-02-21,Scotland,Clear,Heavy,10000
+2025-02-22,Scotland,Rain,Moderate,4485
+2025-02-23,Scotland,Rain,Moderate,4313
+2025-02-24,Scotland,Rain,Heavy,2097
+2025-02-25,Scotland,Fog,Gridlock,348
+2025-02-26,Scotland,Clear,Moderate,10000
+2025-02-27,Scotland,Fog,Heavy,2561
+2025-02-28,Scotland,Rain,Heavy,536
+2025-03-01,Scotland,Fog,Light,1410
+2025-03-02,Scotland,Rain,Moderate,1006
+2025-03-03,Scotland,Rain,Gridlock,288
+2025-03-04,Scotland,Rain,Heavy,2602
+2025-03-05,Scotland,Rain,Moderate,4182
+2025-03-06,Scotland,Rain,Gridlock,1475
+2025-03-07,Scotland,Fog,Heavy,3297
+2025-03-08,Scotland,Clear,Light,10000
+2025-03-09,Scotland,Rain,Moderate,882
+2025-03-10,Scotland,Fog,Heavy,1696
+2025-03-11,Scotland,Storm,Heavy,1579
+2025-03-12,Scotland,Rain,Heavy,4713
+2025-03-13,Scotland,Clear,Heavy,10000
+2025-03-14,Scotland,Fog,Heavy,3312
+2025-03-15,Scotland,Rain,Light,4370
+2025-03-16,Scotland,Clear,Light,10000
+2025-03-17,Scotland,Clear,Heavy,10000
+2025-03-18,Scotland,Storm,Gridlock,2854
+2025-03-19,Scotland,Fog,Heavy,4591
+2025-03-20,Scotland,Clear,Heavy,10000
+2025-03-21,Scotland,Fog,Moderate,1174
+2025-03-22,Scotland,Rain,Heavy,1179
+2025-03-23,Scotland,Clear,Light,10000
+2025-03-24,Scotland,Rain,Heavy,3259
+2025-03-25,Scotland,Rain,Gridlock,4255
+2025-03-26,Scotland,Fog,Heavy,2414
+2025-03-27,Scotland,Clear,Moderate,10000
+2025-03-28,Scotland,Clear,Heavy,10000
+2025-03-29,Scotland,Clear,Light,10000
+2025-03-30,Scotland,Storm,Light,3987
+2025-03-31,Scotland,Clear,Moderate,10000
+2025-04-01,Scotland,Clear,Heavy,10000
+2025-04-02,Scotland,Rain,Heavy,4667
+2025-04-03,Scotland,Fog,Heavy,2806
+2025-04-04,Scotland,Clear,Moderate,10000
+2025-04-05,Scotland,Rain,Moderate,3414
+2025-04-06,Scotland,Clear,Moderate,10000
+2025-04-07,Scotland,Storm,Heavy,1031
+2025-04-08,Scotland,Rain,Heavy,92
+2025-04-09,Scotland,Rain,Heavy,1827
+2025-04-10,Scotland,Fog,Moderate,1179
+2025-04-11,Scotland,Clear,Gridlock,10000
+2025-04-12,Scotland,Clear,Moderate,10000
+2025-04-13,Scotland,Clear,Light,10000
+2025-04-14,Scotland,Storm,Heavy,2244
+2025-04-15,Scotland,Clear,Heavy,10000
+2025-04-16,Scotland,Clear,Gridlock,10000
+2025-04-17,Scotland,Storm,Moderate,2939
+2025-04-18,Scotland,Rain,Heavy,927
+2025-04-19,Scotland,Clear,Light,10000
+2025-04-20,Scotland,Rain,Moderate,2805
+2025-04-21,Scotland,Clear,Gridlock,10000
+2025-04-22,Scotland,Storm,Heavy,1911
+2025-04-23,Scotland,Clear,Heavy,10000
+2025-04-24,Scotland,Clear,Gridlock,10000
+2025-04-25,Scotland,Rain,Moderate,3466
+2025-04-26,Scotland,Storm,Light,730
+2025-04-27,Scotland,Clear,Moderate,10000
+2025-04-28,Scotland,Clear,Heavy,10000
+2025-04-29,Scotland,Clear,Heavy,10000
+2025-04-30,Scotland,Rain,Heavy,2513
+2025-05-01,Scotland,Clear,Gridlock,10000
+2025-05-02,Scotland,Rain,Moderate,3217
+2025-05-03,Scotland,Rain,Moderate,2202
+2025-05-04,Scotland,Clear,Light,10000
+2025-05-05,Scotland,Rain,Gridlock,4988
+2025-05-06,Scotland,Storm,Moderate,2561
+2025-05-07,Scotland,Rain,Heavy,1343
+2025-05-08,Scotland,Rain,Gridlock,1899
+2025-05-09,Scotland,Clear,Gridlock,10000
+2025-05-10,Scotland,Rain,Light,302
+2025-05-11,Scotland,Clear,Light,10000
+2025-05-12,Scotland,Rain,Heavy,4999
+2025-05-13,Scotland,Clear,Gridlock,10000
+2025-05-14,Scotland,Fog,Heavy,1349
+2025-05-15,Scotland,Clear,Heavy,10000
+2025-05-16,Scotland,Clear,Heavy,10000
+2025-05-17,Scotland,Storm,Moderate,143
+2025-05-18,Scotland,Storm,Light,2310
+2025-05-19,Scotland,Fog,Gridlock,4350
+2025-05-20,Scotland,Rain,Heavy,126
+2025-05-21,Scotland,Rain,Gridlock,155
+2025-05-22,Scotland,Clear,Heavy,10000
+2025-05-23,Scotland,Clear,Gridlock,10000
+2025-05-24,Scotland,Rain,Light,294
+2025-05-25,Scotland,Clear,Moderate,10000
+2025-05-26,Scotland,Clear,Heavy,10000
+2025-05-27,Scotland,Rain,Moderate,2449
+2025-05-28,Scotland,Clear,Gridlock,10000
+2025-05-29,Scotland,Clear,Heavy,10000
+2025-05-30,Scotland,Storm,Heavy,2818
+2025-05-31,Scotland,Rain,Light,1710
+2025-06-01,Scotland,Rain,Light,2274
+2025-06-02,Scotland,Rain,Gridlock,1380
+2025-06-03,Scotland,Clear,Gridlock,10000
+2025-06-04,Scotland,Fog,Gridlock,2701
+2025-06-05,Scotland,Clear,Gridlock,10000
+2025-06-06,Scotland,Clear,Heavy,10000
+2025-06-07,Scotland,Clear,Light,10000
+2025-06-08,Scotland,Clear,Light,10000
+2025-06-09,Scotland,Clear,Heavy,10000
+2025-06-10,Scotland,Clear,Heavy,10000
+2025-06-11,Scotland,Rain,Heavy,1386
+2025-06-12,Scotland,Clear,Heavy,10000
+2025-06-13,Scotland,Rain,Heavy,3464
+2025-06-14,Scotland,Rain,Light,1593
+2025-06-15,Scotland,Clear,Light,10000
+2025-06-16,Scotland,Fog,Heavy,2759
+2025-06-17,Scotland,Clear,Moderate,10000
+2025-06-18,Scotland,Rain,Heavy,387
+2025-06-19,Scotland,Fog,Heavy,780
+2025-06-20,Scotland,Clear,Heavy,10000
+2025-06-21,Scotland,Clear,Moderate,10000
+2025-06-22,Scotland,Clear,Light,10000
+2025-06-23,Scotland,Rain,Moderate,3279
+2025-06-24,Scotland,Clear,Heavy,10000
+2025-06-25,Scotland,Rain,Heavy,2739
+2025-06-26,Scotland,Rain,Moderate,3521
+2025-06-27,Scotland,Clear,Moderate,10000
+2025-06-28,Scotland,Clear,Moderate,10000
+2025-06-29,Scotland,Clear,Moderate,10000
+2025-06-30,Scotland,Storm,Heavy,670
+2025-07-01,Scotland,Clear,Heavy,10000
+2025-07-02,Scotland,Clear,Moderate,10000
+2025-07-03,Scotland,Clear,Gridlock,10000
+2025-07-04,Scotland,Clear,Heavy,10000
+2025-07-05,Scotland,Clear,Moderate,10000
+2025-07-06,Scotland,Fog,Heavy,4374
+2025-07-07,Scotland,Rain,Heavy,4271
+2025-07-08,Scotland,Fog,Moderate,2725
+2025-07-09,Scotland,Rain,Heavy,1282
+2025-07-10,Scotland,Clear,Gridlock,10000
+2025-07-11,Scotland,Clear,Gridlock,10000
+2025-07-12,Scotland,Clear,Light,10000
+2025-07-13,Scotland,Clear,Moderate,10000
+2025-07-14,Scotland,Clear,Gridlock,10000
+2025-07-15,Scotland,Fog,Gridlock,3040
+2025-07-16,Scotland,Clear,Heavy,10000
+2025-07-17,Scotland,Clear,Heavy,10000
+2025-07-18,Scotland,Clear,Heavy,10000
+2025-07-19,Scotland,Clear,Light,10000
+2025-07-20,Scotland,Clear,Light,10000
+2025-07-21,Scotland,Clear,Moderate,10000
+2025-07-22,Scotland,Clear,Moderate,10000
+2025-07-23,Scotland,Clear,Heavy,10000
+2025-07-24,Scotland,Clear,Heavy,10000
+2025-07-25,Scotland,Clear,Heavy,10000
+2025-07-26,Scotland,Clear,Light,10000
+2025-07-27,Scotland,Clear,Light,10000
+2025-07-28,Scotland,Clear,Heavy,10000
+2025-07-29,Scotland,Clear,Moderate,10000
+2025-07-30,Scotland,Clear,Gridlock,10000
+2025-07-31,Scotland,Clear,Moderate,10000
+2025-08-01,Scotland,Clear,Heavy,10000
+2025-08-02,Scotland,Rain,Light,4888
+2025-08-03,Scotland,Rain,Light,1126
+2025-08-04,Scotland,Storm,Gridlock,3175
+2025-08-05,Scotland,Clear,Moderate,10000
+2025-08-06,Scotland,Clear,Heavy,10000
+2025-08-07,Scotland,Rain,Heavy,1231
+2025-08-08,Scotland,Clear,Moderate,10000
+2025-08-09,Scotland,Clear,Light,10000
+2025-08-10,Scotland,Rain,Light,1824
+2025-08-11,Scotland,Clear,Heavy,10000
+2025-08-12,Scotland,Clear,Gridlock,10000
+2025-08-13,Scotland,Clear,Heavy,10000
+2025-08-14,Scotland,Rain,Heavy,1295
+2025-08-15,Scotland,Rain,Moderate,4714
+2025-08-16,Scotland,Clear,Heavy,10000
+2025-08-17,Scotland,Clear,Light,10000
+2025-08-18,Scotland,Clear,Moderate,10000
+2025-08-19,Scotland,Clear,Heavy,10000
+2025-08-20,Scotland,Rain,Heavy,954
+2025-08-21,Scotland,Clear,Gridlock,10000
+2025-08-22,Scotland,Clear,Heavy,10000
+2025-08-23,Scotland,Clear,Heavy,10000
+2025-08-24,Scotland,Rain,Moderate,823
+2025-08-25,Scotland,Clear,Moderate,10000
+2025-08-26,Scotland,Clear,Heavy,10000
+2025-08-27,Scotland,Clear,Heavy,10000
+2025-08-28,Scotland,Rain,Heavy,156
+2025-08-29,Scotland,Clear,Heavy,10000
+2025-08-30,Scotland,Clear,Moderate,10000
+2025-08-31,Scotland,Clear,Moderate,10000
+2025-09-01,Scotland,Rain,Heavy,2065
+2025-09-02,Scotland,Clear,Gridlock,10000
+2025-09-03,Scotland,Rain,Heavy,1929
+2025-09-04,Scotland,Storm,Gridlock,1124
+2025-09-05,Scotland,Clear,Heavy,10000
+2025-09-06,Scotland,Clear,Light,10000
+2025-09-07,Scotland,Storm,Moderate,4637
+2025-09-08,Scotland,Clear,Heavy,10000
+2025-09-09,Scotland,Storm,Moderate,4268
+2025-09-10,Scotland,Rain,Heavy,3232
+2025-09-11,Scotland,Clear,Moderate,10000
+2025-09-12,Scotland,Clear,Gridlock,10000
+2025-09-13,Scotland,Clear,Moderate,10000
+2025-09-14,Scotland,Rain,Moderate,3624
+2025-09-15,Scotland,Clear,Heavy,10000
+2025-09-16,Scotland,Rain,Heavy,4713
+2025-09-17,Scotland,Rain,Gridlock,1762
+2025-09-18,Scotland,Storm,Moderate,936
+2025-09-19,Scotland,Rain,Heavy,1835
+2025-09-20,Scotland,Storm,Heavy,345
+2025-09-21,Scotland,Fog,Moderate,4940
+2025-09-22,Scotland,Rain,Heavy,2341
+2025-09-23,Scotland,Clear,Heavy,10000
+2025-09-24,Scotland,Storm,Heavy,414
+2025-09-25,Scotland,Storm,Heavy,1119
+2025-09-26,Scotland,Clear,Heavy,10000
+2025-09-27,Scotland,Clear,Moderate,10000
+2025-09-28,Scotland,Clear,Moderate,10000
+2025-09-29,Scotland,Clear,Moderate,10000
+2025-09-30,Scotland,Rain,Moderate,1609
+2025-10-01,Scotland,Rain,Moderate,675
+2025-10-02,Scotland,Rain,Gridlock,2831
+2025-10-03,Scotland,Rain,Gridlock,1138
+2025-10-04,Scotland,Fog,Moderate,1951
+2025-10-05,Scotland,Storm,Light,1647
+2025-10-06,Scotland,Clear,Gridlock,10000
+2025-10-07,Scotland,Storm,Gridlock,188
+2025-10-08,Scotland,Clear,Gridlock,10000
+2025-10-09,Scotland,Rain,Heavy,4950
+2025-10-10,Scotland,Clear,Heavy,10000
+2025-10-11,Scotland,Rain,Light,4470
+2025-10-12,Scotland,Clear,Light,10000
+2025-10-13,Scotland,Clear,Moderate,10000
+2025-10-14,Scotland,Clear,Heavy,10000
+2025-10-15,Scotland,Rain,Heavy,626
+2025-10-16,Scotland,Rain,Heavy,4555
+2025-10-17,Scotland,Clear,Gridlock,10000
+2025-10-18,Scotland,Rain,Moderate,4714
+2025-10-19,Scotland,Rain,Light,4201
+2025-10-20,Scotland,Fog,Heavy,2097
+2025-10-21,Scotland,Rain,Moderate,306
+2025-10-22,Scotland,Clear,Gridlock,10000
+2025-10-23,Scotland,Clear,Heavy,10000
+2025-10-24,Scotland,Clear,Heavy,10000
+2025-10-25,Scotland,Clear,Light,10000
+2025-10-26,Scotland,Clear,Moderate,10000
+2025-10-27,Scotland,Clear,Gridlock,10000
+2025-10-28,Scotland,Fog,Heavy,1026
+2025-10-29,Scotland,Clear,Gridlock,10000
+2025-10-30,Scotland,Rain,Heavy,296
+2025-10-31,Scotland,Clear,Heavy,10000
+2025-11-01,Scotland,Storm,Moderate,4883
+2025-11-02,Scotland,Rain,Heavy,4746
+2025-11-03,Scotland,Rain,Heavy,3940
+2025-11-04,Scotland,Clear,Heavy,10000
+2025-11-05,Scotland,Rain,Moderate,3536
+2025-11-06,Scotland,Clear,Gridlock,10000
+2025-11-07,Scotland,Storm,Heavy,2655
+2025-11-08,Scotland,Storm,Moderate,3084
+2025-11-09,Scotland,Clear,Heavy,10000
+2025-11-10,Scotland,Clear,Heavy,10000
+2025-11-11,Scotland,Fog,Heavy,4162
+2025-11-12,Scotland,Rain,Heavy,1946
+2025-11-13,Scotland,Rain,Heavy,929
+2025-11-14,Scotland,Storm,Heavy,1698
+2025-11-15,Scotland,Clear,Light,10000
+2025-11-16,Scotland,Storm,Light,4292
+2025-11-17,Scotland,Storm,Gridlock,2759
+2025-11-18,Scotland,Rain,Heavy,717
+2025-11-19,Scotland,Rain,Heavy,1494
+2025-11-20,Scotland,Clear,Heavy,10000
+2025-11-21,Scotland,Clear,Gridlock,10000
+2025-11-22,Scotland,Rain,Light,1075
+2025-11-23,Scotland,Rain,Light,2735
+2025-11-24,Scotland,Rain,Moderate,2072
+2025-11-25,Scotland,Clear,Heavy,10000
+2025-11-26,Scotland,Clear,Heavy,10000
+2025-11-27,Scotland,Rain,Heavy,2670
+2025-11-28,Scotland,Rain,Heavy,3922
+2025-11-29,Scotland,Fog,Light,815
+2025-11-30,Scotland,Rain,Moderate,4142
+2025-12-01,Scotland,Clear,Heavy,10000
+2025-12-02,Scotland,Rain,Heavy,513
+2025-12-03,Scotland,Clear,Gridlock,10000
+2025-12-04,Scotland,Fog,Heavy,2704
+2025-12-05,Scotland,Clear,Heavy,10000
+2025-12-06,Scotland,Rain,Moderate,1237
+2025-12-07,Scotland,Rain,Light,706
+2025-12-08,Scotland,Clear,Heavy,10000
+2025-12-09,Scotland,Rain,Heavy,101
+2025-12-10,Scotland,Rain,Heavy,1698
+2025-12-11,Scotland,Clear,Heavy,10000
+2025-12-12,Scotland,Clear,Heavy,10000
+2025-12-13,Scotland,Rain,Light,1124
+2025-12-14,Scotland,Rain,Moderate,2036
+2025-12-15,Scotland,Clear,Gridlock,10000
+2025-12-16,Scotland,Fog,Heavy,1905
+2025-12-17,Scotland,Clear,Heavy,10000
+2025-12-18,Scotland,Clear,Gridlock,10000
+2025-12-19,Scotland,Rain,Heavy,4334
+2025-12-20,Scotland,Snow,Moderate,1804
+2025-12-21,Scotland,Storm,Moderate,1544
+2025-12-22,Scotland,Rain,Heavy,2374
+2025-12-23,Scotland,Snow,Moderate,3403
+2025-12-24,Scotland,Rain,Heavy,4745
+2025-12-25,Scotland,Rain,Moderate,1832
+2025-12-26,Scotland,Fog,Heavy,3182
+2025-12-27,Scotland,Rain,Heavy,2887
+2025-12-28,Scotland,Rain,Heavy,4289
+2025-12-29,Scotland,Rain,Gridlock,1469
+2025-12-30,Scotland,Fog,Heavy,1490
+2025-12-31,Scotland,Rain,Heavy,4225
+2025-01-01,Wales,Clear,Heavy,10000
+2025-01-02,Wales,Rain,Gridlock,521
+2025-01-03,Wales,Clear,Gridlock,10000
+2025-01-04,Wales,Rain,Light,4051
+2025-01-05,Wales,Rain,Light,1041
+2025-01-06,Wales,Clear,Gridlock,10000
+2025-01-07,Wales,Fog,Gridlock,3448
+2025-01-08,Wales,Clear,Heavy,10000
+2025-01-09,Wales,Rain,Heavy,4035
+2025-01-10,Wales,Clear,Heavy,10000
+2025-01-11,Wales,Rain,Moderate,2553
+2025-01-12,Wales,Rain,Moderate,3062
+2025-01-13,Wales,Clear,Moderate,10000
+2025-01-14,Wales,Rain,Gridlock,2869
+2025-01-15,Wales,Rain,Gridlock,1234
+2025-01-16,Wales,Fog,Gridlock,966
+2025-01-17,Wales,Rain,Gridlock,1291
+2025-01-18,Wales,Rain,Moderate,1573
+2025-01-19,Wales,Rain,Moderate,2938
+2025-01-20,Wales,Clear,Heavy,10000
+2025-01-21,Wales,Rain,Heavy,1545
+2025-01-22,Wales,Fog,Heavy,1299
+2025-01-23,Wales,Rain,Heavy,947
+2025-01-24,Wales,Rain,Moderate,4562
+2025-01-25,Wales,Fog,Moderate,4312
+2025-01-26,Wales,Clear,Moderate,10000
+2025-01-27,Wales,Fog,Heavy,1042
+2025-01-28,Wales,Clear,Heavy,10000
+2025-01-29,Wales,Storm,Moderate,2423
+2025-01-30,Wales,Rain,Heavy,757
+2025-01-31,Wales,Fog,Heavy,2404
+2025-02-01,Wales,Rain,Moderate,1026
+2025-02-02,Wales,Rain,Light,4318
+2025-02-03,Wales,Clear,Heavy,10000
+2025-02-04,Wales,Fog,Moderate,4113
+2025-02-05,Wales,Rain,Heavy,430
+2025-02-06,Wales,Fog,Gridlock,1642
+2025-02-07,Wales,Fog,Moderate,3077
+2025-02-08,Wales,Rain,Moderate,3713
+2025-02-09,Wales,Clear,Light,10000
+2025-02-10,Wales,Rain,Heavy,3180
+2025-02-11,Wales,Rain,Heavy,2758
+2025-02-12,Wales,Rain,Heavy,4418
+2025-02-13,Wales,Rain,Heavy,257
+2025-02-14,Wales,Rain,Heavy,4349
+2025-02-15,Wales,Clear,Moderate,10000
+2025-02-16,Wales,Rain,Moderate,882
+2025-02-17,Wales,Storm,Heavy,436
+2025-02-18,Wales,Clear,Heavy,10000
+2025-02-19,Wales,Rain,Moderate,739
+2025-02-20,Wales,Rain,Gridlock,1219
+2025-02-21,Wales,Fog,Gridlock,4640
+2025-02-22,Wales,Rain,Light,4892
+2025-02-23,Wales,Rain,Moderate,3281
+2025-02-24,Wales,Rain,Heavy,2241
+2025-02-25,Wales,Clear,Gridlock,10000
+2025-02-26,Wales,Snow,Moderate,1846
+2025-02-27,Wales,Clear,Heavy,10000
+2025-02-28,Wales,Rain,Heavy,3613
+2025-03-01,Wales,Clear,Light,10000
+2025-03-02,Wales,Clear,Moderate,10000
+2025-03-03,Wales,Clear,Heavy,10000
+2025-03-04,Wales,Fog,Gridlock,3144
+2025-03-05,Wales,Storm,Moderate,1639
+2025-03-06,Wales,Fog,Gridlock,4698
+2025-03-07,Wales,Rain,Heavy,4462
+2025-03-08,Wales,Rain,Moderate,3733
+2025-03-09,Wales,Rain,Moderate,1553
+2025-03-10,Wales,Clear,Moderate,10000
+2025-03-11,Wales,Clear,Gridlock,10000
+2025-03-12,Wales,Rain,Heavy,2192
+2025-03-13,Wales,Rain,Heavy,4152
+2025-03-14,Wales,Rain,Gridlock,4687
+2025-03-15,Wales,Clear,Light,10000
+2025-03-16,Wales,Rain,Moderate,2390
+2025-03-17,Wales,Clear,Heavy,10000
+2025-03-18,Wales,Rain,Gridlock,4572
+2025-03-19,Wales,Storm,Heavy,3643
+2025-03-20,Wales,Rain,Gridlock,3198
+2025-03-21,Wales,Clear,Gridlock,10000
+2025-03-22,Wales,Clear,Moderate,10000
+2025-03-23,Wales,Rain,Moderate,591
+2025-03-24,Wales,Rain,Heavy,2594
+2025-03-25,Wales,Rain,Heavy,1486
+2025-03-26,Wales,Clear,Gridlock,10000
+2025-03-27,Wales,Clear,Heavy,10000
+2025-03-28,Wales,Storm,Heavy,4772
+2025-03-29,Wales,Fog,Moderate,4626
+2025-03-30,Wales,Clear,Heavy,10000
+2025-03-31,Wales,Rain,Heavy,831
+2025-04-01,Wales,Rain,Heavy,2436
+2025-04-02,Wales,Rain,Heavy,3844
+2025-04-03,Wales,Clear,Moderate,10000
+2025-04-04,Wales,Clear,Heavy,10000
+2025-04-05,Wales,Clear,Moderate,10000
+2025-04-06,Wales,Clear,Light,10000
+2025-04-07,Wales,Rain,Moderate,3822
+2025-04-08,Wales,Storm,Heavy,4164
+2025-04-09,Wales,Clear,Moderate,10000
+2025-04-10,Wales,Rain,Gridlock,1623
+2025-04-11,Wales,Clear,Heavy,10000
+2025-04-12,Wales,Storm,Moderate,825
+2025-04-13,Wales,Clear,Heavy,10000
+2025-04-14,Wales,Clear,Heavy,10000
+2025-04-15,Wales,Fog,Heavy,4747
+2025-04-16,Wales,Clear,Heavy,10000
+2025-04-17,Wales,Clear,Heavy,10000
+2025-04-18,Wales,Clear,Heavy,10000
+2025-04-19,Wales,Clear,Light,10000
+2025-04-20,Wales,Rain,Light,1262
+2025-04-21,Wales,Clear,Heavy,10000
+2025-04-22,Wales,Clear,Heavy,10000
+2025-04-23,Wales,Clear,Heavy,10000
+2025-04-24,Wales,Clear,Heavy,10000
+2025-04-25,Wales,Clear,Gridlock,10000
+2025-04-26,Wales,Fog,Light,576
+2025-04-27,Wales,Clear,Moderate,10000
+2025-04-28,Wales,Storm,Gridlock,2808
+2025-04-29,Wales,Rain,Heavy,3562
+2025-04-30,Wales,Rain,Heavy,487
+2025-05-01,Wales,Rain,Heavy,609
+2025-05-02,Wales,Storm,Heavy,3835
+2025-05-03,Wales,Clear,Moderate,10000
+2025-05-04,Wales,Fog,Moderate,627
+2025-05-05,Wales,Rain,Heavy,2781
+2025-05-06,Wales,Clear,Gridlock,10000
+2025-05-07,Wales,Rain,Heavy,1470
+2025-05-08,Wales,Clear,Heavy,10000
+2025-05-09,Wales,Rain,Heavy,4405
+2025-05-10,Wales,Rain,Heavy,119
+2025-05-11,Wales,Fog,Moderate,530
+2025-05-12,Wales,Clear,Moderate,10000
+2025-05-13,Wales,Storm,Heavy,2422
+2025-05-14,Wales,Clear,Heavy,10000
+2025-05-15,Wales,Fog,Heavy,3498
+2025-05-16,Wales,Rain,Heavy,1475
+2025-05-17,Wales,Rain,Light,1942
+2025-05-18,Wales,Rain,Moderate,4590
+2025-05-19,Wales,Clear,Heavy,10000
+2025-05-20,Wales,Storm,Heavy,923
+2025-05-21,Wales,Rain,Gridlock,2173
+2025-05-22,Wales,Storm,Heavy,3242
+2025-05-23,Wales,Clear,Heavy,10000
+2025-05-24,Wales,Clear,Moderate,10000
+2025-05-25,Wales,Clear,Moderate,10000
+2025-05-26,Wales,Rain,Heavy,3207
+2025-05-27,Wales,Rain,Heavy,1791
+2025-05-28,Wales,Rain,Heavy,3796
+2025-05-29,Wales,Clear,Heavy,10000
+2025-05-30,Wales,Fog,Heavy,4071
+2025-05-31,Wales,Rain,Light,1749
+2025-06-01,Wales,Clear,Moderate,10000
+2025-06-02,Wales,Clear,Gridlock,10000
+2025-06-03,Wales,Clear,Moderate,10000
+2025-06-04,Wales,Clear,Heavy,10000
+2025-06-05,Wales,Clear,Gridlock,10000
+2025-06-06,Wales,Clear,Heavy,10000
+2025-06-07,Wales,Clear,Moderate,10000
+2025-06-08,Wales,Clear,Light,10000
+2025-06-09,Wales,Clear,Heavy,10000
+2025-06-10,Wales,Storm,Heavy,2588
+2025-06-11,Wales,Rain,Heavy,2465
+2025-06-12,Wales,Clear,Heavy,10000
+2025-06-13,Wales,Clear,Moderate,10000
+2025-06-14,Wales,Clear,Moderate,10000
+2025-06-15,Wales,Rain,Light,3623
+2025-06-16,Wales,Rain,Heavy,4975
+2025-06-17,Wales,Clear,Heavy,10000
+2025-06-18,Wales,Rain,Heavy,2644
+2025-06-19,Wales,Rain,Heavy,3002
+2025-06-20,Wales,Clear,Heavy,10000
+2025-06-21,Wales,Clear,Light,10000
+2025-06-22,Wales,Rain,Moderate,2802
+2025-06-23,Wales,Storm,Moderate,1482
+2025-06-24,Wales,Rain,Moderate,4380
+2025-06-25,Wales,Clear,Heavy,10000
+2025-06-26,Wales,Clear,Heavy,10000
+2025-06-27,Wales,Clear,Heavy,10000
+2025-06-28,Wales,Clear,Light,10000
+2025-06-29,Wales,Clear,Light,10000
+2025-06-30,Wales,Clear,Gridlock,10000
+2025-07-01,Wales,Clear,Heavy,10000
+2025-07-02,Wales,Clear,Heavy,10000
+2025-07-03,Wales,Clear,Heavy,10000
+2025-07-04,Wales,Clear,Moderate,10000
+2025-07-05,Wales,Rain,Light,1069
+2025-07-06,Wales,Clear,Light,10000
+2025-07-07,Wales,Clear,Heavy,10000
+2025-07-08,Wales,Clear,Heavy,10000
+2025-07-09,Wales,Clear,Heavy,10000
+2025-07-10,Wales,Clear,Gridlock,10000
+2025-07-11,Wales,Clear,Heavy,10000
+2025-07-12,Wales,Clear,Moderate,10000
+2025-07-13,Wales,Rain,Heavy,1742
+2025-07-14,Wales,Clear,Moderate,10000
+2025-07-15,Wales,Clear,Heavy,10000
+2025-07-16,Wales,Rain,Gridlock,257
+2025-07-17,Wales,Clear,Gridlock,10000
+2025-07-18,Wales,Clear,Moderate,10000
+2025-07-19,Wales,Rain,Light,805
+2025-07-20,Wales,Storm,Moderate,1885
+2025-07-21,Wales,Clear,Heavy,10000
+2025-07-22,Wales,Clear,Heavy,10000
+2025-07-23,Wales,Rain,Gridlock,3236
+2025-07-24,Wales,Clear,Moderate,10000
+2025-07-25,Wales,Clear,Gridlock,10000
+2025-07-26,Wales,Clear,Light,10000
+2025-07-27,Wales,Clear,Light,10000
+2025-07-28,Wales,Rain,Heavy,1044
+2025-07-29,Wales,Clear,Heavy,10000
+2025-07-30,Wales,Clear,Heavy,10000
+2025-07-31,Wales,Rain,Heavy,1337
+2025-08-01,Wales,Rain,Heavy,710
+2025-08-02,Wales,Clear,Light,10000
+2025-08-03,Wales,Clear,Light,10000
+2025-08-04,Wales,Clear,Heavy,10000
+2025-08-05,Wales,Fog,Moderate,3587
+2025-08-06,Wales,Clear,Moderate,10000
+2025-08-07,Wales,Fog,Heavy,4069
+2025-08-08,Wales,Rain,Heavy,972
+2025-08-09,Wales,Clear,Moderate,10000
+2025-08-10,Wales,Rain,Light,4273
+2025-08-11,Wales,Rain,Heavy,1723
+2025-08-12,Wales,Rain,Heavy,2888
+2025-08-13,Wales,Rain,Gridlock,1434
+2025-08-14,Wales,Clear,Heavy,10000
+2025-08-15,Wales,Rain,Heavy,3997
+2025-08-16,Wales,Clear,Light,10000
+2025-08-17,Wales,Clear,Moderate,10000
+2025-08-18,Wales,Clear,Heavy,10000
+2025-08-19,Wales,Rain,Heavy,61
+2025-08-20,Wales,Clear,Heavy,10000
+2025-08-21,Wales,Fog,Gridlock,4207
+2025-08-22,Wales,Rain,Heavy,3709
+2025-08-23,Wales,Clear,Light,10000
+2025-08-24,Wales,Clear,Heavy,10000
+2025-08-25,Wales,Clear,Gridlock,10000
+2025-08-26,Wales,Clear,Heavy,10000
+2025-08-27,Wales,Clear,Heavy,10000
+2025-08-28,Wales,Clear,Heavy,10000
+2025-08-29,Wales,Clear,Gridlock,10000
+2025-08-30,Wales,Clear,Heavy,10000
+2025-08-31,Wales,Clear,Light,10000
+2025-09-01,Wales,Clear,Heavy,10000
+2025-09-02,Wales,Rain,Heavy,1875
+2025-09-03,Wales,Rain,Moderate,4464
+2025-09-04,Wales,Fog,Heavy,3987
+2025-09-05,Wales,Rain,Heavy,1166
+2025-09-06,Wales,Storm,Light,4077
+2025-09-07,Wales,Clear,Light,10000
+2025-09-08,Wales,Rain,Heavy,4242
+2025-09-09,Wales,Rain,Gridlock,1409
+2025-09-10,Wales,Fog,Gridlock,4353
+2025-09-11,Wales,Clear,Heavy,10000
+2025-09-12,Wales,Clear,Heavy,10000
+2025-09-13,Wales,Storm,Light,4399
+2025-09-14,Wales,Clear,Light,10000
+2025-09-15,Wales,Fog,Heavy,3705
+2025-09-16,Wales,Storm,Gridlock,4458
+2025-09-17,Wales,Rain,Heavy,2915
+2025-09-18,Wales,Rain,Heavy,4572
+2025-09-19,Wales,Clear,Heavy,10000
+2025-09-20,Wales,Clear,Moderate,10000
+2025-09-21,Wales,Clear,Moderate,10000
+2025-09-22,Wales,Rain,Heavy,3528
+2025-09-23,Wales,Rain,Moderate,4469
+2025-09-24,Wales,Clear,Moderate,10000
+2025-09-25,Wales,Clear,Gridlock,10000
+2025-09-26,Wales,Fog,Heavy,442
+2025-09-27,Wales,Rain,Moderate,4591
+2025-09-28,Wales,Clear,Moderate,10000
+2025-09-29,Wales,Clear,Heavy,10000
+2025-09-30,Wales,Storm,Heavy,1710
+2025-10-01,Wales,Rain,Heavy,4791
+2025-10-02,Wales,Rain,Heavy,4599
+2025-10-03,Wales,Clear,Gridlock,10000
+2025-10-04,Wales,Clear,Light,10000
+2025-10-05,Wales,Rain,Moderate,684
+2025-10-06,Wales,Storm,Heavy,2789
+2025-10-07,Wales,Rain,Gridlock,4727
+2025-10-08,Wales,Rain,Heavy,4326
+2025-10-09,Wales,Rain,Heavy,1295
+2025-10-10,Wales,Clear,Moderate,10000
+2025-10-11,Wales,Rain,Light,492
+2025-10-12,Wales,Rain,Moderate,4427
+2025-10-13,Wales,Rain,Heavy,2989
+2025-10-14,Wales,Storm,Gridlock,2066
+2025-10-15,Wales,Rain,Moderate,3825
+2025-10-16,Wales,Clear,Moderate,10000
+2025-10-17,Wales,Storm,Heavy,3538
+2025-10-18,Wales,Rain,Light,2030
+2025-10-19,Wales,Rain,Light,1379
+2025-10-20,Wales,Clear,Heavy,10000
+2025-10-21,Wales,Clear,Heavy,10000
+2025-10-22,Wales,Rain,Heavy,3900
+2025-10-23,Wales,Rain,Moderate,2115
+2025-10-24,Wales,Clear,Heavy,10000
+2025-10-25,Wales,Rain,Light,1586
+2025-10-26,Wales,Clear,Light,10000
+2025-10-27,Wales,Clear,Moderate,10000
+2025-10-28,Wales,Rain,Moderate,1325
+2025-10-29,Wales,Rain,Heavy,2379
+2025-10-30,Wales,Rain,Heavy,317
+2025-10-31,Wales,Rain,Gridlock,2606
+2025-11-01,Wales,Clear,Light,10000
+2025-11-02,Wales,Fog,Light,788
+2025-11-03,Wales,Rain,Gridlock,4231
+2025-11-04,Wales,Rain,Moderate,4294
+2025-11-05,Wales,Rain,Heavy,2353
+2025-11-06,Wales,Clear,Heavy,10000
+2025-11-07,Wales,Rain,Heavy,1159
+2025-11-08,Wales,Clear,Moderate,10000
+2025-11-09,Wales,Rain,Light,3006
+2025-11-10,Wales,Rain,Heavy,3414
+2025-11-11,Wales,Rain,Moderate,852
+2025-11-12,Wales,Rain,Gridlock,1807
+2025-11-13,Wales,Clear,Heavy,10000
+2025-11-14,Wales,Rain,Gridlock,3545
+2025-11-15,Wales,Clear,Light,10000
+2025-11-16,Wales,Clear,Light,10000
+2025-11-17,Wales,Rain,Heavy,4797
+2025-11-18,Wales,Clear,Gridlock,10000
+2025-11-19,Wales,Clear,Heavy,10000
+2025-11-20,Wales,Clear,Heavy,10000
+2025-11-21,Wales,Rain,Heavy,3455
+2025-11-22,Wales,Rain,Light,2938
+2025-11-23,Wales,Rain,Light,1257
+2025-11-24,Wales,Rain,Heavy,3768
+2025-11-25,Wales,Fog,Heavy,675
+2025-11-26,Wales,Rain,Moderate,811
+2025-11-27,Wales,Rain,Gridlock,3579
+2025-11-28,Wales,Rain,Heavy,86
+2025-11-29,Wales,Rain,Moderate,2777
+2025-11-30,Wales,Rain,Light,1944
+2025-12-01,Wales,Rain,Heavy,3126
+2025-12-02,Wales,Clear,Heavy,10000
+2025-12-03,Wales,Clear,Heavy,10000
+2025-12-04,Wales,Rain,Heavy,2779
+2025-12-05,Wales,Storm,Heavy,3947
+2025-12-06,Wales,Rain,Light,1928
+2025-12-07,Wales,Rain,Light,2667
+2025-12-08,Wales,Fog,Heavy,3594
+2025-12-09,Wales,Rain,Heavy,3487
+2025-12-10,Wales,Rain,Heavy,3558
+2025-12-11,Wales,Clear,Gridlock,10000
+2025-12-12,Wales,Fog,Heavy,2671
+2025-12-13,Wales,Clear,Light,10000
+2025-12-14,Wales,Clear,Moderate,10000
+2025-12-15,Wales,Rain,Heavy,508
+2025-12-16,Wales,Rain,Heavy,2315
+2025-12-17,Wales,Fog,Heavy,2561
+2025-12-18,Wales,Rain,Gridlock,4513
+2025-12-19,Wales,Fog,Moderate,888
+2025-12-20,Wales,Clear,Light,10000
+2025-12-21,Wales,Snow,Moderate,305
+2025-12-22,Wales,Fog,Gridlock,3012
+2025-12-23,Wales,Rain,Heavy,1527
+2025-12-24,Wales,Rain,Gridlock,641
+2025-12-25,Wales,Rain,Heavy,397
+2025-12-26,Wales,Rain,Heavy,4543
+2025-12-27,Wales,Rain,Light,4453
+2025-12-28,Wales,Rain,Moderate,4244
+2025-12-29,Wales,Rain,Heavy,4796
+2025-12-30,Wales,Clear,Heavy,10000
+2025-12-31,Wales,Rain,Heavy,1118

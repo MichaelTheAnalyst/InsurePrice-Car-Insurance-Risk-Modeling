@@ -51,7 +51,22 @@ with st.sidebar:
     st.header("👤 Mock User Profile")
     age = st.slider("User Age", 18, 80, 42)
     miles = st.slider("Annual Mileage", 1000, 20000, 8000)
-    st.session_state.user_profile = {'age': age, 'annual_mileage': miles}
+    night_pct = st.slider("Night Driving %", 0.0, 1.0, 0.1)
+    
+    st.session_state.user_profile = {
+        'age': age, 
+        'annual_mileage': miles,
+        'night_driving_percent': night_pct
+    }
+    
+    # Help text to explain logic
+    st.info("""
+    **Assignment Logic:**
+    - Age < 25 → **Young Pros**
+    - Miles < 5k → **Weekend Warriors**
+    - Night > 30% → **Night Owls**
+    - Else → **Safe Commuters**
+    """)
 
 # 1. Determine Village
 village_id = cluster.assign_user_to_village(st.session_state.user_profile)
@@ -62,9 +77,15 @@ st.markdown(f"""
 <div class="village-header">
     <h3>You are a member of:</h3>
     <h1>{stats['name']} 🛡️</h1>
-    <p>Collective Risk Factor: {stats['risk_factor']}x | {stats['members']} Members</p>
+    <p>Collective Risk Factor: {stats['risk_factor']}x | {stats['members']:,} Members</p>
 </div>
 """, unsafe_allow_html=True)
+
+# New Stats Row
+m1, m2, m3 = st.columns(3)
+m1.metric("Avg Driver Fatigue (0-10)", f"{stats.get('avg_fatigue', 5.0):.1f}")
+m2.metric("Avg Annual Mileage", f"{stats.get('avg_mileage', 8000):,.0f} miles")
+m3.metric("Pool Value", f"£{stats['total_pool_value']:,.0f}")
 
 col1, col2 = st.columns([2, 1])
 

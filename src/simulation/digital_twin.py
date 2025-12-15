@@ -26,32 +26,53 @@ class DigitalTwinSimulator:
         'Light': 0.8,
         'Moderate': 1.0,
         'Heavy': 1.4,
-        'Gridlock': 1.6 # High frequency of fenders benders, low severity?
+        'Gridlock': 1.6
     }
 
     def __init__(self, base_accident_prob_per_mile: float = 0.000005):
-        """
-        :param base_accident_prob_per_mile: Baseline probability of an accident per mile traveled
-        """
         self.base_prob = base_accident_prob_per_mile
+        
+        # Load Environmental Data
+        try:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            data_path = os.path.join(current_dir, '..', '..', 'data', 'UK_Driving_Conditions_2025.csv')
+            self.env_data = pd.read_csv(data_path)
+        except Exception as e:
+            print(f"Warning: Could not lead environment data: {e}")
+            self.env_data = None
 
     def simulate_commute(self, 
                         distance_miles: float, 
                         n_simulations: int = 1000, 
-                        driver_fatigue_level: float = 1.0) -> pd.DataFrame:
+                        driver_fatigue_level: float = 1.0,
+                        region: str = 'London') -> pd.DataFrame:
         """
-        Run N simulations of the commute with random environmental variables.
+        Run N simulations of the commute using historical environmental data.
         """
         results = []
         
+        # Filter data for region if available
+        if self.env_data is not None:
+            region_data = self.env_data[self.env_data['region'] == region]
+            if region_data.empty:
+                region_data = self.env_data # Fallback
+        
         for i in range(n_simulations):
-            # 1. Randomize Environment
-            weather = np.random.choice(self.WEATHER_CONDITIONS, p=[0.6, 0.2, 0.1, 0.05, 0.05])
-            traffic = np.random.choice(self.TRAFFIC_CONDITIONS, p=[0.2, 0.4, 0.3, 0.1])
+            # 1. Sample Environment from Real Data
+            if self.env_data is not None and not region_data.empty:
+                day_cond = region_data.sample(1).iloc[0]
+                weather = day_cond['weather_condition']
+                traffic = day_cond['traffic_baseline']
+                date = day_cond['date']
+            else:
+                # Fallback to random
+                weather = np.random.choice(self.WEATHER_CONDITIONS, p=[0.6, 0.2, 0.1, 0.05, 0.05])
+                traffic = np.random.choice(self.TRAFFIC_CONDITIONS, p=[0.2, 0.4, 0.3, 0.1])
+                date = "N/A"
             
-            # 2. Calculate Specific Risk Multiplier for this run
-            w_risk = self.WEATHER_RISK[weather]
-            t_risk = self.TRAFFIC_RISK[traffic]
+            # 2. Calculate Specific Risk Multiplier
+            w_risk = self.WEATHER_RISK.get(weather, 1.0)
+            t_risk = self.TRAFFIC_RISK.get(traffic, 1.0)
             
             # 3. Total Trip Probability of Accident
             # P(Accident) = 1 - (1 - p_mile)^miles

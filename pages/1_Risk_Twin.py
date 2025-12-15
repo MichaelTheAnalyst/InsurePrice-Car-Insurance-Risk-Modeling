@@ -53,6 +53,13 @@ with col1:
     
     with st.container(border=True):
         commute_name = st.text_input("Route Name", value="Home to Office (Southampton)")
+        
+        region = st.selectbox(
+            "Region (Environmental Data)",
+            ["London", "South East", "South West", "East Anglia", "West Midlands", "North West", "North East", "Scotland", "Wales"],
+            index=1
+        )
+        
         distance = st.slider("Distance (miles)", 1, 100, 15)
         
         st.markdown("### Driver State")
@@ -72,11 +79,12 @@ with col2:
     if run_btn:
         simulator = DigitalTwinSimulator()
         
-        with st.spinner(f"Running {sim_count} Monte Carlo simulations for '{commute_name}'..."):
+        with st.spinner(f"Running {sim_count} simulations for '{region}' weather patterns..."):
             df_results = simulator.simulate_commute(
                 distance_miles=distance,
                 n_simulations=sim_count,
-                driver_fatigue_level=fatigue_map[fatigue]
+                driver_fatigue_level=fatigue_map[fatigue],
+                region=region
             )
             
             stats = simulator.get_summary_stats(df_results)
