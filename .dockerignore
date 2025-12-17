@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Terraform
+terraform/
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# VS Code
+.vscode/
+
+# Project specific
+tmp/
+output/

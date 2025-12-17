@@ -149,46 +149,6 @@ streamlit run insureprice_dashboard.py
 
 ---
 
----
-
-## ☁️ Cloud Architecture & Deployment
-
-**InsurePrice** is designed as a cloud-native application, leveraging modern **DevOps** principles and **Infrastructure as Code (IaC)**.
-
-### Technology Stack
-- **Terraform**: Manages Azure infrastructure (IaC)
-- **Docker**: Containerizes the application for consistent deployment
-- **Azure Container Instances (ACI)**: Serverless container execution
-- **Azure Container Registry (ACR)**: Secure Docker image storage
-
-### Infrastructure Diagram
-```mermaid
-graph LR
-    User[User/Browser] -->|HTTPS| ACI[Azure Container Instance]
-    ACI -->|Pull Image| ACR[Azure Container Registry]
-    Terraform[Terraform] -->|Provisions| ACI
-    Terraform -->|Provisions| ACR
-```
-
-### Deployment Commands
-The project includes a production-ready Terraform configuration for Azure.
-
-```bash
-# Login to Azure
-az login
-
-# Initialize Terraform
-terraform -chdir=terraform init
-
-# Plan Infrastructure
-terraform -chdir=terraform plan
-
-# Deploy to Azure
-terraform -chdir=terraform apply
-```
-
----
-
 ## 📊 Interactive Dashboard
 
 ### Pages Overview
