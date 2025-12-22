@@ -1,4 +1,4 @@
-# 🚗 InsurePrice: Enterprise Car Insurance Risk Modeling & Pricing Platform
+# InsurePrice: Enterprise Car Insurance Risk Modeling & Pricing Platform
 
 <div align="center">
 
@@ -9,34 +9,34 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-ff4b4b.svg)
 ![License](https://img.shields.io/badge/License-MIT-purple.svg)
 
-**🏆 Complete End-to-End Insurance Technology Platform**
+**Complete End-to-End Insurance Technology Platform**
 
 *Production-ready ML-powered risk assessment, actuarial pricing, fraud detection, and portfolio optimization.*
 *Featuring new **GenAI & IoT Prototypes** for 2026.*
 
-[🚀 Quick Start](#-quick-start) • [📡 API Docs](#-rest-api) • [🔍 Fraud Detection](#-fraud-detection) • [⚡ Next-Gen Prototypes](#-next-gen-prototypes-new)
+[Quick Start](#quick-start) • [API Docs](#rest-api) • [Fraud Detection](#fraud-detection) • [Next-Gen Prototypes](#next-gen-prototypes-new)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Next-Gen Prototypes (New)](#-next-gen-prototypes-new)
-- [Quick Start](#-quick-start)
-- [REST API](#-rest-api)
-- [Fraud Detection](#-fraud-detection)
-- [Interactive Dashboard](#-interactive-dashboard)
-- [Project Structure](#-project-structure)
-- [Tech Stack](#-tech-stack)
-- [Business Value](#-business-value)
-- [Contact](#-contact)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Next-Gen Prototypes (New)](#next-gen-prototypes-new)
+- [Quick Start](#quick-start)
+- [REST API](#rest-api)
+- [Fraud Detection](#fraud-detection)
+- [Interactive Dashboard](#interactive-dashboard)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Business Value](#business-value)
+- [Contact](#contact)
 
 ---
 
-## 🎯 Overview
+## Overview
 
 **InsurePrice** is a comprehensive, enterprise-grade car insurance platform that transforms traditional insurance operations through advanced machine learning, actuarial science, and AI-powered analytics.
 
@@ -55,51 +55,51 @@ In **December 2025**, the platform was expanded with three cutting-edge R&D prot
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🤖 Machine Learning Risk Models
-- **CatBoost**: Best performer with categorical embeddings (AUC 0.6176) 🏆
+### Machine Learning Risk Models
+- **CatBoost**: Best performer with categorical embeddings (AUC 0.6176) - WINNER
 - **Random Forest**: Optimized with hyperparameter tuning (AUC 0.6074)
 - **Neural Network Ensemble**: Deep learning with embedding layers
 - **Feature Engineering**: +3.84% AUC improvement with interaction terms
 
-### 💰 Actuarial Pricing Engine
+### Actuarial Pricing Engine
 - Professional premium calculation formulas
 - Risk-based pricing with 17+ factors
 - NCD (No Claims Discount) integration
 - Voluntary excess adjustments
 
-### 🔍 Real-Time Fraud Detection
+### Real-Time Fraud Detection
 - **Anomaly Detection**: Isolation Forest for unusual patterns
 - **NLP Analysis**: 40+ fraud indicator keywords
 - **Network Analysis**: Fraud ring identification
 
 ---
 
-## ⚡ Next-Gen Prototypes (New)
+## Next-Gen Prototypes (New)
 
 Added in **v2.1 (Dec 2025)**, these experimental features showcase the future of insurance:
 
-### 1. 🧬 Risk Twin Simulator
+### 1. Risk Twin Simulator
 *A "Digital Twin" of the driver that simulates their daily commute 10,000 times.*
 - **Methodology**: Monte Carlo Simulation.
 - **Data Source**: Uses real historical UK weather/traffic data (`UK_Driving_Conditions_2025.csv`).
 - **Value**: Instead of guessing risk, we *simulate* it based on exact route, driver fatigue, and environmental conditions.
 
-### 2. 🏘️ Peer-to-Peer "Village" Pools
+### 2. Peer-to-Peer "Village" Pools
 *Why pay for bad drivers? Join a "Village" of similar people.*
 - **Logic**: Assigns users to micro-communities (e.g., "Night Owls", "Safe Commuters") based on telemetry.
 - **Smart Contract**: Automates "End of Month" reconciliation. If Claims < Premiums, the Surplus is paid back as a **Dividend**.
 - **Data**: Built on a synthetic population of **50,000 users** (`The_Village_Population.csv`).
 
-### 3. 🛠️ Preventative Maintenance Bond
+### 3. Preventative Maintenance Bond
 *Insurance that pays you to fix your car BEFORE you crash.*
 - **Concept**: Parametric insurance linked to IoT Telematics.
 - **Mechanism**: Monitors Brake Wear (%) and Tyre Tread (mm).
 - **Trigger**: If `Risk > 80%`, the policy **automatically credits £250** for immediate repairs at a partner garage.
 - **Goal**: Cheaper to pay £250 for tyres than £15,000 for a hydroplaning accident.
 
-### 4. 🍃 Carbon-to-Credit Gamification
+### 4. Carbon-to-Credit Gamification
 *Drive Green, Mine Crypto.*
 - **Concept**: Verifiable eco-driving earns "InsureCoin" tokens.
 - **Engine**: Calculates a "Mining Hashrate" based on **Avg RPM** and **Driving Smoothness**.
@@ -108,7 +108,7 @@ Added in **v2.1 (Dec 2025)**, these experimental features showcase the future of
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -151,7 +151,7 @@ streamlit run insureprice_dashboard.py
 
 ---
 
-## ☁️ Cloud Architecture & Deployment
+## Cloud Architecture & Deployment
 
 **InsurePrice** is designed as a cloud-native application, leveraging modern **DevOps** principles and **Infrastructure as Code (IaC)**.
 
@@ -189,34 +189,34 @@ terraform -chdir=terraform apply
 
 ---
 
-## 📊 Interactive Dashboard
+## Interactive Dashboard
 
 ### Pages Overview
-1.  **📊 Dashboard**: Main portfolio overview.
-2.  **🎯 Risk Assessment**: Classic actuarial pricing.
-3.  **💎 Customer CLV**: Lifetime value prediction.
-4.  **🔍 Fraud Detection**: AI Claims analysis.
-5.  **📈 Portfolio Analytics**: Deep dive stats.
-6.  **🤖 Model Performance**: ML Metrics.
-7.  **🧬 Risk Twin**: (New) Commute Simulator.
-8.  **🏘️ Village Pools**: (New) P2P Insurance.
-9.  **🛠️ Preventative Bond**: (New) IoT Maintenance.
-10. **🍃 Eco-Credits**: (New) Crypto Mining Gamification.
+1.  **Dashboard**: Main portfolio overview.
+2.  **Risk Assessment**: Classic actuarial pricing.
+3.  **Customer CLV**: Lifetime value prediction.
+4.  **Fraud Detection**: AI Claims analysis.
+5.  **Portfolio Analytics**: Deep dive stats.
+6.  **Model Performance**: ML Metrics.
+7.  **Risk Twin**: (New) Commute Simulator.
+8.  **Village Pools**: (New) P2P Insurance.
+9.  **Preventative Bond**: (New) IoT Maintenance.
+10. **Eco-Credits**: (New) Crypto Mining Gamification.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 InsurePrice/
-├── 📊 Data & Models
+├── Data & Models
 │   ├── data/The_Village_Population.csv          # [NEW] 50k User profiles
 │   ├── data/Vehicle_Maintenance_Records.csv     # [NEW] IoT Health data
 │   ├── data/Driver_Eco_Profiles.csv             # [NEW] Eco-Driving stats
 │   ├── data/UK_Driving_Conditions_2025.csv      # [NEW] Environmental data
 │   └── ...
 │
-├── ⚡ Next-Gen Prototypes [NEW]
+├── Next-Gen Prototypes [NEW]
 │   ├── src/simulation/digital_twin.py           # Monte Carlo Engine
 │   ├── src/p2p/community_pool.py                # Village Logic
 │   ├── src/maintenance/bond_engine.py           # IoT Bond Logic
@@ -227,27 +227,27 @@ InsurePrice/
 │       ├── 3_Preventative_Bond.py
 │       └── 4_Eco_Credits.py
 │
-├── 💰 Pricing Engine
+├── Pricing Engine
 │   ├── pricing_engine.py                        # Main pricing engine
 │   └── ...
 │
-├── 🔍 Fraud Detection
+├── Fraud Detection
 │   ├── fraud_detection.py                       # Core fraud engine
 │   └── ...
 │
-├── 📜 Scripts [NEW]
+├── Scripts [NEW]
 │   ├── generate_village_population.py
 │   ├── generate_weather_traffic.py
 │   ├── generate_maintenance_data.py
 │   └── generate_eco_data.py
 │
-└── 📊 Dashboard
+└── Dashboard
     └── insureprice_dashboard.py                 # Main App Entry point
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -259,7 +259,7 @@ InsurePrice/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
@@ -269,7 +269,7 @@ InsurePrice/
 
 ---
 
-## 📞 Contact
+## Contact
 
 <div align="center">
 
@@ -285,9 +285,9 @@ InsurePrice/
 
 ---
 
-## 📄 License
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <div align="center">
-**🚗 InsurePrice v2.1** - *Innovating Insurance with AI*
+**InsurePrice v2.1** - *Innovating Insurance with AI*
 </div>
